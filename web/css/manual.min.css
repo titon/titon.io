@@ -1,0 +1,62 @@
+/* line 3, ../scss/modules/_manual.scss */
+.manual-body {
+  margin-left: 250px;
+}
+
+/* line 7, ../scss/modules/_manual.scss */
+.manual-sidebar {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #4d5967;
+}
+
+/* line 18, ../scss/modules/_manual.scss */
+.manual-head {
+  padding: 1.5rem;
+  background: #f6faff;
+  border-bottom: 1px solid #e9f0f8;
+  text-shadow: 1px 1px #fff;
+}
+/* line 24, ../scss/modules/_manual.scss */
+.manual-head h1 {
+  font-size: 3.5rem;
+}
+/* line 28, ../scss/modules/_manual.scss */
+.manual-head p {
+  margin-bottom: 0;
+}
+
+/* line 33, ../scss/modules/_manual.scss */
+.manual-chapter {
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+}
+/* line 37, ../scss/modules/_manual.scss */
+.manual-chapter:last-child {
+  margin-bottom: 0;
+}
+/* line 41, ../scss/modules/_manual.scss */
+.manual-chapter .chapter-buttons {
+  float: right;
+}
+/* line 46, ../scss/modules/_manual.scss */
+.manual-chapter .chapter-meta dt {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* line 53, ../scss/modules/_manual.scss */
+.manual-page {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid whitesmoke;
+}
+/* line 58, ../scss/modules/_manual.scss */
+.manual-page p {
+  margin-right: 250px;
+}

@@ -1,0 +1,11 @@
+.idea
+.sass-cache
+temp/cache
+vendor
+composer.lock
+
+# Ignore symlinks
+web/common/
+
+# Keep folders
+!.gitkeep

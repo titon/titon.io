@@ -1,0 +1,61 @@
+
+
+.manual-body {
+	margin-left: 250px;
+}
+
+.manual-sidebar {
+	width: 250px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background: $bg-dark;
+}
+
+.manual-head {
+	padding: $padding;
+	background: $bg-light;
+	border-bottom: 1px solid $bg-light-border;
+	text-shadow: 1px 1px #fff;
+
+	h1 {
+		font-size: 3.5rem;
+	}
+
+	p {
+		margin-bottom: 0;
+	}
+}
+
+.manual-chapter {
+	padding: $padding;
+	margin-bottom: $margin * 2;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	.chapter-buttons {
+		float: right;
+	}
+
+	.chapter-meta {
+		dt {
+			font-weight: bold;
+			margin-top: 5px;
+		}
+	}
+}
+
+.manual-page {
+	margin-top: $margin;
+	padding-top: $padding;
+	border-top: 1px solid $gray;
+
+	p {
+		margin-right: 250px;
+	}
+}
