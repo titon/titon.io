@@ -15,11 +15,62 @@
 </head>
 <body>
 	<div class="skeleton">
-		<aside class="manual-sidebar">
+		<aside class="manual-sidebar" id="sidebar">
+			<h1 class="manual-logo">LOGO</h1>
 
+			<ul class="manual-menu">
+				<li>
+					<a href="">Getting Started</a>
+				</li>
+				<li class="is-open">
+					<a href="">CSS <span class="icon-chevron-sign-down"></span></a>
+
+					<ul class="manual-menu">
+						<li><a href="">Normalize integration</a></li>
+						<li><a href="">Global states</a></li>
+						<li><a href="">Sizing and shapes</a></li>
+						<li><a href="">Reserved classes</a></li>
+						<li class="is-open">
+							<a href="">Layout Components <span class="icon-chevron-sign-down"></span></a>
+
+							<ul class="manual-menu">
+								<li><a href="">Base</a></li>
+								<li><a href="">Typography</a></li>
+								<li><a href="" class="is-active">Grid</a></li>
+								<li><a href="">Responsive</a></li>
+								<li><a href="">Code</a></li>
+								<li><a href="">Form</a></li>
+								<li><a href="">InputGroup</a></li>
+								<li><a href="">Table</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="">UI Components <span class="icon-chevron-sign-right"></span></a>
+
+							<ul class="manual-menu" style="display: none">
+								<li><a href="">Alert</a></li>
+								<li><a href="">Breadcrumbs</a></li>
+								<li><a href="">Button</a></li>
+								<li><a href="">ButtonGroup</a></li>
+								<li><a href="">Dropdown</a></li>
+								<li><a href="">Icon</a></li>
+								<li><a href="">Label &amp; Badge</a></li>
+								<li><a href="">Pagination</a></li>
+								<li><a href="">Progress</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="">Javascript <span class="icon-chevron-sign-right"></span></a>
+				</li>
+				<li>
+					<a href="">Customize</a>
+				</li>
+			</ul>
 		</aside>
 
-		<div class="manual-body">
+		<div class="manual-body" id="content">
 			<div class="manual-head" id="top">
 				<h1>CSS</h1>
 
@@ -28,6 +79,11 @@
 
 			<section class="manual-chapter" id="tooltip">
 				<div class="button-group chapter-buttons">
+					<a href="#top" class="button">
+						<span class="icon-arrow-up icon--left"></span>
+						Up
+					</a>
+
 					<a href="#popover" class="button">
 						Popover
 						<span class="icon-arrow-right icon--right"></span>

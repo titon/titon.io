@@ -1,4 +1,6 @@
 
-@import "global";
+@import "global/variables";
+@import "global/mixins";
+
 @import "skeleton/base";
 @import "skeleton/ui";

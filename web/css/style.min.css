@@ -1,12 +1,39 @@
-/* line 2, ../scss/skeleton/_base.scss */
+/* line 1, ../scss/skeleton/_base.scss */
+html {
+  font: normal 76%/150% "Droid Sans", sans-serif;
+}
+
+/* line 5, ../scss/skeleton/_base.scss */
 body {
-  font: normal 16px/150% "Droid Sans", sans-serif;
   color: #3f4752;
   background: #fff;
   margin: 0;
   padding: 0;
 }
 
+/* line 12, ../scss/skeleton/_base.scss */
+a, a:hover {
+  color: #3eb1d3;
+  text-decoration: none;
+}
+
+/* line 17, ../scss/skeleton/_base.scss */
+a:hover {
+  color: #4067ab;
+}
+
+@media only screen and (min-width: 480px) {
+  /* line 24, ../scss/skeleton/_base.scss */
+  html {
+    font-size: 84%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  /* line 28, ../scss/skeleton/_base.scss */
+  html {
+    font-size: 90%;
+  }
+}
 /* line 6, ../scss/skeleton/_ui.scss */
 .button {
   border: 1px solid #e5e5e5;
@@ -21,6 +48,7 @@ body {
 }
 /* line 13, ../scss/skeleton/_ui.scss */
 .button:hover {
+  color: #000;
   border-color: #c2c2c2;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f8f8f8));
   background-image: -webkit-linear-gradient(#ffffff, #f8f8f8);
@@ -28,27 +56,27 @@ body {
   background-image: -o-linear-gradient(#ffffff, #f8f8f8);
   background-image: linear-gradient(#ffffff, #f8f8f8);
 }
-/* line 19, ../scss/skeleton/_ui.scss */
+/* line 20, ../scss/skeleton/_ui.scss */
 .button:focus, .button:active {
   background: whitesmoke;
 }
-/* line 23, ../scss/skeleton/_ui.scss */
+/* line 24, ../scss/skeleton/_ui.scss */
 .button.small {
   font-size: .8rem;
 }
 
-/* line 30, ../scss/skeleton/_ui.scss */
+/* line 31, ../scss/skeleton/_ui.scss */
 .button-group {
   border-radius: 3px;
 }
-/* line 35, ../scss/skeleton/_ui.scss */
+/* line 36, ../scss/skeleton/_ui.scss */
 .button-group > li:first-child .button,
 .button-group > .button:first-child,
 .button-group > .button.first {
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
-/* line 42, ../scss/skeleton/_ui.scss */
+/* line 43, ../scss/skeleton/_ui.scss */
 .button-group > li:last-child .button,
 .button-group > .button:last-child,
 .button-group > .button.last {
@@ -56,17 +84,17 @@ body {
   border-bottom-right-radius: 3px;
 }
 
-/* line 50, ../scss/skeleton/_ui.scss */
+/* line 51, ../scss/skeleton/_ui.scss */
 .icon--left {
   margin-right: 5px;
 }
 
-/* line 54, ../scss/skeleton/_ui.scss */
+/* line 55, ../scss/skeleton/_ui.scss */
 .icon--right {
   margin-left: 5px;
 }
 
-/* line 60, ../scss/skeleton/_ui.scss */
+/* line 61, ../scss/skeleton/_ui.scss */
 .label, .badge {
   font-size: .8rem;
 }

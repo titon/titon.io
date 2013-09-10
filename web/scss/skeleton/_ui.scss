@@ -11,6 +11,7 @@
 	@include background-image(linear-gradient(#fff, $gray));
 
 	&:hover {
+		color: #000;
 		border-color: $gray-darkest;
 		@include background-image(linear-gradient(#fff, $gray-light));
 	}

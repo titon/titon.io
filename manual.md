@@ -1,7 +1,7 @@
 # Manual #
 
 Suggested hierarchy for the documentation manual. Each section of the manual is represented by a node (each indent).
-Nodes can be nested indefinately. Each node can have documentation attached to it (represented by a dash).
+Nodes can be nested indefinitely. Each node can have documentation attached to it (represented by a dash).
 
 ```
 Framework
@@ -164,7 +164,7 @@ Framework
     Model
       Connection
         - Loading drivers
-      Model 
+      Model
         - Creating models
         - Adding behaviors
         - Mapping relationships
@@ -278,7 +278,7 @@ Framework
         - Methods
       String
         - Methods
-      Time 
+      Time
         - Methods
       Uuid
         - Methods
@@ -322,12 +322,12 @@ Framework
           - Radios and checkboxes
           - Selects
           - Misc inputs
-  
+
 Toolkit
   Getting Started
     - Requirements
     - HTML5 & CSS3
-    - Mobile first 
+    - Mobile first
     - Fluid & responsive based
   CSS
     - Normalize integration
@@ -354,7 +354,7 @@ Toolkit
         - Media scaling
         - Browser visibility
         - State detection
-      Code 
+      Code
         - Inline
         - Block
       Form
