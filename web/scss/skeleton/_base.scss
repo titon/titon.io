@@ -1,29 +1,29 @@
 html {
-	font: normal 76%/150% "Droid Sans", sans-serif;
+    font: normal 76%/150% "Droid Sans", sans-serif;
 }
 
 body {
-	color: $text;
-	background: #fff;
-	margin: 0;
-	padding: 0;
+    color: $text;
+    background: #fff;
+    margin: 0;
+    padding: 0;
 }
 
 a, a:hover {
-	color: shade($blue, 10%);
-	text-decoration: none;
+    color: shade($blue, 10%);
+    text-decoration: none;
 }
 
 a:hover {
-	color: $blue-dark;
+    color: $blue-dark;
 }
 
 //-------------------- Content --------------------//
 
 @include if-tablet-portrait {
-	html { font-size: 84%; }
+    html { font-size: 84%; }
 }
 
 @include if-desktop {
-	html { font-size: 90%; }
+    html { font-size: 90%; }
 }
