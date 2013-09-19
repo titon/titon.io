@@ -1,11 +1,9 @@
 .idea
-.sass-cache
-temp/cache
-vendor
+.sass-cache/
+temp/cache/
+vendor/
+!empty
 composer.lock
 
 # Ignore symlinks
 web/common/
-
-# Keep folders
-!.gitkeep
