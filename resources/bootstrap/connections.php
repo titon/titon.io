@@ -15,6 +15,6 @@ use Titon\Model\Mysql\MysqlDriver;
 $db = Registry::factory('Titon\Model\Connection');
 
 // Load MySQL driver
-$db->addDriver(new MysqlDriver('common', Config::get('db.common')))
+$db->addDriver(new MysqlDriver('default', Config::get('db.common')))
     ->setStorage(new MemoryStorage('sql'))
     ->setLogger(new Logger(TEMP_DIR . 'logs/'));

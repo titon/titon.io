@@ -1,0 +1,584 @@
+[2013-10-03T02:28:05+00:00] Titon\Mvc\Exception\MissingModuleException: Could not locate favicon module [/Users/milesj/Sites/titon/titon.io/vendor/titon/mvc/src/Titon/Mvc/Application.php:162] [/en/favicon.ico]
+#0 /Users/milesj/Sites/titon/titon.io/vendor/titon/mvc/src/Titon/Mvc/Dispatcher/AbstractDispatcher.php(97): Titon\Mvc\Application->getModule('favicon')
+#1 /Users/milesj/Sites/titon/titon.io/vendor/titon/mvc/src/Titon/Mvc/Dispatcher/AbstractDispatcher.php(74): Titon\Mvc\Dispatcher\AbstractDispatcher->getModule()
+#2 /Users/milesj/Sites/titon/titon.io/vendor/titon/mvc/src/Titon/Mvc/Dispatcher/FrontDispatcher.php(27): Titon\Mvc\Dispatcher\AbstractDispatcher->getController()
+#3 /Users/milesj/Sites/titon/titon.io/vendor/titon/mvc/src/Titon/Mvc/Application.php(296): Titon\Mvc\Dispatcher\FrontDispatcher->dispatch()
+#4 /Users/milesj/Sites/titon/titon.io/index.php(69): Titon\Mvc\Application->run('/Users/milesj/S...')
+#5 /Users/milesj/Sites/titon/titon.io/web/index.php(13): require_once('/Users/milesj/S...')
+#6 {main}
+[2013-10-03T02:28:05+00:00] Titon\Mvc\Exception\MissingModuleException: Could not locate favicon module [/Users/milesj/Sites/titon/titon.io/vendor/titon/mvc/src/Titon/Mvc/Application.php:162] [/en/favicon.ico]
+#0 /Users/milesj/Sites/titon/titon.io/vendor/titon/mvc/src/Titon/Mvc/Dispatcher/AbstractDispatcher.php(97): Titon\Mvc\Application->getModule('favicon')
+#1 /Users/milesj/Sites/titon/titon.io/vendor/titon/mvc/src/Titon/Mvc/Dispatcher/AbstractDispatcher.php(74): Titon\Mvc\Dispatcher\AbstractDispatcher->getModule()
+#2 /Users/milesj/Sites/titon/titon.io/vendor/titon/mvc/src/Titon/Mvc/Dispatcher/FrontDispatcher.php(27): Titon\Mvc\Dispatcher\AbstractDispatcher->getController()
+#3 /Users/milesj/Sites/titon/titon.io/vendor/titon/mvc/src/Titon/Mvc/Application.php(296): Titon\Mvc\Dispatcher\FrontDispatcher->dispatch()
+#4 /Users/milesj/Sites/titon/titon.io/index.php(69): Titon\Mvc\Application->run('/Users/milesj/S...')
+#5 /Users/milesj/Sites/titon/titon.io/web/index.php(13): require_once('/Users/milesj/S...')
+#6 {main}
+[2013-10-03T02:43:51+00:00] [SQL] CREATE TABLE IF NOT EXISTS `docs` (
+`id` SERIAL UNSIGNED NOT NULL AUTO_INCREMENT,
+`parent_id` INT NULL,
+`left` SMALLINT NULL,
+`right` SMALLINT NULL,
+`version` VARCHAR(20) NULL,
+`title` VARCHAR(255) NULL,
+`slug` VARCHAR(255) NULL,
+`content` TEXT NULL,
+`created` DATETIME NULL DEFAULT NULL,
+`updated` DATETIME NULL DEFAULT NULL,
+FOREIGN KEY (`parent_id`) REFERENCES `docs`(`id`)
+); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:44:12+00:00] [SQL] CREATE TABLE IF NOT EXISTS `docs` (
+`id` SERIAL UNSIGNED NOT NULL AUTO_INCREMENT,
+`parent_id` INT NULL,
+`left` SMALLINT NULL,
+`right` SMALLINT NULL,
+`version` VARCHAR(20) NULL,
+`title` VARCHAR(255) NULL,
+`slug` VARCHAR(255) NULL,
+`content` TEXT NULL,
+`created` DATETIME NULL DEFAULT NULL,
+`updated` DATETIME NULL DEFAULT NULL,
+FOREIGN KEY (`parent_id`) REFERENCES `docs`(`id`)
+); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:45:34+00:00] [SQL] CREATE TABLE IF NOT EXISTS `docs` (
+`id` INT NOT NULL AUTO_INCREMENT,
+`parent_id` INT NULL,
+`left` SMALLINT NULL,
+`right` SMALLINT NULL,
+`version` VARCHAR(20) NULL,
+`title` VARCHAR(255) NULL,
+`slug` VARCHAR(255) NULL,
+`content` TEXT NULL,
+`created` DATETIME NULL DEFAULT NULL,
+`updated` DATETIME NULL DEFAULT NULL,
+PRIMARY KEY (`id`),
+FOREIGN KEY (`parent_id`) REFERENCES `docs`(`id`)
+); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:45:34+00:00] [SQL] CREATE INDEX `left` ON `docs` (`left`); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:45:34+00:00] [SQL] CREATE INDEX `right` ON `docs` (`right`); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:45:34+00:00] [SQL] CREATE TABLE IF NOT EXISTS `doc_revisions` (
+`id` INT NOT NULL AUTO_INCREMENT,
+`doc_section_id` INT NULL,
+`content` TEXT NULL,
+`created` DATETIME NULL DEFAULT NULL,
+`updated` DATETIME NULL DEFAULT NULL,
+PRIMARY KEY (`id`),
+FOREIGN KEY (`doc_section_id`) REFERENCES `doc_sections`(`id`)
+); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:46:36+00:00] [SQL] CREATE TABLE IF NOT EXISTS `docs` (
+`id` INT NOT NULL AUTO_INCREMENT,
+`parent_id` INT NULL,
+`left` SMALLINT NULL,
+`right` SMALLINT NULL,
+`version` VARCHAR(20) NULL,
+`title` VARCHAR(255) NULL,
+`slug` VARCHAR(255) NULL,
+`content` TEXT NULL,
+`created` DATETIME NULL DEFAULT NULL,
+`updated` DATETIME NULL DEFAULT NULL,
+PRIMARY KEY (`id`)
+); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:46:36+00:00] [SQL] CREATE INDEX `parent_id` ON `docs` (`parent_id`); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:46:36+00:00] [SQL] CREATE INDEX `left` ON `docs` (`left`); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:46:39+00:00] [SQL] CREATE TABLE IF NOT EXISTS `docs` (
+`id` INT NOT NULL AUTO_INCREMENT,
+`parent_id` INT NULL,
+`left` SMALLINT NULL,
+`right` SMALLINT NULL,
+`version` VARCHAR(20) NULL,
+`title` VARCHAR(255) NULL,
+`slug` VARCHAR(255) NULL,
+`content` TEXT NULL,
+`created` DATETIME NULL DEFAULT NULL,
+`updated` DATETIME NULL DEFAULT NULL,
+PRIMARY KEY (`id`)
+); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:46:39+00:00] [SQL] CREATE INDEX `parent_id` ON `docs` (`parent_id`); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:46:40+00:00] [SQL] CREATE TABLE IF NOT EXISTS `docs` (
+`id` INT NOT NULL AUTO_INCREMENT,
+`parent_id` INT NULL,
+`left` SMALLINT NULL,
+`right` SMALLINT NULL,
+`version` VARCHAR(20) NULL,
+`title` VARCHAR(255) NULL,
+`slug` VARCHAR(255) NULL,
+`content` TEXT NULL,
+`created` DATETIME NULL DEFAULT NULL,
+`updated` DATETIME NULL DEFAULT NULL,
+PRIMARY KEY (`id`)
+); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:46:40+00:00] [SQL] CREATE INDEX `parent_id` ON `docs` (`parent_id`); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:46:40+00:00] [SQL] CREATE TABLE IF NOT EXISTS `docs` (
+`id` INT NOT NULL AUTO_INCREMENT,
+`parent_id` INT NULL,
+`left` SMALLINT NULL,
+`right` SMALLINT NULL,
+`version` VARCHAR(20) NULL,
+`title` VARCHAR(255) NULL,
+`slug` VARCHAR(255) NULL,
+`content` TEXT NULL,
+`created` DATETIME NULL DEFAULT NULL,
+`updated` DATETIME NULL DEFAULT NULL,
+PRIMARY KEY (`id`)
+); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:46:40+00:00] [SQL] CREATE INDEX `parent_id` ON `docs` (`parent_id`); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:47:02+00:00] [SQL] CREATE TABLE IF NOT EXISTS `docs` (
+`id` INT NOT NULL AUTO_INCREMENT,
+`parent_id` INT NULL,
+`left` SMALLINT NULL,
+`right` SMALLINT NULL,
+`version` VARCHAR(20) NULL,
+`title` VARCHAR(255) NULL,
+`slug` VARCHAR(255) NULL,
+`content` TEXT NULL,
+`created` DATETIME NULL DEFAULT NULL,
+`updated` DATETIME NULL DEFAULT NULL,
+PRIMARY KEY (`id`)
+); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:47:03+00:00] [SQL] CREATE INDEX `parent_id` ON `docs` (`parent_id`); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:47:03+00:00] [SQL] CREATE INDEX `left` ON `docs` (`left`); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:47:03+00:00] [SQL] CREATE INDEX `right` ON `docs` (`right`); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:47:03+00:00] [SQL] CREATE TABLE IF NOT EXISTS `doc_revisions` (
+`id` INT NOT NULL AUTO_INCREMENT,
+`doc_section_id` INT NULL,
+`content` TEXT NULL,
+`created` DATETIME NULL DEFAULT NULL,
+`updated` DATETIME NULL DEFAULT NULL,
+PRIMARY KEY (`id`)
+); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:47:03+00:00] [SQL] CREATE INDEX `doc_section_id` ON `doc_revisions` (`doc_section_id`); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:47:03+00:00] [SQL] CREATE TABLE IF NOT EXISTS `doc_sections` (
+`id` INT NOT NULL AUTO_INCREMENT,
+`doc_id` INT NULL,
+`doc_revision_id` INT NULL,
+`order` SMALLINT NULL,
+`title` VARCHAR(255) NULL,
+`slug` VARCHAR(255) NULL,
+`created` DATETIME NULL DEFAULT NULL,
+`updated` DATETIME NULL DEFAULT NULL,
+PRIMARY KEY (`id`)
+); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:47:03+00:00] [SQL] CREATE INDEX `doc_id` ON `doc_sections` (`doc_id`); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:47:03+00:00] [SQL] CREATE INDEX `doc_revision_id` ON `doc_sections` (`doc_revision_id`); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:47:04+00:00] [SQL] CREATE TABLE IF NOT EXISTS `docs` (
+`id` INT NOT NULL AUTO_INCREMENT,
+`parent_id` INT NULL,
+`left` SMALLINT NULL,
+`right` SMALLINT NULL,
+`version` VARCHAR(20) NULL,
+`title` VARCHAR(255) NULL,
+`slug` VARCHAR(255) NULL,
+`content` TEXT NULL,
+`created` DATETIME NULL DEFAULT NULL,
+`updated` DATETIME NULL DEFAULT NULL,
+PRIMARY KEY (`id`)
+); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:47:04+00:00] [SQL] CREATE INDEX `parent_id` ON `docs` (`parent_id`); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/createTables]
+[2013-10-03T02:53:20+00:00] [SQL] SELECT * FROM `docs` ORDER BY `id` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/list_docs]
+[2013-10-03T02:54:22+00:00] [SQL] SELECT * FROM `docs` ORDER BY `id` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/list_docs]
+[2013-10-03T02:54:39+00:00] [SQL] SELECT * FROM `docs` ORDER BY `id` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/list_docs]
+[2013-10-03T02:55:36+00:00] [SQL] SELECT * FROM `docs` ORDER BY `id` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/list_docs]
+[2013-10-03T03:00:17+00:00] [SQL] SELECT * FROM `docs` ORDER BY `id` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/list_docs]
+[2013-10-03T03:00:24+00:00] [SQL] SELECT * FROM `docs` ORDER BY `id` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/list_docs]
+[2013-10-03T03:00:48+00:00] [SQL] SELECT * FROM `docs` ORDER BY `id` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/list_docs]
+[2013-10-03T03:04:19+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/list_docs]
+[2013-10-03T03:04:35+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/list_docs]
+[2013-10-03T03:14:02+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:14:02+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:15:31+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:15:31+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:17:28+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:17:28+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:18:04+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:18:04+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:19:09+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:19:09+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:21:49+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:21:49+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:22:49+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:22:49+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:22:52+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:22:52+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:22:53+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:22:53+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:22:54+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:22:54+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:22:55+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:22:55+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:22:56+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:22:56+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:23:22+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:23:22+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:23:23+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:23:23+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:23:24+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:23:24+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:23:25+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:23:25+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:23:39+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:23:39+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:23:40+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:23:40+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:25:50+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:25:50+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:28:09+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:28:09+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:32:29+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:32:29+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:32:55+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:32:55+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:34:11+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:34:11+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:40:23+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:40:23+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:44:06+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:44:06+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:44:21+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:45:02+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:45:02+00:00] [SQL] SELECT * FROM `docs` ORDER BY `right` DESC LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:45:02+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `title`, `slug`, `content`, `created`) VALUES (1, 2, 'Toolkit', 'toolkit', 'It's awesome!', '2013-10-03 03:45:02'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:45:15+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:45:15+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:45:23+00:00] [SQL] SELECT * FROM `docs` WHERE `id` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:45:23+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:45:23+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `parent_id`, `title`, `slug`, `content`, `created`) VALUES (2, 3, 1, 'Toolkit', 'toolkit', 'asdsa', '2013-10-03 03:45:23'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:45:23+00:00] [SQL] UPDATE `docs` SET `left` = `left` + 2 WHERE `left` >= 2 AND `id` != 2; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:45:23+00:00] [SQL] UPDATE `docs` SET `right` = `right` + 2 WHERE `right` >= 2 AND `id` != 2; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T03:47:19+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T03:47:19+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T03:47:24+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:47:24+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:47:38+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:47:38+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:47:48+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:47:48+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:48:26+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:48:26+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:49:00+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:49:00+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:52:40+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:52:40+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:54:51+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:54:51+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:56:23+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:56:23+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:57:04+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:57:04+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:57:04+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 2 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:57:04+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 2 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:57:04+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:58:00+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:58:00+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:58:00+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 2 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:58:00+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 2 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:58:00+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:58:22+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:58:22+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:58:22+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 2 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:58:22+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 2 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:58:22+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:04+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:04+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:04+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 2 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:04+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 2 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:04+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:34+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:34+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:34+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 2 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:34+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 2 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:34+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:39+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:39+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:39+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 2 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:39+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 2 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:39+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:43+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:43+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:43+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 2 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:43+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 2 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:43+00:00] [SQL] UPDATE `docs` SET `parent_id` = 0, `title` = 'Toolkit', `slug` = 'toolkit', `content` = 'asdsa', `updated` = '2013-10-03 03:59:43' WHERE `id` = 2; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:43+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:43+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 2 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:43+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 2 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T03:59:43+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T04:00:27+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:00:27+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 1 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:00:27+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 1 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:00:27+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:00:35+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:00:35+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 1 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:00:35+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 1 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:00:35+00:00] [SQL] UPDATE `docs` SET `parent_id` = 0, `title` = 'Framework', `slug` = 'framework', `content` = 'It's awesome!', `updated` = '2013-10-03 04:00:35' WHERE `id` = 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:00:35+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:00:35+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 1 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:00:35+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 1 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:00:35+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:03:31+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:03:31+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 1 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:03:31+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 1 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:03:31+00:00] [SQL] UPDATE `docs` SET `parent_id` = 0, `title` = 'Framework', `slug` = 'framework', `content` = 'It's awesome!', `updated` = '2013-10-03 04:03:31' WHERE `id` = 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:03:31+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:05:08+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:05:08+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 1 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:05:08+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 1 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:05:08+00:00] [SQL] UPDATE `docs` SET `parent_id` = 0, `title` = 'Framework', `slug` = 'framework', `content` = 'It's awesome!', `updated` = '2013-10-03 04:05:08' WHERE `id` = 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:05:08+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:05:28+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:05:28+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 1 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:05:28+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 1 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:05:28+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:05:34+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:05:34+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 1 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:05:34+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 1 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:05:34+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:06:21+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:06:21+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 1 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:06:21+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 1 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:06:21+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:06:24+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:06:24+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 1 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:06:24+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 1 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:06:24+00:00] [SQL] UPDATE `docs` SET `parent_id` = 0, `title` = 'Framework', `slug` = 'framework', `content` = 'It's awesome!', `updated` = '2013-10-03 04:06:24' WHERE `id` = 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:06:24+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:07:30+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:07:30+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 1 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:07:30+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 1 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:07:30+00:00] [SQL] UPDATE `docs` SET `parent_id` = 0, `title` = 'Framework', `slug` = 'framework', `content` = 'It's awesome!', `updated` = '2013-10-03 04:07:30' WHERE `id` = 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:07:30+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:07:33+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:07:33+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 1 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:07:33+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 1 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:07:33+00:00] [SQL] UPDATE `docs` SET `parent_id` = 0, `title` = 'Framework', `slug` = 'framework', `content` = 'It's awesome!', `updated` = '2013-10-03 04:07:33' WHERE `id` = 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:07:33+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:09:02+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:09:02+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 1 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:09:02+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 1 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:09:04+00:00] [SQL] UPDATE `docs` SET `parent_id` = 0, `title` = 'Framework', `slug` = 'framework', `content` = 'It's awesome!', `updated` = '2013-10-03 04:09:02' WHERE `id` = 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:09:04+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:09:47+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:09:47+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 1 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:09:47+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 1 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:09:47+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:09:49+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:09:49+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 1 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:09:49+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 1 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:09:49+00:00] [SQL] UPDATE `docs` SET `parent_id` = 0, `title` = 'Framework', `slug` = 'framework', `content` = 'It's awesome!', `updated` = '2013-10-03 04:09:49' WHERE `id` = 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:09:49+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:11:24+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:11:24+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 1 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:11:24+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 1 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:11:24+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:11:27+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:11:27+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 1 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:11:27+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 1 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:11:27+00:00] [SQL] UPDATE `docs` SET `parent_id` = 0, `title` = 'Framework', `slug` = 'framework', `content` = 'It's awesome!', `updated` = '2013-10-03 04:11:27' WHERE `id` = 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:11:27+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:11:48+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 1 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:11:48+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 1 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:11:48+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 1 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:11:48+00:00] [SQL] UPDATE `docs` SET `parent_id` = NULL, `title` = 'Framework', `slug` = 'framework', `content` = 'It's awesome!', `updated` = '2013-10-03 04:11:48' WHERE `id` = 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:11:48+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/1]
+[2013-10-03T04:11:55+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T04:11:55+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 2 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T04:11:55+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 2 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T04:11:55+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T04:11:56+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T04:11:56+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 2 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T04:11:56+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 2 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T04:11:56+00:00] [SQL] UPDATE `docs` SET `parent_id` = NULL, `title` = 'Toolkit', `slug` = 'toolkit', `content` = 'asdsa', `updated` = '2013-10-03 04:11:56' WHERE `id` = 2; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T04:11:56+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T04:14:28+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` IS NULL; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/sync_tree]
+[2013-10-03T04:14:28+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/sync_tree]
+[2013-10-03T04:14:28+00:00] [SQL] UPDATE `docs` SET `left` = 1, `right` = 2 WHERE `id` = 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/sync_tree]
+[2013-10-03T04:14:28+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 2; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/sync_tree]
+[2013-10-03T04:14:28+00:00] [SQL] UPDATE `docs` SET `left` = 3, `right` = 4 WHERE `id` = 2; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/sync_tree]
+[2013-10-03T04:14:37+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T04:14:37+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 2 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T04:14:37+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 2 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T04:14:37+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs/2]
+[2013-10-03T04:15:56+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:15:56+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:16:13+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:16:13+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:16:13+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `parent_id`, `title`, `slug`, `content`, `created`) VALUES (4, 5, 2, 'Getting Started', 'getting-started', '', '2013-10-03 04:16:13'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:16:13+00:00] [SQL] UPDATE `docs` SET `left` = `left` + 2 WHERE `left` >= 4 AND `id` != 3; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:16:13+00:00] [SQL] UPDATE `docs` SET `right` = `right` + 2 WHERE `right` >= 4 AND `id` != 3; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:16:13+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:16:51+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:16:51+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:16:51+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `parent_id`, `title`, `slug`, `content`, `created`) VALUES (6, 7, 2, 'CSS', 'css', '', '2013-10-03 04:16:51'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:16:51+00:00] [SQL] UPDATE `docs` SET `left` = `left` + 2 WHERE `left` >= 6 AND `id` != 4; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:16:51+00:00] [SQL] UPDATE `docs` SET `right` = `right` + 2 WHERE `right` >= 6 AND `id` != 4; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:16:51+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:02+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:02+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:02+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `parent_id`, `title`, `slug`, `content`, `created`) VALUES (8, 9, 2, 'JavaScript', 'javascript', '', '2013-10-03 04:17:02'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:02+00:00] [SQL] UPDATE `docs` SET `left` = `left` + 2 WHERE `left` >= 8 AND `id` != 5; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:02+00:00] [SQL] UPDATE `docs` SET `right` = `right` + 2 WHERE `right` >= 8 AND `id` != 5; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:02+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:19+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:19+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 4 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:19+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `parent_id`, `title`, `slug`, `content`, `created`) VALUES (7, 8, 4, 'Layout', 'layout', '', '2013-10-03 04:17:19'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:19+00:00] [SQL] UPDATE `docs` SET `left` = `left` + 2 WHERE `left` >= 7 AND `id` != 6; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:19+00:00] [SQL] UPDATE `docs` SET `right` = `right` + 2 WHERE `right` >= 7 AND `id` != 6; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:19+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:30+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:30+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 4 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:30+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `parent_id`, `title`, `slug`, `content`, `created`) VALUES (9, 10, 4, 'UI', 'ui', '', '2013-10-03 04:17:30'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:30+00:00] [SQL] UPDATE `docs` SET `left` = `left` + 2 WHERE `left` >= 9 AND `id` != 7; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:30+00:00] [SQL] UPDATE `docs` SET `right` = `right` + 2 WHERE `right` >= 9 AND `id` != 7; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:30+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:48+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:48+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 6 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:48+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `parent_id`, `title`, `slug`, `content`, `created`) VALUES (8, 9, 6, 'Base', 'base', '', '2013-10-03 04:17:48'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:48+00:00] [SQL] UPDATE `docs` SET `left` = `left` + 2 WHERE `left` >= 8 AND `id` != 8; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:48+00:00] [SQL] UPDATE `docs` SET `right` = `right` + 2 WHERE `right` >= 8 AND `id` != 8; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:48+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:59+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:59+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 6 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:59+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `parent_id`, `title`, `slug`, `content`, `created`) VALUES (10, 11, 6, 'Typography', 'typography', '', '2013-10-03 04:17:59'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:59+00:00] [SQL] UPDATE `docs` SET `left` = `left` + 2 WHERE `left` >= 10 AND `id` != 9; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:59+00:00] [SQL] UPDATE `docs` SET `right` = `right` + 2 WHERE `right` >= 10 AND `id` != 9; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:17:59+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:04+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:04+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 6 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:04+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `parent_id`, `title`, `slug`, `content`, `created`) VALUES (12, 13, 6, 'Grid', 'grid', '', '2013-10-03 04:18:04'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:04+00:00] [SQL] UPDATE `docs` SET `left` = `left` + 2 WHERE `left` >= 12 AND `id` != 10; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:04+00:00] [SQL] UPDATE `docs` SET `right` = `right` + 2 WHERE `right` >= 12 AND `id` != 10; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:04+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:26+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:26+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 6 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:26+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `parent_id`, `title`, `slug`, `content`, `created`) VALUES (14, 15, 6, 'Responsive', 'responsive', '', '2013-10-03 04:18:26'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:26+00:00] [SQL] UPDATE `docs` SET `left` = `left` + 2 WHERE `left` >= 14 AND `id` != 11; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:26+00:00] [SQL] UPDATE `docs` SET `right` = `right` + 2 WHERE `right` >= 14 AND `id` != 11; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:26+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:31+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:31+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 6 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:31+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `parent_id`, `title`, `slug`, `content`, `created`) VALUES (16, 17, 6, 'Code', 'code', '', '2013-10-03 04:18:31'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:31+00:00] [SQL] UPDATE `docs` SET `left` = `left` + 2 WHERE `left` >= 16 AND `id` != 12; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:31+00:00] [SQL] UPDATE `docs` SET `right` = `right` + 2 WHERE `right` >= 16 AND `id` != 12; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:31+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:36+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:36+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 6 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:36+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `parent_id`, `title`, `slug`, `content`, `created`) VALUES (18, 19, 6, 'Form', 'form', '', '2013-10-03 04:18:36'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:36+00:00] [SQL] UPDATE `docs` SET `left` = `left` + 2 WHERE `left` >= 18 AND `id` != 13; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:36+00:00] [SQL] UPDATE `docs` SET `right` = `right` + 2 WHERE `right` >= 18 AND `id` != 13; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:36+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:49+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:49+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 6 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:49+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `parent_id`, `title`, `slug`, `content`, `created`) VALUES (20, 21, 6, 'InputGroup', 'input-group', '', '2013-10-03 04:18:49'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:49+00:00] [SQL] UPDATE `docs` SET `left` = `left` + 2 WHERE `left` >= 20 AND `id` != 14; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:49+00:00] [SQL] UPDATE `docs` SET `right` = `right` + 2 WHERE `right` >= 20 AND `id` != 14; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:49+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:55+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:55+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 6 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:55+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `parent_id`, `title`, `slug`, `content`, `created`) VALUES (22, 23, 6, 'Table', 'table', '', '2013-10-03 04:18:55'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:55+00:00] [SQL] UPDATE `docs` SET `left` = `left` + 2 WHERE `left` >= 22 AND `id` != 15; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:55+00:00] [SQL] UPDATE `docs` SET `right` = `right` + 2 WHERE `right` >= 22 AND `id` != 15; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:18:55+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:10+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:10+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 7 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:10+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `parent_id`, `title`, `slug`, `content`, `created`) VALUES (26, 27, 7, 'Alert', 'alert', '', '2013-10-03 04:19:10'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:10+00:00] [SQL] UPDATE `docs` SET `left` = `left` + 2 WHERE `left` >= 26 AND `id` != 16; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:10+00:00] [SQL] UPDATE `docs` SET `right` = `right` + 2 WHERE `right` >= 26 AND `id` != 16; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:10+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:20+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:20+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 7 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:20+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `parent_id`, `title`, `slug`, `content`, `created`) VALUES (28, 29, 7, 'Breadcrumbs', 'breadcrumbs', '', '2013-10-03 04:19:20'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:20+00:00] [SQL] UPDATE `docs` SET `left` = `left` + 2 WHERE `left` >= 28 AND `id` != 17; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:20+00:00] [SQL] UPDATE `docs` SET `right` = `right` + 2 WHERE `right` >= 28 AND `id` != 17; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:20+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:26+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:26+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 7 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:26+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `parent_id`, `title`, `slug`, `content`, `created`) VALUES (30, 31, 7, 'Button', 'button', '', '2013-10-03 04:19:26'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:26+00:00] [SQL] UPDATE `docs` SET `left` = `left` + 2 WHERE `left` >= 30 AND `id` != 18; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:26+00:00] [SQL] UPDATE `docs` SET `right` = `right` + 2 WHERE `right` >= 30 AND `id` != 18; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:26+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:34+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:34+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 7 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:34+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `parent_id`, `title`, `slug`, `content`, `created`) VALUES (32, 33, 7, 'ButtonGroup', 'button-group', '', '2013-10-03 04:19:34'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:34+00:00] [SQL] UPDATE `docs` SET `left` = `left` + 2 WHERE `left` >= 32 AND `id` != 19; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:34+00:00] [SQL] UPDATE `docs` SET `right` = `right` + 2 WHERE `right` >= 32 AND `id` != 19; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:34+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:44+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:44+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 7 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:44+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `parent_id`, `title`, `slug`, `content`, `created`) VALUES (34, 35, 7, 'Dropdown', 'dropdown', '', '2013-10-03 04:19:44'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:44+00:00] [SQL] UPDATE `docs` SET `left` = `left` + 2 WHERE `left` >= 34 AND `id` != 20; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:44+00:00] [SQL] UPDATE `docs` SET `right` = `right` + 2 WHERE `right` >= 34 AND `id` != 20; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:44+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:48+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:48+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 7 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:48+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `parent_id`, `title`, `slug`, `content`, `created`) VALUES (36, 37, 7, 'Icon', 'icon', '', '2013-10-03 04:19:48'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:48+00:00] [SQL] UPDATE `docs` SET `left` = `left` + 2 WHERE `left` >= 36 AND `id` != 21; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:48+00:00] [SQL] UPDATE `docs` SET `right` = `right` + 2 WHERE `right` >= 36 AND `id` != 21; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:48+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:58+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:58+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 7 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:58+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `parent_id`, `title`, `slug`, `content`, `created`) VALUES (38, 39, 7, 'Label & Badge', 'label-badge', '', '2013-10-03 04:19:58'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:58+00:00] [SQL] UPDATE `docs` SET `left` = `left` + 2 WHERE `left` >= 38 AND `id` != 22; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:58+00:00] [SQL] UPDATE `docs` SET `right` = `right` + 2 WHERE `right` >= 38 AND `id` != 22; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:19:58+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:20:14+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:20:14+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 7 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:20:14+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `parent_id`, `title`, `slug`, `content`, `created`) VALUES (40, 41, 7, 'Pagination', 'pagination', '', '2013-10-03 04:20:14'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:20:14+00:00] [SQL] UPDATE `docs` SET `left` = `left` + 2 WHERE `left` >= 40 AND `id` != 23; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:20:14+00:00] [SQL] UPDATE `docs` SET `right` = `right` + 2 WHERE `right` >= 40 AND `id` != 23; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:20:14+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:20:20+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:20:20+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 7 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:20:20+00:00] [SQL] INSERT INTO `docs` (`left`, `right`, `parent_id`, `title`, `slug`, `content`, `created`) VALUES (42, 43, 7, 'Progress', 'progress', '', '2013-10-03 04:20:20'); [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:20:20+00:00] [SQL] UPDATE `docs` SET `left` = `left` + 2 WHERE `left` >= 42 AND `id` != 24; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:20:20+00:00] [SQL] UPDATE `docs` SET `right` = `right` + 2 WHERE `right` >= 42 AND `id` != 24; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:20:20+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:20:47+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:20:47+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:21:32+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:21:32+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:22:39+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:22:39+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:24:04+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:24:04+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:24:53+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:24:53+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:25:24+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:25:24+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:25:49+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:25:49+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:26:21+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:26:21+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:26:23+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:26:23+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:26:26+00:00] [SQL] SELECT * FROM `docs` WHERE `slug` IS NULL LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:26:26+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form_docs]
+[2013-10-03T04:27:19+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/list_docs]
+[2013-10-03T04:28:46+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/list_docs]
+[2013-10-03T04:31:08+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/list-docs]
+[2013-10-03T04:31:35+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/list-docs]
+[2013-10-03T04:31:59+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/list-docs]
+[2013-10-03T04:32:02+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 3 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/3]
+[2013-10-03T04:32:02+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/3]
+[2013-10-03T04:32:02+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 3 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/3]
+[2013-10-03T04:32:02+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 3 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/3]
+[2013-10-03T04:32:02+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/3]
+[2013-10-03T04:36:39+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/list-docs]
+[2013-10-03T04:37:09+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 9 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/9]
+[2013-10-03T04:37:09+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 6 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/9]
+[2013-10-03T04:37:09+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 9 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/9]
+[2013-10-03T04:37:09+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 9 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/9]
+[2013-10-03T04:37:09+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/9]
+[2013-10-03T04:39:06+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 3 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/3]
+[2013-10-03T04:39:06+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/3]
+[2013-10-03T04:39:06+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 3 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/3]
+[2013-10-03T04:39:06+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 3 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/3]
+[2013-10-03T04:39:06+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/3]
+[2013-10-03T04:39:07+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 3 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/3]
+[2013-10-03T04:39:07+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/3]
+[2013-10-03T04:39:07+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 3 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/3]
+[2013-10-03T04:39:07+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 3 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/3]
+[2013-10-03T04:39:07+00:00] [SQL] UPDATE `docs` SET `parent_id` = 2, `title` = 'Getting Started', `slug` = 'getting-started', `content` = '', `updated` = '2013-10-03 04:39:07' WHERE `id` = 3; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/3]
+[2013-10-03T04:39:07+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/3]
+[2013-10-03T04:44:17+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 3 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/3]
+[2013-10-03T04:44:17+00:00] [SQL] SELECT * FROM `docs` WHERE `id` = 2 LIMIT 1; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/3]
+[2013-10-03T04:44:17+00:00] [SQL] SELECT * FROM `docs` WHERE `parent_id` = 3 ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/3]
+[2013-10-03T04:44:17+00:00] [SQL] SELECT * FROM `doc_sections` WHERE `doc_id` = 3 ORDER BY `order` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/3]
+[2013-10-03T04:44:17+00:00] [SQL] SELECT * FROM `docs` ORDER BY `left` ASC; [TIME] 0 [COUNT] 0 [STATE] Prepared [/en/toolkit/crud/form-docs/3]

@@ -1,7 +1,7 @@
 <?php
 /**
- * @copyright    Copyright 2010-2013, The Titon Project
- * @license        http://opensource.org/licenses/bsd-license.php
+ * @copyright   2010-2013, The Titon Project
+ * @license     http://opensource.org/licenses/bsd-license.php
  * @link        http://titon.io
  */
 
@@ -9,8 +9,11 @@ namespace Common\Controller;
 
 use Titon\Common\Registry;
 use Titon\Controller\Controller\AbstractController;
+use Titon\Http\Cookie;
+use Titon\Http\Session;
 use Titon\View\Engine\ViewEngine;
 use Titon\View\Helper\Html\AssetHelper;
+use Titon\View\Helper\Html\FormHelper;
 use Titon\View\Helper\Html\HtmlHelper;
 use Titon\View\View;
 
@@ -22,6 +25,12 @@ use Titon\View\View;
  */
 class CommonController extends AbstractController {
 
+    /** @type \Titon\Http\Session */
+    public $session;
+
+    /** @type \Titon\Http\Cookie */
+    public $cookie;
+
     /**
      * Set the view rendering layer.
      */
@@ -32,11 +41,16 @@ class CommonController extends AbstractController {
         $view->setEngine(new ViewEngine());
         $view->addHelper('html', new HtmlHelper());
         $view->addHelper('asset', new AssetHelper());
+        $view->addHelper('form', new FormHelper());
         $view->setVariables([
             'env' => $env->current()->getKey()
         ]);
 
         $this->setView($view);
+
+        // Persist
+        $this->session = new Session();
+        $this->cookie = new Cookie();
     }
 
 }

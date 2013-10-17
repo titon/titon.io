@@ -1,4 +1,9 @@
 <?php
+/**
+ * @copyright   2010-2013, The Titon Project
+ * @license     http://opensource.org/licenses/bsd-license.php
+ * @link        http://titon.io
+ */
 
 namespace Common\Model;
 
@@ -8,20 +13,13 @@ use Titon\Model\Relation;
 
 abstract class Common extends Model {
 
+    /**
+     * All models should auto-timestamp on save.
+     */
     public function initialize() {
         parent::initialize();
 
         $this->addBehavior(new TimestampableBehavior());
-    }
-
-    public static function getById($id) {
-        /** @type \Titon\Model\Model $instance */
-        $instance = self::getInstance();
-
-        return $instance->select()
-            ->where($instance->getPrimaryKey(), $id)
-            ->with(array_keys($instance->getRelations(Relation::MANY_TO_ONE)))
-            ->fetch();
     }
 
 }
