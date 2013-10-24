@@ -428,7 +428,22 @@ Toolkit
         - Options
         - Events
         - Methods
+      LazyLoad
+        - Usage
+        - Options
+        - Events
+        - Methods
+      Matrix
+        - Usage
+        - Options
+        - Events
+        - Methods
       Modal
+        - Usage
+        - Options
+        - Events
+        - Methods
+      Pin
         - Usage
         - Options
         - Events
@@ -448,28 +463,17 @@ Toolkit
         - Options
         - Events
         - Methods
+      Toggle
+        - Usage
+        - Options
+        - Events
+        - Methods
       Tooltip
         - Usage
         - Options
         - Events
         - Methods
       TypeAhead
-        - Usage
-        - Options
-        - Events
-        - Methods
-    Utilities
-      LazyLoad
-        - Usage
-        - Options
-        - Events
-        - Methods
-      Pin
-        - Usage
-        - Options
-        - Events
-        - Methods
-      Toggle
         - Usage
         - Options
         - Events

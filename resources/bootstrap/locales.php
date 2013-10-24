@@ -1,7 +1,7 @@
 <?php
 /**
- * @copyright   2010-2013, The Titon Project
- * @license     http://opensource.org/licenses/bsd-license.php
+ * @copyright    Copyright 2010-2013, The Titon Project
+ * @license        http://opensource.org/licenses/bsd-license.php
  * @link        http://titon.io
  */
 
@@ -28,6 +28,3 @@ $g11n->setFallback('en');
 
 // Initialize
 $g11n->initialize();
-
-// Store in the app
-$app->set('g11n', $g11n);

@@ -2,158 +2,158 @@
 //-------------------- Sidebar --------------------//
 
 .manual-sidebar {
-	background: $bg-dark;
+    background: $bg-dark;
 
-	// Display sidebar on the left
-	@include if-tablet-landscape {
-		width: 250px;
-		position: fixed;
-		top: 0;
-		left: 0;
-		bottom: 0;
-		overflow-x: hidden;
-		overflow-y: auto;
-	}
+    // Display sidebar on the left
+    @include if-tablet-landscape {
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
 }
 
 .manual-logo {
-	padding: $padding-mobile;
-	color: #fff;
+    padding: $padding-mobile;
+    color: #fff;
 
-	// Increase spacing
-	@include if-tablet-landscape {
-		padding: 10px;
-	}
+    // Increase spacing
+    @include if-tablet-landscape {
+        padding: 10px;
+    }
 }
 
 //-------------------- Menu --------------------//
 
 .manual-menu {
-	margin-top: $margin-mobile;
-	display: none;
-	list-style: none;
-	padding: 0;
-	margin: 0;
+    margin-top: $margin-mobile;
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
-	> li {
-		> a {
-			display: block;
-			padding: 5px 10px;
-			color: $green;
+    > li {
+        > a {
+            display: block;
+            padding: 5px 10px;
+            color: $green;
 
-			&:hover {
-				color: $green-light;
-				background: white(.05);
-			}
+            &:hover {
+                color: $green-light;
+                background: white(.05);
+            }
 
-			span[class*="icon-"] {
-				margin-left: 5px;
-				opacity: .5;
-			}
-		}
+            span[class*="icon-"] {
+                margin-left: 5px;
+                opacity: .5;
+            }
+        }
 
-		&.is-open > a:first-child,
-		> a.is-active {
-			color: $green-light;
-			font-weight: bold;
-		}
-	}
+        &.is-open > a:first-child,
+        > a.is-active {
+            color: $green-light;
+            font-weight: bold;
+        }
+    }
 
-	.manual-menu {
-		margin-top: 0;
-		background: black(.2);
-		border-top: 1px solid black(.05);
-		border-bottom: 1px solid black(.05);
+    .manual-menu {
+        margin-top: 0;
+        background: black(.2);
+        border-top: 1px solid black(.05);
+        border-bottom: 1px solid black(.05);
 
-		> li > a { padding-left: 20px; }
+        > li > a { padding-left: 20px; }
 
-		.manual-menu {
-			> li > a { padding-left: 30px; }
-		}
-	}
+        .manual-menu {
+            > li > a { padding-left: 30px; }
+        }
+    }
 
-	// Display menu on large devices
-	@include if-tablet-landscape {
-		display: block;
-		margin-top: $margin;
-	}
+    // Display menu on large devices
+    @include if-tablet-landscape {
+        display: block;
+        margin-top: $margin;
+    }
 }
 
 //-------------------- Content --------------------//
 
 .manual-body {
-	@include if-tablet-landscape {
-		margin-left: 250px;
-	}
+    @include if-tablet-landscape {
+        margin-left: 250px;
+    }
 }
 
 .manual-head {
-	padding: $padding-mobile;
-	background: $bg-light;
-	border-bottom: 1px solid $bg-light-border;
-	text-shadow: 1px 1px #fff;
+    padding: $padding-mobile;
+    background: $bg-light;
+    border-bottom: 1px solid $bg-light-border;
+    text-shadow: 1px 1px #fff;
 
-	h1 {
-		font-size: 3.5rem;
-	}
+    h1 {
+        font-size: 3.5rem;
+    }
 
-	p {
-		margin-bottom: 0;
-	}
+    p {
+        margin-bottom: 0;
+    }
 
-	// Increase spacing
-	@include if-tablet-landscape {
-		padding: $padding;
-	}
+    // Increase spacing
+    @include if-tablet-landscape {
+        padding: $padding;
+    }
 }
 
 .manual-chapter {
-	padding: $padding-mobile;
-	margin-bottom: $margin-mobile * 2;
+    padding: $padding-mobile;
+    margin-bottom: $margin-mobile * 2;
 
-	&:last-child {
-		margin-bottom: 0;
-	}
+    &:last-child {
+        margin-bottom: 0;
+    }
 
-	.chapter-buttons {
-		margin: 0 auto $margin-mobile auto;
-	}
+    .chapter-buttons {
+        margin: 0 auto $margin-mobile auto;
+    }
 
-	.chapter-meta {
-		dt {
-			font-weight: bold;
-			margin-top: 5px;
-		}
-	}
+    .chapter-meta {
+        dt {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+    }
 
-	// Increase spacing
-	@include if-tablet-landscape {
-		padding: $padding;
-		margin-bottom: $margin * 2;
-	}
+    // Increase spacing
+    @include if-tablet-landscape {
+        padding: $padding;
+        margin-bottom: $margin * 2;
+    }
 
-	@include if-desktop {
-		.chapter-buttons {
-			margin: 0;
-			float: right;
-		}
-	}
+    @include if-desktop {
+        .chapter-buttons {
+            margin: 0;
+            float: right;
+        }
+    }
 }
 
 .manual-page {
-	margin-top: $margin-mobile;
-	padding-top: $padding-mobile;
-	border-top: 1px solid $gray;
+    margin-top: $margin-mobile;
+    padding-top: $padding-mobile;
+    border-top: 1px solid $gray;
 
-	// Increase spacing
-	@include if-tablet-landscape {
-		margin-top: $margin;
-		padding-top: $padding;
-	}
+    // Increase spacing
+    @include if-tablet-landscape {
+        margin-top: $margin;
+        padding-top: $padding;
+    }
 
-	@include if-desktop {
-		p {
-			margin-right: 250px;
-		}
-	}
+    @include if-desktop {
+        p {
+            margin-right: 250px;
+        }
+    }
 }

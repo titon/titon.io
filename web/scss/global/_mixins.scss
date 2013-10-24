@@ -13,80 +13,80 @@ $large-padding: 1rem !default;
 
 // Container clear fix for floats
 @mixin clear-fix {
-	&:after {
-		content: "";
-		display: block;
-		height: 0;
-		line-height: 0;
-		clear: both;
-		visibility: hidden;
-	}
+    &:after {
+        content: "";
+        display: block;
+        height: 0;
+        line-height: 0;
+        clear: both;
+        visibility: hidden;
+    }
 }
 
 // Reset an inline-block element to defaults
 @mixin reset-inline-block {
-	display: inline-block;
-	border: 0;
-	margin: 0;
-	padding: 0;
-	position: relative;
-	text-decoration: none;
-	vertical-align: middle;
+    display: inline-block;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-decoration: none;
+    vertical-align: middle;
 }
 
 // Remove the top and bottom margin from content elements
 // Allows for perfect spacing within content blocks
 @mixin content-spacing {
-	p, ul, ol, hr, blockquote {
-		&:first-child { margin-top: 0; }
-		&:last-child { margin-bottom: 0; }
-	}
+    p, ul, ol, hr, blockquote {
+        &:first-child { margin-top: 0; }
+        &:last-child { margin-bottom: 0; }
+    }
 }
 
 //-------------------- Sizes --------------------//
 
 @mixin size-small {
-	font-size: $small-size;
-	padding: $small-padding;
+    font-size: $small-size;
+    padding: $small-padding;
 }
 
 @mixin size-medium {
-	font-size: $medium-size;
-	padding: $medium-padding;
+    font-size: $medium-size;
+    padding: $medium-padding;
 }
 
 @mixin size-large {
-	font-size: $large-size;
-	padding: $large-padding;
+    font-size: $large-size;
+    padding: $large-padding;
 }
 
 //-------------------- States --------------------//
 
 // Contains hover and active styles (on self or inherited from parent)
 @mixin active-state {
-	.is-active > &,
-	&:hover,
-	&.is-active,
-	&.is-active:hover { @content; }
+    .is-active > &,
+    &:hover,
+    &.is-active,
+    &.is-active:hover { @content; }
 }
 
 // Contains disabled styles (on self or inherited from parent)
 @mixin disabled-state {
-	.is-disabled > &,
-	&.is-disabled,
-	&.is-disabled:hover,
-	&[disabled],
-	&[disabled]:hover { @content; }
+    .is-disabled > &,
+    &.is-disabled,
+    &.is-disabled:hover,
+    &[disabled],
+    &[disabled]:hover { @content; }
 }
 
 //-------------------- Helpers --------------------//
 
 @function black($opacity){
-	@return rgba(0, 0, 0, $opacity);
+    @return rgba(0, 0, 0, $opacity);
 }
 
 @function white($opacity){
-	@return rgba(255, 255, 255, $opacity);
+    @return rgba(255, 255, 255, $opacity);
 }
 
 
@@ -99,104 +99,104 @@ $breakpoint-mobile-landscape: 480px !default;
 $breakpoint-mobile-portrait: 320px !default;
 
 @mixin if-min($min) {
-	@media only screen and (min-width: $min) {
-		@content;
-	}
+    @media only screen and (min-width: $min) {
+        @content;
+    }
 }
 
 @mixin if-max($max) {
-	@media only screen and (max-width: $max) {
-		@content;
-	}
+    @media only screen and (max-width: $max) {
+        @content;
+    }
 }
 
 @mixin if-min-max($min, $max) {
-	@media only screen and (min-width: $min) and (max-width: $max) {
-		@content;
-	}
+    @media only screen and (min-width: $min) and (max-width: $max) {
+        @content;
+    }
 }
 
 @mixin if-landscape {
-	@media only screen and (orientation: landscape) {
-		@content;
-	}
+    @media only screen and (orientation: landscape) {
+        @content;
+    }
 }
 
 @mixin if-portrait {
-	@media only screen and (orientation: portrait) {
-		@content;
-	}
+    @media only screen and (orientation: portrait) {
+        @content;
+    }
 }
 
 // Either support desktop-first or mobile-first responsive pattern
 @mixin do-responsive($desktop, $mobile) {
-	@if $responsive-design == "desktop" {
-		@if $desktop {
-			@include if-max($desktop) {
-				@content;
-			}
-		} @else {
-			@content;
-		}
-	} @else {
-		@if $mobile {
-			@include if-min($mobile) {
-				@content;
-			}
-		} @else {
-			@content;
-		}
-	}
+    @if $responsive-design == "desktop" {
+        @if $desktop {
+            @include if-max($desktop) {
+                @content;
+            }
+        } @else {
+            @content;
+        }
+    } @else {
+        @if $mobile {
+            @include if-min($mobile) {
+                @content;
+            }
+        } @else {
+            @content;
+        }
+    }
 }
 
 //-------------------- Breakpoints --------------------//
 
 // Uses min or max
 @mixin if-desktop {
-	@include do-responsive(null, $breakpoint-tablet-landscape) {
-		@content;
-	}
+    @include do-responsive(null, $breakpoint-tablet-landscape) {
+        @content;
+    }
 }
 
 @mixin if-tablet-landscape {
-	@include do-responsive($breakpoint-tablet-landscape, $breakpoint-tablet-portrait) {
-		@content;
-	}
+    @include do-responsive($breakpoint-tablet-landscape, $breakpoint-tablet-portrait) {
+        @content;
+    }
 }
 
 @mixin if-tablet-portrait {
-	@include do-responsive($breakpoint-tablet-portrait, $breakpoint-mobile-landscape) {
-		@content;
-	}
+    @include do-responsive($breakpoint-tablet-portrait, $breakpoint-mobile-landscape) {
+        @content;
+    }
 }
 
 @mixin if-mobile-landscape {
-	@include do-responsive($breakpoint-mobile-landscape, $breakpoint-mobile-portrait) {
-		@content;
-	}
+    @include do-responsive($breakpoint-mobile-landscape, $breakpoint-mobile-portrait) {
+        @content;
+    }
 }
 
 @mixin if-mobile-portrait {
-	@include do-responsive($breakpoint-mobile-portrait, null) {
-		@content;
-	}
+    @include do-responsive($breakpoint-mobile-portrait, null) {
+        @content;
+    }
 }
 
 // Within 2 ranges
 @mixin in-desktop {
-	@include if-min($breakpoint-tablet-landscape + 1) {
-		@content;
-	}
+    @include if-min($breakpoint-tablet-landscape + 1) {
+        @content;
+    }
 }
 
 @mixin in-tablet {
-	@include if-min-max($breakpoint-mobile-landscape + 1, $breakpoint-tablet-landscape) {
-		@content;
-	}
+    @include if-min-max($breakpoint-mobile-landscape + 1, $breakpoint-tablet-landscape) {
+        @content;
+    }
 }
 
 @mixin in-mobile {
-	@include if-max($breakpoint-mobile-landscape)  {
-		@content;
-	}
+    @include if-max($breakpoint-mobile-landscape)  {
+        @content;
+    }
 }

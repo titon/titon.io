@@ -1,7 +1,7 @@
 <?php
 /**
- * @copyright   2010-2013, The Titon Project
- * @license     http://opensource.org/licenses/bsd-license.php
+ * @copyright    Copyright 2010-2013, The Titon Project
+ * @license        http://opensource.org/licenses/bsd-license.php
  * @link        http://titon.io
  */
 
@@ -42,7 +42,7 @@ define('WEB_DIR', APP_DIR . 'web' . DS);
  */
 $composer = require_once VENDOR_DIR . 'autoload.php';
 
-Titon\Common\Registry::set($composer, 'titon.composer');
+Titon\Common\Registry::set($composer, 'Titon.composer');
 
 /**
  * Define auto-loading for local modules not installed through Composer.
@@ -50,9 +50,6 @@ Titon\Common\Registry::set($composer, 'titon.composer');
 foreach (glob(MODULES_DIR . '*', GLOB_ONLYDIR) as $modulePath) {
     $composer->add(basename($modulePath), MODULES_DIR);
 }
-
-/** @type \Titon\Mvc\Application $app */
-$app = Titon\Mvc\Application::getInstance();
 
 /**
  * Bootstrap application with configuration.
@@ -69,4 +66,4 @@ foreach (['setup', 'environments', 'cache', 'locales', 'connections', 'events', 
 /**
  * Run the application!
  */
-$app->run(WEB_DIR);
+Titon\Mvc\Application::getInstance()->run(WEB_DIR);

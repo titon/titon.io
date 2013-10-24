@@ -4,60 +4,60 @@
 //-------------------- Button --------------------//
 
 .button {
-	border: 1px solid $gray-dark;
-	border-radius: $radius;
-	text-shadow: 1px 1px #fff;
-	color: $text;
-	@include background-image(linear-gradient(#fff, $gray));
+    border: 1px solid $gray-dark;
+    border-radius: $radius;
+    text-shadow: 1px 1px #fff;
+    color: $text;
+    @include background-image(linear-gradient(#fff, $gray));
 
-	&:hover {
-		color: #000;
-		border-color: $gray-darkest;
-		@include background-image(linear-gradient(#fff, $gray-light));
-	}
+    &:hover {
+        color: #000;
+        border-color: $gray-darkest;
+        @include background-image(linear-gradient(#fff, $gray-light));
+    }
 
-	&:focus,
-	&:active {
-		background: $gray;
-	}
+    &:focus,
+    &:active {
+        background: $gray;
+    }
 
-	&.small {
-		font-size: .8rem;
-	}
+    &.small {
+        font-size: .8rem;
+    }
 }
 
 //-------------------- ButtonGroup --------------------//
 
 .button-group {
-	border-radius: $radius;
+    border-radius: $radius;
 
-	> li:first-child .button,
-	> .button:first-child,
-	> .button.first {
-		border-top-left-radius: $radius;
-		border-bottom-left-radius: $radius;
-	}
+    > li:first-child .button,
+    > .button:first-child,
+    > .button.first {
+        border-top-left-radius: $radius;
+        border-bottom-left-radius: $radius;
+    }
 
-	> li:last-child .button,
-	> .button:last-child,
-	> .button.last {
-		border-top-right-radius: $radius;
-		border-bottom-right-radius: $radius;
-	}
+    > li:last-child .button,
+    > .button:last-child,
+    > .button.last {
+        border-top-right-radius: $radius;
+        border-bottom-right-radius: $radius;
+    }
 }
 
 //-------------------- Icon --------------------//
 
 .icon--left {
-	margin-right: 5px;
+    margin-right: 5px;
 }
 
 .icon--right {
-	margin-left: 5px;
+    margin-left: 5px;
 }
 
 //-------------------- Label, Badge --------------------//
 
 .label, .badge {
-	font-size: .8rem;
+    font-size: .8rem;
 }
