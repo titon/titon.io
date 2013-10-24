@@ -1,48 +1,61 @@
 
-@import "compass/css3/images";
-
 //-------------------- Button --------------------//
 
+@mixin button-style($bg) {
+    background: $bg;
+    &:hover { background: darken($bg, 15%); }
+}
+
 .button {
-    border: 1px solid $gray-dark;
-    border-radius: $radius;
-    text-shadow: 1px 1px #fff;
+    border-radius: $round;
+    border: none;
+    box-shadow: inset 0 -3px black(.1);
     color: $text;
-    @include background-image(linear-gradient(#fff, $gray));
+    font-weight: bold;
+    letter-spacing: .5px;
+    background: $gray;
+    @include transition(all .2s);
 
-    &:hover {
-        color: #000;
-        border-color: $gray-darkest;
-        @include background-image(linear-gradient(#fff, $gray-light));
+    &:hover { background: $gray-dark; }
+    &:active { box-shadow: inset 2px 2px 2px black(.1); }
+
+    &.is-info,
+    &.is-error,
+    &.is-warning,
+    &.is-success {
+        text-shadow: 1px 1px black(.1);
+        color: #fff;
     }
 
-    &:focus,
-    &:active {
-        background: $gray;
-    }
+    &.is-info { @include button-style($info); }
+    &.is-error { @include button-style($error); }
+    &.is-warning { @include button-style($warning); }
+    &.is-success { @include button-style($success); }
 
-    &.small {
-        font-size: .8rem;
-    }
+    @include active-state { box-shadow: inset 0 0 0 3px black(.1); }
+    @include disabled-state { opacity: .5; }
 }
 
 //-------------------- ButtonGroup --------------------//
 
 .button-group {
-    border-radius: $radius;
+    border-radius: $round;
+
+    .button { border-left: 1px solid black(.05); }
 
     > li:first-child .button,
     > .button:first-child,
     > .button.first {
-        border-top-left-radius: $radius;
-        border-bottom-left-radius: $radius;
+        border-top-left-radius: $round;
+        border-bottom-left-radius: $round;
+        border-left: 0;
     }
 
     > li:last-child .button,
     > .button:last-child,
     > .button.last {
-        border-top-right-radius: $radius;
-        border-bottom-right-radius: $radius;
+        border-top-right-radius: $round;
+        border-bottom-right-radius: $round;
     }
 }
 

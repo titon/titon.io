@@ -9,8 +9,6 @@ namespace Common\Controller;
 
 use Titon\Common\Registry;
 use Titon\Controller\Controller\AbstractController;
-use Titon\Http\Cookie;
-use Titon\Http\Session;
 use Titon\View\Engine\ViewEngine;
 use Titon\View\Helper\Html\AssetHelper;
 use Titon\View\Helper\Html\FormHelper;
@@ -24,12 +22,6 @@ use Titon\View\View;
  * @package Common\Controller
  */
 class CommonController extends AbstractController {
-
-    /** @type \Titon\Http\Session */
-    public $session;
-
-    /** @type \Titon\Http\Cookie */
-    public $cookie;
 
     /**
      * Set the view rendering layer.
@@ -47,10 +39,6 @@ class CommonController extends AbstractController {
         ]);
 
         $this->setView($view);
-
-        // Persist
-        $this->session = new Session();
-        $this->cookie = new Cookie();
     }
 
 }

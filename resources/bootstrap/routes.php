@@ -9,12 +9,14 @@ use Titon\Common\Registry;
 use Titon\Route\Router;
 use Titon\Route\Route;
 
-/** @type \Titon\Route\Router $router */
-$router = Registry::factory('Titon\Route\Router');
+$router = $app->getRouter();
+
+// Enable locale resolving
+$router->on('g11n', $g11n);
 
 // Custom routes
-$router->map(new Route('/static/(path)', ['module' => 'common', 'controller' => 'static', 'action' => 'index']));
-$router->map(new Route('/static', ['module' => 'common', 'controller' => 'static', 'action' => 'index']));
+$router->map(new Route('static.page', '/static/(path)', ['module' => 'common', 'controller' => 'static', 'action' => 'index']));
+$router->map(new Route('static', '/static', ['module' => 'common', 'controller' => 'static', 'action' => 'index']));
 
 // Initialize
 $router->initialize();

@@ -1,47 +1,15 @@
 
-$gray-lightest: #fbfbfb;
-$gray-light: #f8f8f8;
-$gray: #f5f5f5;
-$gray-dark: #e5e5e5;
-$gray-darkest: #c2c2c2;
+$spacing: 1.5rem;
+$spacing-mobile: 1rem;
 
-$default: #929497;
-$default-light: #d0d2d3;
-$default-dark: #404041;
+$responsive-size: "device";
 
-$blue: #45c5eb;
-$blue-light: #dbf1fa;
-$blue-dark: #4067ab;
+$bg: #473044;
+$bg-light: #574454;
+$bg-other: #3d1f39;
+$bg-dark: #2b1628;
+$bg-inverse: #ebe8dd;
 
-$yellow: #fcd04b;
-$yellow-light: #ffebb5;
-$yellow-dark: #c87e00;
+$text: #000;
 
-$green: #97cb6f;
-$green-light: #e7f2dd;
-$green-dark: #226b36;
-
-$red: #f06060;
-$red-light: #fdc5c1;
-$red-dark: #b10e0e;
-
-$bg-dark: #4d5967;
-$bg-dark-dark: #3f4752;
-$bg-dark-darkest: #272a2f;
-$bg-dark-border: #656c76;
-
-$bg-light: #f6faff;
-$bg-light-border: #e9f0f8;
-
-$text: #3f4752;
-
-$padding: 1.5rem;
-$padding-mobile: 1rem;
-
-$margin: 1.5rem;
-$margin-mobile: 1rem;
-
-$radius: 3px;
-
-@import "compass/css3/images";
 @import "toolkit/common";
