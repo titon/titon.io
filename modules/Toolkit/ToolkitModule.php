@@ -2,9 +2,9 @@
 
 namespace Toolkit;
 
+use Titon\G11n\Route\LocaleRoute;
 use Titon\Mvc\Application;
 use Titon\Mvc\Module\AbstractModule;
-use Titon\Route\Route;
 
 class ToolkitModule extends AbstractModule {
 
@@ -15,11 +15,7 @@ class ToolkitModule extends AbstractModule {
         parent::initialize();
 
         $this->setControllers([
-            'index' => 'Toolkit\Controller\IndexController',
-            'css'   => 'Toolkit\Controller\CssController',
-            'js'    => 'Toolkit\Controller\JsController',
-            'build' => 'Toolkit\Controller\BuildController',
-            'crud'  => 'Toolkit\Controller\CrudController'
+            'index' => 'Toolkit\Controller\IndexController'
         ]);
     }
 
@@ -31,16 +27,9 @@ class ToolkitModule extends AbstractModule {
     public function bootstrap(Application $app) {
         parent::bootstrap($app);
 
-        $config = ['patterns' => ['version' => Route::ALNUM]];
-
-        /*$router = $app->getRouter();
-        $router->map(new Route('/toolkit/<version>/build', ['module' => 'toolkit', 'controller' => 'build'], $config));
-        $router->map(new Route('/toolkit/<version>/css/{component}', ['module' => 'toolkit', 'controller' => 'css', 'action' => 'component'], $config));
-        $router->map(new Route('/toolkit/<version>/css', ['module' => 'toolkit', 'controller' => 'css'], $config));
-        $router->map(new Route('/toolkit/<version>/js/{component}', ['module' => 'toolkit', 'controller' => 'js', 'action' => 'component'], $config));
-        $router->map(new Route('/toolkit/<version>/js', ['module' => 'toolkit', 'controller' => 'js'], $config));
-        $router->map(new Route('/toolkit/<version>', ['module' => 'toolkit', 'controller' => 'index', 'action' => 'redirect'], $config));
-        $router->map(new Route('/toolkit', ['module' => 'toolkit', 'controller' => 'index']));*/
+        $router = $app->getRouter();
+        $router->map(new LocaleRoute('toolkit.docs', '/toolkit/{version}/(path)', 'Toolkit\Docs@index'));
+        $router->map(new LocaleRoute('toolkit', '/toolkit', 'Toolkit\Index@index'));
     }
 
 }
