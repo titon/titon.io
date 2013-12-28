@@ -1,15 +1,64 @@
+// Toolkit
+
+$toolkit-primary-light: #42586e;
+$toolkit-primary: #344a5f;
+$toolkit-primary-dark: #293f54;
+$toolkit-primary-darkest: #283442;
+
+$toolkit-secondary: #dd6195;
+
+$toolkit-bg: #fff;
+$toolkit-bg-alt: #f0f1f2;
+$toolkit-border: #cfd4d9;
+
+$toolkit-text: #6e7e8a;
+
+// Framework
+
+$framework-primary-light: #574454;
+$framework-primary: #473044;
+$framework-primary-dark: #3d1f39;
+$framework-primary-darkest: #2b1628;
+
+$framework-secondary: #4fac9c;
+
+$framework-bg: #fff;
+$framework-bg-alt: #ebe8dd;
+$framework-border: #d3d0c4;
+
+$framework-text: #8f8d85;
+
+// Others
+
+$bg-color: #fff;
+
+$text-color: #424242;
+$text-muted: #b3b3b3;
 
 $spacing: 1.5rem;
-$spacing-mobile: 1rem;
 
-$responsive-size: "device";
+$base-size: 16px;
 
-$bg: #473044;
-$bg-light: #574454;
-$bg-other: #3d1f39;
-$bg-dark: #2b1628;
-$bg-inverse: #ebe8dd;
+$default: #97a7b9;
+$default-light: lighten($default, 15%);
+$default-dark: darken($default, 15%);
 
-$text: #000;
+$info: #52a4d5;
+$info-light: lighten($info, 15%);
+$info-dark: darken($info, 15%);
+
+$warning: #ebcd6a;
+$warning-light: lighten($warning, 15%);
+$warning-dark: darken($warning, 15%);
+
+$success: #74bc7a;
+$success-light: lighten($success, 15%);
+$success-dark: darken($success, 15%);
+
+$error: #d2686f;
+$error-light: lighten($error, 15%);
+$error-dark: darken($error, 15%);
+
+// Imports
 
 @import "toolkit/common";

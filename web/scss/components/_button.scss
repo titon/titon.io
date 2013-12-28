@@ -1,0 +1,73 @@
+@import "toolkit/components/button";
+
+@mixin button-style($bg, $bg-hover) {
+    background: $bg;
+
+    &:hover { background: $bg-hover; }
+}
+
+.button {
+    border-radius: $round;
+    border: none;
+    box-shadow: inset 0 -2px black(.15);
+    text-shadow: 0 1px black(.25);
+    color: #fff !important;
+    font-weight: bold;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    @include transition(all .1s);
+
+    @include button-style($default, $default-dark);
+    &.is-info { @include button-style($info, $info-dark); }
+    &.is-error { @include button-style($error, $error-dark); }
+    &.is-warning { @include button-style($warning, $warning-dark); }
+    &.is-success { @include button-style($success, $success-dark); }
+
+    @include is-active { box-shadow: inset 0 0 0 3px black(.1); }
+    @include is-disabled { opacity: .5; }
+
+    &:hover { color: #fff !important; }
+    &:active { box-shadow: inset 0 0 2px 2px black(.1); }
+}
+
+.button-prefix,
+.button-suffix {
+    display: inline-block;
+    line-height: normal;
+    text-transform: lowercase;
+    background: black(.1);
+    margin: -$medium-padding;
+    padding: $medium-padding;
+
+    .small & {
+        margin: -$small-padding;
+        padding: $small-padding;
+    }
+
+    .large & {
+        margin: -$large-padding;
+        padding: $large-padding;
+    }
+}
+
+.button-prefix {
+    margin-right: $medium-padding;
+    border-right: 1px solid black(.05);
+
+    .small & { margin-right: $small-padding; }
+    .large & { margin-right: $large-padding; }
+}
+
+.button-suffix {
+    margin-left: $medium-size;
+    border-left: 1px solid black(.05);
+
+    .small & { margin-left: $small-padding; }
+    .large & { margin-left: $large-padding; }
+}
+
+.button-toolbar {
+    text-align: center;
+
+    .button { margin: 0 ($margin / 2); }
+}

@@ -1,0 +1,65 @@
+/* line 3, ../scss/home.scss */
+.home {
+  position: relative;
+  background: url('../img/hexagon-pattern.png?1385609288') repeat, -webkit-linear-gradient(left, #293f54, #3d1f39);
+  background: url('../img/hexagon-pattern.png?1385609288') repeat, -moz-linear-gradient(left, #293f54, #3d1f39);
+  background: url('../img/hexagon-pattern.png?1385609288') repeat, linear-gradient(left, #293f54, #3d1f39); }
+  /* line 9, ../scss/home.scss */
+  .home h1 {
+    background: url('../img/logo-large.png?1387619051') no-repeat;
+    background-size: 100% auto;
+    text-indent: -9999px;
+    width: 100%;
+    height: auto;
+    max-width: 768px;
+    max-height: 167px;
+    position: relative;
+    line-height: 0;
+    font-size: 0;
+    margin: 0 auto 3rem auto; }
+    /* line 22, ../scss/home.scss */
+    .home h1:after {
+      display: block;
+      content: '';
+      padding-bottom: 21.74%; }
+  /* line 29, ../scss/home.scss */
+  .home .wrapper {
+    padding: 5rem; }
+
+/* line 34, ../scss/home.scss */
+.go, .go-toolkit, .go-framework {
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 0.2rem;
+  text-align: center;
+  color: #fff; }
+  /* line 42, ../scss/home.scss */
+  .go h2, .go-toolkit h2, .go-framework h2 {
+    line-height: 100%; }
+  /* line 46, ../scss/home.scss */
+  .go p:last-child, .go-toolkit p:last-child, .go-framework p:last-child {
+    margin-bottom: 0; }
+
+/* line 54, ../scss/home.scss */
+.go-toolkit h2 {
+  color: #5f7e9e; }
+
+/* line 60, ../scss/home.scss */
+.go-framework h2 {
+  color: #82667d; }
+
+@media only screen and (min-width: 768px) {
+  /* line 66, ../scss/home.scss */
+  .home .wrapper {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+
+  /* line 74, ../scss/home.scss */
+  .go, .go-toolkit, .go-framework {
+    margin-bottom: 0; } }

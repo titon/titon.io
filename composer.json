@@ -5,7 +5,6 @@
         "titon/cache": "*",
         "titon/debug": "*",
         "titon/env": "*",
-        "titon/model-mysql": "*",
         "psr/log": "*"
     }
 }

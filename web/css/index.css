@@ -1,0 +1,192 @@
+/* line 4, ../scss/index.scss */
+.head .wrapper {
+  padding: 2rem 10%;
+  text-align: center; }
+  /* line 8, ../scss/index.scss */
+  .head .wrapper h1 {
+    font-size: 5rem; }
+  /* line 10, ../scss/index.scss */
+  .head .wrapper h1, .head .wrapper p {
+    text-shadow: 0 1px rgba(0, 0, 0, 0.5); }
+
+/* line 14, ../scss/index.scss */
+.hexagons {
+  position: relative;
+  height: 176px;
+  margin: 3rem auto; }
+  /* line 19, ../scss/index.scss */
+  .hexagons a {
+    display: block;
+    color: #fff !important;
+    position: absolute;
+    top: 0;
+    line-height: normal;
+    font-size: 1.1rem;
+    width: 128px;
+    height: 113px;
+    background-position: 0 -57px; }
+    /* line 32, ../scss/index.scss */
+    .hexagons a small {
+      display: block;
+      opacity: .5; }
+    /* line 37, ../scss/index.scss */
+    .hexagons a:hover {
+      opacity: .75; }
+    /* line 41, ../scss/index.scss */
+    .hexagons a:nth-child(2) {
+      left: 105px;
+      top: 60px; }
+    /* line 46, ../scss/index.scss */
+    .hexagons a:nth-child(3) {
+      left: 210px; }
+    /* line 50, ../scss/index.scss */
+    .hexagons a:nth-child(4) {
+      left: 315px;
+      top: 60px; }
+    /* line 55, ../scss/index.scss */
+    .hexagons a:nth-child(5) {
+      left: 420px; }
+    /* line 59, ../scss/index.scss */
+    .hexagons a:nth-child(6) {
+      left: 525px;
+      top: 60px; }
+
+/* line 66, ../scss/index.scss */
+.segment {
+  position: relative;
+  border-top: 2px solid transparent; }
+  /* line 70, ../scss/index.scss */
+  .segment h2, .segment h5 {
+    text-align: center; }
+  /* line 74, ../scss/index.scss */
+  .segment h5 {
+    color: #b3b3b3; }
+  /* line 78, ../scss/index.scss */
+  .segment h6 + p {
+    margin: .1rem 0 0 0; }
+  /* line 82, ../scss/index.scss */
+  .segment hr {
+    margin: 2rem 0;
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.05); }
+
+/* line 90, ../scss/index.scss */
+.features ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+/* line 96, ../scss/index.scss */
+.features li {
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 45px; }
+  /* line 101, ../scss/index.scss */
+  .features li .hexagon-32 {
+    position: absolute;
+    top: .3rem;
+    left: 0; }
+
+/* line 110, ../scss/index.scss */
+.components a {
+  display: block;
+  padding: .5rem 1rem;
+  text-align: center;
+  background: #fff;
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  transition: all 0.1s; }
+  /* line 117, ../scss/index.scss */
+  .components a:hover {
+    color: #fff !important; }
+/* line 122, ../scss/index.scss */
+.components ul {
+  list-style: none;
+  margin: 1.5rem 0;
+  padding: 0; }
+  /* line 127, ../scss/index.scss */
+  .components ul + h6 {
+    margin-top: 3rem; }
+/* line 132, ../scss/index.scss */
+.components li {
+  margin-top: 2px; }
+  /* line 135, ../scss/index.scss */
+  .components li:first-child a {
+    border-top-left-radius: 0.2rem;
+    border-top-right-radius: 0.2rem; }
+  /* line 140, ../scss/index.scss */
+  .components li:last-child a {
+    border-bottom-left-radius: 0.2rem;
+    border-bottom-right-radius: 0.2rem; }
+
+/* line 148, ../scss/index.scss */
+.examples pre {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 0.2rem;
+  border: none; }
+/* line 154, ../scss/index.scss */
+.examples hr {
+  border-top-color: rgba(255, 255, 255, 0.05); }
+
+@media only screen and (max-width: 480px) {
+  /* line 162, ../scss/index.scss */
+  .hexagons {
+    width: 290px;
+    height: 95px; }
+    /* line 166, ../scss/index.scss */
+    .hexagons a {
+      width: 64px;
+      height: 57px;
+      background-position: 0 0; }
+      /* line 171, ../scss/index.scss */
+      .hexagons a:nth-child(2) {
+        left: 55px;
+        top: 35px; }
+      /* line 176, ../scss/index.scss */
+      .hexagons a:nth-child(3) {
+        left: 110px; }
+      /* line 180, ../scss/index.scss */
+      .hexagons a:nth-child(4) {
+        left: 165px;
+        top: 35px; }
+      /* line 185, ../scss/index.scss */
+      .hexagons a:nth-child(5) {
+        left: 220px; } }
+@media only screen and (min-width: 768px) {
+  /* line 193, ../scss/index.scss */
+  .head .wrapper {
+    padding: 3rem 15%; }
+
+  /* line 197, ../scss/index.scss */
+  .features li {
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+    padding-right: 45px; }
+
+  /* line 204, ../scss/index.scss */
+  .hexagons a {
+    width: 128px;
+    height: 113px;
+    background-position: 0 -57px; }
+    /* line 209, ../scss/index.scss */
+    .hexagons a:nth-child(2) {
+      left: 105px;
+      top: 60px; }
+    /* line 214, ../scss/index.scss */
+    .hexagons a:nth-child(3) {
+      left: 210px; }
+    /* line 218, ../scss/index.scss */
+    .hexagons a:nth-child(4) {
+      left: 315px;
+      top: 60px; }
+    /* line 223, ../scss/index.scss */
+    .hexagons a:nth-child(5) {
+      left: 420px; } }
+@media only screen and (min-width: 1280px) {
+  /* line 230, ../scss/index.scss */
+  .head .wrapper {
+    padding: 4rem 20%; }
+
+  /* line 232, ../scss/index.scss */
+  .features li {
+    width: 33%; } }

@@ -1,0 +1,29 @@
+@import "toolkit/components/icon";
+
+@mixin build-icons($size, $icons, $x: 0, $y: 0) {
+    $column: 0;
+
+    @each $icon in $icons {
+        $x: ($column * $size);
+
+        .icon-#{$size}-#{$icon} {
+            background-position: -#{$x}px -#{$y}px;
+
+            @content;
+        }
+
+        $column: $column + 1;
+    }
+}
+
+[class*="icon-16"] {
+    background-image: url("../img/icons/16.png");
+    background-size: auto 32px;
+
+    @include if-retina {
+        background-image: url("../img/icons/16@2x.png");
+    }
+}
+
+@include build-icons(16, ("mobile", "responsive", "semantic", "flexible", "accelerated", "extensible", "scalable", "reusable", "accessible", "adaptable", "stable"));
+@include build-icons(16, ("abstract", "interoperable", "coupling", "cohesion", "responsible", "di", "polymorph", "database"), 0, 16);

@@ -1,0 +1,252 @@
+html {
+    font: normal 14px/1.5rem "Droid Sans", sans-serif;
+}
+
+body {
+    color: $text-color;
+    background: $bg-color;
+    margin: 0;
+    padding: 0;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+pre code {
+    display: block;
+}
+
+//-------------------- Structure --------------------//
+
+.wrapper {
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+//-------------------- Header --------------------//
+
+.head {
+    color: #fff;
+    background: image-url("hexagon-pattern.png") repeat;
+    padding-top: 45px;
+}
+
+//-------------------- Body --------------------//
+
+.body {
+
+}
+
+//-------------------- Footer --------------------//
+
+.foot {
+    background: #1f1f1f;
+    border-top: 2px solid #0e0e0e;
+    color: #6c6c6c;
+
+    .wrapper { padding: 2rem; }
+}
+
+.social {
+    float: right;
+
+    a {
+        font-size: 1.5rem;
+        display: inline-block;
+        margin-left: .5rem;
+    }
+}
+
+//-------------------- Toolbar --------------------//
+
+.toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 45px;
+    padding: $small-padding;
+    background: black(.75);
+
+    .wrapper {
+        padding: 0;
+    }
+}
+
+.nav {
+    float: right;
+    height: 45px;
+    margin: -$small-padding;
+
+    > ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border-right: 1px solid #2f2f2f;
+
+        > li {
+            float: left;
+            border-left: 1px solid #2f2f2f;
+
+            > a {
+                display: block;
+                height: 45px;
+                line-height: 45px;
+                padding: 0 $small-padding;
+
+                &:hover {
+                    color: #fff;
+                    background: black(.5);
+                }
+            }
+        }
+
+        @include clear-fix;
+    }
+}
+
+.logo {
+    height: 30px;
+    width: 138px;
+    display: block;
+    text-indent: -9999px;
+    background: image-url("logo.png") no-repeat;
+    background-size: auto 60px;
+    position: relative;
+    bottom: -2px;
+
+    &:hover { background-position: 0 -30px; }
+}
+
+//-------------------- Helpers --------------------//
+
+.center-vertical {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include transform(translate(-50%, -50%));
+}
+
+//-------------------- Hexagons --------------------//
+
+.hexagon {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-size: 128px auto;
+
+    span[class*="icon-"] {
+        @extend .center-vertical;
+    }
+}
+
+.hexagon-128 {
+    @extend .hexagon;
+    width: 128px;
+    height: 113px;
+    background-position: 0 -57px;
+}
+
+.hexagon-64 {
+    @extend .hexagon;
+    width: 64px;
+    height: 57px;
+}
+
+.hexagon-32 {
+    @extend .hexagon;
+    width: 32px;
+    height: 28px;
+    background-position: -64px 0;
+}
+
+.hexagon-24 {
+    @extend .hexagon;
+    width: 24px;
+    height: 21px;
+    background-position: -64px -36px;
+}
+
+.hexagon-16 {
+    @extend .hexagon;
+    width: 16px;
+    height: 14px;
+    background-position: -96px 0;
+}
+
+//-------------------- Responsive --------------------//
+
+@include if-medium {
+    html { font-size: 16px; }
+
+    .head { padding-top: 60px; }
+
+    .wrapper {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .toolbar {
+        padding: $medium-padding;
+        height: 60px;
+    }
+
+    .nav {
+        margin: -$medium-padding;
+        height: 60px;
+
+        > ul > li > a {
+            height: 60px;
+            line-height: 60px;
+            padding: 0 $medium-padding;
+        }
+    }
+
+    .logo {
+        height: 35px;
+        width: 161px;
+        background-size: auto 70px;
+
+        &:hover { background-position: 0 -35px; }
+    }
+}
+
+@include if-large {
+    html { font-size: 18px; }
+
+    .wrapper {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        max-width: $breakpoint-large;
+    }
+
+    .head { padding-top: 75px; }
+
+    .toolbar {
+        padding: $large-padding;
+        height: 75px;
+    }
+
+    .nav {
+        margin: -$large-padding;
+        height: 75px;
+
+        > ul > li > a {
+            height: 75px;
+            line-height: 75px;
+            padding: 0 $large-padding;
+        }
+    }
+
+    .logo {
+        height: 40px;
+        width: 184px;
+        background-size: auto 80px;
+
+        &:hover { background-position: 0 -40px; }
+    }
+}

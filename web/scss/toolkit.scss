@@ -1,0 +1,48 @@
+@import "global/common";
+
+.toolkit {
+
+    // Global
+
+    a { color: $toolkit-secondary; }
+    a:hover { color: darken($toolkit-secondary, 15%); }
+
+    .head {
+        background-color: $toolkit-primary-dark;
+    }
+
+    .hexagon,
+    .hexagon-16,
+    .hexagon-24,
+    .hexagon-32,
+    .hexagon-64,
+    .hexagon-128 {
+        background-image: image-url("hexagon-pink.png");
+
+        @include if-retina {
+            background-image: image-url("hexagon-pink@2x.png");
+        }
+    }
+
+    // Index
+
+    .hexagons { width: 550px; }
+
+    .components a:hover { background-color: $toolkit-secondary; }
+
+    .segment {
+        border-color: #182028;
+
+        h6 { color: $toolkit-text; }
+
+        &:nth-child(even) {
+            background-color: $toolkit-bg-alt;
+            border-color: $toolkit-border;
+        }
+    }
+
+    .examples {
+        background-color: $toolkit-primary-dark;
+        color: #fff;
+    }
+}

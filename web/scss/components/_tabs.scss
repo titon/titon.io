@@ -1,0 +1,27 @@
+@import "toolkit/components/tabs";
+
+.example-tabs {
+    .tabs-nav {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        a {
+            padding: .5rem 1rem;
+            display: inline-block;
+            outline: none;
+        }
+
+        li.is-active a {
+            color: #fff;
+            background: black(.25);
+            border-top-left-radius: $round;
+            border-top-right-radius: $round;
+        }
+    }
+
+    .tabs-section {
+        border-top-left-radius: 0;
+        margin-top: 0;
+    }
+}
