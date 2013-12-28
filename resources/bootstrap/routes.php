@@ -15,8 +15,8 @@ $router = $app->getRouter();
 $router->on('g11n', $g11n);
 
 // Custom routes
-$router->map(new Route('static.page', '/static/(path)', ['module' => 'common', 'controller' => 'static', 'action' => 'index']));
-$router->map(new Route('static', '/static', ['module' => 'common', 'controller' => 'static', 'action' => 'index']));
+$router->map(new Route('static.page', '/static/(path)', 'Common\Static@index'));
+$router->map(new Route('static', '/static', 'Common\Static@index'));
 
 // Initialize
 $router->initialize();

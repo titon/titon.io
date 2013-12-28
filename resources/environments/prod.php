@@ -10,11 +10,3 @@ use Titon\Debug\Debugger;
 
 // Disable error reporting
 Debugger::enable(false);
-
-// Set database login
-Config::set('db.common', [
-    'host' => 'localhost',
-    'port' => 3306,
-    'user' => 'user',
-    'pass' => 'pass'
-]);

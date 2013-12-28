@@ -1,6 +1,0 @@
-[2013-10-03T03:11:52+00:00] Titon\Debug\Exception\FatalErrorException: Call to a member function open() on a non-object [/Users/milesj/Sites/titon/titon.io/modules/Toolkit/views/public/crud/form_docs.tpl:8] [/en/toolkit/crud/form_docs]
-#0 [internal function]: Titon\Debug\Debugger::handleFatalError()
-#1 {main}
-[2013-10-03T04:29:38+00:00] Titon\Debug\Exception\FatalErrorException: Wrong parameters for Exception([string $exception [, long $code [, Exception $previous = NULL]]]) [/Users/milesj/Sites/titon/titon.io/vendor/titon/controller/src/Titon/Controller/Controller/AbstractController.php:125] [/en/toolkit/crud/list-docs]
-#0 [internal function]: Titon\Debug\Debugger::handleFatalError()
-#1 {main}
