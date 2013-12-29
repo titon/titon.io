@@ -5,4 +5,10 @@
  * @link        http://titon.io
  */
 
+use Titon\Cache\Storage\FileSystemStorage;
 use Titon\Common\Config;
+
+// Use file system in dev
+Config::set('cache.storage', new FileSystemStorage('default', [
+    'directory' => TEMP_DIR . 'cache/'
+]));

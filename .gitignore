@@ -1,7 +1,9 @@
 .idea
 .sass-cache/
 temp/cache/
+temp/logs
 vendor/
+web/css/**/_*.css
 !empty
 composer.lock
 

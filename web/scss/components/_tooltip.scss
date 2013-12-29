@@ -2,5 +2,14 @@
 
 .tooltip {
     border-radius: $round;
+    background: black(.85);
     font-size: .9rem;
+    max-width: 350px;
+    margin: .75rem;
+
+    &.top-center {
+        .tooltip-arrow {
+            border-top-color: black(.85);
+        }
+    }
 }

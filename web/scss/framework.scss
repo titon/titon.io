@@ -28,7 +28,22 @@
 
     .hexagons { width: 660px; }
 
-    .components a:hover { background-color: $framework-secondary; }
+    .packages {
+        .label {
+            color: $framework-primary;
+            background: black(.1);
+            margin-left: .75rem;
+        }
+
+        a:hover {
+            background-color: $framework-secondary;
+
+            .label {
+                color: #fff;
+                background: white(.2);
+            }
+        }
+    }
 
     .segment {
         border-color: #182028;
@@ -41,7 +56,7 @@
         }
     }
 
-    .examples {
+    .install {
         background-color: $framework-primary-dark;
         color: #fff;
     }

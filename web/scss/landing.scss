@@ -106,7 +106,8 @@
     }
 }
 
-.components {
+.components,
+.packages {
     a {
         display: block;
         padding: .5rem 1rem;
@@ -144,16 +145,25 @@
     }
 }
 
-.examples {
-    pre {
+.examples,
+.install {
+    pre,
+    code {
         background: black(.25);
         border-radius: $round;
         border: none;
+        margin-bottom: 0;
+    }
+
+    pre code {
+        background: none;
     }
 
     hr {
         border-top-color: white(.05);
     }
+
+    .col > p { margin-top: 0; }
 }
 
 //-------------------- Responsive --------------------//

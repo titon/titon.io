@@ -27,20 +27,29 @@
 /* line 29, ../scss/framework.scss */
 .framework .hexagons {
   width: 660px; }
-/* line 31, ../scss/framework.scss */
-.framework .components a:hover {
+/* line 32, ../scss/framework.scss */
+.framework .packages .label {
+  color: #473044;
+  background: rgba(0, 0, 0, 0.1);
+  margin-left: .75rem; }
+/* line 38, ../scss/framework.scss */
+.framework .packages a:hover {
   background-color: #4fac9c; }
-/* line 33, ../scss/framework.scss */
+  /* line 41, ../scss/framework.scss */
+  .framework .packages a:hover .label {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2); }
+/* line 48, ../scss/framework.scss */
 .framework .segment {
   border-color: #182028; }
-  /* line 36, ../scss/framework.scss */
+  /* line 51, ../scss/framework.scss */
   .framework .segment h6 {
     color: #8f8d85; }
-  /* line 38, ../scss/framework.scss */
+  /* line 53, ../scss/framework.scss */
   .framework .segment:nth-child(even) {
     background-color: #ebe8dd;
     border-color: #d3d0c4; }
-/* line 44, ../scss/framework.scss */
-.framework .examples {
+/* line 59, ../scss/framework.scss */
+.framework .install {
   background-color: #3d1f39;
   color: #fff; }

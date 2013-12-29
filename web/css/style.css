@@ -2031,98 +2031,110 @@ button::-moz-focus-inner {
 
   /* line 103, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-1 {
-    width: 10.75%; }
+    width: 9.33333%; }
 
   /* line 104, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-push-1 {
-    left: 10.75%; }
+    left: 9.33333%; }
 
   /* line 105, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-pull-1 {
-    right: 10.75%; }
+    right: 9.33333%; }
 
   /* line 103, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-2 {
-    width: 23.5%; }
+    width: 20.66667%; }
 
   /* line 104, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-push-2 {
-    left: 23.5%; }
+    left: 20.66667%; }
 
   /* line 105, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-pull-2 {
-    right: 23.5%; }
+    right: 20.66667%; }
 
   /* line 103, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-3 {
-    width: 36.25%; }
+    width: 32%; }
 
   /* line 104, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-push-3 {
-    left: 36.25%; }
+    left: 32%; }
 
   /* line 105, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-pull-3 {
-    right: 36.25%; }
+    right: 32%; }
 
   /* line 103, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-4 {
-    width: 49%; }
+    width: 43.33333%; }
 
   /* line 104, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-push-4 {
-    left: 49%; }
+    left: 43.33333%; }
 
   /* line 105, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-pull-4 {
-    right: 49%; }
+    right: 43.33333%; }
 
   /* line 103, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-5 {
-    width: 61.75%; }
+    width: 54.66667%; }
 
   /* line 104, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-push-5 {
-    left: 61.75%; }
+    left: 54.66667%; }
 
   /* line 105, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-pull-5 {
-    right: 61.75%; }
+    right: 54.66667%; }
 
   /* line 103, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-6 {
-    width: 74.5%; }
+    width: 66%; }
 
   /* line 104, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-push-6 {
-    left: 74.5%; }
+    left: 66%; }
 
   /* line 105, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-pull-6 {
-    right: 74.5%; }
+    right: 66%; }
 
   /* line 103, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-7 {
-    width: 87.25%; }
+    width: 77.33333%; }
 
   /* line 104, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-push-7 {
-    left: 87.25%; }
+    left: 77.33333%; }
 
   /* line 105, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-pull-7 {
-    right: 87.25%; }
+    right: 77.33333%; }
 
   /* line 103, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-8 {
-    width: 100%; }
+    width: 88.66667%; }
 
   /* line 104, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-push-8 {
-    left: 100%; }
+    left: 88.66667%; }
 
   /* line 105, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
   .col.medium-pull-8 {
+    right: 88.66667%; }
+
+  /* line 103, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
+  .col.medium-9 {
+    width: 100%; }
+
+  /* line 104, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
+  .col.medium-push-9 {
+    left: 100%; }
+
+  /* line 105, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
+  .col.medium-pull-9 {
     right: 100%; } }
 @media only screen and (min-width: 1281px) {
   /* line 111, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/grid.scss */
@@ -2488,6 +2500,119 @@ button::-moz-focus-inner {
  * @license     http://opensource.org/licenses/bsd-license.php
  * @link        http://titon.io
  */
+/* line 9, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/label.scss */
+.label, .label--badge, .label--arrow-left, .label--arrow-right, .label--ribbon-left, .label--ribbon-right {
+  display: inline-block;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-decoration: none;
+  vertical-align: middle;
+  font-size: .7rem;
+  line-height: 100%;
+  background: #e5e5e5;
+  padding: .275rem .425rem;
+  text-transform: uppercase;
+  border-radius: 2px;
+  white-space: nowrap;
+  top: -1px;
+  letter-spacing: 1px; }
+  /* line 61, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/../mixins/_layout.scss */
+  .label.small, .small.label--badge, .small.label--arrow-left, .small.label--arrow-right, .small.label--ribbon-left, .small.label--ribbon-right {
+    font-size: .6rem;
+    padding: .2rem .35rem; }
+  /* line 61, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/../mixins/_layout.scss */
+  .label.medium, .medium.label--badge, .medium.label--arrow-left, .medium.label--arrow-right, .medium.label--ribbon-left, .medium.label--ribbon-right {
+    font-size: .7rem;
+    padding: .275rem .425rem; }
+  /* line 61, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/../mixins/_layout.scss */
+  .label.large, .large.label--badge, .large.label--arrow-left, .large.label--arrow-right, .large.label--ribbon-left, .large.label--ribbon-right {
+    font-size: .8rem;
+    padding: .35rem .5rem; }
+  /* line 36, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/label.scss */
+  .label:empty, .label--badge:empty, .label--arrow-left:empty, .label--arrow-right:empty, .label--ribbon-left:empty, .label--ribbon-right:empty {
+    display: none; }
+  /* line 38, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/label.scss */
+  .label:after, .label--badge:after, .label--arrow-left:after, .label--arrow-right:after, .label--ribbon-left:after, .label--ribbon-right:after {
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute; }
+
+/* line 48, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/label.scss */
+.label--badge {
+  border-radius: 1rem; }
+
+/* line 54, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/label.scss */
+.label--arrow-left {
+  border-top-left-radius: 1px;
+  border-bottom-left-radius: 1px;
+  padding-left: 2px;
+  margin-left: 10px; }
+  /* line 62, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/label.scss */
+  .label--arrow-left:after {
+    top: 0;
+    right: 100%;
+    border: .65rem solid transparent;
+    border-right-color: #e5e5e5; }
+  /* line 69, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/label.scss */
+  .label--arrow-left.small:after {
+    border-width: .5rem; }
+  /* line 70, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/label.scss */
+  .label--arrow-left.large:after {
+    border-width: .75rem; }
+
+/* line 73, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/label.scss */
+.label--arrow-right {
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  padding-right: 2px;
+  margin-right: 10px; }
+  /* line 81, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/label.scss */
+  .label--arrow-right:after {
+    top: 0;
+    left: 100%;
+    border: .65rem solid transparent;
+    border-left-color: #e5e5e5; }
+  /* line 88, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/label.scss */
+  .label--arrow-right.small:after {
+    border-width: .5rem; }
+  /* line 89, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/label.scss */
+  .label--arrow-right.large:after {
+    border-width: .75rem; }
+
+/* line 92, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/label.scss */
+.label--ribbon-left {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0; }
+  /* line 98, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/label.scss */
+  .label--ribbon-left:after {
+    top: 100%;
+    left: 0;
+    border: 1em solid transparent;
+    border-top-width: 0 !important;
+    border-left-width: 0 !important;
+    border-right-color: #c2c2c2; }
+
+/* line 108, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/label.scss */
+.label--ribbon-right {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0; }
+  /* line 114, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/label.scss */
+  .label--ribbon-right:after {
+    top: 100%;
+    right: 0;
+    border: 1em solid transparent;
+    border-top-width: 0 !important;
+    border-right-width: 0 !important;
+    border-left-color: #c2c2c2; }
+
+/**
+ * @copyright   2010-2013, The Titon Project
+ * @license     http://opensource.org/licenses/bsd-license.php
+ * @link        http://titon.io
+ */
 /* line 9, /usr/lib/ruby/gems/1.9.1/gems/titon-toolkit-1.0.1/scss/toolkit/components/tabs.scss */
 .tabs, .tabs--horizontal {
   text-align: left; }
@@ -2720,4 +2845,10 @@ button::-moz-focus-inner {
 /* line 3, ../scss/components/_tooltip.scss */
 .tooltip {
   border-radius: 0.2rem;
-  font-size: .9rem; }
+  background: rgba(0, 0, 0, 0.85);
+  font-size: .9rem;
+  max-width: 350px;
+  margin: .75rem; }
+  /* line 11, ../scss/components/_tooltip.scss */
+  .tooltip.top-center .tooltip-arrow {
+    border-top-color: rgba(0, 0, 0, 0.85); }
