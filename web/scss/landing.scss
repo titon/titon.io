@@ -23,8 +23,6 @@
         top: 0;
         line-height: normal;
         font-size: 1.1rem;
-
-        // hexagon-128
         width: 128px;
         height: 113px;
         background-position: 0 -57px;
@@ -162,40 +160,21 @@
     hr {
         border-top-color: white(.05);
     }
-
-    .col > p { margin-top: 0; }
 }
 
 //-------------------- Responsive --------------------//
 
-@include if-max(480px) {
-    .hexagons {
-        width: 290px;
-        height: 95px;
+@include if-mobile-portrait() {
+    .head .wrapper h1 {
+        font-size: 3.5rem;
+    }
+}
 
-        a {
-            width: 64px;
-            height: 57px;
-            background-position: 0 0;
+@include if-tablet-landscape() {
+    .head .hexagons {
+        width: 550px !important;
 
-            &:nth-child(2) {
-                left: 55px;
-                top: 35px;
-            }
-
-            &:nth-child(3) {
-                left: 110px;
-            }
-
-            &:nth-child(4) {
-                left: 165px;
-                top: 35px;
-            }
-
-            &:nth-child(5) {
-                left: 220px;
-            }
-        }
+        a:nth-child(6) { display: none; }
     }
 }
 
@@ -209,30 +188,6 @@
         vertical-align: top;
         width: 49%;
         padding-right: 45px;
-    }
-
-    .hexagons a {
-        width: 128px;
-        height: 113px;
-        background-position: 0 -57px;
-
-        &:nth-child(2) {
-            left: 105px;
-            top: 60px;
-        }
-
-        &:nth-child(3) {
-            left: 210px;
-        }
-
-        &:nth-child(4) {
-            left: 315px;
-            top: 60px;
-        }
-
-        &:nth-child(5) {
-            left: 420px;
-        }
     }
 }
 

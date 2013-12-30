@@ -1135,15 +1135,20 @@ pre code {
     padding: 2rem; }
 
 /* line 51, ../scss/global/_skeleton.scss */
+.copyright {
+  text-align: center;
+  margin-top: 1rem; }
+
+/* line 56, ../scss/global/_skeleton.scss */
 .social {
-  float: right; }
-  /* line 54, ../scss/global/_skeleton.scss */
+  text-align: center; }
+  /* line 59, ../scss/global/_skeleton.scss */
   .social a {
     font-size: 1.5rem;
     display: inline-block;
     margin-left: .5rem; }
 
-/* line 63, ../scss/global/_skeleton.scss */
+/* line 68, ../scss/global/_skeleton.scss */
 .toolbar {
   position: fixed;
   top: 0;
@@ -1153,32 +1158,32 @@ pre code {
   height: 45px;
   padding: 0.5rem;
   background: rgba(0, 0, 0, 0.75); }
-  /* line 73, ../scss/global/_skeleton.scss */
+  /* line 78, ../scss/global/_skeleton.scss */
   .toolbar .wrapper {
     padding: 0; }
 
-/* line 78, ../scss/global/_skeleton.scss */
+/* line 83, ../scss/global/_skeleton.scss */
 .nav {
   float: right;
   height: 45px;
   margin: -0.5rem; }
-  /* line 83, ../scss/global/_skeleton.scss */
+  /* line 88, ../scss/global/_skeleton.scss */
   .nav > ul {
     margin: 0;
     padding: 0;
     list-style: none;
     border-right: 1px solid #2f2f2f; }
-    /* line 89, ../scss/global/_skeleton.scss */
+    /* line 94, ../scss/global/_skeleton.scss */
     .nav > ul > li {
       float: left;
       border-left: 1px solid #2f2f2f; }
-      /* line 93, ../scss/global/_skeleton.scss */
+      /* line 98, ../scss/global/_skeleton.scss */
       .nav > ul > li > a {
         display: block;
         height: 45px;
         line-height: 45px;
         padding: 0 0.5rem; }
-        /* line 99, ../scss/global/_skeleton.scss */
+        /* line 104, ../scss/global/_skeleton.scss */
         .nav > ul > li > a:hover {
           color: #fff;
           background: rgba(0, 0, 0, 0.5); }
@@ -1191,7 +1196,7 @@ pre code {
       clear: both;
       visibility: hidden; }
 
-/* line 110, ../scss/global/_skeleton.scss */
+/* line 115, ../scss/global/_skeleton.scss */
 .logo {
   height: 30px;
   width: 138px;
@@ -1201,11 +1206,11 @@ pre code {
   background-size: auto 60px;
   position: relative;
   bottom: -2px; }
-  /* line 120, ../scss/global/_skeleton.scss */
+  /* line 125, ../scss/global/_skeleton.scss */
   .logo:hover {
     background-position: 0 -30px; }
 
-/* line 125, ../scss/global/_skeleton.scss */
+/* line 130, ../scss/global/_skeleton.scss */
 .center-vertical, .hexagon span[class*="icon-"], .hexagon-128 span[class*="icon-"], .hexagon-64 span[class*="icon-"], .hexagon-32 span[class*="icon-"], .hexagon-24 span[class*="icon-"], .hexagon-16 span[class*="icon-"] {
   position: absolute;
   left: 50%;
@@ -1214,7 +1219,7 @@ pre code {
   -moz-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
-/* line 134, ../scss/global/_skeleton.scss */
+/* line 139, ../scss/global/_skeleton.scss */
 .hexagon, .hexagon-128, .hexagon-64, .hexagon-32, .hexagon-24, .hexagon-16 {
   display: inline-block;
   position: relative;
@@ -1223,108 +1228,117 @@ pre code {
   background-repeat: no-repeat;
   background-size: 128px auto; }
 
-/* line 147, ../scss/global/_skeleton.scss */
+/* line 152, ../scss/global/_skeleton.scss */
 .hexagon-128 {
   width: 128px;
   height: 113px;
   background-position: 0 -57px; }
 
-/* line 154, ../scss/global/_skeleton.scss */
+/* line 159, ../scss/global/_skeleton.scss */
 .hexagon-64 {
   width: 64px;
   height: 57px; }
 
-/* line 160, ../scss/global/_skeleton.scss */
+/* line 165, ../scss/global/_skeleton.scss */
 .hexagon-32 {
   width: 32px;
   height: 28px;
   background-position: -64px 0; }
 
-/* line 167, ../scss/global/_skeleton.scss */
+/* line 172, ../scss/global/_skeleton.scss */
 .hexagon-24 {
   width: 24px;
   height: 21px;
   background-position: -64px -36px; }
 
-/* line 174, ../scss/global/_skeleton.scss */
+/* line 179, ../scss/global/_skeleton.scss */
 .hexagon-16 {
   width: 16px;
   height: 14px;
   background-position: -96px 0; }
 
 @media only screen and (min-width: 768px) {
-  /* line 184, ../scss/global/_skeleton.scss */
+  /* line 189, ../scss/global/_skeleton.scss */
   html {
     font-size: 16px; }
 
-  /* line 186, ../scss/global/_skeleton.scss */
+  /* line 191, ../scss/global/_skeleton.scss */
   .head {
     padding-top: 60px; }
 
-  /* line 188, ../scss/global/_skeleton.scss */
+  /* line 193, ../scss/global/_skeleton.scss */
   .wrapper {
     padding-top: 3rem;
     padding-bottom: 3rem; }
 
-  /* line 193, ../scss/global/_skeleton.scss */
+  /* line 198, ../scss/global/_skeleton.scss */
   .toolbar {
     padding: 0.75rem;
     height: 60px; }
 
-  /* line 198, ../scss/global/_skeleton.scss */
+  /* line 203, ../scss/global/_skeleton.scss */
   .nav {
     margin: -0.75rem;
     height: 60px; }
-    /* line 202, ../scss/global/_skeleton.scss */
+    /* line 207, ../scss/global/_skeleton.scss */
     .nav > ul > li > a {
       height: 60px;
       line-height: 60px;
       padding: 0 0.75rem; }
 
-  /* line 209, ../scss/global/_skeleton.scss */
+  /* line 214, ../scss/global/_skeleton.scss */
   .logo {
     height: 35px;
     width: 161px;
     background-size: auto 70px; }
-    /* line 214, ../scss/global/_skeleton.scss */
+    /* line 219, ../scss/global/_skeleton.scss */
     .logo:hover {
-      background-position: 0 -35px; } }
+      background-position: 0 -35px; }
+
+  /* line 222, ../scss/global/_skeleton.scss */
+  .social {
+    float: right; }
+
+  /* line 226, ../scss/global/_skeleton.scss */
+  .copyright {
+    text-align: left;
+    margin: 0; } }
 @media only screen and (min-width: 1280px) {
-  /* line 219, ../scss/global/_skeleton.scss */
+  /* line 233, ../scss/global/_skeleton.scss */
   html {
     font-size: 18px; }
 
-  /* line 221, ../scss/global/_skeleton.scss */
+  /* line 235, ../scss/global/_skeleton.scss */
   .wrapper {
     padding-top: 4rem;
     padding-bottom: 4rem;
     max-width: 1440px; }
 
-  /* line 227, ../scss/global/_skeleton.scss */
+  /* line 241, ../scss/global/_skeleton.scss */
   .head {
     padding-top: 75px; }
 
-  /* line 229, ../scss/global/_skeleton.scss */
+  /* line 243, ../scss/global/_skeleton.scss */
   .toolbar {
     padding: 1rem;
     height: 75px; }
 
-  /* line 234, ../scss/global/_skeleton.scss */
+  /* line 248, ../scss/global/_skeleton.scss */
   .nav {
     margin: -1rem;
     height: 75px; }
-    /* line 238, ../scss/global/_skeleton.scss */
+    /* line 252, ../scss/global/_skeleton.scss */
     .nav > ul > li > a {
       height: 75px;
       line-height: 75px;
       padding: 0 1rem; }
 
-  /* line 245, ../scss/global/_skeleton.scss */
+  /* line 259, ../scss/global/_skeleton.scss */
   .logo {
     height: 40px;
     width: 184px;
     background-size: auto 80px; }
-    /* line 250, ../scss/global/_skeleton.scss */
+    /* line 264, ../scss/global/_skeleton.scss */
     .logo:hover {
       background-position: 0 -40px; } }
 /**

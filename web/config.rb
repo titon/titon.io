@@ -8,7 +8,7 @@ images_dir = "img/"
 javascripts_dir = "js/"
 
 preferred_syntax = :scss
-output_style = :nested
+output_style = :compressed
 relative_assets = true
 line_comments = true
 sass_options = { :unix_newlines => true }

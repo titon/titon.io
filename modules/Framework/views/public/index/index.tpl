@@ -8,7 +8,7 @@
             <a href="http://en.wikipedia.org/wiki/KISS_principle">KISS</a>, <a href="http://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it">YAGNI</a>,
             and <a href="http://en.wikipedia.org/wiki/GRASP_%28object-oriented_design%29">GRASP</a> design principles.</p>
 
-            <div class="hexagons">
+            <div class="hexagons hide-mobile">
                 <a href="http://php.net" target="_blank" class="hexagon">
                     <span class="center-vertical">
                         PHP
@@ -198,7 +198,7 @@
                 <hr>
 
                 <div class="grid">
-                    <div class="col small-2 medium-3 large-4">
+                    <div class="col medium-3 large-4">
                         <p>Add a package to <code>composer.json</code>.</p>
 
                         <pre><code class="lang-json">"require": {
@@ -207,13 +207,13 @@
 }</code></pre>
                     </div>
 
-                    <div class="col small-2 medium-3 large-4">
+                    <div class="col medium-3 large-4">
                         <p>Install the packages from the command line.</p>
 
                         <pre><code class="lang-bash">composer install</code></pre>
                     </div>
 
-                    <div class="col small-2 medium-3 large-4">
+                    <div class="col medium-3 large-4">
                         <p>Include the Composer autoloader.</p>
 
                         <pre><code class="lang-php">require 'vendor/autoload.php';</code></pre>

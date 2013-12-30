@@ -48,8 +48,13 @@ pre code {
     .wrapper { padding: 2rem; }
 }
 
+.copyright {
+    text-align: center;
+    margin-top: 1rem;
+}
+
 .social {
-    float: right;
+    text-align: center;
 
     a {
         font-size: 1.5rem;
@@ -212,6 +217,15 @@ pre code {
         background-size: auto 70px;
 
         &:hover { background-position: 0 -35px; }
+    }
+
+    .social {
+        float: right;
+    }
+
+    .copyright {
+        text-align: left;
+        margin: 0;
     }
 }
 
