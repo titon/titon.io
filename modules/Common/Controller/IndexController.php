@@ -7,15 +7,10 @@
 
 namespace Common\Controller;
 
-/**
- * Handles the root index of the application.
- *
- * @package Common\Controller
- */
 class IndexController extends CommonController {
 
     /**
-     * Index action.
+     * Homepage.
      */
     public function index() {
         $this->getView()->setVariable('pageTitle', 'Project Titon');

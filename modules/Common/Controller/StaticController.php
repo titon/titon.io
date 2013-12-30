@@ -9,11 +9,6 @@ namespace Common\Controller;
 
 use Titon\G11n\Utility\Inflector;
 
-/**
- * The static controller will handle all static pages.
- *
- * @package Common\Controller
- */
 class StaticController extends CommonController {
 
     /**

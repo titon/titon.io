@@ -10,11 +10,6 @@ namespace Common;
 use Titon\Mvc\Application;
 use Titon\Mvc\Module\AbstractModule;
 
-/**
- * A module that represents common application functionality like the index or static pages.
- *
- * @package Common
- */
 class CommonModule extends AbstractModule {
 
     /**

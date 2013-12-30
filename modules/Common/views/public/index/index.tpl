@@ -1,5 +1,4 @@
-<?php
-$asset->addStylesheet('/css/home', [], 10); ?>
+<?php $asset->addStylesheet('/css/home', [], 10); ?>
 
 <div id="home" class="home">
     <div class="wrapper">

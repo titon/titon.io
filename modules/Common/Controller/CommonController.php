@@ -15,12 +15,6 @@ use Titon\View\Helper\Html\FormHelper;
 use Titon\View\Helper\Html\HtmlHelper;
 use Titon\View\View;
 
-/**
- * Common controller that all other controllers should inherit.
- * Will define shared functionality.
- *
- * @package Common\Controller
- */
 class CommonController extends AbstractController {
 
     /**

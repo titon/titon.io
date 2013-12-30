@@ -1,3 +1,5 @@
+<?php $asset->addStylesheet('/css/landing', [], 10); ?>
+
 <div class="skeleton">
     <header class="head">
         <div class="wrapper">
