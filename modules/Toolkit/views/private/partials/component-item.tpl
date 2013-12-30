@@ -5,7 +5,7 @@
         <?php if (!empty($component['source']['js'])) { ?>
             <span class="label small">JS</span>
         <?php } ?>
-   </a>
+    </a>
 
     <div id="tooltip-<?php echo $key; ?>" style="display: none">
         <?php echo esc($component['description']); ?>

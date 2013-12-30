@@ -135,7 +135,7 @@
 
                         <ul>
                             <?php foreach (['common' => 'Common', 'event' => 'Event', 'type' => 'Type', 'utility' => 'Utility'] as $key => $name) {
-                                echo $this->open('package-item', ['package' => $packages[$key], 'name' => $name]);
+                                echo $this->open('package-item', ['package' => $packages[$key], 'key' => $key, 'name' => $name]);
                             } ?>
                         </ul>
 
@@ -145,7 +145,7 @@
 
                         <ul>
                             <?php foreach (['http' => 'HTTP', 'route' => 'Route'] as $key => $name) {
-                                echo $this->open('package-item', ['package' => $packages[$key], 'name' => $name]);
+                                echo $this->open('package-item', ['package' => $packages[$key], 'key' => $key, 'name' => $name]);
                             } ?>
                         </ul>
                     </div>
@@ -162,7 +162,7 @@
                                 </a>
                             </li>
                             <?php foreach (['cache' => 'Cache', 'debug' => 'Debug', 'env' => 'Environment', 'g11n' => 'Globalization', 'io' => 'I/O'] as $key => $name) {
-                                echo $this->open('package-item', ['package' => $packages[$key], 'name' => $name]);
+                                echo $this->open('package-item', ['package' => $packages[$key], 'key' => $key, 'name' => $name]);
                             } ?>
                         </ul>
                     </div>
@@ -174,7 +174,7 @@
 
                         <ul>
                             <?php foreach (['mvc' => 'MVC', 'model' => 'Model', 'view' => 'View', 'controller' => 'Controller'] as $key => $name) {
-                                echo $this->open('package-item', ['package' => $packages[$key], 'name' => $name]);
+                                echo $this->open('package-item', ['package' => $packages[$key], 'key' => $key, 'name' => $name]);
                             } ?>
                         </ul>
 
@@ -184,7 +184,7 @@
 
                         <ul>
                             <?php foreach (['model-mysql' => 'MySQL', 'model-postgresql' => 'PostgreSQL', 'model-sqlite' => 'SQLite', 'model-mongodb' => 'MongoDB'] as $key => $name) {
-                                echo $this->open('package-item', ['package' => $packages[$key], 'name' => $name]);
+                                echo $this->open('package-item', ['package' => $packages[$key], 'key' => $key, 'name' => $name]);
                             } ?>
                         </ul>
                     </div>
