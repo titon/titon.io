@@ -4,7 +4,9 @@
 
     // Global
 
-    a { color: $toolkit-secondary; }
+    a,
+    .secondary { color: $toolkit-secondary; }
+
     a:hover { color: darken($toolkit-secondary, 15%); }
 
     .head {
@@ -28,7 +30,11 @@
 
     .hexagons { width: 550px; }
 
-    .components a:hover { background-color: $toolkit-secondary; }
+    .components {
+        .label { color: $toolkit-primary; }
+
+        a:hover { background-color: $toolkit-secondary; }
+    }
 
     .segment {
         border-color: #182028;

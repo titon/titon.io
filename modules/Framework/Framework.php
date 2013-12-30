@@ -33,7 +33,7 @@ class Framework {
             $packages[basename($dir)] = $package;
         }
 
-        $storage->set($cacheKey, $packages);
+        $storage->set($cacheKey, $packages, '+24 hours');
 
         return $packages;
     }

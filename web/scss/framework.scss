@@ -4,7 +4,9 @@
 
     // Global
 
-    a { color: $framework-secondary; }
+    a,
+    .secondary { color: $framework-secondary; }
+
     a:hover { color: darken($framework-secondary, 15%); }
 
     .head {
@@ -29,20 +31,9 @@
     .hexagons { width: 660px; }
 
     .packages {
-        .label {
-            color: $framework-primary;
-            background: black(.1);
-            margin-left: .75rem;
-        }
+        .label { color: $framework-primary; }
 
-        a:hover {
-            background-color: $framework-secondary;
-
-            .label {
-                color: #fff;
-                background: white(.2);
-            }
-        }
+        a:hover { background-color: $framework-secondary; }
     }
 
     .segment {
