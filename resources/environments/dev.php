@@ -6,9 +6,11 @@
  */
 
 use Titon\Cache\Storage\FileSystemStorage;
-use Titon\Common\Config;
+use Titon\Mvc\Application;
+
+$app = Application::getInstance();
 
 // Use file system in dev
-Config::set('cache.storage', new FileSystemStorage('default', [
+$app->get('cache')->addStorage(new FileSystemStorage('default', [
     'directory' => TEMP_DIR . 'cache/'
 ]));

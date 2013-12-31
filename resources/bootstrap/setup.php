@@ -6,8 +6,10 @@
  */
 
 use Titon\Common\Config;
+use Titon\Common\Registry;
 use Titon\Debug\Debugger;
 use Titon\Debug\Logger;
+use Titon\Mvc\Application;
 
 /**
  * Dates should always be UTC!
@@ -42,3 +44,11 @@ Config::set('titon.path', [
         VIEWS_DIR
     ]
 ]);
+
+/**
+ * Initialize all application level components.
+ */
+Application::getInstance()
+    ->set('env', Registry::factory('Titon\Environment\Environment'))
+    ->set('cache', Registry::factory('Titon\Cache\Cache'))
+    ->set('g11n', Registry::factory('Titon\G11n\G11n'));

@@ -5,12 +5,11 @@
  * @link        http://titon.io
  */
 
-use Titon\Common\Registry;
 use Titon\Environment\Environment;
 use Titon\Environment\Host;
 
 /** @type \Titon\Environment\Environment $env */
-$env = Registry::factory('Titon\Environment\Environment');
+$env = $app->get('env');
 
 // Development
 $env->addHost(new Host('dev', ['localhost', '127.0.0.1', '::1']))
@@ -25,6 +24,3 @@ $env->setFallback('prod');
 
 // Initialize
 $env->initialize();
-
-// Store in the app
-$app->set('env', $env);
