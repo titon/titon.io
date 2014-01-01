@@ -13,20 +13,9 @@ class Toolkit {
      * @return array
      */
     public static function loadComponents() {
-        $cacheKey = __METHOD__;
-
-        /** @type \Titon\Cache\Storage $storage */
-        $storage = Application::getInstance()->get('cache')->getStorage('default');
-
-        if ($storage->has($cacheKey)) {
-            return $storage->get($cacheKey);
-        }
-
-        $components = json_decode(self::fetchRemoteResource('https://raw.github.com/titon/toolkit/master/manifest.json'), true);
-
-        $storage->set($cacheKey, $components, '+24 hours');
-
-        return $components;
+        return Application::getInstance()->get('cache')->getStorage('default')->store(__METHOD__, function() {
+            return json_decode(Toolkit::fetchRemoteResource('https://raw.github.com/titon/toolkit/master/manifest.json'), true);
+        });
     }
 
     /**
@@ -35,20 +24,9 @@ class Toolkit {
      * @return string
      */
     public static function loadVersion() {
-        $cacheKey = __METHOD__;
-
-        /** @type \Titon\Cache\Storage $storage */
-        $storage = Application::getInstance()->get('cache')->getStorage('default');
-
-        if ($storage->has($cacheKey)) {
-            return $storage->get($cacheKey);
-        }
-
-        $components = self::fetchRemoteResource('https://raw.github.com/titon/toolkit/master/version.md');
-
-        $storage->set($cacheKey, $components, '+24 hours');
-
-        return $components;
+        return Application::getInstance()->get('cache')->getStorage('default')->store(__METHOD__, function() {
+            return Toolkit::fetchRemoteResource('https://raw.github.com/titon/toolkit/master/version.md');
+        });
     }
 
     /**

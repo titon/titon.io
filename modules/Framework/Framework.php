@@ -14,28 +14,20 @@ class Framework {
      * @return array
      */
     public static function loadPackages() {
-        $packages = [];
-        $cacheKey = __METHOD__;
+        return Application::getInstance()->get('cache')->getStorage('default')->store(__METHOD__, function() {
+            $packages = [];
 
-        /** @type \Titon\Cache\Storage $storage */
-        $storage = Application::getInstance()->get('cache')->getStorage('default');
+            foreach (glob(VENDOR_DIR . 'titon/*', GLOB_ONLYDIR | GLOB_MARK) as $dir) {
+                $reader = new JsonReader($dir . 'composer.json');
 
-        if ($storage->has($cacheKey)) {
-            return $storage->get($cacheKey);
-        }
+                $package = $reader->read();
+                $package['version'] = file_get_contents($dir . 'version.md');
 
-        foreach (glob(VENDOR_DIR . 'titon/*', GLOB_ONLYDIR | GLOB_MARK) as $dir) {
-            $reader = new JsonReader($dir . 'composer.json');
+                $packages[basename($dir)] = $package;
+            }
 
-            $package = $reader->read();
-            $package['version'] = file_get_contents($dir . 'version.md');
-
-            $packages[basename($dir)] = $package;
-        }
-
-        $storage->set($cacheKey, $packages, '+24 hours');
-
-        return $packages;
+            return $packages;
+        });
     }
 
 }
