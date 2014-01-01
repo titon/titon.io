@@ -21,7 +21,7 @@ class ToolkitController extends CommonController {
 
         $this->getView()
             ->setVariable('bodyClass', 'toolkit')
-            ->getHelper('asset')->addStylesheet('/css/toolkit', [], 20);
+            ->getHelper('asset')->addStylesheet('/css/toolkit.min', [], 20);
     }
 
 }

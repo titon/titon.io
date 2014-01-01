@@ -174,13 +174,13 @@
 
 //-------------------- Responsive --------------------//
 
-@include if-mobile-portrait() {
+@include if-max($breakpoint-mobile-portrait) {
     .head .wrapper h1 {
         font-size: 3.5rem;
     }
 }
 
-@include if-tablet-landscape() {
+@include if-max($breakpoint-tablet-landscape) {
     .head .hexagons {
         width: 550px !important;
 

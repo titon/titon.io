@@ -1,4 +1,4 @@
-<?php $asset->addStylesheet('/css/landing', [], 10); ?>
+<?php $asset->addStylesheet('/css/landing.min', [], 10); ?>
 
 <div class="skeleton">
     <header class="head">

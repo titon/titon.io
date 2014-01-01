@@ -3,6 +3,7 @@
 namespace Toolkit;
 
 use Titon\Common\Registry;
+use Titon\Mvc\Application;
 
 class Toolkit {
 
@@ -14,9 +15,8 @@ class Toolkit {
     public static function loadComponents() {
         $cacheKey = __METHOD__;
 
-        /** @type \Titon\Cache\Cache $cache */
-        $cache = Registry::factory('Titon\Cache\Cache');
-        $storage = $cache->getStorage('default');
+        /** @type \Titon\Cache\Storage $storage */
+        $storage = Application::getInstance()->get('cache')->getStorage('default');
 
         if ($storage->has($cacheKey)) {
             return $storage->get($cacheKey);
@@ -37,9 +37,8 @@ class Toolkit {
     public static function loadVersion() {
         $cacheKey = __METHOD__;
 
-        /** @type \Titon\Cache\Cache $cache */
-        $cache = Registry::factory('Titon\Cache\Cache');
-        $storage = $cache->getStorage('default');
+        /** @type \Titon\Cache\Storage $storage */
+        $storage = Application::getInstance()->get('cache')->getStorage('default');
 
         if ($storage->has($cacheKey)) {
             return $storage->get($cacheKey);

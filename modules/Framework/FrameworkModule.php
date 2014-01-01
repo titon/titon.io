@@ -30,6 +30,10 @@ class FrameworkModule extends AbstractModule {
         $router = $app->getRouter();
         $router->map(new LocaleRoute('framework.docs', '/framework/{version}/(path)', 'Framework\Docs@index'));
         $router->map(new LocaleRoute('framework', '/framework', 'Framework\Index@index'));
+
+        /** @type \Titon\G11n\Locale $locale */
+        $locale = $app->get('g11n')->current();
+        $locale->addResourcePath('framework', $this->getResourcePath());
     }
 
 }

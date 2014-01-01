@@ -21,7 +21,7 @@ class FrameworkController extends CommonController {
 
         $this->getView()
             ->setVariable('bodyClass', 'framework')
-            ->getHelper('asset')->addStylesheet('/css/framework', [], 20);
+            ->getHelper('asset')->addStylesheet('/css/framework.min', [], 20);
     }
 
 }

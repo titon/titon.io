@@ -4,6 +4,7 @@ namespace Framework;
 
 use Titon\Common\Registry;
 use Titon\Io\Reader\JsonReader;
+use Titon\Mvc\Application;
 
 class Framework {
 
@@ -16,9 +17,8 @@ class Framework {
         $packages = [];
         $cacheKey = __METHOD__;
 
-        /** @type \Titon\Cache\Cache $cache */
-        $cache = Registry::factory('Titon\Cache\Cache');
-        $storage = $cache->getStorage('default');
+        /** @type \Titon\Cache\Storage $storage */
+        $storage = Application::getInstance()->get('cache')->getStorage('default');
 
         if ($storage->has($cacheKey)) {
             return $storage->get($cacheKey);
