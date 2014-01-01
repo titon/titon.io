@@ -1,7 +1,14 @@
-<h1><?php echo $code; ?></h1>
+<?php $this->wrapWith('error'); ?>
 
-<h2><?php echo $pageTitle; ?></h2>
+<header class="head">
+    <div class="wrapper align-center">
+        <h1><?php echo $code; ?></h1>
+        <h2><?php echo $pageTitle; ?></h2>
+    </div>
+</header>
 
-<?php if ($code < 500) { ?>
-    <p><?php echo $message; ?></p>
-<?php } ?>
+<main class="body">
+    <div class="wrapper align-center">
+        An unexpected error has occurred. Please be patient while be throw some wrenches at it.
+    </div>
+</main>

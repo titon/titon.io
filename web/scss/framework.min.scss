@@ -9,7 +9,7 @@
     a:hover { color: darken($framework-secondary, 15%); }
 
     .head {
-        background-color: $framework-primary-dark;
+        background: $framework-primary-dark image-url("hexagon-pattern.png") repeat;
     }
 
     .hexagon,

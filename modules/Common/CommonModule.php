@@ -19,8 +19,9 @@ class CommonModule extends AbstractModule {
         parent::initialize();
 
         $this->setControllers([
-            'index' => 'Common\Controller\IndexController', // /
-            'static' => 'Common\Controller\StaticController' // /static/
+            'index' => 'Common\Controller\IndexController',
+            'static' => 'Common\Controller\StaticController',
+            'contact' => 'Common\Controller\ContactController',
         ]);
     }
 

@@ -17,13 +17,15 @@
     echo $asset->stylesheets($env);
     echo $asset->scripts('header', $env); ?>
 </head>
-<?php if ($bodyClass = $this->data('bodyClass')) { ?>
-    <body class="<?php echo $bodyClass; ?>">
-<?php } else { ?>
-    <body>
-<?php }
+<body<?php if ($bodyClass = $this->data('bodyClass')) { ?> class="<?php echo $bodyClass; ?>" <?php }?>>
+    <div class="skeleton">
+        <?php echo $this->getContent(); ?>
+    </div>
 
-    echo $this->getContent();
-    echo $asset->scripts('footer', $env); ?>
+    <?php if (empty($route) || !($route->getParam('module') === 'common' && $route->getParam('controller') === 'index')) {
+        echo $this->open('toolbar');
+    } ?>
+
+    <?php echo $asset->scripts('footer', $env); ?>
 </body>
 </html>

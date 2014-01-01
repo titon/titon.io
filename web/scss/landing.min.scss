@@ -193,6 +193,11 @@
         padding: 3rem 15%;
     }
 
+    .body .wrapper {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
     .features li {
         display: inline-block;
         vertical-align: top;
@@ -203,6 +208,11 @@
 
 @include if-large {
     .head .wrapper { padding: 4rem 20%; }
+
+    .body .wrapper {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
 
     .features li { width: 33%; }
 }

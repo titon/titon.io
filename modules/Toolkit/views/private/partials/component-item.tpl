@@ -1,5 +1,5 @@
 <li>
-    <a href="https://github.com/titon/toolkit/tree/master/docs/pages/en/components" target="_blank" data-tooltip="#tooltip-<?php echo $key; ?>">
+    <a href="https://github.com/titon/toolkit" target="_blank" data-tooltip="#tooltip-<?php echo $key; ?>">
         <?php echo esc($component['name']); ?>
 
         <?php if (!empty($component['source']['js'])) { ?>

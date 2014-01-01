@@ -4,14 +4,17 @@ html {
 
 body {
     color: $text-color;
-    background: $bg-color;
+    background: #1f1f1f;
     margin: 0;
     padding: 0;
 }
 
 a, a:hover {
+    color: $toolkit-primary-light;
     text-decoration: none;
 }
+
+a:hover { color: $framework-primary-light; }
 
 pre code {
     display: block;
@@ -28,20 +31,21 @@ pre code {
 
 .head {
     color: #fff;
-    background: image-url("hexagon-pattern.png") repeat;
+    @include background(
+        image-url("hexagon-pattern.png") repeat,
+        linear-gradient(left, $toolkit-primary-dark, $framework-primary-dark));
     padding-top: 45px;
 }
 
 //-------------------- Body --------------------//
 
 .body {
-
+    background: $bg-color;
 }
 
 //-------------------- Footer --------------------//
 
 .foot {
-    background: #1f1f1f;
     border-top: 2px solid #0e0e0e;
     color: #6c6c6c;
 
@@ -76,7 +80,8 @@ pre code {
     background: black(.75);
 
     .wrapper {
-        padding: 0;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 }
 
@@ -190,11 +195,6 @@ pre code {
 
     .head { padding-top: 60px; }
 
-    .wrapper {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-    }
-
     .toolbar {
         padding: $medium-padding;
         height: 60px;
@@ -232,11 +232,7 @@ pre code {
 @include if-large {
     html { font-size: 18px; }
 
-    .wrapper {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-        max-width: $breakpoint-large;
-    }
+    .wrapper { max-width: $breakpoint-large; }
 
     .head { padding-top: 75px; }
 

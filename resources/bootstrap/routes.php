@@ -5,9 +5,7 @@
  * @link        http://titon.io
  */
 
-use Titon\Common\Registry;
-use Titon\Route\Router;
-use Titon\Route\Route;
+use Titon\G11n\Route\LocaleRoute;
 
 $router = $app->getRouter();
 
@@ -15,8 +13,9 @@ $router = $app->getRouter();
 $router->on('g11n', $g11n);
 
 // Custom routes
-$router->map(new Route('static.page', '/static/(path)', 'Common\Static@index'));
-$router->map(new Route('static', '/static', 'Common\Static@index'));
+$router->map(new LocaleRoute('static.page', '/static/(path)', 'Common\Static@index'));
+$router->map(new LocaleRoute('static', '/static', 'Common\Static@index'));
+$router->map(new LocaleRoute('contact', '/contact', 'Common\Contact@index'));
 
 // Initialize
 $router->initialize();

@@ -10,7 +10,7 @@
     a:hover { color: darken($toolkit-secondary, 15%); }
 
     .head {
-        background-color: $toolkit-primary-dark;
+        background: $toolkit-primary-dark image-url("hexagon-pattern.png") repeat;
     }
 
     .hexagon,
