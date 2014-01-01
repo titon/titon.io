@@ -1,13 +1,15 @@
 (function($) {
     'use strict';
 
-    // Components
+    // Tabs
     $('.tabs').tabs();
 
+    // Tooltips
     $('[data-tooltip]').tooltip({
         animation: 'fade'
     });
 
+    // Smooth scrolling
     $('.scroll-to').click(function(e) {
         e.preventDefault();
 

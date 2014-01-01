@@ -1,4 +1,5 @@
 {
+    "_REQUIRE_": "ALL THE THINGS!",
     "require": {
         "titon/mvc": "*",
         "titon/g11n": "*",

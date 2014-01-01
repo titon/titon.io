@@ -10,7 +10,7 @@
     $asset->addStylesheet('/css/debug.min', [], 100, 'dev');
     $asset->addScript('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', 'header');
     $asset->addScript('/js/vendors/titon.min', 'header');
-    $asset->addScript('/js/script', 'footer');
+    $asset->addScript('/js/script.min', 'footer');
 
     $env = $this->data('env', 'prod');
 

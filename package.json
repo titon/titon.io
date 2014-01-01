@@ -1,0 +1,10 @@
+{
+    "devDependencies": {
+        "grunt": "*",
+        "grunt-newer": "*",
+        "grunt-contrib-uglify": "*",
+        "grunt-contrib-jshint": "*",
+        "grunt-contrib-compass": "*",
+        "grunt-contrib-watch": "*"
+    }
+}
