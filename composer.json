@@ -7,10 +7,6 @@
         "titon/debug": "*",
         "titon/env": "*",
         "titon/type": "*",
-        "titon/model-mongodb": "*",
-        "titon/model-mysql": "*",
-        "titon/model-postgresql": "*",
-        "titon/model-sqlite": "*",
         "psr/log": "*"
     }
 }

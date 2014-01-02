@@ -26,8 +26,42 @@ class Framework {
                 $packages[basename($dir)] = $package;
             }
 
+            foreach (['mysql', 'postgresql', 'sqlite', 'mongodb'] as $driver) {
+                $driver = 'model-' . $driver;
+
+                $json = json_decode(Framework::fetchRemoteResource('https://raw.github.com/titon/' . $driver . '/master/composer.json'), true);
+                $json['version'] = Framework::fetchRemoteResource('https://raw.github.com/titon/' . $driver . '/master/version.md');
+
+                $packages[$driver] = $json;
+            }
+
             return $packages;
         });
+    }
+
+    /**
+     * Fetch the response of a remote URL.
+     *
+     * @param string $url
+     * @return string
+     */
+    public static function fetchRemoteResource($url) {
+        $curl = curl_init($url);
+        curl_setopt_array($curl, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_FAILONERROR => true,
+            CURLOPT_SSL_VERIFYPEER => false
+        ]);
+        $response = curl_exec($curl);
+        $error = curl_error($curl);
+        curl_close($curl);
+
+        if ($error) {
+            return null;
+        }
+
+        return $response;
     }
 
 }
