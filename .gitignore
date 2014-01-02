@@ -1,12 +1,15 @@
 .idea
 .sass-cache/
 node_modules/
-temp/cache/
-temp/logs
 vendor/
+temp/**/*.cache
+temp/**/*.expires
+temp/**/*.log
 web/css/**/_*.css
-!empty
 composer.lock
 
 # Ignore symlinks
 web/common/
+
+# Allow folders
+!.gitkeep
