@@ -26,7 +26,7 @@
         }
     }
 
-    // Index
+    // Landing
 
     .hexagons { width: 550px; }
 
@@ -50,5 +50,21 @@
     .examples {
         background-color: $toolkit-primary-dark;
         color: #fff;
+    }
+
+    // UI
+
+    .modal-inner {
+        background: $toolkit-bg;
+    }
+
+    .modal-head,
+    .modal-foot {
+        background: $toolkit-bg-alt;
+    }
+
+    .modal-body {
+        border-top: 2px solid $toolkit-border;
+        border-bottom: 2px solid $toolkit-border;
     }
 }

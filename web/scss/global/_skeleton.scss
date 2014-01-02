@@ -4,7 +4,7 @@ html {
 
 body {
     color: $text-color;
-    background: #1f1f1f;
+    background: $bg-color;
     margin: 0;
     padding: 0;
 }
@@ -40,7 +40,7 @@ pre code {
 //-------------------- Body --------------------//
 
 .body {
-    background: $bg-color;
+    background: #fff;
 }
 
 //-------------------- Footer --------------------//
@@ -59,9 +59,10 @@ pre code {
 
 .social {
     text-align: center;
+    padding-top: .55rem;
 
     a {
-        font-size: 1.5rem;
+        font-size: 2rem;
         display: inline-block;
         margin-left: .5rem;
     }
@@ -73,10 +74,10 @@ pre code {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 550;
     width: 100%;
     height: 45px;
-    padding: $small-padding;
+    padding: $small-padding 0;
     background: black(.75);
 
     .wrapper {
@@ -94,21 +95,28 @@ pre code {
         margin: 0;
         padding: 0;
         list-style: none;
-        border-right: 1px solid #2f2f2f;
 
         > li {
             float: left;
-            border-left: 1px solid #2f2f2f;
+            position: relative;
 
             > a {
                 display: block;
                 height: 45px;
                 line-height: 45px;
                 padding: 0 $small-padding;
+            }
 
-                &:hover {
+            &:hover {
+                > a {
                     color: #fff;
                     background: black(.5);
+                }
+
+                .dropdown {
+                    display: block !important;
+                    opacity: 1 !important;
+                    visibility: visible !important;
                 }
             }
         }
@@ -196,7 +204,7 @@ pre code {
     .head { padding-top: 60px; }
 
     .toolbar {
-        padding: $medium-padding;
+        padding: $medium-padding 0;
         height: 60px;
     }
 
@@ -237,7 +245,7 @@ pre code {
     .head { padding-top: 75px; }
 
     .toolbar {
-        padding: $large-padding;
+        padding: $large-padding 0;
         height: 75px;
     }
 

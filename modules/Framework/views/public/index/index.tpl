@@ -5,9 +5,11 @@
         <h1>Framework</h1>
 
         <p>A collection of modular back-end packages to ease the process of application building by off-loading common tasks.
-        Provides independent abstract libraries that follow the <a href="http://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a>,
-        <a href="http://en.wikipedia.org/wiki/KISS_principle">KISS</a>, <a href="http://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it">YAGNI</a>,
-        and <a href="http://en.wikipedia.org/wiki/GRASP_%28object-oriented_design%29">GRASP</a> design principles.</p>
+        Provides independent abstract libraries that follow the
+        <a href="http://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target="_blank">DRY</a>,
+        <a href="http://en.wikipedia.org/wiki/KISS_principle" target="_blank">KISS</a>,
+        <a href="http://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it" target="_blank">YAGNI</a>,
+        and <a href="http://en.wikipedia.org/wiki/GRASP_%28object-oriented_design%29" target="_blank">GRASP</a> design principles.</p>
 
         <div class="hexagons hide-mobile">
             <a href="http://php.net" target="_blank" class="hexagon">

@@ -9,6 +9,11 @@
         animation: 'fade'
     });
 
+    // Modals
+    $('.js-modal').modal({
+        animation: 'slide-in-top'
+    });
+
     // Smooth scrolling
     $('.scroll-to').click(function(e) {
         e.preventDefault();

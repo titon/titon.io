@@ -1,0 +1,38 @@
+@import "toolkit/components/blackout";
+@import "toolkit/components/modal";
+
+.modal-inner {
+    border-radius: $round;
+}
+
+.modal-head {
+    border-top-left-radius: $round;
+    border-top-right-radius: $round;
+}
+
+.modal-foot {
+    border-bottom-left-radius: $round;
+    border-bottom-right-radius: $round;
+}
+
+.modal-head,
+.modal-body,
+.modal-foot {
+    padding: $small-padding;
+}
+
+@include if-medium() {
+    .modal-head,
+    .modal-body,
+    .modal-foot {
+        padding: $medium-padding;
+    }
+}
+
+@include if-large() {
+    .modal-head,
+    .modal-body,
+    .modal-foot {
+        padding: $large-padding;
+    }
+}

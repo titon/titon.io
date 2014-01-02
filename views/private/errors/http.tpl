@@ -9,6 +9,6 @@
 
 <main class="body">
     <div class="wrapper align-center">
-        An unexpected error has occurred. Please be patient while be throw some wrenches at it.
+        An unexpected error has occurred. Please be patient while we throw some wrenches at it.
     </div>
 </main>

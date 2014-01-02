@@ -15,7 +15,8 @@ class FrameworkModule extends AbstractModule {
         parent::initialize();
 
         $this->setControllers([
-            'index' => 'Framework\Controller\IndexController'
+            'index' => 'Framework\Controller\IndexController',
+            'docs' => 'Framework\Controller\DocsController'
         ]);
     }
 
@@ -28,6 +29,7 @@ class FrameworkModule extends AbstractModule {
         parent::bootstrap($app);
 
         $router = $app->getRouter();
+        $router->map(new LocaleRoute('framework.docs.out', '/framework/docs/out', 'Framework\Docs@out'));
         $router->map(new LocaleRoute('framework.docs', '/framework/{version}/(path)', 'Framework\Docs@index'));
         $router->map(new LocaleRoute('framework', '/framework', 'Framework\Index@index'));
 

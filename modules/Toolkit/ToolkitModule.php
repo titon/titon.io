@@ -15,7 +15,8 @@ class ToolkitModule extends AbstractModule {
         parent::initialize();
 
         $this->setControllers([
-            'index' => 'Toolkit\Controller\IndexController'
+            'index' => 'Toolkit\Controller\IndexController',
+            'docs' => 'Toolkit\Controller\DocsController'
         ]);
     }
 
@@ -28,6 +29,7 @@ class ToolkitModule extends AbstractModule {
         parent::bootstrap($app);
 
         $router = $app->getRouter();
+        $router->map(new LocaleRoute('toolkit.docs.out', '/toolkit/docs/out', 'Toolkit\Docs@out'));
         $router->map(new LocaleRoute('toolkit.docs', '/toolkit/{version}/(path)', 'Toolkit\Docs@index'));
         $router->map(new LocaleRoute('toolkit', '/toolkit', 'Toolkit\Index@index'));
 

@@ -25,7 +25,7 @@
         }
     }
 
-    // Index
+    // Landing
 
     .hexagons { width: 660px; }
 
@@ -49,5 +49,21 @@
     .install {
         background-color: $framework-primary-dark;
         color: #fff;
+    }
+
+    // UI
+
+    .modal-inner {
+        background: $framework-bg;
+    }
+
+    .modal-head,
+    .modal-foot {
+        background: $framework-bg-alt;
+    }
+
+    .modal-body {
+        border-top: 2px solid $framework-border;
+        border-bottom: 2px solid $framework-border;
     }
 }

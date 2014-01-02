@@ -253,12 +253,12 @@
 });</code></pre>
                     </div>
 
-                    <p>
+                    <?php /*<p>
                         <a href="https://github.com/titon/toolkit/tree/master/docs/pages/en/components/carousel.md" class="button">
                             View Carousel Component
                             <span class="fa fa-arrow-circle-right"></span>
                         </a>
-                    </p>
+                    </p>*/ ?>
                 </div>
             </div>
         </div>
