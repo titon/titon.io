@@ -78,7 +78,7 @@ pre code {
     width: 100%;
     height: 45px;
     padding: $small-padding 0;
-    background: black(.75);
+    background: $bg-color;
 
     .wrapper {
         padding-top: 0;
@@ -104,13 +104,13 @@ pre code {
                 display: block;
                 height: 45px;
                 line-height: 45px;
-                padding: 0 $small-padding;
+                padding: 0 ($small-padding * 2);
             }
 
             &:hover {
                 > a {
                     color: #fff;
-                    background: black(.5);
+                    background: #0e0e0e;
                 }
 
                 .dropdown {
@@ -122,6 +122,16 @@ pre code {
         }
 
         @include clear-fix;
+    }
+
+    .dropdown {
+        background: #0e0e0e;
+
+        &,
+        li:first-child > a {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
     }
 }
 
@@ -215,7 +225,7 @@ pre code {
         > ul > li > a {
             height: 60px;
             line-height: 60px;
-            padding: 0 $medium-padding;
+            padding: 0 ($medium-padding * 2);
         }
     }
 
@@ -256,7 +266,7 @@ pre code {
         > ul > li > a {
             height: 75px;
             line-height: 75px;
-            padding: 0 $large-padding;
+            padding: 0 ($large-padding * 2);
         }
     }
 

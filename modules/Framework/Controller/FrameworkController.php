@@ -19,9 +19,7 @@ class FrameworkController extends CommonController {
     public function postProcess(Event $event, Controller $controller, $action, &$response) {
         parent::postProcess($event, $controller, $action, $response);
 
-        $this->getView()
-            ->setVariable('bodyClass', 'framework')
-            ->getHelper('asset')->addStylesheet('/css/framework.min', [], 20);
+        $this->getView()->setVariable('bodyClass', 'framework');
     }
 
 }

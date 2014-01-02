@@ -1,2 +1,26 @@
 @import "toolkit/components/dropdown";
 
+.dropdown {
+    background: $bg-color;
+    border-radius: $round;
+    font-size: .9rem;
+
+    li {
+        > a {
+            padding: 1rem;
+            @include transition(all .1s);
+
+            &:hover { color: #fff; }
+        }
+
+        &:first-child > a {
+            border-top-left-radius: $round;
+            border-top-right-radius: $round;
+        }
+
+        &:last-child > a {
+            border-bottom-left-radius: $round;
+            border-bottom-right-radius: $round;
+        }
+    }
+}

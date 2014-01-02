@@ -15,20 +15,6 @@
     border-bottom-right-radius: $round;
 }
 
-.modal-head,
-.modal-body,
-.modal-foot {
-    padding: $small-padding;
-}
-
-@include if-medium() {
-    .modal-head,
-    .modal-body,
-    .modal-foot {
-        padding: $medium-padding;
-    }
-}
-
 @include if-large() {
     .modal-head,
     .modal-body,

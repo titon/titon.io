@@ -1,5 +1,3 @@
-@import "global/common";
-
 .toolkit {
 
     // Global
@@ -53,6 +51,8 @@
     }
 
     // UI
+
+    .dropdown li > a:hover { background-color: $toolkit-secondary; }
 
     .modal-inner {
         background: $toolkit-bg;

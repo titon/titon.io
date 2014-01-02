@@ -19,9 +19,7 @@ class ToolkitController extends CommonController {
     public function postProcess(Event $event, Controller $controller, $action, &$response) {
         parent::postProcess($event, $controller, $action, $response);
 
-        $this->getView()
-            ->setVariable('bodyClass', 'toolkit')
-            ->getHelper('asset')->addStylesheet('/css/toolkit.min', [], 20);
+        $this->getView()->setVariable('bodyClass', 'toolkit');
     }
 
 }

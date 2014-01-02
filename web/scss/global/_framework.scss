@@ -1,5 +1,3 @@
-@import "global/common";
-
 .framework {
     // Global
 
@@ -52,6 +50,8 @@
     }
 
     // UI
+
+    .dropdown li > a:hover { background-color: $framework-secondary; }
 
     .modal-inner {
         background: $framework-bg;
