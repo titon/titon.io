@@ -2,9 +2,7 @@
 .sass-cache/
 node_modules/
 vendor/
-temp/**/*.cache
-temp/**/*.expires
-temp/**/*.log
+temp/*
 web/css/**/_*.css
 composer.lock
 
