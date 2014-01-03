@@ -10,11 +10,11 @@ body {
 }
 
 a, a:hover {
-    color: $toolkit-primary-light;
+    color: lighten($toolkit-primary-light, 15%);
     text-decoration: none;
 }
 
-a:hover { color: $framework-primary-light; }
+a:hover { color: $toolkit-primary-light; }
 
 pre code {
     display: block;

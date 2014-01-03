@@ -21,6 +21,7 @@ date_default_timezone_set('UTC');
  */
 Debugger::initialize();
 Debugger::setLogger(new Logger(TEMP_DIR . '/logs'));
+Debugger::setHandler([$app, 'handleError']);
 
 /**
  * Define the primary configurations used by the application.

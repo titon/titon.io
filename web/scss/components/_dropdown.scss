@@ -10,7 +10,10 @@
             padding: 1rem;
             @include transition(all .1s);
 
-            &:hover { color: #fff; }
+            &:hover {
+                color: #fff;
+                background: $framework-primary-light;
+            }
         }
 
         &:first-child > a {
