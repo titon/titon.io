@@ -11,7 +11,8 @@
 
     // Modals
     $('.js-modal').modal({
-        animation: 'slide-in-top'
+        animation: 'slide-in-top',
+        showLoading: false
     });
 
     // Smooth scrolling
