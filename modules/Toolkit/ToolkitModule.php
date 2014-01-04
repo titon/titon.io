@@ -34,8 +34,8 @@ class ToolkitModule extends AbstractModule {
         $router->map(new LocaleRoute('toolkit', '/toolkit', 'Toolkit\Index@index'));
 
         /** @type \Titon\G11n\Locale $locale */
-        //$locale = $app->get('g11n')->current();
-        //$locale->addResourcePath('toolkit', $this->getResourcePath());
+        $locale = $app->get('g11n')->current();
+        $locale->addResourcePath('toolkit', $this->getResourcePath());
     }
 
 }

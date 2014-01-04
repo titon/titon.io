@@ -1,9 +1,9 @@
 <div class="modal-head">
-    <h3><?php echo $pageTitle; ?></h3>
+    <h3><?= $html->title(); ?></h3>
 </div>
 
 <div class="modal-body">
-    <?php echo $this->getContent(); ?>
+    <?= $this->getContent(); ?>
 </div>
 
 <div class="modal-foot clear-fix">

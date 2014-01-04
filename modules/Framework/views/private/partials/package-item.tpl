@@ -1,16 +1,16 @@
 <li>
-    <a href="https://github.com/<?php echo $package['name']; ?>" target="_blank" data-tooltip="#tooltip-<?php echo $key; ?>">
-        <?php echo esc($name); ?>
-        <span class="label small"><?php echo $package['version']; ?></span>
+    <a href="https://github.com/<?= $package['name']; ?>" target="_blank" data-tooltip="#tooltip-<?= $key; ?>">
+        <?= esc($name); ?>
+        <span class="label small"><?= $package['version']; ?></span>
    </a>
 
-    <div id="tooltip-<?php echo $key; ?>" style="display: none">
-        <?php echo esc($package['description']); ?>
+    <div id="tooltip-<?= $key; ?>" style="display: none">
+        <?= esc($package['description']); ?>
 
         <ul class="meta-list">
             <li>
                 <span class="secondary">Version:</span>
-                <?php echo $package['version']; ?>
+                <?= $package['version']; ?>
             </li>
 
             <?php
@@ -35,14 +35,14 @@
 
                 <li>
                     <span class="secondary">Requires:</span>
-                    <?php echo implode(', ', $requires); ?>
+                    <?= implode(', ', $requires); ?>
                 </li>
             <?php } ?>
 
             <?php if (!empty($extensions)) { ?>
                 <li>
                     <span class="secondary">Extensions:</span>
-                    <?php echo implode(', ', $extensions); ?>
+                    <?= implode(', ', $extensions); ?>
                 </li>
             <?php } ?>
         </ul>

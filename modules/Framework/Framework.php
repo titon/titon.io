@@ -26,6 +26,7 @@ class Framework {
                 $packages[basename($dir)] = $package;
             }
 
+            // Fetch separately so we don't have to install requirements
             foreach (['mysql', 'postgresql', 'sqlite', 'mongodb'] as $driver) {
                 $driver = 'model-' . $driver;
 

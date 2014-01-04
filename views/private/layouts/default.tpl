@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="charset" content="UTF-8">
-    <title><?php echo $html->title(); ?></title>
+    <title><?= $html->title(); ?></title>
     <?php
     $asset->addStylesheet('//fonts.googleapis.com/css?family=Droid+Sans:400,700');
     $asset->addStylesheet('/css/vendors/font-awesome.min');
@@ -17,15 +17,15 @@
     echo $asset->stylesheets($env);
     echo $asset->scripts('header', $env); ?>
 </head>
-<body<?php if ($bodyClass = $this->data('bodyClass')) { ?> class="<?php echo $bodyClass; ?>" <?php }?>>
+<body<?php if ($bodyClass = $this->data('bodyClass')) { ?> class="<?= $bodyClass; ?>" <?php }?>>
     <div class="skeleton">
-        <?php echo $this->getContent(); ?>
+        <?= $this->getContent(); ?>
     </div>
 
-    <?php if (empty($route) || !($route->getParam('module') === 'common' && $route->getParam('controller') === 'index')) {
+    <?php if (!($this->config->module === 'common' && $this->config->controller === 'index')) {
         echo $this->open('toolbar');
     } ?>
 
-    <?php echo $asset->scripts('footer', $env); ?>
+    <?= $asset->scripts('footer', $env); ?>
 </body>
 </html>

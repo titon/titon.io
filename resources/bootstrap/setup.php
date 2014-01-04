@@ -5,10 +5,12 @@
  * @link        http://titon.io
  */
 
+use Titon\Cache\Cache;
 use Titon\Common\Config;
-use Titon\Common\Registry;
 use Titon\Debug\Debugger;
 use Titon\Debug\Logger;
+use Titon\Environment\Environment;
+use Titon\G11n\G11n;
 use Titon\Mvc\Application;
 
 /**
@@ -21,6 +23,11 @@ date_default_timezone_set('UTC');
  */
 Debugger::initialize();
 Debugger::setLogger(new Logger(TEMP_DIR . '/logs'));
+
+/**
+ * Define the handler to use for uncaught exceptions.
+ * The application defaults will render an error view.
+ */
 Debugger::setHandler([$app, 'handleError']);
 
 /**
@@ -49,6 +56,6 @@ Config::set('titon.path', [
  * Initialize all application level components.
  */
 Application::getInstance()
-    ->set('env', Registry::factory('Titon\Environment\Environment'))
-    ->set('cache', Registry::factory('Titon\Cache\Cache'))
-    ->set('g11n', Registry::factory('Titon\G11n\G11n'));
+    ->set('env', new Environment())
+    ->set('cache', new Cache())
+    ->set('g11n', new G11n());

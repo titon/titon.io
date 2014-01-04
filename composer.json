@@ -1,12 +1,14 @@
 {
     "_REQUIRE_": "ALL THE THINGS!",
     "require": {
+        "titon/app": "*",
         "titon/mvc": "*",
         "titon/g11n": "*",
         "titon/cache": "*",
         "titon/debug": "*",
         "titon/env": "*",
         "titon/type": "*",
+        "titon/toolkit": "dev-master",
         "psr/log": "*"
     }
 }

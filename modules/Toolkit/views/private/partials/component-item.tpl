@@ -1,14 +1,14 @@
 <li>
-    <a href="https://github.com/titon/toolkit" target="_blank" data-tooltip="#tooltip-<?php echo $key; ?>">
-        <?php echo esc($component['name']); ?>
+    <a href="https://github.com/titon/toolkit" target="_blank" data-tooltip="#tooltip-<?= $key; ?>">
+        <?= esc($component['name']); ?>
 
         <?php if (!empty($component['source']['js'])) { ?>
             <span class="label small">JS</span>
         <?php } ?>
     </a>
 
-    <div id="tooltip-<?php echo $key; ?>" style="display: none">
-        <?php echo esc($component['description']); ?>
+    <div id="tooltip-<?= $key; ?>" style="display: none">
+        <?= esc($component['description']); ?>
 
         <ul class="meta-list">
             <?php if (!empty($component['source'])) {
@@ -18,7 +18,7 @@
 
                 <li>
                     <span class="secondary">Includes:</span>
-                    <?php echo implode(', ', $includes); ?>
+                    <?= implode(', ', $includes); ?>
                 </li>
             <?php } ?>
 
@@ -29,21 +29,21 @@
 
                 <li>
                     <span class="secondary">Requires:</span>
-                    <?php echo implode(', ', $requires); ?>
+                    <?= implode(', ', $requires); ?>
                 </li>
             <?php } ?>
 
             <?php if (!empty($component['source']['jquery'])) { ?>
                 <li>
                     <span class="secondary">jQuery Dependencies:</span>
-                    <?php echo implode(', ', $component['source']['jquery']); ?>
+                    <?= implode(', ', $component['source']['jquery']); ?>
                 </li>
             <?php } ?>
 
             <?php if (!empty($component['source']['moo'])) { ?>
                 <li>
                     <span class="secondary">MooTools Dependencies:</span>
-                    <?php echo implode(', ', $component['source']['moo']); ?>
+                    <?= implode(', ', $component['source']['moo']); ?>
                 </li>
             <?php } ?>
         </ul>

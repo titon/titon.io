@@ -2,8 +2,8 @@
 
 <header class="head">
     <div class="wrapper align-center">
-        <h1><?php echo $code; ?></h1>
-        <h2><?php echo $pageTitle; ?></h2>
+        <h1><?= $code; ?></h1>
+        <h2><?= $html->title(); ?></h2>
     </div>
 </header>
 

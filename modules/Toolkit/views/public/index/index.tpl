@@ -46,7 +46,7 @@
         <div class="button-toolbar">
             <a href="https://github.com/titon/toolkit/releases" class="button large is-success" target="_blank">
                 Download
-                <span class="button-suffix"><?php echo $version; ?></span>
+                <span class="button-suffix"><?= $version; ?></span>
             </a>
 
             <a href="https://github.com/titon/toolkit/blob/master/docs/pages/en/setup/getting-started.md" class="button large hide-mobile" target="_blank">

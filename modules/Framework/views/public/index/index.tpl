@@ -157,12 +157,7 @@
                     <p>Eases application building by offloading common tasks and use cases.</p>
 
                     <ul>
-                        <li>
-                            <a href="https://github.com/titon/app" target="_blank" data-tooltip="A skeleton application that conforms to the directory structure and library hierarchy suggested by the Titon framework.">
-                                Application
-                            </a>
-                        </li>
-                        <?php foreach (['cache' => 'Cache', 'debug' => 'Debug', 'env' => 'Environment', 'g11n' => 'Globalization', 'io' => 'I/O'] as $key => $name) {
+                        <?php foreach (['app' => 'Application', 'cache' => 'Cache', 'debug' => 'Debug', 'env' => 'Environment', 'g11n' => 'Globalization', 'io' => 'I/O'] as $key => $name) {
                             echo $this->open('package-item', ['package' => $packages[$key], 'key' => $key, 'name' => $name]);
                         } ?>
                     </ul>

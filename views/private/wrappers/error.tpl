@@ -1,3 +1,3 @@
-<?php echo $this->getContent(); ?>
+<?= $this->getContent(); ?>
 
-<?php echo $this->open('footer'); ?>
+<?= $this->open('footer'); ?>

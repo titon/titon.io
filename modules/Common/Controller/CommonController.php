@@ -24,15 +24,15 @@ class CommonController extends AbstractController {
     public function initialize() {
         $app = Application::getInstance();
 
+        $engine = new ViewEngine($app->getRouter()->current()->getParams());
+
         $view = new View($this->getModule()->getViewPath());
-        $view->setEngine(new ViewEngine());
+        $view->setEngine($engine);
         $view->addHelper('html', new HtmlHelper());
         $view->addHelper('asset', new AssetHelper());
         $view->addHelper('form', new FormHelper());
         $view->setVariables([
-            'env' => $app->get('env')->current()->getKey(),
-            'route' => $app->getRouter()->current(),
-            'request' => $this->getRequest()
+            'env' => $app->get('env')->current()->getKey()
         ]);
 
         $this->setView($view);
