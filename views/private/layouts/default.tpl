@@ -3,6 +3,17 @@
 <head>
     <meta name="charset" content="UTF-8">
     <title><?= $html->title(); ?></title>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://s3.amazonaws.com/titon/logo-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://s3.amazonaws.com/titon/logo-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://s3.amazonaws.com/titon/logo-114.png">
+    <link rel="apple-touch-icon-precomposed" href="https://s3.amazonaws.com/titon/titon-114.png">
+    <link href="/favicon.ico" type="image/x-icon" rel="icon">
+    <link href="/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://titon.io/">
+    <meta property="og:site_name" content="Project Titon">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://s3.amazonaws.com/titon/logo-200.png">
     <?php
     $asset->addStylesheet('//fonts.googleapis.com/css?family=Droid+Sans:400,700');
     $asset->addStylesheet('/css/vendors/font-awesome.min');
