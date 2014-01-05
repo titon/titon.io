@@ -16,7 +16,6 @@
 
     $(function() {
         $(document).ready(resizeIntro);
-        $(window).on('resize', resizeIntro);
-        //$(window).on('resize', $.throttle(resizeIntro, 50));
+        $(window).on('resize', $.throttle(resizeIntro, 50));
     });
 })(jQuery);
