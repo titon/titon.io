@@ -14,7 +14,7 @@ class Framework {
      * @return array
      */
     public static function loadPackages() {
-        return Application::getInstance()->get('cache')->getStorage('default')->store(__METHOD__, function() {
+        return Application::getInstance()->get('cache')->store(__METHOD__, function() {
             $packages = [];
 
             foreach (glob(VENDOR_DIR . 'titon/*', GLOB_ONLYDIR | GLOB_MARK) as $dir) {

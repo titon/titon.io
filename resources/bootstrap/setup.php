@@ -56,6 +56,6 @@ Config::set('titon.path', [
  * Initialize all application level components.
  */
 Application::getInstance()
-    ->set('env', new Environment())
+    ->set('env', new Environment(['bootstrapPath' => RESOURCES_DIR . 'environments/']))
     ->set('cache', new Cache())
     ->set('g11n', new G11n());

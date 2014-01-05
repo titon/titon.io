@@ -14,7 +14,7 @@ class Toolkit {
      * @return array
      */
     public static function loadComponents() {
-        return Application::getInstance()->get('cache')->getStorage('default')->store(__METHOD__, function() {
+        return Application::getInstance()->get('cache')->store(__METHOD__, function() {
             return (new JsonReader(VENDOR_DIR . 'titon/toolkit/manifest.json'))->read();
         });
     }
@@ -25,7 +25,7 @@ class Toolkit {
      * @return string
      */
     public static function loadVersion() {
-        return Application::getInstance()->get('cache')->getStorage('default')->store(__METHOD__, function() {
+        return Application::getInstance()->get('cache')->store(__METHOD__, function() {
             return file_get_contents(VENDOR_DIR . 'titon/toolkit/version.md');
         });
     }
