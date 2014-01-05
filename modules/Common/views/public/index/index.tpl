@@ -1,4 +1,6 @@
-<?php $asset->addStylesheet('/css/home.min', [], 10); ?>
+<?php
+$asset->addStylesheet('/css/home.min', [], 10);
+$asset->addScript('/js/home.min', 'footer', 10); ?>
 
 <div id="home" class="home">
     <div class="wrapper">
@@ -23,14 +25,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    function resizeIntro() {
-        $('#home').css('height', $(document).height());
-    }
-
-    $(function() {
-        $(document).ready(resizeIntro);
-        $(window).on('resize', resizeIntro);
-    });
-</script>

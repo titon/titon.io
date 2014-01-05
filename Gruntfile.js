@@ -6,10 +6,10 @@ module.exports = function(grunt) {
             options: {
                 globals: {
                     Toolkit: true,
-                    Jquery: true
+                    jQuery: true,
+                    console: true
                 },
                 browser: true,
-                mootools: true,
                 jquery: true,
                 // enforcing
                 curly: true,
@@ -26,7 +26,7 @@ module.exports = function(grunt) {
                 boss: true,
                 scripturl: true
             },
-            files: ['web/jss/**/*.js']
+            files: ['web/jss/*.js']
         },
 
         uglify: {
@@ -35,7 +35,9 @@ module.exports = function(grunt) {
             },
             build: {
                 files: {
-                    'web/js/script.min.js': ['web/jss/common.js']
+                    'web/js/script.min.js': ['web/jss/common.js'],
+                    'web/js/home.min.js': ['web/jss/home.js'],
+                    'web/js/vendors/titon.min.js': ['web/jss/vendors/titon.js']
                 }
             }
         }
