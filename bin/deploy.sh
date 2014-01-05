@@ -29,5 +29,5 @@ fi
 echo -e "\nGive Write Access"
 echo "------------------------------"
 
-chmod 0750 temp/
-find temp/ -type d -print0 | xargs -0 -rn1 chmod 0750
+chmod 0660 temp/
+find temp/ -type d -print0 | xargs -0 -rn1 chmod 0660

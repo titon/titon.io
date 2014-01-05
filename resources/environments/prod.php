@@ -6,13 +6,9 @@
  */
 
 use Titon\Cache\Storage\MemcacheStorage;
-use Titon\Debug\Debugger;
 use Titon\Mvc\Application;
 
 $app = Application::getInstance();
-
-// Disable error reporting
-Debugger::enable(false);
 
 // Use memcache in prod
 $app->get('cache')->addStorage(new MemcacheStorage('default'));
