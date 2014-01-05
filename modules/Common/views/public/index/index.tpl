@@ -29,6 +29,8 @@
         $('#home').css('height', $(document).height());
     }
 
-    $(document).ready(resizeIntro);
-    $(window).on('resize', resizeIntro);
+    $(function() {
+        $(document).ready(resizeIntro);
+        $(window).on('resize', resizeIntro);
+    });
 </script>
