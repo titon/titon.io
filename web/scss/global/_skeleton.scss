@@ -24,7 +24,7 @@ pre code {
 
 .wrapper {
     margin: 0 auto;
-    padding: 2rem;
+    padding: 2rem 1rem;
 }
 
 //-------------------- Header --------------------//
@@ -48,8 +48,6 @@ pre code {
 .foot {
     border-top: 2px solid #0e0e0e;
     color: #6c6c6c;
-
-    .wrapper { padding: 2rem; }
 }
 
 .copyright {
@@ -210,6 +208,8 @@ pre code {
 
 @include if-medium {
     html { font-size: 16px; }
+
+    .wrapper { padding: 2rem; }
 
     .head { padding-top: 60px; }
 

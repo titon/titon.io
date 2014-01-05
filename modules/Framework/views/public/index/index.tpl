@@ -11,7 +11,7 @@
         <a href="http://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it" target="_blank">YAGNI</a>,
         and <a href="http://en.wikipedia.org/wiki/GRASP_%28object-oriented_design%29" target="_blank">GRASP</a> design principles.</p>
 
-        <div class="hexagons hide-mobile">
+        <div class="hexagons hide-small">
             <a href="http://php.net" target="_blank" class="hexagon">
                 <span class="center-vertical">
                     PHP

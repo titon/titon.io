@@ -7,7 +7,7 @@
         <p>A collection of extensible front-end UI components for the responsive web.
         Each component represents encapsulated HTML, CSS and JavaScript functionality for common use cases.</p>
 
-        <div class="hexagons hide-mobile">
+        <div class="hexagons hide-small">
             <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank" class="hexagon">
                 <span class="center-vertical">
                     HTML5

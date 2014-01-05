@@ -27,7 +27,7 @@
     }
 
     .wrapper {
-        padding: 5rem;
+        padding: 3rem;
     }
 }
 
@@ -64,6 +64,7 @@
 
 @include if-medium {
     .home .wrapper {
+        padding: 5rem;
         position: absolute;
         width: 100%;
         top: 50%;

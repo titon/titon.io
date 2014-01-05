@@ -174,7 +174,7 @@
 
 //-------------------- Responsive --------------------//
 
-@include if-max($breakpoint-mobile-portrait) {
+@include if-max($breakpoint-mobile-landscape) {
     .head .wrapper h1 {
         font-size: 3.5rem;
     }
