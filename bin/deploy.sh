@@ -29,4 +29,4 @@ fi
 echo -e "\nGive Write Access"
 echo "------------------------------"
 
-find temp/ -type d -print0 | xargs -0 -rn1 chmod 0775
+chmod 775 $(find temp/ -type d)
