@@ -57,7 +57,7 @@
 </header>
 
 <main class="body">
-    <section class="segment features">
+    <section class="segment features" id="features">
         <div class="wrapper">
             <h2>Feature rich for modern applications.</h2>
             <h5>Engineered for both developers and designers.</h5>
@@ -124,7 +124,7 @@
         </div>
     </section>
 
-    <section class="segment components">
+    <section class="segment components" id="components">
         <div class="wrapper">
             <h2>Powerful user interface components.</h2>
             <h5>Continually growing with every release.</h5>
@@ -194,7 +194,7 @@
         </div>
     </section>
 
-    <section class="segment examples">
+    <section class="segment examples" id="examples">
         <div class="wrapper">
             <h2>Easy to integrate.</h2>
             <h5>Even easier to understand.</h5>
