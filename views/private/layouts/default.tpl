@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
 <head>
     <meta name="charset" content="UTF-8">
     <title><?= $html->title(); ?></title>
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://s3.amazonaws.com/titon/logo-144.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://s3.amazonaws.com/titon/logo-144.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://s3.amazonaws.com/titon/logo-114.png">
-    <link rel="apple-touch-icon-precomposed" href="https://s3.amazonaws.com/titon/titon-114.png">
+    <link rel="apple-touch-icon-precomposed" href="https://s3.amazonaws.com/titon/logo-114.png">
     <link href="/favicon.ico" type="image/x-icon" rel="icon">
     <link href="/favicon.ico" type="image/x-icon" rel="shortcut icon">
     <meta property="og:type" content="website">
@@ -28,7 +28,7 @@
     echo $asset->stylesheets($env);
     echo $asset->scripts('header', $env); ?>
 </head>
-<body<?php if ($bodyClass = $this->data('bodyClass')) { ?> class="<?= $bodyClass; ?>" <?php }?>>
+<body class="<?= $this->config->module . '-' . $this->config->controller . '-' . $this->config->action; ?> <?= $this->data('bodyClass'); ?>">
     <div class="skeleton">
         <?= $this->getContent(); ?>
     </div>
