@@ -1,4 +1,7 @@
-<?php $this->wrapWith('landing'); ?>
+<?php
+$this->wrapWith('landing');
+
+$breadcrumb->add('Toolkit', 'toolkit'); ?>
 
 <header class="head">
     <div class="wrapper">

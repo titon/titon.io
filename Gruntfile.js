@@ -36,8 +36,7 @@ module.exports = function(grunt) {
             build: {
                 files: {
                     'web/js/script.min.js': ['web/jss/common.js'],
-                    'web/js/home.min.js': ['web/jss/home.js'],
-                    'web/js/vendors/titon.min.js': ['web/jss/vendors/titon.js']
+                    'web/js/home.min.js': ['web/jss/home.js']
                 }
             }
         }

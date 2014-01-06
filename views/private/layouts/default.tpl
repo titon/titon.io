@@ -7,13 +7,15 @@ $asset->addScript('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
 $asset->addScript('/js/vendors/titon.min');
 $asset->addScript('/js/script.min');
 
+$breadcrumb->add('Project Titon', '/');
+
 $env = $this->data('env', 'prod'); ?>
 
 <!DOCTYPE html>
 <html xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
 <head>
     <meta name="charset" content="UTF-8">
-    <title><?= $html->title(); ?></title>
+    <title><?= $breadcrumb->title(); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://s3.amazonaws.com/titon/logo-144.png">

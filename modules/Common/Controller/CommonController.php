@@ -7,13 +7,13 @@
 
 namespace Common\Controller;
 
-use Titon\Common\Registry;
 use Titon\Controller\Controller\AbstractController;
 use Titon\Mvc\Application;
 use Titon\View\Engine\ViewEngine;
 use Titon\View\Helper\Html\AssetHelper;
 use Titon\View\Helper\Html\FormHelper;
 use Titon\View\Helper\Html\HtmlHelper;
+use Titon\View\Helper\Html\BreadcrumbHelper;
 use Titon\View\View;
 
 class CommonController extends AbstractController {
@@ -29,8 +29,9 @@ class CommonController extends AbstractController {
         $view = new View($this->getModule()->getViewPath());
         $view->setEngine($engine);
         $view->addHelper('html', new HtmlHelper());
-        $view->addHelper('asset', new AssetHelper());
+        $view->addHelper('asset', new AssetHelper(['webroot' => WEB_DIR]));
         $view->addHelper('form', new FormHelper());
+        $view->addHelper('breadcrumb', new BreadcrumbHelper());
         $view->setVariables([
             'env' => $app->get('env')->current()->getKey()
         ]);

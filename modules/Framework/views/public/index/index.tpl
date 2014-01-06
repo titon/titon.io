@@ -1,4 +1,7 @@
-<?php $this->wrapWith('landing'); ?>
+<?php
+$this->wrapWith('landing');
+
+$breadcrumb->add('Framework', 'framework'); ?>
 
 <header class="head">
     <div class="wrapper">
@@ -9,7 +12,8 @@
         <a href="http://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target="_blank">DRY</a>,
         <a href="http://en.wikipedia.org/wiki/KISS_principle" target="_blank">KISS</a>,
         <a href="http://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it" target="_blank">YAGNI</a>,
-        and <a href="http://en.wikipedia.org/wiki/GRASP_%28object-oriented_design%29" target="_blank">GRASP</a> design principles.</p>
+        <a href="http://en.wikipedia.org/wiki/GRASP_%28object-oriented_design%29" target="_blank">GRASP</a>,
+        and <a href="http://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29">SOLID</a> design principles.</p>
 
         <div class="hexagons hide-small">
             <a href="http://php.net" target="_blank" class="hexagon">
