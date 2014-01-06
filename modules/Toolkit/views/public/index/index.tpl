@@ -163,7 +163,7 @@ $breadcrumb->add('Toolkit', 'toolkit'); ?>
                     <p>Common user interface concepts packaged as static HTML elements.</p>
 
                     <ul>
-                        <?php foreach (['breadcrumb', 'button', 'buttonGroup', 'grid', 'icon', 'inputGroup', 'label', 'notice', 'pagination', 'progress', 'table'] as $key) {
+                        <?php foreach (['breadcrumb', 'button', 'button-group', 'grid', 'icon', 'input-group', 'label', 'notice', 'pagination', 'progress', 'table'] as $key) {
                             echo $this->open('component-item', ['component' => $components[$key], 'key' => $key]);
                         } ?>
                     </ul>
@@ -186,8 +186,8 @@ $breadcrumb->add('Toolkit', 'toolkit'); ?>
 
                     <ul>
                         <?php foreach ([
-                           'accordion', 'blackout', 'carousel', 'flyout', 'input', 'lazyLoad', 'matrix', 'modal',
-                           'pin', 'popover', 'showcase', 'stalker', 'tabs', 'tooltip', 'typeAhead'
+                           'accordion', 'blackout', 'carousel', 'flyout', 'input', 'lazy-load', 'matrix', 'modal',
+                           'pin', 'popover', 'showcase', 'stalker', 'tabs', 'tooltip', 'type-ahead'
                         ] as $key) {
                             echo $this->open('component-item', ['component' => $components[$key], 'key' => $key]);
                         } ?>
