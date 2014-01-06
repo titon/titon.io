@@ -226,7 +226,7 @@ $breadcrumb->add('Toolkit', 'toolkit'); ?>
 &lt;/div&gt;</code></pre>
                 </div>
 
-                <div class="col medium-4 medium-push-1 large-6 end">
+                <div class="col medium-4 large-6 end">
                     <p>Initialize JavaScript functionality for components using familiar plugin syntax.</p>
 
                     <div class="tabs example-tabs">
