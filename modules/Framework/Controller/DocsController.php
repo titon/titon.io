@@ -8,7 +8,7 @@ class DocsController extends FrameworkController {
      * Temporary redirect.
      */
     public function index() {
-        $this->getResponse()->redirect(url('framework'));
+        return $this->getResponse()->redirect(url('framework'));
     }
 
     /**

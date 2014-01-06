@@ -13,7 +13,6 @@ class IndexController extends CommonController {
      * Homepage.
      */
     public function index() {
-        $this->getView()->setVariable('pageTitle', 'Project Titon');
     }
 
 }

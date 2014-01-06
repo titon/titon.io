@@ -8,7 +8,7 @@ class DocsController extends ToolkitController {
      * Temporary redirect.
      */
     public function index() {
-        $this->getResponse()->redirect(url('toolkit'));
+        return $this->getResponse()->redirect(url('toolkit'));
     }
 
     /**
