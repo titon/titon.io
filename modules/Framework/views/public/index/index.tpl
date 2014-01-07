@@ -7,13 +7,7 @@ $breadcrumb->add('Framework', 'framework'); ?>
     <div class="wrapper">
         <h1>Framework</h1>
 
-        <p>A collection of modular back-end packages to ease the process of application building by off-loading common tasks.
-        Provides independent abstract libraries that follow the
-        <a href="http://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target="_blank">DRY</a>,
-        <a href="http://en.wikipedia.org/wiki/KISS_principle" target="_blank">KISS</a>,
-        <a href="http://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it" target="_blank">YAGNI</a>,
-        <a href="http://en.wikipedia.org/wiki/GRASP_%28object-oriented_design%29" target="_blank">GRASP</a>,
-        and <a href="http://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29">SOLID</a> design principles.</p>
+        <h6>Ease the process of application development by off-loading common tasks with these lightweight modular back-end packages.</h6>
 
         <div class="hexagons hide-small">
             <a href="http://php.net" target="_blank" class="hexagon">
@@ -79,47 +73,65 @@ $breadcrumb->add('Framework', 'framework'); ?>
                 <li>
                     <span class="hexagon-32"><span class="icon-16-abstract"></span></span>
                     <h6>Abstraction</h6>
-                    <p>Provides an interface for easier code implementation and reduction.</p>
+                    <p>Provides an architecture for easier code implementation and reduction, through interfaces, traits, and abstract classes.</p>
                 </li>
                 <li>
                     <span class="hexagon-32"><span class="icon-16-interoperable"></span></span>
                     <h6>Interoperability</h6>
-                    <p>Works seamlessly with external libraries, vendors, and third-parties.</p>
+                    <p>Works seamlessly with external libraries, vendors, and third-parties. Even smoother through Composer.</p>
                 </li>
                 <li>
                     <span class="hexagon-32"><span class="icon-16-coupling"></span></span>
                     <h6>Low Coupling</h6>
-                    <p>Requires minimal dependency and cross-package requirements.</p>
+                    <p>Requires minimal internal and external dependencies with low cross-package requirements.</p>
                 </li>
                 <li>
                     <span class="hexagon-32"><span class="icon-16-cohesion"></span></span>
                     <h6>High Cohesion</h6>
-                    <p>Supplies focused classes for easier manageability and understanding.</p>
+                    <p>Supplies focused classes, and their sub-classes, for easier manageability and understanding.</p>
                 </li>
                 <li>
                     <span class="hexagon-32"><span class="icon-16-di"></span></span>
                     <h6>Dependency Inversion</h6>
-                    <p>Depends on abstraction instead of concrete implementations.</p>
+                    <p>Wide array of dependency support through registries, factories, containers, service locators, and more.</p>
                 </li>
                 <li>
-                    <span class="hexagon-32"><span class="icon-16-accessible"></span></span>
+                    <span class="hexagon-32"><span class="icon-16-polymorph"></span></span>
                     <h6>Polymorphism</h6>
-                    <p>Supports diverse functionality through a common interface.</p>
+                    <p>Supports diverse type and relational functionality through a common interface.</p>
                 </li>
                 <li>
                     <span class="hexagon-32"><span class="icon-16-database"></span></span>
                     <h6>Database Modeling</h6>
-                    <p>Provides a powerful database abstraction layer and object relational mapper for popular database drivers.</p>
+                    <p>Provides a powerful database abstraction layer and object relational mapper for popular database drivers &mdash; even MongoDB.</p>
                 </li>
                 <li>
                     <span class="hexagon-32"><span class="icon-16-responsible"></span></span>
                     <h6>Single Responsibility</h6>
-                    <p>Classes are designed and encapsulated for a single purpose.</p>
+                    <p>Classes are designed and encapsulated for a single purpose. Why increase class complexity?</p>
                 </li>
                 <li>
                     <span class="hexagon-32"><span class="icon-16-extensible"></span></span>
                     <h6>Configurable</h6>
-                    <p>Encourages a configuration over convention approach.</p>
+                    <p>Encourages a configuration over convention approach. Further enhanced by powerful traits and base classes.</p>
+                </li>
+                <li>
+                    <span class="hexagon-32"><span class="icon-16-principles"></span></span>
+                    <h6>Software Principles</h6>
+                    <p>Encourages the practice of <a href="http://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target="_blank">DRY</a>,
+                    <a href="http://en.wikipedia.org/wiki/KISS_principle" target="_blank">KISS</a>,
+                    <a href="http://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it" target="_blank">YAGNI</a>,
+                    <a href="http://en.wikipedia.org/wiki/GRASP_%28object-oriented_design%29" target="_blank">GRASP</a>,
+                    and <a href="http://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29" target="_blank">SOLID</a> design principles.</p>
+                </li>
+                <li>
+                    <span class="hexagon-32"><span class="icon-16-patterns"></span></span>
+                    <h6>Design Patterns</h6>
+                    <p>Makes use of popular design patterns like
+                    <a href="http://en.wikipedia.org/wiki/Factory_pattern" target="_blank">Factory</a>,
+                    <a href="http://en.wikipedia.org/wiki/Observer_pattern" target="_blank">Observer</a>,
+                    <a href="http://en.wikipedia.org/wiki/Adapter_pattern" target="_blank">Adapter</a>, and
+                    <a href="http://en.wikipedia.org/wiki/Decorator_pattern" target="_blank">Decorator</a>.</p>
                 </li>
             </ul>
         </div>

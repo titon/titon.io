@@ -2,12 +2,16 @@
 
 .head {
     .wrapper {
-        padding: 2rem 10%;
+        padding: 2rem 0;
         text-align: center;
 
         h1 { font-size: 5rem; }
-
         h1, p { text-shadow: 0 1px black(.5); }
+
+        h6 {
+            width: 80%;
+            margin: 1rem auto 2rem auto;
+        }
     }
 }
 
@@ -190,7 +194,9 @@
 
 @include if-medium {
     .head .wrapper {
-        padding: 3rem 15%;
+        padding: 3rem 0;
+
+        h6 { width: 50%; }
     }
 
     .body .wrapper {
@@ -207,7 +213,7 @@
 }
 
 @include if-large {
-    .head .wrapper { padding: 4rem 20%; }
+    .head .wrapper { padding: 4rem 0; }
 
     .body .wrapper {
         padding-top: 4rem;

@@ -7,8 +7,7 @@ $breadcrumb->add('Toolkit', 'toolkit'); ?>
     <div class="wrapper">
         <h1>Toolkit</h1>
 
-        <p>A collection of extensible front-end UI components for the responsive web.
-        Each component represents encapsulated HTML, CSS and JavaScript functionality for common use cases.</p>
+        <h6>Extensible front-end HTML, CSS, and JavaScript user interface components for the responsive, mobile, and modern web.</h6>
 
         <div class="hexagons hide-small">
             <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank" class="hexagon">
@@ -71,57 +70,57 @@ $breadcrumb->add('Toolkit', 'toolkit'); ?>
                 <li>
                     <span class="hexagon-32"><span class="icon-16-mobile"></span></span>
                     <h6>Mobile First</h6>
-                    <p>Optimized for mobile and touch devices.</p>
+                    <p>Optimized for mobile and touch devices by designated them as first-class priorities.</p>
                 </li>
                 <li>
                     <span class="hexagon-32"><span class="icon-16-responsive"></span></span>
-                    <h6>Responsive</h6>
-                    <p>Fluid by design to work seamlessly in all resolutions.</p>
+                    <h6>Responsive Design</h6>
+                    <p>Fluid by design to work seamlessly in all resolutions. No more pixel perfect designs &mdash; unless that's your thing.</p>
                 </li>
                 <li>
                     <span class="hexagon-32"><span class="icon-16-semantic"></span></span>
-                    <h6>Semantic</h6>
-                    <p>Relays information alongside presentation using valid markup.</p>
+                    <h6>Semantic Markup</h6>
+                    <p>Structured using semantically valid HTML tags to relay information alongside presentation.</p>
                 </li>
                 <li>
                     <span class="hexagon-32"><span class="icon-16-flexible"></span></span>
-                    <h6>Flexible</h6>
-                    <p>Provides no visual styles for easier integration.</p>
+                    <h6>Flexible Styles</h6>
+                    <p>Provides no visual CSS styles allowing for easier integration and customization. No more tedious style overriding!</p>
                 </li>
                 <li>
                     <span class="hexagon-32"><span class="icon-16-accelerated"></span></span>
-                    <h6>Accelerated</h6>
-                    <p>Improves animations and transitions with CSS and the GPU.</p>
+                    <h6>Accelerated Animations</h6>
+                    <p>Improves animations and transitions with CSS3 and the GPU. Older browsers will fall back to simple display toggling.</p>
                 </li>
                 <li>
                     <span class="hexagon-32"><span class="icon-16-extensible"></span></span>
-                    <h6>Extensible</h6>
-                    <p>Encourages a configuration over convention approach.</p>
+                    <h6>Extensible Configuration</h6>
+                    <p>Encourages a configuration over convention approach. Customizable options, templates, builds, and more.</p>
                 </li>
                 <li>
                     <span class="hexagon-32"><span class="icon-16-scalable"></span></span>
-                    <h6>Scalable</h6>
-                    <p>Fonts, margins, and padding scaled with <var>em</var> and <var>rem</var> measurements.</p>
+                    <h6>Scalable Spacing</h6>
+                    <p>Fonts, margins, and padding scaled with <var>em</var> and <var>rem</var> measurements. Eases responsive rendering.</p>
                 </li>
                 <li>
                     <span class="hexagon-32"><span class="icon-16-reusable"></span></span>
-                    <h6>Reusable</h6>
-                    <p>Simpler code re-use through the BEM methodology.</p>
+                    <h6>Reusable Code</h6>
+                    <p>Easier code re-use through the CSS block-element-modifier (BEM) methodology, and an advanced JavaScript component system.</p>
                 </li>
                 <li>
                     <span class="hexagon-32"><span class="icon-16-accessible"></span></span>
-                    <h6>Accessible</h6>
-                    <p>Progressive enhancement for anyone and everyone.</p>
+                    <h6>Progressive Enhancement</h6>
+                    <p>Enables shiny new features if a users device supports it. Further increases accessibility and portability.</p>
                 </li>
                 <li>
                     <span class="hexagon-32"><span class="icon-16-adaptable"></span></span>
-                    <h6>Adaptable</h6>
-                    <p>Graceful degradation for legacy browsers.</p>
+                    <h6>Graceful Degradation</h6>
+                    <p>Increases adaptability of legacy browsers by disabling or removing advanced features and providing bare bones functionality.</p>
                 </li>
                 <li>
                     <span class="hexagon-32"><span class="icon-16-stable"></span></span>
                     <h6>Stable</h6>
-                    <p>Tested through and through.</p>
+                    <p>Tested in a wide array of browsers, operating systems, and devices. Primed and ready for the modern age.</p>
                 </li>
             </ul>
         </div>
