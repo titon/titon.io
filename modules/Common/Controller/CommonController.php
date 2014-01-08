@@ -30,7 +30,7 @@ class CommonController extends AbstractController {
         $view->setEngine($engine);
         $view->addHelper('html', new HtmlHelper());
         $view->addHelper('asset', new AssetHelper(['webroot' => WEB_DIR]));
-        $view->addHelper('form', new FormHelper());
+        $view->addHelper('form', (new FormHelper())->setRequest($this->getRequest()));
         $view->addHelper('breadcrumb', new BreadcrumbHelper());
         $view->setVariables([
             'env' => $app->get('env')->current()->getKey()
