@@ -1,5 +1,5 @@
 <?php
-$mode = value('mode', 'single'); ?>
+$mode = $demo->value('mode', 'single'); ?>
 
 <p>
     <button type="button" onclick="appendItem();" class="button">Append Item</button>
@@ -64,17 +64,17 @@ $mode = value('mode', 'single'); ?>
     <?php if ($vendor === 'mootools') { ?>
         window.addEvent('domready', function() {
             $('matrix').matrix({
-                gutter: <?php number('gutter', 20); ?>,
-                rtl: <?php bool('rtl', false); ?>,
-                defer: <?php bool('defer', true); ?>
+                gutter: <?= $demo->number('gutter', 20); ?>,
+                rtl: <?= $demo->bool('rtl', false); ?>,
+                defer: <?= $demo->bool('defer', true); ?>
             });
         });
     <?php } else { ?>
         $(function() {
             $('#matrix').matrix({
-                gutter: <?php number('gutter', 20); ?>,
-                rtl: <?php bool('rtl', false); ?>,
-                defer: <?php bool('defer', true); ?>
+                gutter: <?= $demo->number('gutter', 20); ?>,
+                rtl: <?= $demo->bool('rtl', false); ?>,
+                defer: <?= $demo->bool('defer', true); ?>
             });
         });
     <?php } ?>

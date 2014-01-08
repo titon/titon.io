@@ -1,6 +1,6 @@
 
-<div class="demo-pin <?php echo value('location', 'right'); ?>">
-    <div class="pin" id="pin" style="<?php if ($height = value('height')) echo 'height: ' . $height . 'px;'; if ($top = value('top')) echo 'top: ' . $top . 'px;'; ?>">
+<div class="demo-pin <?php echo $demo->value('location', 'right'); ?>">
+    <div class="pin" id="pin" style="<?php if ($height = $demo->value('height')) echo 'height: ' . $height . 'px;'; if ($top = $demo->value('top')) echo 'top: ' . $top . 'px;'; ?>">
         This div should stay positioned at the top right of the page, regardless of window scroll.<br><br>
         It will also stay contained within the parent.
     </div>
@@ -14,23 +14,23 @@
     <?php if ($vendor === 'mootools') { ?>
         window.addEvent('domready', function() {
             $('pin').pin({
-                animation: <?php string('animation'); ?>,
-                location: <?php string('location', 'right'); ?>,
-                xOffset: <?php number('xOffset', 0); ?>,
-                yOffset: <?php number('yOffset', 0); ?>,
-                throttle: <?php number('throttle', 50); ?>,
-                fixed: <?php bool('fixed', false); ?>
+                animation: <?= $demo->string('animation'); ?>,
+                location: <?= $demo->string('location', 'right'); ?>,
+                xOffset: <?= $demo->number('xOffset', 0); ?>,
+                yOffset: <?= $demo->number('yOffset', 0); ?>,
+                throttle: <?= $demo->number('throttle', 50); ?>,
+                fixed: <?= $demo->bool('fixed', false); ?>
             });
         });
     <?php } else { ?>
         $(function() {
             $('#pin').pin({
-                animation: <?php string('animation'); ?>,
-                location: <?php string('location', 'right'); ?>,
-                xOffset: <?php number('xOffset', 0); ?>,
-                yOffset: <?php number('yOffset', 0); ?>,
-                throttle: <?php number('throttle', 50); ?>,
-                fixed: <?php bool('fixed', false); ?>
+                animation: <?= $demo->string('animation'); ?>,
+                location: <?= $demo->string('location', 'right'); ?>,
+                xOffset: <?= $demo->number('xOffset', 0); ?>,
+                yOffset: <?= $demo->number('yOffset', 0); ?>,
+                throttle: <?= $demo->number('throttle', 50); ?>,
+                fixed: <?= $demo->bool('fixed', false); ?>
             });
         });
     <?php } ?>

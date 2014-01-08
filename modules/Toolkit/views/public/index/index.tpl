@@ -119,7 +119,7 @@ $breadcrumb->add('Toolkit', 'toolkit'); ?>
                 </li>
                 <li>
                     <span class="hexagon-32"><span class="icon-16-stable"></span></span>
-                    <h6>Stable</h6>
+                    <h6>Stable Codebase</h6>
                     <p>Tested in a wide array of browsers, operating systems, and devices. Primed and ready for the modern age.</p>
                 </li>
             </ul>

@@ -17,25 +17,25 @@
     <?php if ($vendor  === 'mootools') { ?>
         window.addEvent('domready', function() {
             $$('.js-modal').modal({
-                animation: <?php string('animation', 'fade'); ?>,
-                className: <?php string('className'); ?>,
-                ajax: <?php bool('ajax', true); ?>,
-                draggable: <?php bool('draggable', false); ?>,
-                blackout: <?php bool('blackout', true); ?>,
-                showLoading: <?php bool('showLoading', true); ?>,
-                fullScreen: <?php bool('fullScreen', false); ?>
+                animation: <?= $demo->string('animation', 'fade'); ?>,
+                className: <?= $demo->string('className'); ?>,
+                ajax: <?= $demo->bool('ajax', true); ?>,
+                draggable: <?= $demo->bool('draggable', false); ?>,
+                blackout: <?= $demo->bool('blackout', true); ?>,
+                showLoading: <?= $demo->bool('showLoading', true); ?>,
+                fullScreen: <?= $demo->bool('fullScreen', false); ?>
             });
         });
     <?php } else { ?>
         $(function() {
             $('.js-modal').modal({
-                animation: <?php string('animation', 'fade'); ?>,
-                className: <?php string('className'); ?>,
-                ajax: <?php bool('ajax', true); ?>,
-                draggable: <?php bool('draggable', false); ?>,
-                blackout: <?php bool('blackout', true); ?>,
-                showLoading: <?php bool('showLoading', true); ?>,
-                fullScreen: <?php bool('fullScreen', false); ?>
+                animation: <?= $demo->string('animation', 'fade'); ?>,
+                className: <?= $demo->string('className'); ?>,
+                ajax: <?= $demo->bool('ajax', true); ?>,
+                draggable: <?= $demo->bool('draggable', false); ?>,
+                blackout: <?= $demo->bool('blackout', true); ?>,
+                showLoading: <?= $demo->bool('showLoading', true); ?>,
+                fullScreen: <?= $demo->bool('fullScreen', false); ?>
             });
         });
     <?php } ?>

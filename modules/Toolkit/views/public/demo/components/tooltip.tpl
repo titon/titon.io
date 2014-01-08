@@ -10,35 +10,35 @@
     <?php if ($vendor === 'mootools') { ?>
         window.addEvent('domready', function() {
             $$('.js-tooltip').tooltip({
-                animation: <?php string('animation'); ?>,
-                mode: <?php string('mode', 'hover'); ?>,
-                ajax: <?php bool('ajax', false); ?>,
-                follow: <?php bool('follow', false); ?>,
-                getContent: '<?php echo value('ajax') ? 'href' : 'data-tooltip'; ?>',
-                position: <?php string('position', 'topRight'); ?>,
-                showLoading: <?php bool('showLoading', true); ?>,
-                showTitle: <?php bool('showTitle', true); ?>,
-                mouseThrottle: <?php number('mouseThrottle', 50); ?>,
-                xOffset: <?php number('xOffset', 0); ?>,
-                yOffset: <?php number('yOffset', 0); ?>,
-                delay: <?php number('delay', 0); ?>
+                animation: <?= $demo->string('animation'); ?>,
+                mode: <?= $demo->string('mode', 'hover'); ?>,
+                ajax: <?= $demo->bool('ajax', false); ?>,
+                follow: <?= $demo->bool('follow', false); ?>,
+                getContent: '<?php echo $demo->value('ajax') ? 'href' : 'data-tooltip'; ?>',
+                position: <?= $demo->string('position', 'topRight'); ?>,
+                showLoading: <?= $demo->bool('showLoading', true); ?>,
+                showTitle: <?= $demo->bool('showTitle', true); ?>,
+                mouseThrottle: <?= $demo->number('mouseThrottle', 50); ?>,
+                xOffset: <?= $demo->number('xOffset', 0); ?>,
+                yOffset: <?= $demo->number('yOffset', 0); ?>,
+                delay: <?= $demo->number('delay', 0); ?>
             });
         });
     <?php } else { ?>
         $(function() {
             $('.js-tooltip').tooltip({
-                animation: <?php string('animation'); ?>,
-                mode: <?php string('mode', 'hover'); ?>,
-                ajax: <?php bool('ajax', false); ?>,
-                follow: <?php bool('follow', false); ?>,
-                getContent: '<?php echo value('ajax') ? 'href' : 'data-tooltip'; ?>',
-                position: <?php string('position', 'topRight'); ?>,
-                showLoading: <?php bool('showLoading', true); ?>,
-                showTitle: <?php bool('showTitle', true); ?>,
-                mouseThrottle: <?php number('mouseThrottle', 50); ?>,
-                xOffset: <?php number('xOffset', 0); ?>,
-                yOffset: <?php number('yOffset', 0); ?>,
-                delay: <?php number('delay', 0); ?>
+                animation: <?= $demo->string('animation'); ?>,
+                mode: <?= $demo->string('mode', 'hover'); ?>,
+                ajax: <?= $demo->bool('ajax', false); ?>,
+                follow: <?= $demo->bool('follow', false); ?>,
+                getContent: '<?php echo $demo->value('ajax') ? 'href' : 'data-tooltip'; ?>',
+                position: <?= $demo->string('position', 'topRight'); ?>,
+                showLoading: <?= $demo->bool('showLoading', true); ?>,
+                showTitle: <?= $demo->bool('showTitle', true); ?>,
+                mouseThrottle: <?= $demo->number('mouseThrottle', 50); ?>,
+                xOffset: <?= $demo->number('xOffset', 0); ?>,
+                yOffset: <?= $demo->number('yOffset', 0); ?>,
+                delay: <?= $demo->number('delay', 0); ?>
             });
         });
     <?php } ?>

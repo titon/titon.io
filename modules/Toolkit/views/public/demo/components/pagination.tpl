@@ -1,9 +1,9 @@
 <?php
-$count = value('count', 5);
-$state = value('state');
-$classes = array(value('size'), value('shape'), value('effect'));
+$count = $demo->value('count', 5);
+$state = $demo->value('state');
+$classes = array($demo->value('size'), $demo->value('shape'), $demo->value('effect'));
 
-if ($mod = value('modifier')) {
+if ($mod = $demo->value('modifier')) {
     $classes[] = 'pagination--' . $mod;
 } else {
     $classes[] = 'pagination';

@@ -45,19 +45,19 @@
     <?php if ($vendor === 'mootools') { ?>
         window.addEvent('domready', function() {
             $('accordion').accordion({
-                mode: <?php string('mode', 'click'); ?>,
-                defaultIndex: <?php number('defaultIndex'); ?>,
-                multiple: <?php bool('multiple', false); ?>,
-                collapsible: <?php bool('collapsible', false); ?>
+                mode: <?= $demo->string('mode', 'click'); ?>,
+                defaultIndex: <?= $demo->number('defaultIndex'); ?>,
+                multiple: <?= $demo->bool('multiple', false); ?>,
+                collapsible: <?= $demo->bool('collapsible', false); ?>
             });
         });
     <?php } else { ?>
         $(function() {
             $('#accordion').accordion({
-                mode: <?php string('mode', 'click'); ?>,
-                defaultIndex: <?php number('defaultIndex'); ?>,
-                multiple: <?php bool('multiple', false); ?>,
-                collapsible: <?php bool('collapsible', false); ?>
+                mode: <?= $demo->string('mode', 'click'); ?>,
+                defaultIndex: <?= $demo->number('defaultIndex'); ?>,
+                multiple: <?= $demo->bool('multiple', false); ?>,
+                collapsible: <?= $demo->bool('collapsible', false); ?>
             });
         });
     <?php } ?>

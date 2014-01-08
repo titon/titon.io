@@ -14,14 +14,14 @@
 
             $$('.js-flyout').flyout('ajax/flyout.php', {
                 delegate: '.js-flyout',
-                className: <?php string('className'); ?>,
-                mode: <?php string('mode', 'hover'); ?>,
-                getUrl: <?php string('getUrl', 'href'); ?>,
-                xOffset: <?php number('xOffset'); ?>,
-                yOffset: <?php number('yOffset'); ?>,
-                showDelay: <?php number('showDelay', 350); ?>,
-                hideDelay: <?php number('hideDelay', 500); ?>,
-                itemLimit: <?php number('itemLimit', 15); ?>
+                className: <?= $demo->string('className'); ?>,
+                mode: <?= $demo->string('mode', 'hover'); ?>,
+                getUrl: <?= $demo->string('getUrl', 'href'); ?>,
+                xOffset: <?= $demo->number('xOffset'); ?>,
+                yOffset: <?= $demo->number('yOffset'); ?>,
+                showDelay: <?= $demo->number('showDelay', 350); ?>,
+                hideDelay: <?= $demo->number('hideDelay', 500); ?>,
+                itemLimit: <?= $demo->number('itemLimit', 15); ?>
             });
         });
     <?php } else { ?>
@@ -31,14 +31,14 @@
             });
 
             $('.js-flyout').flyout('ajax/flyout.php', {
-                className: <?php string('className'); ?>,
-                mode: <?php string('mode', 'hover'); ?>,
-                getUrl: <?php string('getUrl', 'href'); ?>,
-                xOffset: <?php number('xOffset'); ?>,
-                yOffset: <?php number('yOffset'); ?>,
-                showDelay: <?php number('showDelay', 350); ?>,
-                hideDelay: <?php number('hideDelay', 500); ?>,
-                itemLimit: <?php number('itemLimit', 15); ?>
+                className: <?= $demo->string('className'); ?>,
+                mode: <?= $demo->string('mode', 'hover'); ?>,
+                getUrl: <?= $demo->string('getUrl', 'href'); ?>,
+                xOffset: <?= $demo->number('xOffset'); ?>,
+                yOffset: <?= $demo->number('yOffset'); ?>,
+                showDelay: <?= $demo->number('showDelay', 350); ?>,
+                hideDelay: <?= $demo->number('hideDelay', 500); ?>,
+                itemLimit: <?= $demo->number('itemLimit', 15); ?>
             });
         });
     <?php } ?>

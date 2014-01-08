@@ -1,7 +1,7 @@
 <?php
-$classes = array(value('size'), value('state'));
+$classes = array($demo->value('size'), $demo->value('state'));
 
-if ($mod = value('modifier')) {
+if ($mod = $demo->value('modifier')) {
     $classes[] = 'label--' . $mod;
 } else {
     $classes[] = 'label';

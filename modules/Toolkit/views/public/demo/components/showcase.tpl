@@ -1,7 +1,7 @@
 <?php
-$group = value('group', true) ? 'Titon' : '';
+$group = $demo->value('group', true) ? 'Titon' : '';
 
-for ($i = 1; $i <= value('count', 5); $i++) {
+for ($i = 1; $i <= $demo->value('count', 5); $i++) {
     $width = rand(200, 800);
     $height = rand(200, 800);?>
 
@@ -15,17 +15,17 @@ for ($i = 1; $i <= value('count', 5); $i++) {
     <?php if ($vendor === 'mootools') { ?>
         window.addEvent('domready', function() {
             $$('.js-showcase').showcase({
-                className: <?php string('className'); ?>,
-                blackout: <?php bool('blackout', true); ?>,
-                gutter: <?php number('gutter', 50); ?>
+                className: <?= $demo->string('className'); ?>,
+                blackout: <?= $demo->bool('blackout', true); ?>,
+                gutter: <?= $demo->number('gutter', 50); ?>
             });
         });
     <?php } else { ?>
         $(function() {
             $('.js-showcase').showcase({
-                className: <?php string('className'); ?>,
-                blackout: <?php bool('blackout', true); ?>,
-                gutter: <?php number('gutter', 50); ?>
+                className: <?= $demo->string('className'); ?>,
+                blackout: <?= $demo->bool('blackout', true); ?>,
+                gutter: <?= $demo->number('gutter', 50); ?>
             });
         });
     <?php } ?>

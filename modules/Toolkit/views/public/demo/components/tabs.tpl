@@ -67,53 +67,53 @@
     <?php if ($vendor === 'mootools') { ?>
         window.addEvent('domready', function() {
             $('tabs-1').tabs({
-                mode: <?php string('mode', 'click'); ?>,
-                ajax: <?php bool('ajax', true); ?>,
-                collapsible: <?php bool('collapsible', false); ?>,
-                defaultIndex: <?php number('defaultIndex'); ?>,
-                persistState: <?php bool('persistState', false); ?>,
-                loadFragment: <?php bool('loadFragment', true); ?>,
-                preventDefault: <?php bool('preventDefault', true); ?>,
-                cookie: <?php string('cookie'); ?>,
-                cookieDuration: <?php number('defaultIndex', 30); ?>
+                mode: <?= $demo->string('mode', 'click'); ?>,
+                ajax: <?= $demo->bool('ajax', true); ?>,
+                collapsible: <?= $demo->bool('collapsible', false); ?>,
+                defaultIndex: <?= $demo->number('defaultIndex'); ?>,
+                persistState: <?= $demo->bool('persistState', false); ?>,
+                loadFragment: <?= $demo->bool('loadFragment', true); ?>,
+                preventDefault: <?= $demo->bool('preventDefault', true); ?>,
+                cookie: <?= $demo->string('cookie'); ?>,
+                cookieDuration: <?= $demo->number('defaultIndex', 30); ?>
             });
 
             $('tabs-2').tabs({
-                mode: <?php string('mode', 'click'); ?>,
-                ajax: <?php bool('ajax', true); ?>,
-                collapsible: <?php bool('collapsible', false); ?>,
-                defaultIndex: <?php number('defaultIndex'); ?>,
-                persistState: <?php bool('persistState', false); ?>,
-                loadFragment: <?php bool('loadFragment', true); ?>,
-                preventDefault: <?php bool('preventDefault', true); ?>,
-                cookie: <?php string('cookie'); ?>,
-                cookieDuration: <?php number('cookieDuration', 30); ?>
+                mode: <?= $demo->string('mode', 'click'); ?>,
+                ajax: <?= $demo->bool('ajax', true); ?>,
+                collapsible: <?= $demo->bool('collapsible', false); ?>,
+                defaultIndex: <?= $demo->number('defaultIndex'); ?>,
+                persistState: <?= $demo->bool('persistState', false); ?>,
+                loadFragment: <?= $demo->bool('loadFragment', true); ?>,
+                preventDefault: <?= $demo->bool('preventDefault', true); ?>,
+                cookie: <?= $demo->string('cookie'); ?>,
+                cookieDuration: <?= $demo->number('cookieDuration', 30); ?>
             });
         });
     <?php } else { ?>
         $(function() {
             $('#tabs-1').tabs({
-                mode: <?php string('mode', 'click'); ?>,
-                ajax: <?php bool('ajax', true); ?>,
-                collapsible: <?php bool('collapsible', false); ?>,
-                defaultIndex: <?php number('defaultIndex'); ?>,
-                persistState: <?php bool('persistState', false); ?>,
-                loadFragment: <?php bool('loadFragment', true); ?>,
-                preventDefault: <?php bool('preventDefault', true); ?>,
-                cookie: <?php string('cookie'); ?>,
-                cookieDuration: <?php number('cookieDuration', 30); ?>
+                mode: <?= $demo->string('mode', 'click'); ?>,
+                ajax: <?= $demo->bool('ajax', true); ?>,
+                collapsible: <?= $demo->bool('collapsible', false); ?>,
+                defaultIndex: <?= $demo->number('defaultIndex'); ?>,
+                persistState: <?= $demo->bool('persistState', false); ?>,
+                loadFragment: <?= $demo->bool('loadFragment', true); ?>,
+                preventDefault: <?= $demo->bool('preventDefault', true); ?>,
+                cookie: <?= $demo->string('cookie'); ?>,
+                cookieDuration: <?= $demo->number('cookieDuration', 30); ?>
             });
 
             $('#tabs-2').tabs({
-                mode: <?php string('mode', 'click'); ?>,
-                ajax: <?php bool('ajax', true); ?>,
-                collapsible: <?php bool('collapsible', false); ?>,
-                defaultIndex: <?php number('defaultIndex'); ?>,
-                persistState: <?php bool('persistState', false); ?>,
-                loadFragment: <?php bool('loadFragment', true); ?>,
-                preventDefault: <?php bool('preventDefault', true); ?>,
-                cookie: <?php string('cookie'); ?>,
-                cookieDuration: <?php number('cookieDuration', 30); ?>
+                mode: <?= $demo->string('mode', 'click'); ?>,
+                ajax: <?= $demo->bool('ajax', true); ?>,
+                collapsible: <?= $demo->bool('collapsible', false); ?>,
+                defaultIndex: <?= $demo->number('defaultIndex'); ?>,
+                persistState: <?= $demo->bool('persistState', false); ?>,
+                loadFragment: <?= $demo->bool('loadFragment', true); ?>,
+                preventDefault: <?= $demo->bool('preventDefault', true); ?>,
+                cookie: <?= $demo->string('cookie'); ?>,
+                cookieDuration: <?= $demo->number('cookieDuration', 30); ?>
             });
         });
     <?php } ?>

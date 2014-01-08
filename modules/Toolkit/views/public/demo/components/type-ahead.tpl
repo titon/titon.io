@@ -29,13 +29,13 @@
     ];
 
     var options = {
-        className: <?php string('className'); ?>,
+        className: <?= $demo->string('className'); ?>,
         source: langs,
-        minLength: <?php number('minLength', 1); ?>,
-        itemLimit: <?php number('itemLimit', 15); ?>,
-        throttle: <?php number('throttle', 250); ?>,
-        prefetch: <?php bool('prefetch', false); ?>,
-        shadow: <?php bool('shadow', false); ?>
+        minLength: <?= $demo->number('minLength', 1); ?>,
+        itemLimit: <?= $demo->number('itemLimit', 15); ?>,
+        throttle: <?= $demo->number('throttle', 250); ?>,
+        prefetch: <?= $demo->bool('prefetch', false); ?>,
+        shadow: <?= $demo->bool('shadow', false); ?>
     };
 
     <?php if ($vendor === 'mootools') { ?>

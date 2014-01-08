@@ -10,29 +10,29 @@
     <?php if ($vendor === 'mootools') { ?>
         window.addEvent('domready', function() {
             $$('.js-popover').popover({
-                animation: <?php string('animation'); ?>,
-                ajax: <?php bool('ajax', false); ?>,
-                getContent: '<?php echo value('ajax') ? 'href' : 'data-popover'; ?>',
-                position: <?php string('position', 'topRight'); ?>,
-                showLoading: <?php bool('showLoading', true); ?>,
-                showTitle: <?php bool('showTitle', true); ?>,
-                xOffset: <?php number('xOffset', 0); ?>,
-                yOffset: <?php number('yOffset', 0); ?>,
-                delay: <?php number('delay', 0); ?>
+                animation: <?= $demo->string('animation'); ?>,
+                ajax: <?= $demo->bool('ajax', false); ?>,
+                getContent: '<?php echo $demo->value('ajax') ? 'href' : 'data-popover'; ?>',
+                position: <?= $demo->string('position', 'topRight'); ?>,
+                showLoading: <?= $demo->bool('showLoading', true); ?>,
+                showTitle: <?= $demo->bool('showTitle', true); ?>,
+                xOffset: <?= $demo->number('xOffset', 0); ?>,
+                yOffset: <?= $demo->number('yOffset', 0); ?>,
+                delay: <?= $demo->number('delay', 0); ?>
             });
         });
     <?php } else { ?>
         $(function() {
             $('.js-popover').popover({
-                animation: <?php string('animation'); ?>,
-                ajax: <?php bool('ajax', false); ?>,
-                getContent: '<?php echo value('ajax') ? 'href' : 'data-popover'; ?>',
-                position: <?php string('position', 'topRight'); ?>,
-                showLoading: <?php bool('showLoading', true); ?>,
-                showTitle: <?php bool('showTitle', true); ?>,
-                xOffset: <?php number('xOffset', 0); ?>,
-                yOffset: <?php number('yOffset', 0); ?>,
-                delay: <?php number('delay', 0); ?>
+                animation: <?= $demo->string('animation'); ?>,
+                ajax: <?= $demo->bool('ajax', false); ?>,
+                getContent: '<?php echo $demo->value('ajax') ? 'href' : 'data-popover'; ?>',
+                position: <?= $demo->string('position', 'topRight'); ?>,
+                showLoading: <?= $demo->bool('showLoading', true); ?>,
+                showTitle: <?= $demo->bool('showTitle', true); ?>,
+                xOffset: <?= $demo->number('xOffset', 0); ?>,
+                yOffset: <?= $demo->number('yOffset', 0); ?>,
+                delay: <?= $demo->number('delay', 0); ?>
             });
         });
     <?php } ?>

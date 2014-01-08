@@ -2,13 +2,13 @@
 $funcs = get_defined_functions();
 $total = count($funcs) - 1;
 
-$classes = array(value('size'));
+$classes = array($demo->value('size'));
 
-if (value('hover')) {
+if ($demo->value('hover')) {
     $classes[] = 'has-hover';
 }
 
-if (value('sortable')) {
+if ($demo->value('sortable')) {
     $classes[] = 'is-sortable';
 }
 
@@ -35,7 +35,7 @@ $classes = implode(' ', $classes); ?>
             </tr>
         </thead>
         <tbody>
-            <?php for ($i = 0; $i <= value('count', 25); $i++) {
+            <?php for ($i = 0; $i <= $demo->value('count', 25); $i++) {
                 if ($i != 0 && $i % 10 == 0) { ?>
                     <tr class="table-divider">
                         <td colspan="6">Divider</td>

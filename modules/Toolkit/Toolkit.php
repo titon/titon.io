@@ -65,6 +65,7 @@ class Toolkit {
                     $key = str_replace('_', '-', Inflector::underscore($key));
                 }
 
+                $component['key'] = $key;
                 $components[$key] = $component;
             }
 

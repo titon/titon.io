@@ -1,9 +1,9 @@
 <?php
-$classes = array(value('state'));
-$disabled = value('disabled', false);
-$size = value('size', '');
+$classes = array($demo->value('state'));
+$disabled = $demo->value('disabled', false);
+$size = $demo->value('size', '');
 
-if (value('required')) {
+if ($demo->value('required')) {
     $classes[] = 'is-required';
 }
 

@@ -43,17 +43,17 @@
             document.body.stalker({
                 target: '#stalker-target a',
                 marker: '#stalker div[id]',
-                threshold: <?php number('threshold', 50); ?>,
-                onlyWithin: <?php bool('onlyWithin', true); ?>,
-                applyToParent: <?php bool('applyToParent', true); ?>
+                threshold: <?= $demo->number('threshold', 50); ?>,
+                onlyWithin: <?= $demo->bool('onlyWithin', true); ?>,
+                applyToParent: <?= $demo->bool('applyToParent', true); ?>
             });
 
             $('stalker2').stalker({
                 target: '#stalker2-target a',
                 marker: 'div[id]',
-                threshold: <?php number('threshold', 50); ?>,
-                onlyWithin: <?php bool('onlyWithin', true); ?>,
-                applyToParent: <?php bool('applyToParent', true); ?>
+                threshold: <?= $demo->number('threshold', 50); ?>,
+                onlyWithin: <?= $demo->bool('onlyWithin', true); ?>,
+                applyToParent: <?= $demo->bool('applyToParent', true); ?>
             });
         });
     <?php } else { ?>
@@ -61,17 +61,17 @@
             $('body').stalker({
                 target: '#stalker-target a',
                 marker: '#stalker div[id]',
-                threshold: <?php number('threshold', 50); ?>,
-                onlyWithin: <?php bool('onlyWithin', true); ?>,
-                applyToParent: <?php bool('applyToParent', true); ?>
+                threshold: <?= $demo->number('threshold', 50); ?>,
+                onlyWithin: <?= $demo->bool('onlyWithin', true); ?>,
+                applyToParent: <?= $demo->bool('applyToParent', true); ?>
             });
 
             $('#stalker2').stalker({
                 target: '#stalker2-target a',
                 marker: 'div[id]',
-                threshold: <?php number('threshold', 50); ?>,
-                onlyWithin: <?php bool('onlyWithin', true); ?>,
-                applyToParent: <?php bool('applyToParent', true); ?>
+                threshold: <?= $demo->number('threshold', 50); ?>,
+                onlyWithin: <?= $demo->bool('onlyWithin', true); ?>,
+                applyToParent: <?= $demo->bool('applyToParent', true); ?>
             });
         });
     <?php } ?>

@@ -32,15 +32,15 @@
 <script>
     <?php if ($vendor === 'mootools') { ?>
         $$('.lazy-load').lazyLoad({
-            forceLoad: <?php bool('forceLoad', false); ?>,
-            delay: <?php number('delay', 10000); ?>,
-            threshold: <?php number('threshold', 150); ?>
+            forceLoad: <?= $demo->bool('forceLoad', false); ?>,
+            delay: <?= $demo->number('delay', 10000); ?>,
+            threshold: <?= $demo->number('threshold', 150); ?>
         });
     <?php } else { ?>
         $('.lazy-load').lazyLoad({
-            forceLoad: <?php bool('forceLoad', false); ?>,
-            delay: <?php number('delay', 10000); ?>,
-            threshold: <?php number('threshold', 150); ?>
+            forceLoad: <?= $demo->bool('forceLoad', false); ?>,
+            delay: <?= $demo->number('delay', 10000); ?>,
+            threshold: <?= $demo->number('threshold', 150); ?>
         });
     <?php } ?>
 </script>

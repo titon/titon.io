@@ -36,7 +36,8 @@ module.exports = function(grunt) {
             build: {
                 files: {
                     'web/js/script.min.js': ['web/jss/common.js'],
-                    'web/js/home.min.js': ['web/jss/home.js']
+                    'web/js/home.min.js': ['web/jss/home.js'],
+                    'web/js/docs.min.js': ['web/jss/docs.js']
                 }
             }
         }

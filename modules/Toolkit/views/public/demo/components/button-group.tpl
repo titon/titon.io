@@ -1,17 +1,17 @@
 <?php
-$classes = array(value('size'), value('shape'), value('effect'));
-$state = value('state');
-$count = (int) value('count', 3);
+$classes = array($demo->value('size'), $demo->value('shape'), $demo->value('effect'));
+$state = $demo->value('state');
+$count = (int) $demo->value('count', 3);
 
-if ($mod = value('modifier')) {
+if ($mod = $demo->value('modifier')) {
     $classes[] = 'button-group--' . $mod;
 } else {
     $classes[] = 'button-group';
 }
 
-if (value('active')) {
+if ($demo->value('active')) {
     $classes[] = 'is-active';
-} else if (value('disabled')) {
+} else if ($demo->value('disabled')) {
     $classes[] = 'is-disabled';
 }
 

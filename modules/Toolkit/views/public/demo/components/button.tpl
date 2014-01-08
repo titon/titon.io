@@ -1,9 +1,9 @@
 <?php
-$classes = array(value('size'), value('state'), value('shape'), value('effect'));
+$classes = array($demo->value('size'), $demo->value('state'), $demo->value('shape'), $demo->value('effect'));
 
-if (value('active')) {
+if ($demo->value('active')) {
     $classes[] = 'is-active';
-} else if (value('disabled')) {
+} else if ($demo->value('disabled')) {
     $classes[] = 'is-disabled';
 }
 

@@ -1,7 +1,7 @@
 <?php
 $class = '';
 
-if ($mod = value('modifier')) {
+if ($mod = $demo->value('modifier')) {
     $class = 'icon--' . $mod;
 } ?>
 

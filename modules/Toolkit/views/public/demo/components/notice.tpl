@@ -1,7 +1,7 @@
 <?php
-$classes = array(value('state'));
+$classes = array($demo->value('state'));
 
-if (value('round')) {
+if ($demo->value('round')) {
     $classes[] = 'round';
 }
 

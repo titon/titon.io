@@ -1,11 +1,11 @@
 <?php
 $class = '';
 
-if ($mod = value('modifier')) {
+if ($mod = $demo->value('modifier')) {
     $class = 'on-' . $mod;
 }
 
-if ($pos = value('align')) {
+if ($pos = $demo->value('align')) {
     $class .= ' ' . $pos;
 } ?>
 
@@ -55,15 +55,15 @@ if ($pos = value('align')) {
     <?php if ($vendor === 'mootools') { ?>
         window.addEvent('domready', function() {
             $$('.js-dropdown').dropdown({
-                mode: <?php string('mode', 'click'); ?>,
-                hideOpened: <?php bool('hideOpened'); ?>
+                mode: <?= $demo->string('mode', 'click'); ?>,
+                hideOpened: <?= $demo->bool('hideOpened'); ?>
             });
         });
     <?php } else { ?>
         $(function() {
             $('.js-dropdown').dropdown({
-                mode: <?php string('mode', 'click'); ?>,
-                hideOpened: <?php bool('hideOpened'); ?>
+                mode: <?= $demo->string('mode', 'click'); ?>,
+                hideOpened: <?= $demo->bool('hideOpened'); ?>
             });
         });
     <?php } ?>

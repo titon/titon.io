@@ -1,5 +1,5 @@
 <?php
-$class = value('round') ? 'round' : ''; ?>
+$class = $demo->value('round') ? 'round' : ''; ?>
 
 <form action="" method="get">
     <div class="field">
