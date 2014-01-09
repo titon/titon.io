@@ -28,7 +28,7 @@ class Framework {
 
             // Fetch separately so we don't have to install requirements
             foreach (['mysql', 'postgresql', 'sqlite', 'mongodb'] as $driver) {
-                $driver = 'model-' . $driver;
+                $driver = 'db-' . $driver;
 
                 $json = json_decode(Framework::fetchRemoteResource('https://raw.github.com/titon/' . $driver . '/master/composer.json'), true);
                 $json['version'] = Framework::fetchRemoteResource('https://raw.github.com/titon/' . $driver . '/master/version.md');

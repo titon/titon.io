@@ -3,12 +3,13 @@
     "require": {
         "titon/app": "*",
         "titon/mvc": "*",
+        "titon/db": "*",
         "titon/g11n": "*",
         "titon/cache": "*",
         "titon/debug": "*",
         "titon/env": "*",
         "titon/type": "*",
-        "titon/toolkit": "dev-master",
+        "titon/toolkit": "*",
         "psr/log": "*"
     }
 }

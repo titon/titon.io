@@ -17,7 +17,7 @@ class ToolkitModule extends AbstractModule {
         $this->setControllers([
             'index' => 'Toolkit\Controller\IndexController',
             'docs' => 'Toolkit\Controller\DocsController',
-            'demo' => 'Toolkit\Controller\DemoController'
+            //'demo' => 'Toolkit\Controller\DemoController'
         ]);
     }
 

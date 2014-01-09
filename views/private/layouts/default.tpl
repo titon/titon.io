@@ -7,15 +7,20 @@ $asset->addScript('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
 $asset->addScript('/js/vendors/titon.min');
 $asset->addScript('/js/script.min');
 
-$breadcrumb->add('Project Titon', '/');
-
 $env = $this->data('env', 'prod'); ?>
 
 <!DOCTYPE html>
 <html xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
 <head>
     <meta name="charset" content="UTF-8">
-    <title><?= $breadcrumb->title(); ?></title>
+    <title>
+        <?php if (isset($breadcrumb)) {
+            $breadcrumb->add('Project Titon', '/');
+            echo $breadcrumb->title();
+        } else {
+            echo 'Project Titon';
+        } ?>
+    </title>
     <?= $this->open('meta-tags'); ?>
     <?= $this->open('open-graph'); ?>
     <?= $asset->stylesheets($env); ?>

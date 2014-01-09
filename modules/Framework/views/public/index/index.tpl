@@ -185,17 +185,17 @@ $breadcrumb->add('Framework', 'framework'); ?>
                     <p>Separate or combined support for the MVC software pattern.</p>
 
                     <ul>
-                        <?php foreach (['mvc' => 'MVC', 'model' => 'Model', 'view' => 'View', 'controller' => 'Controller'] as $key => $name) {
+                        <?php foreach ([/*'mvc' => 'MVC', 'model' => 'Model',*/ 'view' => 'View', 'controller' => 'Controller'] as $key => $name) {
                             echo $this->open('package-item', ['package' => $packages[$key], 'key' => $key, 'name' => $name]);
                         } ?>
                     </ul>
 
-                    <h6>Databases</h6>
+                    <h6>Database</h6>
 
-                    <p>Model drivers for popular database engines.</p>
+                    <p>Database layer with support for popular engines.</p>
 
                     <ul>
-                        <?php foreach (['model-mysql' => 'MySQL', 'model-postgresql' => 'PostgreSQL', 'model-sqlite' => 'SQLite', 'model-mongodb' => 'MongoDB'] as $key => $name) {
+                        <?php foreach (['db' => 'Database', 'db-mysql' => 'MySQL', 'db-postgresql' => 'PostgreSQL', 'db-sqlite' => 'SQLite', 'db-mongodb' => 'MongoDB'] as $key => $name) {
                             echo $this->open('package-item', ['package' => $packages[$key], 'key' => $key, 'name' => $name]);
                         } ?>
                     </ul>
