@@ -57,13 +57,13 @@ foreach (glob(MODULES_DIR . '*', GLOB_ONLYDIR) as $modulePath) {
 }
 
 /** @type \Titon\Mvc\Application $app */
-$app = Application::getInstance();
+$app = Application::getInstance('default', [new Request(), new Response()]);
 
 /**
  * Bootstrap application with configuration.
  * Order here is extremely critical, do not change!
  */
-foreach (['setup', 'environments', 'cache', 'locales', 'connections', 'events', 'modules', 'routes'] as $config) {
+foreach (['setup', 'environments', 'cache', 'locales', 'database', 'events', 'modules', 'routes'] as $config) {
     $path = sprintf(RESOURCES_DIR . 'bootstrap/%s.php', $config);
 
     if (file_exists($path)) {
@@ -74,4 +74,4 @@ foreach (['setup', 'environments', 'cache', 'locales', 'connections', 'events', 
 /**
  * Run the application!
  */
-$app->run(WEB_DIR, new Request(), new Response());
+$app->run(WEB_DIR);

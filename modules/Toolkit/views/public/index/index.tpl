@@ -1,7 +1,21 @@
 <?php
 $this->wrapWith('landing');
 
-$breadcrumb->add('Toolkit', 'toolkit'); ?>
+$breadcrumb->add('Toolkit', 'toolkit');
+
+$filterComponents = function($type) use ($components) {
+    $clean = [];
+
+    foreach ($components as $key => $component) {
+        if (isset($component['type']) && $component['type'] === $type) {
+            $clean[] = $key;
+        } else if ($component['category'] === $type) {
+            $clean[] = $key;
+        }
+    }
+
+    return $clean;
+}; ?>
 
 <header class="head">
     <div class="wrapper">
@@ -51,7 +65,7 @@ $breadcrumb->add('Toolkit', 'toolkit'); ?>
                 <span class="button-suffix"><?= $version; ?></span>
             </a>
 
-            <a href="https://github.com/titon/toolkit/blob/master/docs/pages/en/setup/getting-started.md" class="button large hide-mobile" target="_blank">
+            <a href="https://github.com/titon/toolkit/blob/master/docs/en/setup/getting-started.md" class="button large hide-mobile" target="_blank">
                 Install
             </a>
         </div>
@@ -140,7 +154,7 @@ $breadcrumb->add('Toolkit', 'toolkit'); ?>
                     <p>Helper classes, mixins, functions, and visual styles for built-in HTML tags.</p>
 
                     <ul>
-                        <?php foreach (['base', 'code', 'form', 'typography', 'responsive'] as $key) {
+                        <?php foreach ($filterComponents('layout') as $key) {
                             echo $this->open('component-item', ['component' => $components[$key], 'key' => $key]);
                         } ?>
                     </ul>
@@ -150,7 +164,7 @@ $breadcrumb->add('Toolkit', 'toolkit'); ?>
                     <p>Additional visual aesthetics for other Toolkit components.</p>
 
                     <ul>
-                        <?php foreach (['effect-visual', 'effect-pill', 'effect-oval', 'effect-skew'] as $key) {
+                        <?php foreach ($filterComponents('effect') as $key) {
                             echo $this->open('component-item', ['component' => $components[$key], 'key' => $key]);
                         } ?>
                     </ul>
@@ -162,7 +176,7 @@ $breadcrumb->add('Toolkit', 'toolkit'); ?>
                     <p>Common user interface concepts packaged as static HTML elements.</p>
 
                     <ul>
-                        <?php foreach (['breadcrumb', 'button', 'button-group', 'grid', 'icon', 'input-group', 'label', 'notice', 'pagination', 'progress', 'table'] as $key) {
+                        <?php foreach ($filterComponents('element') as $key) {
                             echo $this->open('component-item', ['component' => $components[$key], 'key' => $key]);
                         } ?>
                     </ul>
@@ -172,7 +186,7 @@ $breadcrumb->add('Toolkit', 'toolkit'); ?>
                     <p>MooTools classes to solve specific use cases.</p>
 
                     <ul>
-                        <?php foreach (['cache', 'timers'] as $key) {
+                        <?php foreach ($filterComponents('class') as $key) {
                             echo $this->open('component-item', ['component' => $components[$key], 'key' => $key]);
                         } ?>
                     </ul>
@@ -184,10 +198,7 @@ $breadcrumb->add('Toolkit', 'toolkit'); ?>
                     <p>Element components empowered with JavaScript for advanced functionality.</p>
 
                     <ul>
-                        <?php foreach ([
-                           'accordion', 'blackout', 'carousel', 'flyout', 'input', 'lazy-load', 'matrix', 'modal',
-                           'pin', 'popover', 'showcase', 'stalker', 'tabs', 'tooltip', 'type-ahead'
-                        ] as $key) {
+                        <?php foreach ($filterComponents('module') as $key) {
                             echo $this->open('component-item', ['component' => $components[$key], 'key' => $key]);
                         } ?>
                     </ul>
@@ -256,7 +267,7 @@ $breadcrumb->add('Toolkit', 'toolkit'); ?>
                     </div>
 
                     <?php /*<p>
-                        <a href="https://github.com/titon/toolkit/tree/master/docs/pages/en/components/carousel.md" class="button">
+                        <a href="https://github.com/titon/toolkit/tree/master/docs/en/components/carousel.md" class="button">
                             View Carousel Component
                             <span class="fa fa-arrow-circle-right"></span>
                         </a>

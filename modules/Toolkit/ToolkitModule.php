@@ -30,11 +30,11 @@ class ToolkitModule extends AbstractModule {
         parent::bootstrap($app);
 
         $router = $app->getRouter();
-        $router->map(new LocaleRoute('toolkit.demo.component', '/toolkit/demo/{component}', 'Toolkit\Demo@component', ['pass' => 'component']));
-        $router->map(new LocaleRoute('toolkit.demo', '/toolkit/demo', 'Toolkit\Demo@index'));
-        $router->map(new LocaleRoute('toolkit.docs.out', '/toolkit/docs/out', 'Toolkit\Docs@out'));
-        $router->map(new LocaleRoute('toolkit.docs', '/toolkit/{version}/(path)', 'Toolkit\Docs@index', ['pass' => ['version', 'path']]));
-        $router->map(new LocaleRoute('toolkit', '/toolkit', 'Toolkit\Index@index'));
+        $router->map('toolkit.demo.component', new LocaleRoute('/toolkit/demo/{component}', 'Toolkit\Demo@component', ['pass' => 'component']));
+        $router->map('toolkit.demo', new LocaleRoute('/toolkit/demo', 'Toolkit\Demo@index'));
+        $router->map('toolkit.docs.out', new LocaleRoute('/toolkit/docs/out', 'Toolkit\Docs@out'));
+        $router->map('toolkit.docs', new LocaleRoute('/toolkit/{version}/(path)', 'Toolkit\Docs@index', ['pass' => ['version', 'path']]));
+        $router->map('toolkit', new LocaleRoute('/toolkit', 'Toolkit\Index@index'));
 
         /** @type \Titon\G11n\Locale $locale */
         $locale = $app->get('g11n')->current();

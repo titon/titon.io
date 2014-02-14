@@ -2,9 +2,7 @@
 
 namespace Toolkit\Controller;
 
-use Titon\G11n\Utility\Inflector;
 use Titon\Http\Exception\NotFoundException;
-use Titon\Utility\Hash;
 use Toolkit\Helper\DemoHelper;
 use Toolkit\Toolkit;
 

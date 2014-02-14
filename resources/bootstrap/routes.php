@@ -13,9 +13,16 @@ $router = $app->getRouter();
 $router->on('g11n', $g11n);
 
 // Custom routes
-$router->map(new LocaleRoute('static.page', '/static/(path)', 'Common\Static@index'));
-$router->map(new LocaleRoute('static', '/static', 'Common\Static@index'));
-$router->map(new LocaleRoute('contact', '/contact', 'Common\Contact@index'));
+$router->map('static.page', new LocaleRoute('/static/(path)', 'Common\Static@index'));
+$router->map('static', new LocaleRoute('/static', 'Common\Static@index'));
+$router->map('contact', new LocaleRoute('/contact', 'Common\Contact@index'));
+
+// Default routes
+$router->map('action.ext', new LocaleRoute('/{module}/{controller}/{action}.{ext}'));
+$router->map('action', new LocaleRoute('/{module}/{controller}/{action}'));
+$router->map('controller', new LocaleRoute('/{module}/{controller}'));
+$router->map('module', new LocaleRoute('/{module}'));
+$router->map('root', new LocaleRoute('/'));
 
 // Initialize
 $router->initialize();

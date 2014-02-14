@@ -185,7 +185,7 @@ $breadcrumb->add('Framework', 'framework'); ?>
                     <p>Separate or combined support for the MVC software pattern.</p>
 
                     <ul>
-                        <?php foreach ([/*'mvc' => 'MVC', 'model' => 'Model',*/ 'view' => 'View', 'controller' => 'Controller'] as $key => $name) {
+                        <?php foreach (['mvc' => 'MVC', 'model' => 'Model', 'view' => 'View', 'controller' => 'Controller'] as $key => $name) {
                             echo $this->open('package-item', ['package' => $packages[$key], 'key' => $key, 'name' => $name]);
                         } ?>
                     </ul>

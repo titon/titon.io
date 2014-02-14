@@ -131,7 +131,7 @@ class Toolkit {
                         'modifier' => ['title' => 'Modifier', 'data' => ['' => '-- None --', 'scrollable' => 'Scrollable']]
                     ]
                 ],
-                'dropdown' => [
+                'drop' => [
                     'filters' => [
                         'modifier' => ['title' => 'Modifier', 'data' => [
                             '' => '-- None --',

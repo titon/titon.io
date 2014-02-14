@@ -7,29 +7,26 @@
 
 namespace Common\Controller;
 
-use Titon\Controller\Controller\AbstractController;
-use Titon\Mvc\Application;
+use Titon\Mvc\Controller;
+use Titon\Mvc\View;
 use Titon\View\Engine\ViewEngine;
 use Titon\View\Helper\Html\AssetHelper;
 use Titon\View\Helper\Html\FormHelper;
 use Titon\View\Helper\Html\HtmlHelper;
 use Titon\View\Helper\Html\BreadcrumbHelper;
-use Titon\View\View;
 
-class CommonController extends AbstractController {
+class CommonController extends Controller {
 
     /**
      * Set the view rendering layer.
      */
     public function initialize() {
-        $app = Application::getInstance();
-
-        $engine = new ViewEngine($app->getRouter()->current()->getParams());
+        $app = $this->getApplication();
 
         $view = new View($this->getModule()->getViewPath());
-        $view->setEngine($engine);
+        $view->setEngine(new ViewEngine($app->getRouter()->current()->getParams()));
         $view->addHelper('html', new HtmlHelper());
-        $view->addHelper('asset', new AssetHelper(['webroot' => WEB_DIR]));
+        $view->addHelper('asset', new AssetHelper(['webroot' => $app->getWebroot()]));
         $view->addHelper('form', (new FormHelper())->setRequest($this->getRequest()));
         $view->addHelper('breadcrumb', new BreadcrumbHelper());
         $view->setVariables([

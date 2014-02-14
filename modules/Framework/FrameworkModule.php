@@ -29,9 +29,9 @@ class FrameworkModule extends AbstractModule {
         parent::bootstrap($app);
 
         $router = $app->getRouter();
-        $router->map(new LocaleRoute('framework.docs.out', '/framework/docs/out', 'Framework\Docs@out'));
-        $router->map(new LocaleRoute('framework.docs', '/framework/{version}/(path)', 'Framework\Docs@index'));
-        $router->map(new LocaleRoute('framework', '/framework', 'Framework\Index@index'));
+        $router->map('framework.docs.out', new LocaleRoute('/framework/docs/out', 'Framework\Docs@out'));
+        $router->map('framework.docs', new LocaleRoute('/framework/{version}/(path)', 'Framework\Docs@index'));
+        $router->map('framework', new LocaleRoute('/framework', 'Framework\Index@index'));
 
         /** @type \Titon\G11n\Locale $locale */
         $locale = $app->get('g11n')->current();

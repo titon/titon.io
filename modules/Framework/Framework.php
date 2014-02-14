@@ -2,7 +2,6 @@
 
 namespace Framework;
 
-use Titon\Common\Registry;
 use Titon\Io\Reader\JsonReader;
 use Titon\Mvc\Application;
 
