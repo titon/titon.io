@@ -60,6 +60,10 @@ $filterComponents = function($type) use ($components) {
         </div>
 
         <div class="button-toolbar">
+            <a href="/slides/what-is-toolkit.pdf" class="button large hide-mobile" target="_blank">
+                Learn
+            </a>
+
             <a href="https://github.com/titon/toolkit/releases" class="button large is-success" target="_blank">
                 Download
                 <span class="button-suffix"><?= $version; ?></span>
