@@ -6,7 +6,7 @@ if ($mod = $demo->value('modifier')) {
 } ?>
 
 <pre<?php if ($class) echo ' class="' . $class . '"'; ?>><code>/**
- * @copyright   2010-2013, The Titon Project
+ * @copyright   2010-2014, The Titon Project
  * @license     http://opensource.org/licenses/bsd-license.php
  * @link        http://titon.io
  */

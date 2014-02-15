@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright   2010-2013, The Titon Project
+ * @copyright   2010-2014, The Titon Project
  * @license     http://opensource.org/licenses/bsd-license.php
  * @link        http://titon.io
  */
@@ -10,6 +10,7 @@ namespace Common\Controller;
 use Titon\Mvc\Controller;
 use Titon\Mvc\View;
 use Titon\View\Engine\ViewEngine;
+use Titon\View\Helper\BlockHelper;
 use Titon\View\Helper\Html\AssetHelper;
 use Titon\View\Helper\Html\FormHelper;
 use Titon\View\Helper\Html\HtmlHelper;
@@ -29,6 +30,7 @@ class CommonController extends Controller {
         $view->addHelper('asset', new AssetHelper(['webroot' => $app->getWebroot()]));
         $view->addHelper('form', (new FormHelper())->setRequest($this->getRequest()));
         $view->addHelper('breadcrumb', new BreadcrumbHelper());
+        $view->addHelper('block', new BlockHelper());
         $view->setVariables([
             'env' => $app->get('env')->current()->getKey()
         ]);

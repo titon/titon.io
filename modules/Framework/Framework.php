@@ -1,4 +1,9 @@
 <?php
+/**
+ * @copyright   2010-2014, The Titon Project
+ * @license     http://opensource.org/licenses/bsd-license.php
+ * @link        http://titon.io
+ */
 
 namespace Framework;
 
@@ -29,8 +34,8 @@ class Framework {
             foreach (['mysql', 'postgresql', 'sqlite', 'mongodb'] as $driver) {
                 $driver = 'db-' . $driver;
 
-                $json = json_decode(Framework::fetchRemoteResource('https://raw.github.com/titon/' . $driver . '/master/composer.json'), true);
-                $json['version'] = Framework::fetchRemoteResource('https://raw.github.com/titon/' . $driver . '/master/version.md');
+                $json = json_decode(self::fetchRemoteResource('https://raw.github.com/titon/' . $driver . '/master/composer.json'), true);
+                $json['version'] = self::fetchRemoteResource('https://raw.github.com/titon/' . $driver . '/master/version.md');
 
                 $packages[$driver] = $json;
             }

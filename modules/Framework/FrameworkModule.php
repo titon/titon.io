@@ -1,4 +1,9 @@
 <?php
+/**
+ * @copyright   2010-2014, The Titon Project
+ * @license     http://opensource.org/licenses/bsd-license.php
+ * @link        http://titon.io
+ */
 
 namespace Framework;
 
@@ -29,9 +34,9 @@ class FrameworkModule extends AbstractModule {
         parent::bootstrap($app);
 
         $router = $app->getRouter();
-        $router->map('framework.docs.out', new LocaleRoute('/framework/docs/out', 'Framework\Docs@out'));
-        $router->map('framework.docs', new LocaleRoute('/framework/{version}/(path)', 'Framework\Docs@index'));
-        $router->map('framework', new LocaleRoute('/framework', 'Framework\Index@index'));
+        $router->map('framework.docs.out',  new LocaleRoute('/framework/docs/out', 'Framework\Docs@out'));
+        $router->map('framework.docs',      new LocaleRoute('/framework/{version}/(path)', 'Framework\Docs@index'));
+        $router->map('framework',           new LocaleRoute('/framework', 'Framework\Index@index'));
 
         /** @type \Titon\G11n\Locale $locale */
         $locale = $app->get('g11n')->current();

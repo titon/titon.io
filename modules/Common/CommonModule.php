@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright   2010-2013, The Titon Project
+ * @copyright   2010-2014, The Titon Project
  * @license     http://opensource.org/licenses/bsd-license.php
  * @link        http://titon.io
  */
@@ -20,8 +20,8 @@ class CommonModule extends AbstractModule {
 
         $this->setControllers([
             'index' => 'Common\Controller\IndexController',
-            'static' => 'Common\Controller\StaticController',
-            'contact' => 'Common\Controller\ContactController',
+            //'static' => 'Common\Controller\StaticController',
+            //'contact' => 'Common\Controller\ContactController',
         ]);
     }
 

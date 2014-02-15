@@ -1,4 +1,9 @@
 <?php
+/**
+ * @copyright   2010-2014, The Titon Project
+ * @license     http://opensource.org/licenses/bsd-license.php
+ * @link        http://titon.io
+ */
 
 namespace Toolkit;
 
@@ -30,11 +35,11 @@ class ToolkitModule extends AbstractModule {
         parent::bootstrap($app);
 
         $router = $app->getRouter();
-        $router->map('toolkit.demo.component', new LocaleRoute('/toolkit/demo/{component}', 'Toolkit\Demo@component', ['pass' => 'component']));
-        $router->map('toolkit.demo', new LocaleRoute('/toolkit/demo', 'Toolkit\Demo@index'));
-        $router->map('toolkit.docs.out', new LocaleRoute('/toolkit/docs/out', 'Toolkit\Docs@out'));
-        $router->map('toolkit.docs', new LocaleRoute('/toolkit/{version}/(path)', 'Toolkit\Docs@index', ['pass' => ['version', 'path']]));
-        $router->map('toolkit', new LocaleRoute('/toolkit', 'Toolkit\Index@index'));
+        $router->map('toolkit.demo.component',  new LocaleRoute('/toolkit/demo/{component}', 'Toolkit\Demo@component', ['pass' => 'component']));
+        $router->map('toolkit.demo',            new LocaleRoute('/toolkit/demo', 'Toolkit\Demo@index'));
+        $router->map('toolkit.docs.out',        new LocaleRoute('/toolkit/docs/out', 'Toolkit\Docs@out'));
+        $router->map('toolkit.docs',            new LocaleRoute('/toolkit/{version}/(path)', 'Toolkit\Docs@index', ['pass' => ['version', 'path']]));
+        $router->map('toolkit',                 new LocaleRoute('/toolkit', 'Toolkit\Index@index'));
 
         /** @type \Titon\G11n\Locale $locale */
         $locale = $app->get('g11n')->current();
