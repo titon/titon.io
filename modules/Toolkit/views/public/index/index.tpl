@@ -61,7 +61,7 @@ $filterComponents = function($type) use ($components) {
 
         <div class="button-toolbar">
             <a href="/slides/what-is-toolkit.pdf" class="button large hide-mobile" target="_blank">
-                Learn
+                What Is
             </a>
 
             <a href="https://github.com/titon/toolkit/releases" class="button large is-success" target="_blank">

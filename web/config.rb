@@ -1,4 +1,5 @@
 require 'titon-toolkit'
+require 'animation';
 
 http_path = "/"
 css_dir = "css/"

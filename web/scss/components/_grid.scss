@@ -1,11 +1,9 @@
 $responsive-size: "both";
 
 $grid-gutter: 2rem;
-$grid-columns-medium: 9;
 
 @import "toolkit/components/grid";
 
-.col.end {
-    float: right;
-    margin-right: 0;
+@include in-small() {
+    .col.end { float: none !important; }
 }

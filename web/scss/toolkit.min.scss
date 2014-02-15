@@ -1,0 +1,67 @@
+@import "global/common";
+
+a,
+.secondary { color: $toolkit-secondary; }
+
+a:hover { color: darken($toolkit-secondary, 15%); }
+
+.head {
+    background: $toolkit-primary-dark image-url("hexagon-pattern.png") repeat;
+}
+
+.hexagon,
+.hexagon-16,
+.hexagon-24,
+.hexagon-32,
+.hexagon-64,
+.hexagon-128 {
+    background-image: image-url("hexagon-pink.png");
+
+    @include if-retina {
+        background-image: image-url("hexagon-pink@2x.png");
+    }
+}
+
+// Landing
+
+.hexagons { width: 550px; }
+
+.components {
+    .label { color: $toolkit-primary; }
+
+    a:hover { background-color: $toolkit-secondary; }
+}
+
+.segment {
+    border-color: #182028;
+
+    h6 { color: $toolkit-text; }
+
+    &:nth-child(even) {
+        background-color: $toolkit-bg-alt;
+        border-color: $toolkit-border;
+    }
+}
+
+.examples {
+    background-color: $toolkit-primary-dark;
+    color: #fff;
+}
+
+// UI
+
+.drop--down li > a:hover { background-color: $toolkit-secondary; }
+
+.modal-inner {
+    background: $toolkit-bg;
+}
+
+.modal-head,
+.modal-foot {
+    background: $toolkit-bg-alt;
+}
+
+.modal-body {
+    border-top: 2px solid $toolkit-border;
+    border-bottom: 2px solid $toolkit-border;
+}
