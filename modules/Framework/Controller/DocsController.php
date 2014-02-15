@@ -21,10 +21,7 @@ class DocsController extends FrameworkController {
      */
     public function out() {
         $this->getView()->setVariables([
-            'pageTitle' => 'Documentation',
-            'modalActions' => [
-                'View GitHub' => 'https://github.com/titon'
-            ]
+            'pageTitle' => 'Documentation'
         ]);
     }
 

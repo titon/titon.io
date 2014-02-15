@@ -9,9 +9,5 @@
 <div class="modal-foot clear-fix">
     <button type="button" class="button float-right modal-event-close">Close</button>
 
-    <?php if (!empty($modalActions)) {
-        foreach ($modalActions as $title => $url) {
-            echo $html->anchor($title, $url, ['class' => 'button is-success']);
-        }
-    } ?>
+    <?= $block->get('modal-actions'); ?>
 </div>

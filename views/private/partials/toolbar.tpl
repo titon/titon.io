@@ -8,6 +8,7 @@
                     <ul class="drop--down reverse-align" id="toolkit-menu">
                         <li><a href="https://github.com/titon/toolkit">GitHub</a></li>
                         <li><?= $html->anchor('Documentation', 'toolkit.docs.out', ['class' => 'js-modal']); ?></li>
+                        <li><a href="http://demo.titon.io">Interactive Demos</a></li>
                         <li><a href="https://github.com/titon/toolkit/releases">Download</a></li>
                         <li><a href="https://github.com/titon/toolkit/blob/master/docs/en/setup/getting-started.md">Install</a></li>
                     </ul>

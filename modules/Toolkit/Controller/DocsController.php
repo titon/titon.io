@@ -21,11 +21,7 @@ class DocsController extends ToolkitController {
      */
     public function out() {
         $this->getView()->setVariables([
-            'pageTitle' => 'Documentation',
-            'modalActions' => [
-                'View Docs' => 'https://github.com/titon/toolkit/tree/master/docs',
-                'View Demo' => 'https://github.com/titon/toolkit/tree/master/demo'
-            ]
+            'pageTitle' => 'Documentation'
         ]);
     }
 
