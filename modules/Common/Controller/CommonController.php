@@ -15,6 +15,7 @@ use Titon\View\Helper\Html\AssetHelper;
 use Titon\View\Helper\Html\FormHelper;
 use Titon\View\Helper\Html\HtmlHelper;
 use Titon\View\Helper\Html\BreadcrumbHelper;
+use Toolkit\Toolkit;
 
 class CommonController extends Controller {
 
@@ -32,7 +33,8 @@ class CommonController extends Controller {
         $view->addHelper('breadcrumb', new BreadcrumbHelper());
         $view->addHelper('block', new BlockHelper());
         $view->setVariables([
-            'env' => $app->get('env')->current()->getKey()
+            'env' => $app->get('env')->current()->getKey(),
+            'toolkitVersion' => Toolkit::loadVersion()
         ]);
 
         $this->setView($view);
