@@ -7,11 +7,11 @@
 
 namespace Toolkit\Controller;
 
-use Common\Controller\CommonController;
+use Main\Controller\MainController;
 use Titon\Controller\Controller;
 use Titon\Event\Event;
 
-class ToolkitController extends CommonController {
+class ToolkitController extends MainController {
 
     /**
      * Add toolkit specific variables and assets to the view.

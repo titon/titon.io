@@ -11,5 +11,8 @@
         "titon/type": "*",
         "titon/toolkit": "*",
         "psr/log": "*"
+    },
+    "autoload": {
+        "psr-4": { "": "modules/" }
     }
 }

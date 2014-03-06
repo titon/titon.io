@@ -7,11 +7,11 @@
 
 namespace Framework\Controller;
 
-use Common\Controller\CommonController;
+use Main\Controller\MainController;
 use Titon\Controller\Controller;
 use Titon\Event\Event;
 
-class FrameworkController extends CommonController {
+class FrameworkController extends MainController {
 
     /**
      * Add framework specific variables and assets to the view.

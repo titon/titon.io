@@ -5,12 +5,12 @@
  * @link        http://titon.io
  */
 
-namespace Common\Controller;
+namespace Main\Controller;
 
-class IndexController extends CommonController {
+class ContactController extends MainController {
 
     /**
-     * Homepage.
+     * Contact form.
      */
     public function index() {
     }

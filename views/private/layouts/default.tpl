@@ -7,8 +7,10 @@ $asset->addScript('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
 $asset->addScript('/js/vendors/toolkit.min');
 $asset->addScript('/js/script.min');
 
-if ($this->config->module !== 'common') {
-    $asset->addStylesheet('/css/' . $this->config->module . '.min');
+$breadcrumb->add('Project Titon', '/');
+
+if ($this->getConfig('module') !== 'main') {
+    $asset->addStylesheet('/css/' . $this->getConfig('module') . '.min');
 }
 
 $env = $this->data('env', 'prod'); ?>
@@ -18,24 +20,19 @@ $env = $this->data('env', 'prod'); ?>
 <head>
     <meta name="charset" content="UTF-8">
     <title>
-        <?php if (isset($breadcrumb)) {
-            $breadcrumb->add('Project Titon', '/');
-            echo $breadcrumb->title();
-        } else {
-            echo 'Project Titon';
-        } ?>
+        <?php echo $breadcrumb->title(); ?>
     </title>
     <?= $this->open('meta-tags'); ?>
     <?= $this->open('open-graph'); ?>
     <?= $asset->stylesheets($env); ?>
     <?= $asset->scripts('header', $env); ?>
 </head>
-<body class="<?= $this->config->module . '-' . $this->config->controller . '-' . $this->config->action; ?> <?= $this->data('bodyClass'); ?>">
+<body class="<?= $this->getConfig('module') . '-' . $this->getConfig('controller') . '-' . $this->getConfig('action'); ?> <?= $this->data('bodyClass'); ?>">
     <div class="skeleton">
         <?= $this->getContent(); ?>
     </div>
 
-    <?php if (!($this->config->module === 'common' && $this->config->controller === 'index')) {
+    <?php if (!($this->getConfig('module') === 'main' && $this->getConfig('controller') === 'index')) {
         echo $this->open('toolbar');
     } ?>
 

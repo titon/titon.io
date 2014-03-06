@@ -5,12 +5,17 @@
  * @link        http://titon.io
  */
 
-namespace Common;
+namespace Main;
 
 use Titon\Mvc\Application;
 use Titon\Mvc\Module\AbstractModule;
 
-class CommonModule extends AbstractModule {
+/**
+ * A module that represents shared application functionality between all modules.
+ *
+ * @package Main
+ */
+class MainModule extends AbstractModule {
 
     /**
      * Whitelist the controllers that should be URL accessible.
@@ -19,9 +24,9 @@ class CommonModule extends AbstractModule {
         parent::initialize();
 
         $this->setControllers([
-            'index' => 'Common\Controller\IndexController',
-            //'static' => 'Common\Controller\StaticController',
-            //'contact' => 'Common\Controller\ContactController',
+            'index' => 'Main\Controller\IndexController',
+            //'static' => 'Main\Controller\StaticController',
+            //'contact' => 'Main\Controller\ContactController',
         ]);
     }
 

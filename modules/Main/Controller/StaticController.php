@@ -5,11 +5,11 @@
  * @link        http://titon.io
  */
 
-namespace Common\Controller;
+namespace Main\Controller;
 
 use Titon\G11n\Utility\Inflector;
 
-class StaticController extends CommonController {
+class StaticController extends MainController {
 
     /**
      * Grab any path after /static/ in the URL and use that as the template to render.
