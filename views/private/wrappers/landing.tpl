@@ -1,5 +1,5 @@
-<?php $asset->addStylesheet('/css/landing.min', [], 10); ?>
+<div class="landing">
+    <?= $this->getContent(); ?>
 
-<?= $this->getContent(); ?>
-
-<?= $this->open('footer'); ?>
+    <?= $this->open('footer'); ?>
+</div>

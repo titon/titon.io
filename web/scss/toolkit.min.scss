@@ -9,6 +9,10 @@ a:hover { color: darken($toolkit-secondary, 15%); }
     background: $toolkit-primary-dark image-url("hexagon-pattern.png") repeat;
 }
 
+.body {
+    background: $toolkit-bg-alt;
+}
+
 .hexagon,
 .hexagon-16,
 .hexagon-24,
@@ -33,8 +37,6 @@ a:hover { color: darken($toolkit-secondary, 15%); }
 }
 
 .segment {
-    border-color: #182028;
-
     h6 { color: $toolkit-text; }
 
     &:nth-child(even) {
@@ -65,3 +67,5 @@ a:hover { color: darken($toolkit-secondary, 15%); }
     border-top: 2px solid $toolkit-border;
     border-bottom: 2px solid $toolkit-border;
 }
+
+// Docs

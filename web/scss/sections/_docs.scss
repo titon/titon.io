@@ -1,0 +1,116 @@
+@import "../global/common";
+
+$docs-border-color: darken($toolkit-bg-alt, 5%);
+
+.documentation {
+    .head .wrapper {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .docs-article {
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.7rem; }
+        h4 { font-size: 1.4rem; }
+        h5 { font-size: 1.3rem; }
+        h6 { font-size: 1.2rem; }
+
+        h3 {
+            margin: $spacing -1.5rem;
+            padding: $spacing;
+            padding-bottom: 0;
+            border-top: 1px solid $docs-border-color;
+        }
+
+        h4 {
+            margin-top: ($spacing * 2);
+        }
+
+        ul li { margin: .4rem 0; }
+
+        p, pre, .notice {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .docs-toc {
+        padding: 0;
+
+        ul {
+            @include reset-list;
+
+            li {
+                border-top: 1px solid $docs-border-color;
+
+                &:first-child { border-top: 0; }
+
+                &.is-open {
+                    background: lighten($toolkit-bg-alt, 1.5%);
+
+                    > a {
+                        font-weight: bold;
+                        color: $toolkit-primary;
+                    }
+                }
+            }
+
+            a {
+                display: block;
+                padding: .5rem .75rem;
+
+                &.is-active {
+                    border-right: 10px solid $docs-border-color;
+                }
+            }
+
+            ul li { border: 0; }
+
+            ul a {
+                padding-left: 1.75rem;
+                font-size: .9rem;
+                color: $toolkit-primary-light;
+            }
+
+            ul ul a { padding-left: 2.75rem; }
+            ul ul ul a { padding-left: 3.75rem; }
+        }
+    }
+
+    .docs-nav {
+        @include reset-list();
+
+        li {
+            display: inline-block;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            padding: .75rem;
+            padding-top: .85rem;
+            color: $toolkit-bg-alt;
+
+            span {
+                display: block;
+                font-size: 2rem;
+                margin-bottom: 5px;
+            }
+
+            &.is-active {
+                background: $toolkit-bg-alt;
+                color: $toolkit-primary;
+            }
+        }
+    }
+
+    //-------------------- Responsive --------------------//
+
+    @include if-medium {
+        .docs-nav li a {
+            min-width: 150px;
+        }
+    }
+
+}

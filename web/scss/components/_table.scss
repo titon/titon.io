@@ -1,0 +1,31 @@
+@import "toolkit/components/table";
+
+.table {
+    margin-top: $margin;
+
+    td {
+        &.is-info { background: lighten($info-light, 20%); }
+        &.is-success { background: lighten($success-light, 18%); }
+        &.is-warning { background: lighten($warning-light, 18%); }
+        &.is-error { background: lighten($error-light, 18%); }
+    }
+}
+
+.data-table {
+    th, td {
+        white-space: nowrap;
+    }
+
+    td:first-child,
+    td:last-child {
+        white-space: normal;
+    }
+}
+
+.comparison-table {
+    td {
+        text-align: center;
+
+        &:first-child { text-align: left; }
+    }
+}

@@ -1,0 +1,19 @@
+@import "toolkit/components/notice";
+
+@mixin notice-style($base) {
+    background: lighten($base, 30%);
+    border: 1px solid lighten($base, 20%);
+    border-bottom: 2px solid lighten($base, 15%);
+}
+
+.notice {
+    border-radius: $round;
+    @include notice-style($default);
+
+    &.is-info { @include notice-style($info); }
+    &.is-success { @include notice-style($success); }
+    &.is-warning { @include notice-style($warning); }
+    &.is-error { @include notice-style($error); }
+
+    code { background: white(.6); }
+}

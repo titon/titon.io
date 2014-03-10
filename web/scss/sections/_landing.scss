@@ -1,0 +1,228 @@
+@import "../global/common";
+
+.landing {
+    .head {
+        .wrapper {
+            padding: 2rem 0;
+            text-align: center;
+
+            h1 { font-size: 5rem; }
+            h1, p { text-shadow: 0 1px black(.5); }
+
+            h6 {
+                width: 80%;
+                margin: 1rem auto 2rem auto;
+            }
+        }
+    }
+
+    .hexagons {
+        position: relative;
+        height: 176px;
+        margin: ($spacing * 2) auto;
+
+        a {
+            display: block;
+            color: #fff !important;
+            position: absolute;
+            top: 0;
+            line-height: normal;
+            font-size: 1.1rem;
+            width: 128px;
+            height: 113px;
+            background-position: 0 -57px;
+
+            small {
+                display: block;
+                opacity: .5;
+            }
+
+            &:hover {
+                opacity: .75;
+            }
+
+            &:nth-child(2) {
+                left: 105px;
+                top: 60px;
+            }
+
+            &:nth-child(3) {
+                left: 210px;
+            }
+
+            &:nth-child(4) {
+                left: 315px;
+                top: 60px;
+            }
+
+            &:nth-child(5) {
+                left: 420px;
+            }
+
+            &:nth-child(6) {
+                left: 525px;
+                top: 60px;
+            }
+        }
+    }
+
+    .segment {
+        position: relative;
+        border-top: 2px solid transparent;
+
+        h2, h5 {
+            text-align: center;
+        }
+
+        h5 {
+            color: $text-muted;
+        }
+
+        h6 + p {
+            margin: .1rem 0 0 0;
+        }
+
+        hr {
+            margin: 2rem 0;
+            border: none;
+            border-top: 1px solid black(.05);
+        }
+    }
+
+    .features {
+        background: #fff;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: $spacing;
+            position: relative;
+            padding-left: 45px;
+
+            .hexagon-32 {
+                position: absolute;
+                top: .3rem;
+                left: 0;
+            }
+        }
+    }
+
+    .components,
+    .packages {
+        .label {
+            background: black(.1);
+            margin-left: .5rem;
+        }
+
+        a {
+            display: block;
+            padding: .5rem 1rem;
+            text-align: center;
+            background: #fff;
+            @include transition(all .1s);
+
+            &:hover {
+                color: #fff !important;
+
+                .label {
+                    color: #fff;
+                    background: white(.2);
+                }
+            }
+        }
+
+        ul {
+            list-style: none;
+            margin: $spacing 0;
+            padding: 0;
+
+            & + h6 {
+                margin-top: ($spacing * 2);
+            }
+        }
+
+        li {
+            margin-top: 2px;
+
+            &:first-child a {
+                border-top-left-radius: $round;
+                border-top-right-radius: $round;
+            }
+
+            &:last-child a {
+                border-bottom-left-radius: $round;
+                border-bottom-right-radius: $round;
+            }
+        }
+    }
+
+    .examples,
+    .install {
+        pre,
+        code {
+            background: black(.25);
+            border-radius: $round;
+            border: none;
+            margin-bottom: 0;
+        }
+
+        pre code {
+            background: none;
+        }
+
+        hr {
+            border-top-color: white(.05);
+        }
+    }
+
+    //-------------------- Responsive --------------------//
+
+    @include if-max($breakpoint-mobile-landscape) {
+        .head .wrapper h1 {
+            font-size: 3.5rem;
+        }
+    }
+
+    @include if-max($breakpoint-tablet-landscape) {
+        .head .hexagons {
+            width: 550px !important;
+
+            a:nth-child(6) { display: none; }
+        }
+    }
+
+    @include if-medium {
+        .head .wrapper {
+            padding: 3rem 0;
+
+            h6 { width: 50%; }
+        }
+
+        .body .wrapper {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        .features li {
+            display: inline-block;
+            vertical-align: top;
+            width: 49%;
+            padding-right: 45px;
+        }
+    }
+
+    @include if-large {
+        .head .wrapper { padding: 4rem 0; }
+
+        .body .wrapper {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        .features li { width: 33%; }
+    }
+}

@@ -9,10 +9,11 @@
         "titon/debug": "*",
         "titon/env": "*",
         "titon/type": "*",
-        "titon/toolkit": "*",
-        "psr/log": "*"
+        "titon/toolkit": "dev-master",
+        "psr/log": "*",
+        "erusev/parsedown": "*"
     },
     "autoload": {
-        "psr-4": { "": "modules/" }
+        "psr-4": { "": ["modules/", "libs/"] }
     }
 }

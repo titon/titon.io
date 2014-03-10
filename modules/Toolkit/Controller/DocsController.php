@@ -12,16 +12,12 @@ class DocsController extends ToolkitController {
     /**
      * Temporary redirect.
      */
-    public function index() {
-        return $this->getResponse()->redirect(url('toolkit'));
-    }
+    public function index($version, $path) {
+        $sources = $this->getApplication()->get('docs')->getSource('toolkit', $version, $path);
 
-    /**
-     * Out going modal.
-     */
-    public function out() {
         $this->getView()->setVariables([
-            'pageTitle' => 'Documentation'
+            'toc' => $sources['toc'],
+            'chapters' => $sources['chapters']
         ]);
     }
 

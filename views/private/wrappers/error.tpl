@@ -1,3 +1,5 @@
-<?= $this->getContent(); ?>
+<div class="error">
+    <?= $this->getContent(); ?>
 
-<?= $this->open('footer'); ?>
+    <?= $this->open('footer'); ?>
+</div>

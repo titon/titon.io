@@ -39,7 +39,8 @@ $app
     ->set('env', new Environment(['bootstrapPath' => RESOURCES_DIR . 'environments/']))
     ->set('cache', new Cache())
     ->set('g11n', new G11n())
-    ->set('db', new Database());
+    ->set('db', new Database())
+    ->set('docs', new Docs());
 
 /**
  * --------------------------------------------------------------

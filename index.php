@@ -38,6 +38,7 @@ define('APP_DIR', __DIR__ . DS);
 define('VENDOR_DIR', APP_DIR . 'vendor' . DS);
 define('MODULES_DIR', APP_DIR . 'modules' . DS);
 define('RESOURCES_DIR', APP_DIR . 'resources' . DS);
+define('DOCS_DIR', RESOURCES_DIR . 'docs' . DS);
 define('TEMP_DIR', APP_DIR . 'temp' . DS);
 define('VIEWS_DIR', APP_DIR . 'views' . DS);
 define('WEB_DIR', APP_DIR . 'web' . DS);

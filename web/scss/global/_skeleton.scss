@@ -6,7 +6,7 @@ body {
     color: $text-color;
     background: $bg-color;
     margin: 0;
-    padding: 0;
+    padding: 45px 0 0 0;
 }
 
 a, a:hover {
@@ -15,10 +15,6 @@ a, a:hover {
 }
 
 a:hover { color: $toolkit-primary-light; }
-
-pre code {
-    display: block;
-}
 
 //-------------------- Structure --------------------//
 
@@ -34,7 +30,6 @@ pre code {
     @include background(
         image-url("hexagon-pattern.png") repeat,
         linear-gradient(left, $toolkit-primary-dark, $framework-primary-dark));
-    padding-top: 45px;
 }
 
 //-------------------- Body --------------------//
@@ -155,6 +150,15 @@ pre code {
     @include transform(translate(-50%, -50%));
 }
 
+.box {
+    background: $toolkit-bg;
+    border: 1px solid darken($toolkit-bg-alt, 5%);
+    border-bottom: 2px solid $toolkit-border;
+    border-radius: $round;
+    margin-bottom: $spacing;
+    padding: $spacing;
+}
+
 //-------------------- Hexagons --------------------//
 
 .hexagon {
@@ -208,10 +212,9 @@ pre code {
 
 @include if-medium {
     html { font-size: 16px; }
+    body { padding-top: 60px; }
 
     .wrapper { padding: 2rem; }
-
-    .head { padding-top: 60px; }
 
     .toolbar {
         padding: $medium-padding 0;
@@ -249,10 +252,9 @@ pre code {
 
 @include if-large {
     html { font-size: 18px; }
+    body { padding-top: 75px; }
 
-    .wrapper { max-width: $breakpoint-large; }
-
-    .head { padding-top: 75px; }
+    .wrapper { max-width: $breakpoint-large !important; }
 
     .toolbar {
         padding: $large-padding 0;

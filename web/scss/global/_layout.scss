@@ -1,0 +1,16 @@
+@import "toolkit/layout/base";
+@import "toolkit/layout/typography";
+@import "toolkit/layout/form";
+@import "toolkit/layout/code";
+@import "toolkit/layout/responsive";
+
+code {
+    background: lighten($toolkit-secondary, 30%);
+}
+
+pre {
+    background: $bg-color;
+    border-radius: $round;
+    border: 0;
+    color: $text-muted;
+}

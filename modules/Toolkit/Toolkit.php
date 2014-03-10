@@ -7,10 +7,10 @@
 
 namespace Toolkit;
 
+use Titon\G11n\Utility\Inflector;
 use Titon\Io\Reader\JsonReader;
 use Titon\Mvc\Application;
 use Titon\Utility\Hash;
-use Titon\Utility\Inflector;
 
 class Toolkit {
 

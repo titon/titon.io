@@ -7,12 +7,7 @@
 @import "global/common";
 
 @import "normalize";
-@import "toolkit/layout/base";
-@import "toolkit/layout/typography";
-@import "toolkit/layout/form";
-@import "toolkit/layout/code";
-@import "toolkit/layout/responsive";
-
+@import "global/layout";
 @import "global/skeleton";
 @import "components/button";
 @import "components/drop";
@@ -21,5 +16,9 @@
 @import "components/label";
 @import "components/list";
 @import "components/modal";
+@import "components/notice";
+@import "components/table";
 @import "components/tabs";
 @import "components/tooltip";
+@import "sections/landing";
+@import "sections/docs";
