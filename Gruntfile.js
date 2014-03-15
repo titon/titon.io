@@ -40,6 +40,13 @@ module.exports = function(grunt) {
                     'web/js/docs.min.js': ['web/jss/docs.js']
                 }
             }
+        },
+
+        watch: {
+            scripts: {
+                files: 'web/jss/**/*.js',
+                tasks: ['uglify']
+            }
         }
     });
 

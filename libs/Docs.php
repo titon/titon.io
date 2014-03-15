@@ -150,26 +150,32 @@ class Docs {
 
         // Group by type
         foreach ($chapters as $i => $chapter) {
+            $currentType = (int) $chapter['type'];
+            $lastType = (int) end($typeStack);
 
             // Lower depth, go deeper
-            if (!$chapterStack || $chapter['type'] > end($typeStack)) {
+            if (!$lastType || $currentType > $lastType) {
                 $chapterStack[] = $chapter;
-                $typeStack[] = $chapter['type'];
+                $typeStack[] = $currentType;
 
             // Same depth, append previous item and start new stack
-            } else if ($chapter['type'] == end($typeStack)) {
+            } else if ($currentType === $lastType) {
                 $appendToLast($chapterStack, $typeStack);
 
                 if ($i == $chapterCount) {
                     $chapterStack[count($typeStack) - 1]['children'][] = $chapter;
                 } else {
                     $chapterStack[] = $chapter;
-                    $typeStack[] = $chapter['type'];
+                    $typeStack[] = $currentType;
                 }
 
-            // Higher depth, close parent
-            } else if ($chapter['type'] < end($typeStack)) {
+            // Higher depth, close parent and start a new one
+            } else if ($currentType < $lastType) {
                 $appendToLast($chapterStack, $typeStack);
+                $appendToLast($chapterStack, $typeStack);
+
+                $chapterStack[] = $chapter;
+                $typeStack[] = $currentType;
             }
         }
 
