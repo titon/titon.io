@@ -6,7 +6,7 @@ body {
     color: $text-color;
     background: $bg-color;
     margin: 0;
-    padding: 45px 0 0 0;
+    padding: 0;
 }
 
 a, a:hover {
@@ -21,6 +21,7 @@ a:hover { color: $toolkit-primary-light; }
 .wrapper {
     margin: 0 auto;
     padding: 2rem 1rem;
+    position: relative;
 }
 
 //-------------------- Header --------------------//
@@ -64,9 +65,9 @@ a:hover { color: $toolkit-primary-light; }
 //-------------------- Toolbar --------------------//
 
 .toolbar {
-    position: fixed;
+    /*position: fixed;
     top: 0;
-    left: 0;
+    left: 0;*/
     z-index: 550;
     width: 100%;
     height: 45px;
@@ -157,6 +158,8 @@ a:hover { color: $toolkit-primary-light; }
     border-radius: $round;
     margin-bottom: $spacing;
     padding: $spacing;
+
+    &:last-child { margin-bottom: 0; }
 }
 
 //-------------------- Hexagons --------------------//
@@ -212,7 +215,6 @@ a:hover { color: $toolkit-primary-light; }
 
 @include if-medium {
     html { font-size: 16px; }
-    body { padding-top: 60px; }
 
     .wrapper { padding: 2rem; }
 
@@ -252,7 +254,6 @@ a:hover { color: $toolkit-primary-light; }
 
 @include if-large {
     html { font-size: 18px; }
-    body { padding-top: 75px; }
 
     .wrapper { max-width: $breakpoint-large !important; }
 

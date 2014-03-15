@@ -28,13 +28,13 @@ $env = $this->data('env', 'prod'); ?>
     <?= $asset->scripts('header', $env); ?>
 </head>
 <body class="<?= $this->getConfig('module') . '-' . $this->getConfig('controller') . '-' . $this->getConfig('action'); ?> <?= $this->data('bodyClass'); ?>">
-    <div class="skeleton">
-        <?= $this->getContent(); ?>
-    </div>
-
     <?php if (!($this->getConfig('module') === 'main' && $this->getConfig('controller') === 'index')) {
         echo $this->open('toolbar');
     } ?>
+
+    <div class="skeleton">
+        <?= $this->getContent(); ?>
+    </div>
 
     <?= $asset->scripts('footer', $env); ?>
 </body>

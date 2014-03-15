@@ -11,22 +11,36 @@ amount of HTTP requests in a given page.
 The difference between this component, and other libraries, is that lazy loading is applied
 to a parent wrapper. There are 2 reasons for this, the first is that it allows deferred loading
 of background images (ones defined in CSS), and the second is bulk loading of `img`s within the
-element. Simply place a `.lazy-load` class on the element you want to monitor.
+element. Simply place a `.lazy-load` class on the element we want to monitor.
 
 ```html
 <div class="item lazy-load">
-    <img data-lazyload="/img/image.png" alt="">
+    <img data-src="/img/image.png" alt="">
 </div>
 ```
 
 <div class="notice is-info">
-    When lazy loading inline images, use the <code>data-lazyload</code> attribute instead of <code>src</code>.
+    When lazy loading inline images, use the <code>data-src</code> attribute instead of <code>src</code>.
 </div>
 
-Once elements have been marked, the component can be initialized.
+Once elements have been marked, the component can be initialized on a parent container.
 
 ```javascript
-$('.lazy-load').lazyLoad();
+$('body').lazyLoad();
+
+// Or element with overflow hidden
+$('#overflown').lazyLoad();
+```
+
+### Retina Support ###
+
+To display a higher quality image for retina/HD displays, use `data-src-retina`.
+If no retina equivalent is found, it will fallback to `data-src`.
+
+```html
+<div class="item lazy-load">
+    <img data-src="/img/image.png" data-src-retina="/img/image-hd.png" alt="">
+</div>
 ```
 
 ### Scrolling Threshold ###
@@ -35,7 +49,7 @@ When no threshold is set, images will immediately load when they appear on scree
 Defining a threshold (in pixels) will start pre-loading any images that appear outside the viewport.
 
 ```javascript
-$('.lazy-load').lazyLoad({
+$('body').lazyLoad({
     threshold: 200 // load images 200px off screen (default is 150)
 });
 ```
@@ -44,16 +58,16 @@ $('.lazy-load').lazyLoad({
 
 By default, all inline images will be collapsed before being loaded. Because of this, a flicker or
 element shift may occur once the image is loaded. To prevent this, define a width and height for the image,
-either inline or through CSS. You may also define the `src` attribute with a transparent fill-in image.
+either inline or through CSS. We may also define the `src` attribute with a transparent fill-in image.
 
 ```html
-<img src="/img/fake-image.png" data-lazyload="/img/real-image.png" width="250" height="100">
+<img src="/img/fake-image.png" data-src="/img/real-image.png" width="250" height="100">
 ```
 
 ## Notes ##
 
-* Background images will be overridden by the `.lazy-load` class
-* Elements that have been loaded will have the `.lazy-load` class removed
+* Background images will be overridden by the `.lazy-load` class.
+* Elements that have been loaded will have the `.lazy-load` class removed.
 
 ## Options ##
 

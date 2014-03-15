@@ -1,9 +1,9 @@
 <?php $this->wrapWith('docs');
 
-foreach ($chapters as $id => $chapter) { ?>
+foreach ($sections as $id => $section) { ?>
 
     <article class="box docs-article" id="<?= $id; ?>">
-        <?= $chapter; ?>
+        <?= $section; ?>
     </article>
 
 <?php } ?>

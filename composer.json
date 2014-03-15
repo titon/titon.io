@@ -9,7 +9,7 @@
         "titon/debug": "*",
         "titon/env": "*",
         "titon/type": "*",
-        "titon/toolkit": "dev-master",
+        "titon/toolkit": "*",
         "psr/log": "*",
         "erusev/parsedown": "*"
     },

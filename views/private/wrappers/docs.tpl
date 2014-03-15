@@ -1,106 +1,62 @@
+<?php $asset->addScript('/js/docs.min', 'footer', 100); ?>
+
 <div class="documentation">
     <header class="head">
         <div class="wrapper">
-            <ul class="docs-nav">
-                <li>
-                    <a href="" class="is-active">
-                        <span class="fa fa-power-off"></span>
-                        Setup
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <span class="fa fa-code"></span>
-                        Develop
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <span class="fa fa-puzzle-piece"></span>
-                        Components
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <span class="fa fa-shield"></span>
-                        Support
-                    </a>
-                </li>
+            <ul class="docs-nav" id="nav">
+                <?php
+                $navIcons = ['fa-power-off', 'fa-code', 'fa-puzzle-piece', 'fa-shield'];
+                $tocItems = [];
+
+                foreach ($toc['children'] as $i => $nav) {
+                    $isActive = false;
+
+                    if (strpos($url, $nav['url']) === 0) {
+                        $tocItems = $nav['children'];
+                        $isActive = true;
+                    } ?>
+
+                    <li>
+                        <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => trim($nav['url'], '/')]); ?>"
+                            <?php if ($isActive) { ?> class="is-active"<?php } ?>>
+                            <span class="fa <?= $navIcons[$i]; ?>"></span>
+                            <?= $nav['title']; ?>
+                        </a>
+                    </li>
+
+                <?php } ?>
             </ul>
         </div>
     </header>
 
     <main class="body">
-        <div class="wrapper grid">
-            <aside class="hide-small col medium-2 large-3">
-                <nav class="box pin docs-toc" id="toc">
-                    <ul>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li class="is-open">
-                            <a href="">Grid</a>
+        <div class="wrapper">
+            <div class="grid" id="doc">
+                <aside class="hide-small col medium-2 large-3 docs-sidebar" id="toc">
+                    <nav class="box docs-toc">
+                        <ul>
+                            <?php foreach ($tocItems as $toc) {
+                                $isOpen = ($url === $toc['url']); ?>
 
-                            <ul>
-                                <li>
-                                    <a href="">Usage</a>
+                                <li<?php if ($isOpen) { ?> class="is-open"<?php } ?>>
+                                    <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => trim($toc['url'], '/')]); ?>">
+                                        <?= $toc['title']; ?>
+                                    </a>
 
-                                    <ul>
-                                        <li><a href="">Push &amp; Pull</a></li>
-                                        <li><a href="" class="is-active">Nesting Grids</a></li>
-                                        <li>
-                                            <a href="">Responsive Columns</a>
-
-                                            <ul>
-                                                <li><a href="">Size Based</a></li>
-                                                <li><a href="">Device Based</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="">End Capping</a></li>
-                                        <li><a href="">Extending Styles</a></li>
-                                    </ul>
+                                    <?php if ($isOpen) {
+                                        echo $this->open('docs/chapter-nav', ['chapters' => $chapters['children']]);
+                                    } ?>
                                 </li>
-                                <li><a href="">Notes</a></li>
-                                <li><a href="">Variables</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                        <li><a href="">Component</a></li>
-                    </ul>
-                </nav>
-            </aside>
 
-            <section class="col medium-7 large-9">
-                <?= $this->getContent(); ?>
-            </section>
+                            <?php } ?>
+                        </ul>
+                    </nav>
+                </aside>
+
+                <section class="col medium-7 large-9 end" id="chapters">
+                    <?= $this->getContent(); ?>
+                </section>
+            </div>
         </div>
     </main>
 

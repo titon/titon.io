@@ -2,6 +2,8 @@
 
 $docs-border-color: darken($toolkit-bg-alt, 5%);
 
+#doc { position: relative; }
+
 .documentation {
     .head .wrapper {
         padding-top: 0 !important;
@@ -59,6 +61,7 @@ $docs-border-color: darken($toolkit-bg-alt, 5%);
             a {
                 display: block;
                 padding: .5rem .75rem;
+                outline: none;
 
                 &.is-active {
                     border-right: 10px solid $docs-border-color;

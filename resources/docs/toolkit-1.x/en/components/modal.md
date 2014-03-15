@@ -18,18 +18,20 @@ The value of the `getContent` option (falls back to `href` attribute) determines
 Once a request completes, the AJAX response will be inserted into the `contentElement` element.
 
 To insert non-AJAX content into a modal, the `getContent` value can point to an ID in the page, like so `#some-id`.
-You can also set the content directly through the modal instance.
+We can also set the content directly through the modal instance.
 
 ```javascript
 $('.js-modal').toolkit('modal').show(null, 'This will be inserted into the modal.');
 ```
 
-Or you can trigger the modal by passing in the node to read from.
+Or we can trigger the modal by passing in the node to read from.
 
 ```javascript
 $('.js-modal').toolkit('modal').show($('#add-category'));
 // Loads /categories/add
 ```
+
+[Learn more on accessing component instances.](../development/js.md#accessing-components)
 
 ### Multiple Modals ###
 
@@ -45,7 +47,7 @@ will open one. This even applies to elements loaded in via AJAX, like the conten
 
 ### Form Submitting ###
 
-How useful would a modal be if it didn't support forms? Pretty useless.
+How useful would a modal be if it didn't support forms? Rather useless.
 Using forms in modals is rather simple, simply place the `form` tag and a `.modal-event-submit`
 class on the element that should trigger form submission.
 
@@ -88,9 +90,9 @@ Then the `console.log` function will be triggered with the response passed as th
 
 ## Notes ##
 
-* The `animation` option will be appended as a class name
-* An `.is-fullscreen` class will be added to the modal when `fullScreen` is enabled
-* File uploading is enabled if the [browser supports](http://caniuse.com/#feat=xhr2) the `FormData` API
+* The `animation` option will be appended as a class name.
+* An `.is-fullscreen` class will be added to the modal when `fullScreen` is enabled.
+* File uploading is enabled if the [browser supports](http://caniuse.com/#feat=xhr2) the `FormData` API.
 
 ## Variables ##
 
@@ -103,6 +105,14 @@ Then the `console.log` function will be triggered with the response passed as th
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <td>$modal-animation</td>
+            <td>
+                ("fade", "from-above", "from-below", "slide-in-top", "slide-in-right", "slide-in-bottom",
+                "slide-in-left", "sticky-top", "sticky-right", "sticky-bottom", "sticky-left")
+            </td>
+            <td>A list of all animations to include in the CSS output.</td>
+        </tr>
         <tr>
             <td>$modal-transition</td>
             <td>.3s</td>
@@ -131,7 +141,7 @@ Inherits all options from the [parent component](../development/js.md#options).
             <td>fade</td>
             <td>
                 The animation to use when displaying the modal.
-                Available options are: fade, from-above, from-below, flip, flip-vert,
+                Available options are: fade, from-above, from-below,
                 slide-in-top, slide-in-right, slide-in-bottom, slide-in-left,
                 sticky-top, sticky-right, sticky-bottom, sticky-left.
             </td>
@@ -196,12 +206,6 @@ Inherits all options from the [parent component](../development/js.md#options).
             <td>.modal-event-submit</td>
             <td>CSS selector to bind form submit events to.</td>
         </tr>
-        <tr>
-            <td>template</td>
-            <td>string</td>
-            <td>(below)</td>
-            <td>The HTML used to create the modal elements.</td>
-        </tr>
     </tbody>
 </table>
 
@@ -212,15 +216,17 @@ This structure can be customized through the `template` option.
 
 ```html
 <div class="modal">
-    <div class="modal-handle">
-        <div class="modal-inner"></div>
-        <button type="button" class="modal-close modal-event-close"><span class="x"></span></button>
+    <div class="modal-outer">
+        <div class="modal-handle">
+            <div class="modal-inner"></div>
+            <button type="button" class="modal-close modal-event-close"><span class="x"></span></button>
+        </div>
     </div>
 </div>
 ```
 
 <div class="notice is-warning">
-    The <code>.modal-handle</code> class is required for animations to work properly.
+    The <code>.modal-outer</code> and <code>.modal-handle</code> classes are required for certain animations to work properly.
 </div>
 
 ## Events ##

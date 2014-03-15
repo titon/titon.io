@@ -13,11 +13,16 @@ class DocsController extends ToolkitController {
      * Temporary redirect.
      */
     public function index($version, $path) {
-        $sources = $this->getApplication()->get('docs')->getSource('toolkit', $version, $path);
+        $docs = new \Docs();
+        $toc = $docs->getToc('toolkit', $version);
+        $sources = $docs->getSource('toolkit', $version, $path);
 
         $this->getView()->setVariables([
-            'toc' => $sources['toc'],
-            'chapters' => $sources['chapters']
+            'toc' => $toc,
+            'chapters' => $sources['toc'],
+            'sections' => $sources['chapters'],
+            'version' => $version,
+            'url' => '/' . trim($path, '/')
         ]);
     }
 

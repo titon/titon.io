@@ -1,25 +1,16 @@
 (function($) {
     'use strict';
 
-    var Docs = {
+    $('#toc').pin({
+        throttle: 1,
+        context: '#doc',
+        location: 'left'
+    });
 
-        /**
-         * Initialize events for Docs pages.
-         */
-        initialize: function() {
-            Docs.resizeChapters();
-        },
-
-        /**
-         * Resize the height of the chapters to the browser window.
-         * This should hide any clutter and focus it on a single chapter.
-         */
-        resizeChapters: function() {
-            $('.docs-chapter').css('min-height', $(window).height());
-        }
-
-    };
-
-    $(window).resize(Docs.resizeChapters);
-    $(document).ready(Docs.initialize);
+    $('body').stalker({
+        target: '#toc a',
+        marker: '#chapters [id]',
+        applyToParent: false,
+        onlyWithin: false
+    });
 })(jQuery);

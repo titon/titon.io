@@ -26,7 +26,7 @@ To ensure support and adoption on a wide array of devices, Toolkit follows a mob
 This designates mobile devices as first class priority, with CSS and JavaScript focused for mobile first.
 Additional functionality for larger screens will only be loaded through use of media queries.
 
-To ensure proper viewport rendering and touch capabilities on mobile devices, add the appropriate viewport meta tag to your `<head>`.
+To ensure proper viewport rendering and touch capabilities on mobile devices, add the appropriate viewport meta tag to `<head>`.
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,7 +58,7 @@ When writing our (S)CSS, it can easily be written as such:
 .carousel-next { }
 ```
 
-No nesting required as class names have been namespaced, pretty nice huh? This easily reduces the file size and improves compatibility.
+No nesting required as class names have been namespaced, nice huh? This easily reduces the file size and improves compatibility.
 
 The final paradigm, the "modifier", is used to change the behavior or state of the parent (the "block").
 Continuing with our Carousel example, the default `.carousel` block provides a 4:3 sized carousel. Now what if we want 16:9? Or a 4:4?
@@ -82,7 +82,7 @@ Fantastic! This is all possible due to Sass's built in `@extend` functionality.
 ## Reserved Classes ##
 
 We try to avoid declaring global class names, but usually it can't be helped.
-Just be weary of the following classes while building your application.
+Just be weary of the following classes while building an application.
 
 The following classes are reserved by Toolkit:
 
@@ -92,15 +92,15 @@ The following classes are reserved by Toolkit:
 * TypeAhead component `.is-shadow` and `.not-shadow` classes
 * Shape classes: `.round`, `.square`, `.pill`, `.oval`, `.skew`, `.skew-reverse`
 * Size classes: `.small`, `.medium`, `.large`
-* Animation classes: `.from-above`, `.from-below`, `.slide`, `.slide-up`, `.slide-in`, `.slide-in-top`,
-    `.slide-in-bottom`, `.slide-in-left`, `.slide-in-right`, `.flip`, `.flip-vert`, `.flip-rotate`,
+* Animation classes: `.from-above`, `.from-below`, `.slide`, `.slide-up`, `.slide-in-top`,
+    `.slide-in-bottom`, `.slide-in-left`, `.slide-in-right`, `.flip-rotate`,
     `.fade`, `.sticky`, `.sticky-top`, `.sticky-bottom`, `.sticky-left`, `.sticky-right`
 * Positional classes: `.top-left`, `.top-center`, `.top-right`, `.center-left`, `.center-right`,
     `.bottom-left`, `.bottom-center`, `.bottom-right`
 * State classes: `.is-info`, `.is-error`, `.is-warning`, `.is-success`, `.is-active`, `.is-disabled`,
     `.is-open`, `.is-loading`, `.is-children`, `.is-hover`, `.is-draggable`, `.is-dragging`,
     `.is-fullscreen`, `.is-single`, `.is-sortable`, `.is-scrollable`, `.is-required`,
-    `.no-legend`, `.no-columns`
+    `.no-legend`, `.no-columns`, and many more
 
 Some classes make use of [Sass variables](sass.md#variables) for altering the class names.
 This was implemented to avoid collisions of common class names and integration with legacy applications.

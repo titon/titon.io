@@ -15,7 +15,7 @@ The following markup can be used for basic carousel functionality.
     <!-- Items to cycle -->
     <div class="carousel-items">
         <ul>
-            <li><a href=""><img src="/img/carousel/item-1.png" alt=""></a></li>
+            <li><a href=""><img src="/img/carousel/item-1.png" alt="" class="fluid"></a></li>
             ...
         </ul>
     </div>
@@ -34,9 +34,9 @@ The following markup can be used for basic carousel functionality.
 </div>
 ```
 
-If you don't want next and previous arrows, don't add the markup for it.
-If you don't want the tab list, don't add the markup for it.
-If you want additional elements, feel free to add them! So on and so forth.
+If we don't want next and previous arrows, don't add the markup for it.
+If we don't want the tab list, don't add the markup for it.
+If we want additional elements, we can freely to add them! So on and so forth.
 The only elements that are required, are the `.carousel` wrapper,
 and the `.carousel-items` list.
 
@@ -99,7 +99,7 @@ The carousel will take care of everything else.
 
 ### Optional Captions ###
 
-Add captions to your carousel by adding a `.carousel-caption` element within each item.
+Add captions to the carousel by adding a `.carousel-caption` element within each item.
 The markup within a caption can be customized extensively and is not enforced by the carousel.
 
 ```html
@@ -332,12 +332,7 @@ Inherits all properties from the [parent component](../development/js.md#propert
             </td>
         </tr>
         <tr>
-            <td>previousIndex</td>
-            <td>int</td>
-            <td>The index of the previously shown item.</td>
-        </tr>
-        <tr>
-            <td>currentIndex</td>
+            <td>index</td>
             <td>int</td>
             <td>The index of the currently shown item.</td>
         </tr>

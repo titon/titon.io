@@ -18,11 +18,13 @@
     $('.scroll-to').click(function(e) {
         e.preventDefault();
 
-        var self = $(e.target);
+        var hash = $(e.target).attr('href');
 
         $('html, body').animate({
-            scrollTop: $(self.attr('href')).offset().top - $('#toolbar').outerHeight()
+            scrollTop: $(hash).offset().top
         }, 1000);
+
+        history.pushState(null, null, hash);
     });
 
 })(jQuery);
