@@ -1,4 +1,7 @@
-<?php $asset->addScript('/js/docs.min', 'footer', 100); ?>
+<?php
+$asset->addStylesheet('/css/vendors/rainbow.min', [], 100);
+$asset->addScript('/js/vendors/rainbow.min', 'footer', 90);
+$asset->addScript('/js/docs.min', 'footer', 100); ?>
 
 <header class="head">
     <div class="wrapper">
