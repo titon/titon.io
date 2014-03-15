@@ -1,6 +1,4 @@
 <?php
-$this->wrapWith('landing');
-
 $breadcrumb->add('Framework', 'framework'); ?>
 
 <header class="head">
@@ -10,43 +8,43 @@ $breadcrumb->add('Framework', 'framework'); ?>
         <h6>Ease the process of application development by off-loading common tasks with these lightweight modular back-end packages.</h6>
 
         <div class="hexagons hide-small">
-            <a href="http://php.net" target="_blank" class="hexagon">
+            <div class="hexagon">
                 <span class="center-vertical">
                     PHP
                     <small>5.3, 5.4</small>
                 </span>
-            </a>
+            </div>
 
-            <a href="http://getcomposer.org" target="_blank" class="hexagon">
+            <div class="hexagon">
                 <span class="center-vertical">
                     Composer
                     <small>Packagist</small>
                 </span>
-            </a>
+            </div>
 
-            <a href="http://mysql.com/" target="_blank" class="hexagon">
+            <div class="hexagon">
                 <span class="center-vertical">
                     MySQL
                 </span>
-            </a>
+            </div>
 
-            <a href="http://postgresql.org/" target="_blank" class="hexagon">
+            <div class="hexagon">
                 <span class="center-vertical">
                     PostgreSQL
                 </span>
-            </a>
+            </div>
 
-            <a href="http://sqlite.org/" target="_blank" class="hexagon">
+            <div class="hexagon">
                 <span class="center-vertical">
                     SQLite
                 </span>
-            </a>
+            </div>
 
-            <a href="http://mongodb.org/" target="_blank" class="hexagon">
+            <div class="hexagon">
                 <span class="center-vertical">
                     MongoDB
                 </span>
-            </a>
+            </div>
         </div>
 
         <div class="button-toolbar">
@@ -236,3 +234,5 @@ $breadcrumb->add('Framework', 'framework'); ?>
         </div>
     </section>
 </main>
+
+<?= $this->open('footer'); ?>

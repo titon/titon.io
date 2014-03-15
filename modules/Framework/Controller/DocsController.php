@@ -10,6 +10,18 @@ namespace Framework\Controller;
 class DocsController extends FrameworkController {
 
     /**
+     * Set shared variables.
+     */
+    public function initialize() {
+        parent::initialize();
+
+        $this->getView()->setVariables([
+            'skeletonClass' => 'documentation',
+            'navIcons' => []
+        ]);
+    }
+
+    /**
      * Temporary redirect.
      */
     public function index() {

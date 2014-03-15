@@ -16,7 +16,8 @@ class IndexController extends FrameworkController {
      */
     public function index() {
         $this->getView()->setVariables([
-            'packages' => Framework::loadPackages()
+            'packages' => Framework::loadPackages(),
+            'skeletonClass' => 'landing'
         ]);
     }
 
