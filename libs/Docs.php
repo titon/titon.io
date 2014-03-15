@@ -43,7 +43,7 @@ class Docs {
 
     public function compileFile(File $file) {
         $key = md5($file->path());
-        $content = $this->parseMarkdown($file->read());
+        $content = $this->parseMarkdown($file);
 
         $this->getStorage()->set($key, $content, '+1 week');
 
@@ -122,12 +122,12 @@ class Docs {
             $base = DOCS_DIR . sprintf('%s-%s/%s/', $source, $version, $locale);
             $paths = [$base];
 
-            if ($query) {
+            if ($query !== null) {
                 $paths = [$base . $query . '.md', $base . $query . '/index.md'];
             }
 
             foreach ($paths as $path) {
-                if (file_exists($path)) {
+                if (is_file($path) && file_exists($path)) {
                     return $path;
                 }
             }
@@ -185,14 +185,23 @@ class Docs {
         return $toc;
     }
 
-    public function parseMarkdown($content) {
+    public function parseMarkdown(File $file) {
         $parsedown = new Parsedown();
+        $path = $file->path();
 
         // Parse the file
-        $parsed = $parsedown->parse($content);
+        $parsed = $parsedown->parse($file->read());
 
         // Replace .md in URLs
         $parsed = str_replace('.md', '', $parsed);
+
+        // Fix URLs on index pages
+        if (basename($path) === 'index.md') {
+            $folder = basename(dirname($path));
+            $parsed = preg_replace_callback('/<a href="([-a-zA-Z0-9\/]+)">/', function($matches) use ($folder) {
+                return sprintf('<a href="%s">', $folder . '/' . $matches[1]);
+            }, $parsed);
+        }
 
         // Break up into sections
         $parsed = explode("\n", $parsed);
@@ -219,8 +228,12 @@ class Docs {
                     $sections[$sectionHash] = $currentSection;
                 }
 
-                $sectionHash = Inflector::slug(trim($matches[2]));
+                $sectionHash = str_replace('.', '', Inflector::slug(trim($matches[2])));
                 $currentSection = $line;
+
+                if (is_numeric($sectionHash)) {
+                    $sectionHash = 'no-' . $sectionHash;
+                }
 
                 $toc[] = [
                     'title' => $matches[2],
@@ -231,7 +244,12 @@ class Docs {
 
             // Rewrite h3-h6 tags to have an ID
             } else {
-                $hash = Inflector::slug(trim($matches[2]));
+                $hash = str_replace('.', '', Inflector::slug(trim($matches[2])));
+
+                if (is_numeric($hash)) {
+                    $hash = 'no-' . $hash;
+                }
+
                 $currentSection .= "\n" . sprintf('<h%s id="%s">%s</h%s>', $matches[1], $hash, $matches[2], $matches[3]);
 
                 $toc[] = [

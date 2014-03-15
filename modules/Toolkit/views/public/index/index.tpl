@@ -1,6 +1,4 @@
 <?php
-$this->wrapWith('landing');
-
 $breadcrumb->add('Toolkit', 'toolkit');
 
 $filterComponents = function($type) use ($components) {
@@ -24,52 +22,52 @@ $filterComponents = function($type) use ($components) {
         <h6>Extensible front-end HTML, CSS, and JavaScript user interface components for the responsive, mobile, and modern web.</h6>
 
         <div class="hexagons hide-small">
-            <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank" class="hexagon">
+            <div class="hexagon">
                 <span class="center-vertical">
                     HTML5
                 </span>
-            </a>
+            </div>
 
-            <a href="http://sass-lang.com/" target="_blank" class="hexagon">
+            <div class="hexagon">
                 <span class="center-vertical">
                     CSS3
                     <small>Sass</small>
                 </span>
-            </a>
+            </div>
 
-            <a href="http://gruntjs.com/" target="_blank" class="hexagon">
+            <div class="hexagon">
                 <span class="center-vertical">
                     <span class="hide-mobile">JavaScript</span>
                     <span class="show-mobile">JS</span>
                     <small>Grunt</small>
                 </span>
-            </a>
+            </div>
 
-            <a href="http://jquery.com/" target="_blank" class="hexagon">
+            <div class="hexagon">
                 <span class="center-vertical">
                     jQuery
                 </span>
-            </a>
+            </div>
 
-            <a href="http://mootools.net/" target="_blank" class="hexagon">
+            <div class="hexagon">
                 <span class="center-vertical">
                     <span class="hide-mobile">MooTools</span>
                     <span class="show-mobile">Moo</span>
                 </span>
-            </a>
+            </div>
         </div>
 
         <div class="button-toolbar">
-            <a href="/slides/what-is-toolkit.pdf" class="button large hide-mobile" target="_blank">
+            <a href="/slides/what-is-toolkit.pdf" class="button large" target="_blank">
                 What Is
             </a>
 
-            <a href="https://github.com/titon/toolkit/releases" class="button large is-success" target="_blank">
+            <a href="https://github.com/titon/toolkit/archive/<?= $version; ?>.zip" class="button large is-success hide-mobile">
                 Download
                 <span class="button-suffix"><?= $version; ?></span>
             </a>
 
-            <a href="https://github.com/titon/toolkit/blob/master/docs/en/setup/getting-started.md" class="button large hide-mobile" target="_blank">
+            <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => 'setup/getting-started']); ?>" class="button large">
                 Install
             </a>
         </div>
@@ -152,7 +150,7 @@ $filterComponents = function($type) use ($components) {
             <hr>
 
             <div class="grid">
-                <div class="col medium-3 large-4">
+                <div class="col medium-4 large-4">
                     <h6>Layout</h6>
 
                     <p>Helper classes, mixins, functions, and visual styles for built-in HTML tags.</p>
@@ -174,7 +172,7 @@ $filterComponents = function($type) use ($components) {
                     </ul>
                 </div>
 
-                <div class="col medium-3 large-4">
+                <div class="col medium-4 large-4">
                     <h6>Elements</h6>
 
                     <p>Common user interface concepts packaged as static HTML elements.</p>
@@ -196,7 +194,7 @@ $filterComponents = function($type) use ($components) {
                     </ul>
                 </div>
 
-                <div class="col medium-3 large-4">
+                <div class="col medium-4 large-4">
                     <h6>Modules</h6>
 
                     <p>Element components empowered with JavaScript for advanced functionality.</p>
@@ -219,7 +217,7 @@ $filterComponents = function($type) use ($components) {
             <hr>
 
             <div class="grid">
-                <div class="col medium-4 large-6">
+                <div class="col medium-6 large-6">
                     <p>Define your own markup or roll with the suggested Toolkit structure.</p>
 
                     <pre><code class="lang-html">&lt;div class="carousel"&gt;
@@ -240,7 +238,7 @@ $filterComponents = function($type) use ($components) {
 &lt;/div&gt;</code></pre>
                 </div>
 
-                <div class="col medium-4 large-6 end">
+                <div class="col medium-6 large-6 end">
                     <p>Initialize JavaScript functionality for components using familiar plugin syntax.</p>
 
                     <div class="tabs example-tabs">
@@ -270,14 +268,16 @@ $filterComponents = function($type) use ($components) {
 });</code></pre>
                     </div>
 
-                    <?php /*<p>
-                        <a href="https://github.com/titon/toolkit/tree/master/docs/en/components/carousel.md" class="button">
+                    <p>
+                        <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => 'components/carousel']); ?>" class="button">
                             View Carousel Component
                             <span class="fa fa-arrow-circle-right"></span>
                         </a>
-                    </p>*/ ?>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 </main>
+
+<?= $this->open('footer'); ?>

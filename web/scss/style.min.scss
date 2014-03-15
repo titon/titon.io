@@ -23,3 +23,6 @@
 @import "components/tooltip";
 @import "sections/landing";
 @import "sections/docs";
+
+// Last so it overrides
+@import "toolkit/layout/responsive";

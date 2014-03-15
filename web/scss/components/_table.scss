@@ -11,17 +11,6 @@
     }
 }
 
-.data-table {
-    th, td {
-        white-space: nowrap;
-    }
-
-    td:first-child,
-    td:last-child {
-        white-space: normal;
-    }
-}
-
 .comparison-table,
 .compatibility-table {
     td {

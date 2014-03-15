@@ -1,6 +1,8 @@
 @import "toolkit/components/tabs";
 
 .example-tabs {
+    margin-top: $margin;
+
     .tabs-nav {
         margin: 0;
         padding: 0;

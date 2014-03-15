@@ -145,7 +145,7 @@ $breadcrumb->add('Framework', 'framework'); ?>
             <hr>
 
             <div class="grid">
-                <div class="col medium-3 large-4">
+                <div class="col medium-4 large-4">
                     <h6>Utilities</h6>
 
                     <p>Helper and utility classes.</p>
@@ -167,7 +167,7 @@ $breadcrumb->add('Framework', 'framework'); ?>
                     </ul>
                 </div>
 
-                <div class="col medium-3 large-4">
+                <div class="col medium-4 large-4">
                     <h6>Application</h6>
 
                     <p>Eases application building by offloading common tasks and use cases.</p>
@@ -179,7 +179,7 @@ $breadcrumb->add('Framework', 'framework'); ?>
                     </ul>
                 </div>
 
-                <div class="col medium-3 large-4">
+                <div class="col medium-4 large-4">
                     <h6>MVC</h6>
 
                     <p>Separate or combined support for the MVC software pattern.</p>
@@ -212,7 +212,7 @@ $breadcrumb->add('Framework', 'framework'); ?>
             <hr>
 
             <div class="grid">
-                <div class="col medium-3 large-4">
+                <div class="col medium-4 large-4">
                     <p>Add a package to <code>composer.json</code>.</p>
 
                     <pre><code class="lang-json">"require": {
@@ -221,13 +221,13 @@ $breadcrumb->add('Framework', 'framework'); ?>
 }</code></pre>
                 </div>
 
-                <div class="col medium-3 large-4">
+                <div class="col medium-4 large-4">
                     <p>Install the packages from the command line.</p>
 
                     <pre><code class="lang-bash">composer install</code></pre>
                 </div>
 
-                <div class="col medium-3 large-4">
+                <div class="col medium-4 large-4">
                     <p>Include the Composer autoloader.</p>
 
                     <pre><code class="lang-php">require 'vendor/autoload.php';</code></pre>

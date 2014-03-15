@@ -17,7 +17,8 @@ class IndexController extends ToolkitController {
     public function index() {
         $this->getView()->setVariables([
             'components' => Toolkit::loadComponents(),
-            'version' => Toolkit::loadVersion()
+            'version' => Toolkit::loadVersion(),
+            'skeletonClass' => 'landing'
         ]);
     }
 

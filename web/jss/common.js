@@ -15,7 +15,7 @@
     });
 
     // Smooth scrolling
-    $('.scroll-to').click(function(e) {
+    $(document).on('click', '.scroll-to', function(e) {
         e.preventDefault();
 
         var hash = $(e.target).attr('href');

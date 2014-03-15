@@ -1,5 +1,16 @@
 <li>
-    <a href="https://github.com/titon/toolkit" target="_blank" data-tooltip="#tooltip-<?= $key; ?>">
+    <?php
+    if ($component['category'] === 'effect') {
+        $path = 'components/effects';
+    } else if (isset($component['type']) && $component['type'] === 'class') {
+        $path = 'development/js';
+    } else if ($key === 'normalize') {
+        $path = 'development/css#normalize-integration';
+    } else {
+        $path = 'components/' . $key;
+    } ?>
+
+    <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => $path]); ?>" data-tooltip="#tooltip-<?= $key; ?>">
         <?= esc($component['name']); ?>
 
         <?php if (!empty($component['source']['js'])) { ?>

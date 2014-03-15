@@ -2,15 +2,30 @@
     'use strict';
 
     $('#toc').pin({
-        throttle: 1,
+        throttle: 0,
         context: '#doc',
         location: 'left'
     });
 
     $('body').stalker({
-        target: '#toc a',
+        target: '#toc a[href^="#"]',
         marker: '#chapters [id]',
         applyToParent: false,
         onlyWithin: false
+    });
+
+    // Fix URLs within the chapters
+    $('#chapters').find('a').each(function() {
+        var self = $(this),
+            href = self.attr('href');
+
+        // Make it scrollable
+        if (href.substr(0, 1) === '#') {
+            self.addClass('scroll-to');
+
+        // Open a new window
+        } else if (href.substr(0, 4) === 'http') {
+            self.attr('target', '_blank');
+        }
     });
 })(jQuery);

@@ -37,8 +37,22 @@ $docs-border-color: darken($toolkit-bg-alt, 5%);
         }
     }
 
+    .docs-sidebar.is-pinned {
+        margin: $margin 0;
+    }
+
     .docs-toc {
         padding: 0;
+        overflow: hidden;
+
+        header {
+            padding: .5rem .75rem;
+            color: $toolkit-primary;
+            font-weight: bold;
+            @include background-image(linear-gradient(#fff, $toolkit-bg-alt));
+            border-top-left-radius: $round;
+            border-top-right-radius: $round;
+        }
 
         ul {
             @include reset-list;
@@ -46,38 +60,48 @@ $docs-border-color: darken($toolkit-bg-alt, 5%);
             li {
                 border-top: 1px solid $docs-border-color;
 
-                &:first-child { border-top: 0; }
+                a {
+                    display: block;
+                    padding: .5rem .75rem;
+                    outline: none;
+
+                    &:hover {
+                        color: #fff;
+                        background: $toolkit-secondary;
+                    }
+
+                    &.is-active {
+                        border-right: 10px solid $docs-border-color;
+                    }
+                }
 
                 &.is-open {
-                    background: lighten($toolkit-bg-alt, 1.5%);
+                    > ul {
+                        background: lighten($toolkit-bg-alt, 1.5%);
+                        border-top: 1px solid $docs-border-color;
+                    }
 
                     > a {
                         font-weight: bold;
-                        color: $toolkit-primary;
                     }
-                }
-            }
-
-            a {
-                display: block;
-                padding: .5rem .75rem;
-                outline: none;
-
-                &.is-active {
-                    border-right: 10px solid $docs-border-color;
                 }
             }
 
             ul li { border: 0; }
 
-            ul a {
+            ul li a {
                 padding-left: 1.75rem;
                 font-size: .9rem;
                 color: $toolkit-primary-light;
+
+                &:hover {
+                    background: lighten($toolkit-bg-alt, 4%);
+                    color: $toolkit-primary;
+                }
             }
 
-            ul ul a { padding-left: 2.75rem; }
-            ul ul ul a { padding-left: 3.75rem; }
+            ul ul li a { padding-left: 2.75rem; }
+            ul ul ul li a { padding-left: 3.75rem; }
         }
     }
 
@@ -95,7 +119,11 @@ $docs-border-color: darken($toolkit-bg-alt, 5%);
             padding-top: .85rem;
             color: $toolkit-bg-alt;
 
-            span {
+            .title {
+                display: none;
+            }
+
+            .fa {
                 display: block;
                 font-size: 2rem;
                 margin-bottom: 5px;
@@ -109,6 +137,16 @@ $docs-border-color: darken($toolkit-bg-alt, 5%);
     }
 
     //-------------------- Responsive --------------------//
+
+    @include if-tablet-portrait {
+        .docs-nav li a {
+            min-width: 100px;
+
+            .title {
+                display: block;
+            }
+        }
+    }
 
     @include if-medium {
         .docs-nav li a {

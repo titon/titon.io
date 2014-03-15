@@ -7,7 +7,7 @@ $asset->addScript('/js/home.min', 'footer', 10); ?>
         <h1>Titon</h1>
 
         <div class="grid">
-            <div class="go-toolkit col medium-4 large-6">
+            <div class="go-toolkit col medium-6 large-6">
                 <h2>Toolkit</h2>
 
                 <p>A collection of extensible front-end user interface components for the responsive and mobile web.</p>
@@ -15,7 +15,7 @@ $asset->addScript('/js/home.min', 'footer', 10); ?>
                 <p><?php echo $html->anchor('View Components', 'Toolkit\Index@index', ['class' => 'button']); ?></p>
             </div>
 
-            <div class="go-framework col medium-4 large-6 end">
+            <div class="go-framework col medium-6 large-6 end">
                 <h2>Framework</h2>
 
                 <p>A collection of modular back-end packages to ease the process of application building by off-loading common tasks.</p>
