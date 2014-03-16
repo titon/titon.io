@@ -76,9 +76,22 @@ $docs-border-color: darken($toolkit-bg-alt, 5%);
                     padding: .5rem .75rem;
                     outline: none;
 
+                    .label {
+                        background: black(.1);
+                        margin-left: .5rem;
+                        margin-top: .3rem;
+                        color: $toolkit-primary;
+                        float: right;
+                    }
+
                     &:hover {
                         color: #fff;
                         background: $toolkit-secondary;
+
+                        .label {
+                            color: #fff;
+                            background: white(.2);
+                        }
                     }
 
                     &.is-active {

@@ -50,7 +50,9 @@ class DocsController extends ToolkitController {
      * @param string $path
      */
     public function read($version, $path) {
+        $components = Toolkit::loadComponents();
         $source = $this->docs->getSource('toolkit', $version, $path);
+        $name = basename($path);
 
         $this->getView()->setVariables([
             'toc' => $this->docs->getToc('toolkit', $version),
@@ -59,17 +61,12 @@ class DocsController extends ToolkitController {
             'version' => $version,
             'filePath' => $source['path'],
             'urlPath' => '/' . trim($path, '/'),
-            'url' => sprintf('/toolkit/%s/%s', $version, $path)
+            'url' => sprintf('/toolkit/%s/%s', $version, $path),
+            'components' => $components,
         ]);
 
-        if (strpos($path, 'components') === 0) {
-            $components = Toolkit::loadComponents();
-            $name = basename($path);
-
-            $this->getView()->setVariables([
-                'components' => $components,
-                'component' => isset($components[$name]) ? $components[$name] : null
-            ]);
+        if (strpos($path, 'components') === 0 && isset($components[$name])) {
+            $this->getView()->setVariable('component', $components[$name]);
         }
     }
 

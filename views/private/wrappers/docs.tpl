@@ -1,7 +1,11 @@
 <?php
 $asset->addStylesheet('/css/vendors/rainbow.min', [], 100);
 $asset->addScript('/js/vendors/rainbow.min', 'footer', 90);
-$asset->addScript('/js/docs.min', 'footer', 100); ?>
+$asset->addScript('/js/docs.min', 'footer', 100);
+
+$tocItems = [];
+$tocHeader = '';
+$isComponents = (strpos($urlPath, '/components') === 0); ?>
 
 <header class="head">
     <div class="wrapper">
@@ -13,11 +17,7 @@ $asset->addScript('/js/docs.min', 'footer', 100); ?>
                 </a>
             </li>
 
-            <?php
-            $tocItems = [];
-            $tocHeader = '';
-
-            foreach ($toc['children'] as $i => $nav) {
+            <?php foreach ($toc['children'] as $i => $nav) {
                 $isActive = false;
 
                 if (strpos($urlPath, $nav['url']) === 0) {
@@ -52,6 +52,10 @@ $asset->addScript('/js/docs.min', 'footer', 100); ?>
 
                             <li<?php if ($isOpen) { ?> class="is-open"<?php } ?>>
                                 <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => trim($toc['url'], '/')]); ?>">
+                                    <?php if ($isComponents && !empty($components[basename($toc['url'])]['source']['js'])) { ?>
+                                        <span class="label small" data-tooltip="Requires JavaScript">JS</span>
+                                    <?php } ?>
+
                                     <?= $toc['title']; ?>
                                 </a>
 
