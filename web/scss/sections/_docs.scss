@@ -123,12 +123,12 @@ $docs-border-color: darken($toolkit-bg-alt, 5%);
 
             .title {
                 display: none;
+                margin-top: 5px;
             }
 
             .fa {
                 display: block;
                 font-size: 2rem;
-                margin-bottom: 5px;
             }
 
             &.is-active {
