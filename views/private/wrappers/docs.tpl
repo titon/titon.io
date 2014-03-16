@@ -6,6 +6,13 @@ $asset->addScript('/js/docs.min', 'footer', 100); ?>
 <header class="head">
     <div class="wrapper">
         <ul class="docs-nav" id="nav">
+            <li>
+                <a href="<?= url(['route' => 'toolkit.docs', 'version' => $toolkitVersion, 'path' => ' ']); ?>">
+                    <span class="fa fa-book"></span>
+                    <span class="title">Docs</span>
+                </a>
+            </li>
+
             <?php
             $tocItems = [];
             $tocHeader = '';

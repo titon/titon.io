@@ -75,7 +75,7 @@ $app = Application::getInstance('default', [new Request(), new Response()]);
  * Bootstrap the application with configuration.
  * Order here is extremely critical, do not change!
  */
-foreach (['setup', 'registry', 'environments', 'cache', 'locales', 'database', 'modules', 'routes'] as $config) {
+foreach (['setup', 'registry', 'cache', 'locales', 'database', 'modules', 'routes', 'environments'] as $config) {
     $path = sprintf(RESOURCES_DIR . 'bootstrap/%s.php', $config);
 
     if (file_exists($path)) {

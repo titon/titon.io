@@ -35,6 +35,8 @@ $docs-border-color: darken($toolkit-bg-alt, 5%);
                 margin-bottom: 0;
             }
         }
+
+        &:last-child { margin-bottom: 0; }
     }
 
     .docs-sidebar.is-pinned {

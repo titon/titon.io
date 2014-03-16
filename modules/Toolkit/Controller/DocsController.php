@@ -7,6 +7,9 @@
 
 namespace Toolkit\Controller;
 
+/**
+ * @property \Docs $docs
+ */
 class DocsController extends ToolkitController {
 
     /**
@@ -14,6 +17,8 @@ class DocsController extends ToolkitController {
      */
     public function initialize() {
         parent::initialize();
+
+        $this->docs = new \Docs();
 
         $this->getView()->setVariables([
             'skeletonClass' => 'documentation',
@@ -32,6 +37,8 @@ class DocsController extends ToolkitController {
             $this->forwardAction('read', [$version, $path]);
             return;
         }
+
+        $this->getView()->setVariable('toc', $this->docs->getToc('toolkit', $version));
     }
 
     /**
@@ -41,12 +48,10 @@ class DocsController extends ToolkitController {
      * @param string $path
      */
     public function read($version, $path) {
-        $docs = new \Docs();
-        $toc = $docs->getToc('toolkit', $version);
-        $sources = $docs->getSource('toolkit', $version, $path);
+        $sources = $this->docs->getSource('toolkit', $version, $path);
 
         $this->getView()->setVariables([
-            'toc' => $toc,
+            'toc' => $this->docs->getToc('toolkit', $version),
             'chapters' => $sources['toc'],
             'sections' => $sources['chapters'],
             'version' => $version,

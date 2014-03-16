@@ -1,13 +1,13 @@
 # Components #
 
-## Layout ##
+### Layout ###
 * [Base](base.md)
 * [Code](code.md)
 * [Form](form.md)
 * [Typography](typography.md)
 * [Responsive](responsive.md)
 
-## Elements ##
+### Elements ###
 * [Breadcrumb](breadcrumb.md)
 * [Button](button.md)
 * [Button Group](button-group.md)
@@ -21,11 +21,11 @@
 * [Progress](progress.md)
 * [Table](table.md)
 
-## Modules ##
+### Modules ###
 * [Accordion](accordion.md)
 * [Blackout](blackout.md)
 * [Carousel](carousel.md)
-* [Dropdown](dropdown.md)
+* [Drop](drop.md)
 * [Flyout](flyout.md)
 * [Input](input.md)
 * [Lazy Load](lazy-load.md)
@@ -40,7 +40,7 @@
 * [Tooltip](tooltip.md)
 * [Type Ahead](type-ahead.md)
 
-## Effects ##
+### Effects ###
 * [Oval](effects.md)
 * [Pill](effects.md)
 * [Skew](effects.md)
