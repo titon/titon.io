@@ -1,19 +1,67 @@
 @import "toolkit/components/notice";
 
 @mixin notice-style($base) {
-    background: lighten($base, 30%);
-    border: 1px solid lighten($base, 20%);
-    border-bottom: 2px solid lighten($base, 15%);
+    background: $base;
+    border: 1px solid darken($base, 10%);
+    border-bottom: 2px solid darken($base, 15%);
+
+    &:before { background: darken($base, 15%); }
 }
 
 .notice {
     border-radius: $round;
-    @include notice-style($default);
+    position: relative;
 
-    &.is-info { @include notice-style($info); }
-    &.is-success { @include notice-style($success); }
-    &.is-warning { @include notice-style($warning); }
-    &.is-error { @include notice-style($error); }
+    &[class*="is-"] {
+        padding-left: 95px;
+
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 75px;
+            height: 100%;
+            content: " ";
+            border-top-left-radius: $round;
+            border-bottom-left-radius: $round;
+        }
+
+        &:after {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 75px;
+            text-align: center;
+            font-size: 2rem;
+            color: #fff;
+            font-family: FontAwesome;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            @include transform(translateY(-50%));
+        }
+    }
+
+    @include notice-style(#e7ebef);
+
+    &.is-info {
+        @include notice-style(#e2f0f8);
+        &:after { content: "\f06a"; }
+    }
+
+    &.is-success {
+        @include notice-style(#d4f6d7);
+        &:after { content: "\f058"; }
+    }
+
+    &.is-warning {
+        @include notice-style(#fff4d0);
+        &:after { content: "\f071"; }
+    }
+
+    &.is-error {
+        @include notice-style(#f8cfd1);
+        &:after { content: "\f057"; }
+    }
 
     code { background: white(.6); }
 }
