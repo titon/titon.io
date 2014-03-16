@@ -27,7 +27,7 @@ $cache = $app->get('cache');
 /**
  * Cache data for the duration of the request.
  */
-$cache->addStorage('default', new MemoryStorage());
+$cache->addStorage('default', new FileSystemStorage(['directory' => TEMP_DIR . 'cache/']));
 
 /**
  * Cache globalization messages.

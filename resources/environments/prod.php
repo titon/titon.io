@@ -19,8 +19,3 @@ use Titon\Mvc\Application;
  */
 
 $app = Application::getInstance();
-
-/**
- * Update caching to use Memcache.
- */
-$app->get('cache')->addStorage('default', new MemcacheStorage());
