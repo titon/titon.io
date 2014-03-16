@@ -39,7 +39,7 @@ $asset->addScript('/js/docs.min', 'footer', 100); ?>
     </div>
 </header>
 
-<main class="body">
+<main class="body" id="top">
     <div class="wrapper">
         <div class="grid" id="doc">
             <aside class="hide-small col medium-3 large-3 docs-sidebar" id="toc">

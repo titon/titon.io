@@ -10,6 +10,15 @@ $docs-border-color: darken($toolkit-bg-alt, 5%);
         padding-bottom: 0 !important;
     }
 
+    .back-to-top {
+        font-size: .8rem;
+        color: $toolkit-primary;
+        opacity: .3;
+        float: right;
+
+        &:hover { opacity: 1; }
+    }
+
     .docs-article {
         h2 { font-size: 2rem; }
         h3 { font-size: 1.7rem; }
