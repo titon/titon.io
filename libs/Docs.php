@@ -267,7 +267,10 @@ class Docs {
             }
         }
 
+        $paths = preg_split('/([a-z]+)-([0-9\.x]+)/', $path);
+
         return [
+            'path' => str_replace('\\', '/', $paths[1]),
             'toc' => $this->parseChapters($toc),
             'chapters' => $sections
         ];

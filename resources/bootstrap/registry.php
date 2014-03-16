@@ -86,6 +86,7 @@ Registry::register('titon.view', function() use ($app) {
     // Set variables that are also accessible
     $view->setVariables([
         'env' => $app->get('env')->current()->getKey(),
+        'locale' => $app->get('g11n')->current()->getCode(),
         'toolkitVersion' => Toolkit::loadVersion()
     ]);
 

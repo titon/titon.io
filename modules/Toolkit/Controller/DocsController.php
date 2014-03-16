@@ -48,13 +48,14 @@ class DocsController extends ToolkitController {
      * @param string $path
      */
     public function read($version, $path) {
-        $sources = $this->docs->getSource('toolkit', $version, $path);
+        $source = $this->docs->getSource('toolkit', $version, $path);
 
         $this->getView()->setVariables([
             'toc' => $this->docs->getToc('toolkit', $version),
-            'chapters' => $sources['toc'],
-            'sections' => $sources['chapters'],
+            'chapters' => $source['toc'],
+            'sections' => $source['chapters'],
             'version' => $version,
+            'filePath' => $source['path'],
             'urlPath' => '/' . trim($path, '/'),
             'url' => sprintf('/toolkit/%s/%s', $version, $path)
         ]);
