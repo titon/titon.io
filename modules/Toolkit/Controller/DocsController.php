@@ -7,6 +7,8 @@
 
 namespace Toolkit\Controller;
 
+use Toolkit\Toolkit;
+
 /**
  * @property \Docs $docs
  */
@@ -59,6 +61,16 @@ class DocsController extends ToolkitController {
             'urlPath' => '/' . trim($path, '/'),
             'url' => sprintf('/toolkit/%s/%s', $version, $path)
         ]);
+
+        if (strpos($path, 'components') === 0) {
+            $components = Toolkit::loadComponents();
+            $name = basename($path);
+
+            $this->getView()->setVariables([
+                'components' => $components,
+                'component' => isset($components[$name]) ? $components[$name] : null
+            ]);
+        }
     }
 
 }
