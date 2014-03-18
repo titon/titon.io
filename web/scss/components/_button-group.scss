@@ -1,0 +1,7 @@
+@import "toolkit/components/button-group";
+
+.button-group {
+    > .button {
+        border-left: 1px solid black(.05);
+    }
+}

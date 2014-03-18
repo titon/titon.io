@@ -10,9 +10,20 @@ foreach ($sections as $id => $section) { ?>
 
     <article class="box docs-article" id="<?= $id; ?>">
         <?php if ($count === 0) { ?>
-            <a href="https://github.com/titon/toolkit/tree/master/docs<?= $filePath; ?>" class="button float-right">
-                Edit <span class="fa fa-edit"></span>
-            </a>
+            <div class="button-group round float-right small">
+                <?php if (!empty($component)) {
+                    if (!empty($component['source']['css'][0])) { ?>
+                        <a href="https://github.com/titon/toolkit/tree/master/scss/toolkit/<?= str_replace('css', 'scss', $component['source']['css'][0]); ?>" class="button">SCSS</a>
+                    <?php }
+
+                    if (!empty($component['source']['js'][0])) {?>
+                        <a href="https://github.com/titon/toolkit/tree/master/js/jquery/<?= $component['source']['js'][0]; ?>" class="button">JS</a>
+                    <?php }
+                } ?>
+
+                <a href="https://github.com/titon/toolkit/tree/master/docs<?= $filePath; ?>" class="button is-success">Edit</a>
+            </div>
+
         <?php } else { ?>
             <a href="#top" class="scroll-to back-to-top">
                 Top <span class="fa fa-arrow-up"></span>
