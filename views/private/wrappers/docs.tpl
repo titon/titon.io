@@ -1,6 +1,6 @@
 <?php
-$asset->addStylesheet('/css/vendors/rainbow.min', [], 100);
-$asset->addScript('/js/vendors/rainbow.min', 'footer', 90);
+$asset->addStylesheet('/css/vendors/prism.min', [], 100);
+$asset->addScript('/js/vendors/prism.min', 'footer', 90);
 $asset->addScript('/js/docs.min', 'footer', 100);
 
 $tocItems = [];
