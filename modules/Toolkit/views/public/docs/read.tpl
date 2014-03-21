@@ -26,7 +26,7 @@ foreach ($sections as $id => $section) { ?>
                 <div class="button-group round small">
                     <a href="https://github.com/titon/toolkit/tree/master/docs<?= $filePath; ?>" class="button is-success">Edit</a>
 
-                    <?php if ($component['key'] !== 'blackout') { ?>
+                    <?php if (!empty($component) && $component['key'] !== 'blackout') { ?>
                         <a href="http://demo.titon.io/?component=<?= $component['key']; ?>" class="button is-error">Demo</a>
                     <?php } ?>
                 </div>
