@@ -27,14 +27,17 @@ $cache = $app->get('cache');
 /**
  * Cache data for the duration of the request.
  */
-$cache->addStorage('default', new FileSystemStorage(['directory' => TEMP_DIR . 'cache/', 'expires' => '+1 week']));
+$cache->addStorage('default', new FileSystemStorage([
+    'directory' => TEMP_DIR . 'cache/',
+    'expires' => '+1 week'
+]));
 
 /**
  * Cache globalization messages.
  */
-$cache->addStorage('g11n', new FileSystemStorage(['directory' => TEMP_DIR . 'cache/g11n/']));
+$cache->addStorage('g11n', new FileSystemStorage(TEMP_DIR . 'cache/g11n/'));
 
 /**
  * Cache database queries.
  */
-$cache->addStorage('sql', new FileSystemStorage(['directory' => TEMP_DIR . 'cache/sql/']));
+$cache->addStorage('sql', new FileSystemStorage(TEMP_DIR . 'cache/sql/'));
