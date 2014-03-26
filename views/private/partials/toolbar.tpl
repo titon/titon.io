@@ -7,7 +7,7 @@
 
                     <ul class="drop--down reverse-align" id="toolkit-menu">
                         <li><a href="https://github.com/titon/toolkit">GitHub</a></li>
-                        <li><a href="<?= trim(url(['route' => 'toolkit.docs', 'version' => $toolkitVersion, 'path' => ' '])); ?>">Documentation</a></li>
+                        <li><a href="<?= trim(url(['route' => 'toolkit.docs', 'version' => $toolkitVersion])); ?>">Documentation</a></li>
                         <li><a href="http://demo.titon.io">Interactive Demos</a></li>
                         <li><a href="<?= url(['route' => 'toolkit.docs', 'version' => $toolkitVersion, 'path' => 'setup/getting-started']); ?>">Download</a></li>
                         <li><a href="<?= url(['route' => 'toolkit.docs', 'version' => $toolkitVersion, 'path' => 'setup/installing']); ?>">Install</a></li>

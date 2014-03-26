@@ -4,7 +4,7 @@
     <div class="wrapper">
         <ul class="docs-nav" id="nav">
             <li>
-                <a href="<?= url(['route' => 'toolkit.docs', 'version' => $toolkitVersion, 'path' => ' ']); ?>" class="is-active">
+                <a href="<?= url(['route' => 'toolkit.docs', 'version' => $toolkitVersion]); ?>" class="is-active">
                     <span class="fa fa-book"></span>
                     <span class="title">Docs</span>
                 </a>

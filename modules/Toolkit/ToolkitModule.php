@@ -38,7 +38,7 @@ class ToolkitModule extends AbstractModule {
         $router->map('toolkit.demo.component',  new LocaleRoute('/toolkit/demo/{component}', 'Toolkit\Demo@component', ['pass' => 'component']));
         $router->map('toolkit.demo',            new LocaleRoute('/toolkit/demo', 'Toolkit\Demo@index'));
         $router->map('toolkit.docs.out',        new LocaleRoute('/toolkit/docs/out', 'Toolkit\Docs@out'));
-        $router->map('toolkit.docs',            new LocaleRoute('/toolkit/[version]/(path)', 'Toolkit\Docs@index', ['pass' => ['version', 'path']]));
+        $router->map('toolkit.docs',            new LocaleRoute('/toolkit/[version]/(path?)', 'Toolkit\Docs@index', ['pass' => ['version', 'path']]));
         $router->map('toolkit',                 new LocaleRoute('/toolkit', 'Toolkit\Index@index'));
 
         /** @type \Titon\G11n\Locale $locale */

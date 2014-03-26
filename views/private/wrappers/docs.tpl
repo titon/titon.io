@@ -11,7 +11,7 @@ $isComponents = (strpos($urlPath, '/components') === 0); ?>
     <div class="wrapper">
         <ul class="docs-nav" id="nav">
             <li>
-                <a href="<?= url(['route' => 'toolkit.docs', 'version' => $toolkitVersion, 'path' => ' ']); ?>">
+                <a href="<?= url(['route' => 'toolkit.docs', 'version' => $toolkitVersion]); ?>">
                     <span class="fa fa-book"></span>
                     <span class="title">Docs</span>
                 </a>
