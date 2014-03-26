@@ -16,6 +16,10 @@
     border-bottom-right-radius: $round;
 }
 
+.modal-body p:first-child {
+    margin-top: 0;
+}
+
 @include if-large() {
     .modal-head,
     .modal-body,
