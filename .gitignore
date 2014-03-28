@@ -3,7 +3,6 @@
 node_modules/
 vendor/
 temp/*
-web/css/**/_*.css
 composer.lock
 
 # Ignore symlinks
