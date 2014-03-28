@@ -8,7 +8,7 @@
     li {
         > a {
             padding: 1rem;
-            @include transition(all .1s);
+            transition: all .1s;
 
             &:hover {
                 color: #fff;

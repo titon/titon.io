@@ -4,7 +4,7 @@
     <div class="wrapper">
         <ul class="docs-nav" id="nav">
             <li>
-                <a href="<?= url(['route' => 'toolkit.docs', 'version' => $toolkitVersion]); ?>" class="is-active">
+                <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version]); ?>" class="is-active">
                     <span class="fa fa-book"></span>
                     <span class="title">Docs</span>
                 </a>
@@ -13,7 +13,7 @@
             <?php foreach ($toc['children'] as $i => $nav) { ?>
 
                 <li>
-                    <a href="<?= url(['route' => 'toolkit.docs', 'version' => $toolkitVersion, 'path' => trim($nav['url'], '/')]); ?>">
+                    <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => trim($nav['url'], '/')]); ?>">
                         <span class="fa <?= $navIcons[$i]; ?>"></span>
                         <span class="title"><?= $nav['title']; ?></span>
                     </a>
@@ -39,7 +39,7 @@
                     and powerful new browser APIs for the JavaScript layer.</p>
 
                 <p>
-                    <a href="<?= url(['route' => 'toolkit.docs', 'version' => $toolkitVersion, 'path' => 'components']); ?>" class="button">
+                    <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => 'components']); ?>" class="button">
                         View Components
                         <span class="fa fa-arrow-circle-right"></span>
                     </a>
@@ -54,15 +54,15 @@
                     Before you start implementing Toolkit, we suggest learning the ins and outs of the JavaScript and CSS.</p>
 
                 <ul>
-                    <li><a href="<?= url(['route' => 'toolkit.docs', 'version' => $toolkitVersion, 'path' => 'development/js']); ?>">JavaScript component system</a></li>
-                    <li><a href="<?= url(['route' => 'toolkit.docs', 'version' => $toolkitVersion, 'path' => 'development/css']); ?>">CSS modules with Sass</a></li>
+                    <li><a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => 'development/js']); ?>">JavaScript component system</a></li>
+                    <li><a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => 'development/css']); ?>">CSS modules with Sass</a></li>
                 </ul>
 
                 <p>If you're ready to move on, or just want to skip ahead, we suggest the following articles.</p>
 
                 <ul>
-                    <li><a href="<?= url(['route' => 'toolkit.docs', 'version' => $toolkitVersion, 'path' => 'setup/getting-started']); ?>">Getting Started</a></li>
-                    <li><a href="<?= url(['route' => 'toolkit.docs', 'version' => $toolkitVersion, 'path' => 'setup/installing']); ?>">Downloading &amp; Installing</a></li>
+                    <li><a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => 'setup/getting-started']); ?>">Getting Started</a></li>
+                    <li><a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => 'setup/installing']); ?>">Downloading &amp; Installing</a></li>
                 </ul>
             </div>
         </div>

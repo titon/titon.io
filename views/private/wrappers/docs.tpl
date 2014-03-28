@@ -11,7 +11,7 @@ $isComponents = (strpos($urlPath, '/components') === 0); ?>
     <div class="wrapper">
         <ul class="docs-nav" id="nav">
             <li>
-                <a href="<?= url(['route' => 'toolkit.docs', 'version' => $toolkitVersion]); ?>">
+                <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version]); ?>">
                     <span class="fa fa-book"></span>
                     <span class="title">Docs</span>
                 </a>
@@ -53,10 +53,18 @@ $isComponents = (strpos($urlPath, '/components') === 0); ?>
                             <li<?php if ($isOpen) { ?> class="is-open"<?php } ?>>
                                 <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => trim($toc['url'], '/')]); ?>">
                                     <?php if ($isComponents && !empty($components[basename($toc['url'])]['source']['js'])) { ?>
-                                        <span class="label small" data-tooltip="Requires JavaScript">JS</span>
+                                        <span class="label small float-right" data-tooltip="Requires JavaScript">JS</span>
                                     <?php } ?>
 
                                     <?= $toc['title']; ?>
+
+                                    <?php if (!empty($toc['updated'])) { ?>
+                                        <span class="label small is-info">Updated</span>
+                                    <?php } ?>
+
+                                    <?php if (!empty($toc['new'])) { ?>
+                                        <span class="label small is-success">New</span>
+                                    <?php } ?>
                                 </a>
 
                                 <?php if ($isOpen) {

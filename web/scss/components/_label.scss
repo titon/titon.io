@@ -1,1 +1,11 @@
 @import "toolkit/components/label";
+
+.label {
+    background: $default;
+    color: #fff;
+
+    &.is-info { background: $info; }
+    &.is-success { background: $success; }
+    &.is-warning { background: $warning; }
+    &.is-error { background: $error; }
+}

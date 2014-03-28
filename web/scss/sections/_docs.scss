@@ -5,7 +5,7 @@ $docs-border-color: darken($toolkit-bg-alt, 5%);
 #doc { position: relative; }
 
 .documentation {
-    .head .wrapper {
+    > .head .wrapper {
         padding-top: 0 !important;
         padding-bottom: 0 !important;
     }
@@ -60,7 +60,7 @@ $docs-border-color: darken($toolkit-bg-alt, 5%);
             padding: .5rem .75rem;
             color: $toolkit-primary;
             font-weight: bold;
-            @include background-image(linear-gradient(#fff, $toolkit-bg-alt));
+            background: linear-gradient(to bottom, #fff, $toolkit-bg-alt);
             border-top-left-radius: $round;
             border-top-right-radius: $round;
         }
@@ -76,12 +76,8 @@ $docs-border-color: darken($toolkit-bg-alt, 5%);
                     padding: .5rem .75rem;
                     outline: none;
 
-                    .label {
-                        background: black(.1);
-                        margin-left: .5rem;
+                    .label.float-right {
                         margin-top: .3rem;
-                        color: $toolkit-primary;
-                        float: right;
                     }
 
                     &:hover {
@@ -89,8 +85,8 @@ $docs-border-color: darken($toolkit-bg-alt, 5%);
                         background: $toolkit-secondary;
 
                         .label {
+                            background: white(.3);
                             color: #fff;
-                            background: white(.2);
                         }
                     }
 
@@ -158,6 +154,16 @@ $docs-border-color: darken($toolkit-bg-alt, 5%);
                 color: $toolkit-primary;
             }
         }
+    }
+
+    .docs-meta {
+        margin: 1.5rem 0 0 0;
+        padding: 0;
+        list-style: none;
+
+        li { margin: 5px 0 0 0 !important; }
+
+        &:empty { display: none; }
     }
 
     //-------------------- Responsive --------------------//

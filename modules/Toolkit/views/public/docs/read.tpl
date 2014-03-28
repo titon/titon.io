@@ -41,21 +41,31 @@ foreach ($sections as $id => $section) { ?>
         <?= $section; ?>
 
         <?php // Display requirements for components
-        if ($count === 0 && !empty($component) && !empty($component['require'])) {
+        if ($count === 0 && !empty($component)) {
             $requires = [];
 
-            foreach ($component['require'] as $requireKey) {
-                $require = $components[$requireKey];
+            if (!empty($component['require'])) {
+                foreach ($component['require'] as $requireKey) {
+                    $require = $components[$requireKey];
 
-                // Hide MooTools classes
-                if (isset($require['type']) && $require['type'] === 'class') {
-                    continue;
+                    // Hide MooTools classes
+                    if (isset($require['type']) && $require['type'] === 'class') {
+                        continue;
+                    }
+
+                    $requires[] = sprintf('<a href="%s">%s</a>', $requireKey, $require['name']);
                 }
-
-                $requires[] = sprintf('<a href="%s">%s</a>', $requireKey, $require['name']);
             } ?>
 
-            <p><b>Requires:</b> <?= implode(', ', $requires); ?></p>
+            <ul class="docs-meta">
+                <?php if ($requires) { ?>
+                    <li><b>Requires:</b> <?= implode(', ', $requires); ?></li>
+                <?php }
+
+                if (!empty($component['version'])) { ?>
+                    <li><b>Added In:</b> <?= $component['version']; ?></li>
+                <?php } ?>
+            </ul>
         <?php } ?>
     </article>
 

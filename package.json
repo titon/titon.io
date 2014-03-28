@@ -5,6 +5,7 @@
         "grunt-contrib-uglify": "*",
         "grunt-contrib-jshint": "*",
         "grunt-contrib-compass": "*",
-        "grunt-contrib-watch": "*"
+        "grunt-contrib-watch": "*",
+        "grunt-autoprefixer": "*"
     }
 }

@@ -28,9 +28,7 @@ a:hover { color: $toolkit-primary-light; }
 
 .head {
     color: #fff;
-    @include background(
-        image-url("hexagon-pattern.png") repeat,
-        linear-gradient(left, $toolkit-primary-dark, $framework-primary-dark));
+    background: image-url("hexagon-pattern.png") repeat, linear-gradient(to left, $toolkit-primary-dark, $framework-primary-dark);
 }
 
 //-------------------- Body --------------------//
@@ -144,7 +142,7 @@ a:hover { color: $toolkit-primary-light; }
     position: absolute;
     left: 50%;
     top: 50%;
-    @include transform(translate(-50%, -50%));
+    transform: translate(-50%, -50%);
 }
 
 .box {

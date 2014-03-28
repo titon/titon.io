@@ -4,9 +4,7 @@ body { padding: 0; }
 
 .home {
     position: relative;
-    @include background(
-        image-url("hexagon-pattern.png") repeat,
-        linear-gradient(left, $toolkit-primary-dark, $framework-primary-dark));
+    background: image-url("hexagon-pattern.png") repeat, linear-gradient(to right, $toolkit-primary-dark, $framework-primary-dark);
 
     h1 {
         background: image-url("logo-large.png") no-repeat;
@@ -71,7 +69,7 @@ body { padding: 0; }
         width: 100%;
         top: 50%;
         left: 50%;
-        @include transform(translate(-50%, -50%));
+        transform: translate(-50%, -50%);
     }
 
     .go { margin-bottom: 0; }

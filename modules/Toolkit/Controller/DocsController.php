@@ -40,7 +40,10 @@ class DocsController extends ToolkitController {
             return;
         }
 
-        $this->getView()->setVariable('toc', $this->docs->getToc('toolkit', $version));
+        $this->getView()->setVariables([
+            'toc' => $this->docs->getToc('toolkit', $version),
+            'version' => $version
+        ]);
     }
 
     /**
