@@ -43,6 +43,11 @@
                         View Components
                         <span class="fa fa-arrow-circle-right"></span>
                     </a>
+
+                    <a href="/slides/what-is-toolkit.pdf" target="_blank" class="button is-info">
+                        View Slides (v1.1)
+                        <span class="fa fa-arrow-circle-right"></span>
+                    </a>
                 </p>
             </div>
 

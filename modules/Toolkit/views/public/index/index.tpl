@@ -58,7 +58,7 @@ $filterComponents = function($type) use ($components) {
         </div>
 
         <div class="button-toolbar">
-            <a href="/slides/what-is-toolkit.pdf" class="button large" target="_blank">
+            <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version]); ?>" class="button large">
                 What Is
             </a>
 
