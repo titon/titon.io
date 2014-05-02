@@ -59,8 +59,8 @@
                     Before you start implementing Toolkit, we suggest learning the ins and outs of the JavaScript and CSS.</p>
 
                 <ul>
-                    <li><a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => 'development/js']); ?>">JavaScript component system</a></li>
-                    <li><a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => 'development/css']); ?>">CSS modules with Sass</a></li>
+                    <li><a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => 'development/js/component']); ?>">JavaScript component system</a></li>
+                    <li><a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => 'development/css/bem']); ?>">CSS modules with Sass</a></li>
                 </ul>
 
                 <p>If you're ready to move on, or just want to skip ahead, we suggest the following articles.</p>

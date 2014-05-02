@@ -5,7 +5,7 @@
     } else if (isset($component['type']) && $component['type'] === 'class') {
         $path = 'development/js';
     } else if ($key === 'normalize') {
-        $path = 'development/css#normalize-integration';
+        $path = 'development/css/philosophies#normalize-integration';
     } else {
         $path = 'components/' . $key;
     } ?>

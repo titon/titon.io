@@ -7,7 +7,7 @@
 </div>
 
 <div class="modal-foot clear-fix">
-    <button type="button" class="button float-right modal-event-close">Close</button>
+    <button type="button" class="button float-right modal-hide">Close</button>
 
     <?= $block->get('modal-actions'); ?>
 </div>
