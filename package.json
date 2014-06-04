@@ -1,4 +1,10 @@
 {
+    "name": "titon.io",
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/titon/titon.io"
+    },
     "devDependencies": {
         "grunt": "*",
         "grunt-newer": "*",
