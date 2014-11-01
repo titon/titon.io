@@ -18,12 +18,11 @@ echo "------------------------------"
 if [ -f "composer.phar" ];
 then
     php composer.phar self-update
-    php composer.phar update --no-dev
 else
-    rm -f composer.lock
     curl -s https://getcomposer.org/installer | php
-    php composer.phar install --no-dev
 fi
+
+php composer.phar install --no-dev
 
 # Set read and write
 echo -e "\nGive Write Access"
