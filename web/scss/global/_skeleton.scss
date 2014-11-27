@@ -205,7 +205,8 @@ a:hover { color: $toolkit-primary-light; }
 
 //-------------------- Responsive --------------------//
 
-@include if-mobile-landscape {
+//@include if-mobile-landscape {
+@include if-tablet-landscape {
     .nav { display: block; }
 }
 

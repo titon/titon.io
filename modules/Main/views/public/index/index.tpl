@@ -20,7 +20,9 @@ $asset->addScript('/js/home.min', 'footer', 10); ?>
 
                 <p>A collection of modular back-end packages to ease the process of application building by off-loading common tasks.</p>
 
-                <p><?php echo $html->anchor('View Packages', 'Framework\Index@index', ['class' => 'button']); ?></p>
+                <?php /*<p><?php echo $html->anchor('View Packages', 'Framework\Index@index', ['class' => 'button']); ?></p>*/ ?>
+
+                <p><button class="button is-disabled" disabled type="button">Temporarily Offline</button></p>
             </div>
         </div>
     </div>
