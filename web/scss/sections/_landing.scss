@@ -185,10 +185,12 @@
 
     @include if-max($breakpoint-tablet-landscape) {
         .head .hexagons {
-            width: 550px !important;
+            width: 422px !important;
 
             a:nth-child(6) { display: none; }
         }
+
+        .head .button-toolbar .button { margin-bottom: 5px; }
     }
 
     @include if-medium {

@@ -14,7 +14,7 @@
 
                 <li>
                     <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => trim($nav['url'], '/')]); ?>">
-                        <span class="fa <?= $navIcons[$i]; ?>"></span>
+                        <span class="fa <?= isset($navIcons[$i]) ? $navIcons[$i] : ''; ?>"></span>
                         <span class="title"><?= $nav['title']; ?></span>
                     </a>
                 </li>
@@ -43,11 +43,6 @@
                         View Components
                         <span class="fa fa-arrow-circle-right"></span>
                     </a>
-
-                    <a href="/slides/what-is-toolkit.pdf" target="_blank" class="button is-info">
-                        View Slides (v1.1)
-                        <span class="fa fa-arrow-circle-right"></span>
-                    </a>
                 </p>
             </div>
 
@@ -59,8 +54,11 @@
                     Before you start implementing Toolkit, we suggest learning the ins and outs of the JavaScript and CSS.</p>
 
                 <ul>
-                    <li><a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => 'development/js/component']); ?>">JavaScript component system</a></li>
-                    <li><a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => 'development/css/bem']); ?>">CSS modules with Sass</a></li>
+                    <li><a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => 'development/js']); ?>">JavaScript</a></li>
+                    <li>
+                        <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => 'development/css']); ?>">CSS</a> and
+                        <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => 'development/sass']); ?>">Sass</a>
+                    </li>
                 </ul>
 
                 <p>If you're ready to move on, or just want to skip ahead, we suggest the following articles.</p>

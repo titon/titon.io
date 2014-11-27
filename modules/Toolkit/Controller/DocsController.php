@@ -24,7 +24,7 @@ class DocsController extends ToolkitController {
 
         $this->getView()->setVariables([
             'skeletonClass' => 'documentation',
-            'navIcons' => ['fa-power-off', 'fa-code', 'fa-puzzle-piece', 'fa-shield']
+            'navIcons' => ['fa-power-off', 'fa-code', 'fa-puzzle-piece', 'fa-shield', 'fa-bullhorn', 'fa-code-fork']
         ]);
     }
 
@@ -55,20 +55,23 @@ class DocsController extends ToolkitController {
     public function read($version, $path) {
         $components = Toolkit::loadComponents();
         $source = $this->docs->getSource('toolkit', $version, $path);
+        $toc = $this->docs->getToc('toolkit', $version);
+        $path = '/' . trim($path, '/');
         $name = basename($path);
 
         $this->getView()->setVariables([
-            'toc' => $this->docs->getToc('toolkit', $version),
-            'chapters' => $source['toc'],
-            'sections' => $source['chapters'],
+            'toc' => $toc,
+            'tocSections' => $this->docs->findChapter($toc, $path),
             'version' => $version,
+            'title' => $source['title'],
+            'sections' => $source['sections'],
             'filePath' => $source['path'],
-            'urlPath' => '/' . trim($path, '/'),
-            'url' => sprintf('/toolkit/%s/%s', $version, $path),
+            'urlPath' => $path,
+            'url' => sprintf('/toolkit/%s%s', $version, $path),
             'components' => $components,
         ]);
 
-        if (strpos($path, 'components') === 0 && isset($components[$name])) {
+        if (strpos($path, 'components') <= 1 && isset($components[$name])) {
             $this->getView()->setVariable('component', $components[$name]);
         }
     }

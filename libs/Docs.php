@@ -66,6 +66,37 @@ class Docs {
         return $this->compileFolder(new Folder($this->locateSource($source, $version)));
     }
 
+    public function flattenToc(array $toc) {
+        $flattened = [];
+
+        foreach ($toc as $item) {
+            if (empty($item['url'])) {
+                continue;
+            }
+
+            $flattened[$item['url']] = $item;
+
+            if (!empty($item['children'])) {
+                $flattened = array_merge($flattened, $this->flattenToc($item['children']));
+            }
+        }
+
+        return $flattened;
+    }
+
+    public function findChapter(array $toc, $url) {
+        $tocGrouped = $this->flattenToc($toc['children']);
+        $url = str_replace('\\', '/', dirname($url));
+
+        if (isset($tocGrouped[$url])) {
+            $chapter = $tocGrouped[$url];
+        } else {
+            $chapter = $toc;
+        }
+
+        return $chapter;
+    }
+
     public function getSource($source, $version, $query) {
         $file = new File(Path::ds($this->locateSource($source, $version, $query)));
 
@@ -204,7 +235,7 @@ class Docs {
         // Fix URLs on index pages
         if (basename($path) === 'index.md') {
             $folder = basename(dirname($path));
-            $parsed = preg_replace_callback('/<a href="([-a-zA-Z0-9\/]+)">/', function($matches) use ($folder) {
+            $parsed = preg_replace_callback('/<a href="([-a-zA-Z0-9\/\.]+)">/', function($matches) use ($folder) {
                 return sprintf('<a href="%s">', $folder . '/' . $matches[1]);
             }, $parsed);
         }
@@ -215,7 +246,7 @@ class Docs {
         $sections = [];
         $currentSection = '';
         $sectionHash = '';
-        $toc = [];
+        $title = '';
 
         foreach ($parsed as $i => $line) {
             preg_match('/^<h([1-6])>(.*?)<\/h([1-6])>$/', $line, $matches);
@@ -230,40 +261,30 @@ class Docs {
 
             // Break up the document into sections based on h2 tags
             } else if ($matches[1] == 1 || $matches[1] == 2) {
+                if ($matches[1] == 1) {
+                    $title = $matches[2];
+                }
+
                 if ($matches[1] == 2) {
                     $sections[$sectionHash] = $currentSection;
                 }
 
-                $sectionHash = str_replace('.', '', Inflector::slug(trim($matches[2])));
+                $sectionHash = $this->makeHash($matches[2]);
                 $currentSection = $line;
 
                 if (is_numeric($sectionHash)) {
                     $sectionHash = 'no-' . $sectionHash;
                 }
 
-                $toc[] = [
-                    'title' => $matches[2],
-                    'url' => '#' . $sectionHash,
-                    'type' => $matches[1],
-                    'children' => []
-                ];
-
             // Rewrite h3-h6 tags to have an ID
             } else {
-                $hash = str_replace('.', '', Inflector::slug(trim($matches[2])));
+                $hash = $this->makeHash($matches[2]);
 
                 if (is_numeric($hash)) {
                     $hash = 'no-' . $hash;
                 }
 
                 $currentSection .= "\n" . sprintf('<h%s id="%s">%s</h%s>', $matches[1], $hash, $matches[2], $matches[3]);
-
-                $toc[] = [
-                    'title' => $matches[2],
-                    'url' => '#' . $hash,
-                    'type' => $matches[1],
-                    'children' => []
-                ];
             }
         }
 
@@ -271,9 +292,13 @@ class Docs {
 
         return [
             'path' => str_replace('\\', '/', $paths[1]),
-            'toc' => $this->parseChapters($toc),
-            'chapters' => $sections
+            'title' => $title,
+            'sections' => $sections
         ];
+    }
+
+    public function makeHash($string) {
+        return str_replace('.', '', Inflector::slug(str_replace('&amp;', 'and', trim($string))));
     }
 
 }

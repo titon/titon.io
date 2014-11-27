@@ -3,8 +3,6 @@ $asset->addStylesheet('/css/vendors/prism.min', [], 100);
 $asset->addScript('/js/vendors/prism.min', 'footer', 90);
 $asset->addScript('/js/docs.min', 'footer', 100);
 
-$tocItems = [];
-$tocHeader = '';
 $isComponents = (strpos($urlPath, '/components') === 0); ?>
 
 <header class="head">
@@ -18,18 +16,12 @@ $isComponents = (strpos($urlPath, '/components') === 0); ?>
             </li>
 
             <?php foreach ($toc['children'] as $i => $nav) {
-                $isActive = false;
-
-                if (strpos($urlPath, $nav['url']) === 0) {
-                    $tocItems = $nav['children'];
-                    $tocHeader = $nav['title'];
-                    $isActive = true;
-                } ?>
+                $isActive = (strpos($urlPath, $nav['url']) === 0); ?>
 
                 <li>
                     <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => trim($nav['url'], '/')]); ?>"
                         <?php if ($isActive) { ?> class="is-active"<?php } ?>>
-                        <span class="fa <?= $navIcons[$i]; ?>"></span>
+                        <span class="fa <?= isset($navIcons[$i]) ? $navIcons[$i] : ''; ?>"></span>
                         <span class="title"><?= $nav['title']; ?></span>
                     </a>
                 </li>
@@ -44,31 +36,47 @@ $isComponents = (strpos($urlPath, '/components') === 0); ?>
         <div class="grid" id="doc">
             <aside class="hide-small col medium-3 large-3 docs-sidebar" id="toc">
                 <nav class="box docs-toc">
-                    <header><?= $tocHeader; ?></header>
+                    <header><?= $tocSections['title']; ?></header>
 
                     <ul>
-                        <?php foreach ($tocItems as $toc) {
-                            $isOpen = ($urlPath === $toc['url']); ?>
+                        <?php if ($tocSections['url'] !== '/') { ?>
+                            <li>
+                                <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => trim($tocSections['url'], '/')]); ?>">&laquo; Back</a>
+                            </li>
+                        <?php }
+
+                        foreach ($tocSections['children'] as $chapter) {
+                            if (isset($chapter['divider'])) {
+                                continue;
+                            }
+
+                            $isOpen = ($urlPath === $chapter['url']); ?>
 
                             <li<?php if ($isOpen) { ?> class="is-open"<?php } ?>>
-                                <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => trim($toc['url'], '/')]); ?>">
-                                    <?php if ($isComponents && !empty($components[basename($toc['url'])]['source']['js'])) { ?>
+                                <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => trim($chapter['url'], '/')]); ?>">
+                                    <?php if ($isComponents && !empty($components[basename($chapter['url'])]['source']['js'])) { ?>
                                         <span class="label small float-right" data-tooltip="Requires JavaScript">JS</span>
                                     <?php } ?>
 
-                                    <?= $toc['title']; ?>
+                                    <?= $chapter['title']; ?>
 
-                                    <?php if (!empty($toc['updated'])) { ?>
+                                    <?php if (!empty($chapter['updated'])) { ?>
                                         <span class="label small is-info">Updated</span>
                                     <?php } ?>
 
-                                    <?php if (!empty($toc['new'])) { ?>
+                                    <?php if (!empty($chapter['new'])) { ?>
                                         <span class="label small is-success">New</span>
                                     <?php } ?>
                                 </a>
 
                                 <?php if ($isOpen) {
-                                    echo $this->open('docs/chapter-nav', ['chapters' => $chapters['children']]);
+                                    if (!empty($chapter['children'])) {
+                                        echo $this->open('docs/chapter-nav', ['chapters' => $chapter['children']]);
+                                    }
+
+                                    if (!empty($chapter['chapters'])) {
+                                        echo $this->open('docs/chapter-nav', ['chapters' => $chapter['chapters']]);
+                                    }
                                 } ?>
                             </li>
 

@@ -1,10 +1,6 @@
 <li>
     <?php
-    if ($component['category'] === 'effect') {
-        $path = 'components/effects';
-    } else if (isset($component['type']) && $component['type'] === 'class') {
-        $path = 'development/js';
-    } else if ($key === 'normalize') {
+    if ($key === 'normalize') {
         $path = 'development/css/philosophies#normalize-integration';
     } else {
         $path = 'components/' . $key;

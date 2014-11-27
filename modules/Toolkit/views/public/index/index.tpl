@@ -7,7 +7,7 @@ $filterComponents = function($type) use ($components) {
     foreach ($components as $key => $component) {
         if (isset($component['type']) && $component['type'] === $type) {
             $clean[] = $key;
-        } else if ($component['category'] === $type) {
+        } else if (isset($component['category']) && $component['category'] === $type) {
             $clean[] = $key;
         }
     }
@@ -39,7 +39,7 @@ $filterComponents = function($type) use ($components) {
                 <span class="center-vertical">
                     <span class="hide-mobile">JavaScript</span>
                     <span class="show-mobile">JS</span>
-                    <small>Grunt</small>
+                    <small>Gulp</small>
                 </span>
             </div>
 
@@ -48,18 +48,11 @@ $filterComponents = function($type) use ($components) {
                     jQuery
                 </span>
             </div>
-
-            <div class="hexagon">
-                <span class="center-vertical">
-                    <span class="hide-mobile">MooTools</span>
-                    <span class="show-mobile">Moo</span>
-                </span>
-            </div>
         </div>
 
         <div class="button-toolbar">
-            <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version]); ?>" class="button large">
-                What Is
+            <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => 'setup/getting-started']); ?>" class="button large">
+                Install
             </a>
 
             <a href="https://github.com/titon/toolkit/archive/<?= $version; ?>.zip" class="button large is-success hide-mobile">
@@ -67,8 +60,8 @@ $filterComponents = function($type) use ($components) {
                 <span class="button-suffix"><?= $version; ?></span>
             </a>
 
-            <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => 'setup/getting-started']); ?>" class="button large">
-                Install
+            <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => 'releases/2.0']); ?>" class="button large">
+                Release Notes
             </a>
         </div>
     </div>
@@ -160,16 +153,6 @@ $filterComponents = function($type) use ($components) {
                             echo $this->open('component-item', ['component' => $components[$key], 'key' => $key]);
                         } ?>
                     </ul>
-
-                    <h6>Effects</h6>
-
-                    <p>Additional visual aesthetics for other Toolkit components.</p>
-
-                    <ul>
-                        <?php foreach ($filterComponents('effect') as $key) {
-                            echo $this->open('component-item', ['component' => $components[$key], 'key' => $key]);
-                        } ?>
-                    </ul>
                 </div>
 
                 <div class="col medium-4 large-4">
@@ -179,16 +162,6 @@ $filterComponents = function($type) use ($components) {
 
                     <ul>
                         <?php foreach ($filterComponents('element') as $key) {
-                            echo $this->open('component-item', ['component' => $components[$key], 'key' => $key]);
-                        } ?>
-                    </ul>
-
-                    <h6>Classes</h6>
-
-                    <p>MooTools classes to solve specific use cases.</p>
-
-                    <ul>
-                        <?php foreach ($filterComponents('class') as $key) {
                             echo $this->open('component-item', ['component' => $components[$key], 'key' => $key]);
                         } ?>
                     </ul>
@@ -220,36 +193,23 @@ $filterComponents = function($type) use ($components) {
                 <div class="col medium-6 large-6">
                     <p>Define your own markup or roll with the suggested Toolkit structure.</p>
 
-                    <pre><code class="lang-html">&lt;div class="carousel"&gt;
+                    <pre><code class="lang-html">&lt;div class="carousel" data-carousel&gt;
     &lt;div class="carousel-items"&gt;
-        &lt;ul&gt;
+        &lt;ul data-carousel-items&gt;
             &lt;li&gt;&lt;a href=""&gt;&lt;img src="slide-1.jpg"&gt;&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href=""&gt;&lt;img src="slide-2.jpg"&gt;&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
     &lt;/div&gt;
 
-    &lt;a href="javascript:;" class="carousel-prev"&gt;
-        &lt;span class="arrow-left"&gt;&lt;/span&gt;
-    &lt;/a&gt;
-
-    &lt;a href="javascript:;" class="carousel-next"&gt;
-        &lt;span class="arrow-right"&gt;&lt;/span&gt;
-    &lt;/a&gt;
+    &lt;button type="button" class="carousel-prev" data-carousel-prev&gt;&lt;/button&gt;
+    &lt;button type="button" class="carousel-next" data-carousel-next&gt;&lt;/button&gt;
 &lt;/div&gt;</code></pre>
                 </div>
 
                 <div class="col medium-6 large-6 end">
                     <p>Initialize JavaScript functionality for components using familiar plugin syntax.</p>
 
-                    <div class="tabs example-tabs">
-                        <nav class="tabs-nav">
-                            <ul>
-                                <li><a href="#example-jquery">jQuery</a></li>
-                                <li><a href="#example-mootools">MooTools</a></li>
-                            </ul>
-                        </nav>
-
-                        <pre id="example-jquery" class="tabs-section"><code class="lang-javascript">$('.carousel').carousel({
+                    <pre id="example-jquery" class="tabs-section"><code class="lang-javascript">$('.carousel').carousel({
     animation: 'slide-up',
     autoCycle: true,
     stopOnHover: true,
@@ -257,16 +217,6 @@ $filterComponents = function($type) use ($components) {
         // Trigger logic
     }
 });</code></pre>
-
-                        <pre id="example-mootools"  class="tabs-section"><code class="lang-javascript">$$('.carousel').carousel({
-    animation: 'slide-up',
-    autoCycle: true,
-    stopOnHover: true,
-    onCycle: function() {
-        // Trigger logic
-    }
-});</code></pre>
-                    </div>
 
                     <p>
                         <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => 'components/carousel']); ?>" class="button">

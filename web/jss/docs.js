@@ -15,7 +15,7 @@
     });
 
     // Fix URLs within the chapters
-    $('#chapters').find('a').each(function() {
+    $('#chapters, #toc').find('a').each(function() {
         var self = $(this),
             href = self.attr('href');
 

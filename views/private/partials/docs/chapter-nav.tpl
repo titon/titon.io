@@ -1,13 +1,22 @@
 <ul>
-    <?php foreach ($chapters as $chapter) { ?>
+    <?php foreach ($chapters as $chapter) {
+        if (isset($chapter['divider'])) {
+            continue;
+        }
+
+        if (strpos($chapter['url'], '#') !== false) {
+            $url = '#' . explode('#', $chapter['url'])[1];
+        } else {
+            $url = url(['route' => 'toolkit.docs', 'version' => $version, 'path' => trim($chapter['url'], '/')]);
+        } ?>
 
         <li>
-            <a href="<?= $chapter['url']; ?>" class="scroll-to">
-                <?= $chapter['title']; ?>
-            </a>
+            <a href="<?= $url; ?>"><?= preg_replace_callback('/^\s+/', function($matches) {
+                return str_replace(' ', '&nbsp;&nbsp;', $matches[0]);
+            }, $chapter['title']); ?></a>
 
             <?php if (!empty($chapter['children'])) {
-                echo $this->open('docs/chapter-nav', ['chapters' => $chapter['children']]);
+                //echo $this->open('docs/chapter-nav', ['chapters' => $chapter['children']]);
             } ?>
         </li>
 

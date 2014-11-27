@@ -4,6 +4,7 @@ node_modules/
 vendor/
 temp/*
 composer.lock
+web/css/toolkit/
 
 # Ignore symlinks
 web/common/

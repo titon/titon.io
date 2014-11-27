@@ -18,7 +18,7 @@
         "titon/debug": "0.6.6",
         "titon/env": "0.11.0",
         "titon/type": "0.9.2",
-        "titon/toolkit": "*",
+        "titon/toolkit": "2.0.0-rc.2",
         "psr/log": "*",
         "erusev/parsedown": "*"
     },

@@ -166,6 +166,11 @@ $docs-border-color: darken($toolkit-bg-alt, 5%);
         &:empty { display: none; }
     }
 
+    .docs-actions {
+        float: right;
+        display: none;
+    }
+
     //-------------------- Responsive --------------------//
 
     @include if-tablet-portrait {
@@ -181,6 +186,10 @@ $docs-border-color: darken($toolkit-bg-alt, 5%);
     @include if-medium {
         .docs-nav li a {
             min-width: 150px;
+        }
+
+        .docs-actions {
+            display: block;
         }
     }
 
