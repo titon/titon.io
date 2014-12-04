@@ -2,7 +2,7 @@
     'use strict';
 
     // Tabs
-    $('.tabs').tabs();
+    $('.tabs').tab();
 
     // Tooltips
     $('[data-tooltip]').tooltip({

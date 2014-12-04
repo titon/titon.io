@@ -5,7 +5,7 @@
         var width = $(window).width(),
             height = 'auto';
 
-        if (width > 768) {
+        if (width > 800) {
             height = $(window).height();
         } else {
             height = $(document).height();

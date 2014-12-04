@@ -27,7 +27,7 @@
 <main class="body">
     <div class="wrapper">
         <div class="grid">
-            <div class="col desktop-6 box">
+            <div class="col large-6 medium-6 box">
                 <h3>What Is Toolkit</h3>
 
                 <p>Titon Toolkit is a collection of very powerful user interface components and utility
@@ -46,7 +46,7 @@
                 </p>
             </div>
 
-            <div class="col desktop-6 box">
+            <div class="col large-6 medium-6 box">
                 <h3>Where To Start</h3>
 
                 <p>Learning a new library can be quite challenging, but in the end the knowledge you gain is worth the time spent.

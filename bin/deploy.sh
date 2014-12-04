@@ -28,4 +28,4 @@ php composer.phar install --no-dev
 echo -e "\nGive Write Access"
 echo "------------------------------"
 
-chmod 775 $(find temp/ -type d)
+#chmod 775 $(find temp/ -type d)

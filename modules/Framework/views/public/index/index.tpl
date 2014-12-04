@@ -52,7 +52,7 @@ $breadcrumb->add('Framework', 'framework'); ?>
                 View Packages
             </a>
 
-            <a href="#install" class="button large hide-mobile scroll-to">
+            <a href="#install" class="button large hide-xsmall scroll-to">
                 Install
             </a>
         </div>

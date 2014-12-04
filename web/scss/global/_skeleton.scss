@@ -205,8 +205,7 @@ a:hover { color: $toolkit-primary-light; }
 
 //-------------------- Responsive --------------------//
 
-//@include if-mobile-landscape {
-@include if-tablet-landscape {
+@include if-small {
     .nav { display: block; }
 }
 
@@ -252,7 +251,7 @@ a:hover { color: $toolkit-primary-light; }
 @include if-large {
     html { font-size: 18px; }
 
-    .wrapper { max-width: $breakpoint-large !important; }
+    .wrapper { max-width: nth($breakpoint-range-large, 1) !important; }
 
     .toolbar {
         padding: $large-padding 0;

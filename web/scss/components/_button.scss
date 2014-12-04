@@ -16,6 +16,7 @@
     letter-spacing: .5px;
     text-transform: uppercase;
     transition: all .1s;
+    white-space: normal;
 
     @include button-style($default, $default-dark);
     &.is-info { @include button-style($info, $info-dark); }
@@ -23,8 +24,8 @@
     &.is-warning { @include button-style($warning, $warning-dark); }
     &.is-success { @include button-style($success, $success-dark); }
 
-    @include is-active { box-shadow: inset 0 0 0 3px black(.1); }
-    @include is-disabled { opacity: .5; }
+    &.is-active { box-shadow: inset 0 0 0 3px black(.1); }
+    &.is-disabled, &[disabled] { opacity: .5; }
 
     &:hover { color: #fff !important; }
     &:active { box-shadow: inset 0 0 2px 2px black(.1); }

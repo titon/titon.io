@@ -21,7 +21,7 @@ $filterComponents = function($type) use ($components) {
 
         <h6>Extensible front-end HTML, CSS, and JavaScript user interface components for the responsive, mobile, and modern web.</h6>
 
-        <div class="hexagons hide-small">
+        <div class="hexagons hide-xsmall hide-small">
             <div class="hexagon">
                 <span class="center-vertical">
                     HTML5
@@ -37,8 +37,7 @@ $filterComponents = function($type) use ($components) {
 
             <div class="hexagon">
                 <span class="center-vertical">
-                    <span class="hide-mobile">JavaScript</span>
-                    <span class="show-mobile">JS</span>
+                    JavaScript
                     <small>Gulp</small>
                 </span>
             </div>
@@ -55,7 +54,7 @@ $filterComponents = function($type) use ($components) {
                 Install
             </a>
 
-            <a href="https://github.com/titon/toolkit/archive/<?= $version; ?>.zip" class="button large is-success hide-mobile">
+            <a href="https://github.com/titon/toolkit/archive/<?= $version; ?>.zip" class="button large is-success hide-xsmall">
                 Download
                 <span class="button-suffix"><?= $version; ?></span>
             </a>

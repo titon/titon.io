@@ -1,7 +1,7 @@
-@import "toolkit/layout/base";
-@import "toolkit/layout/typography";
-@import "toolkit/layout/form";
-@import "toolkit/layout/code";
+@import "toolkit/base";
+@import "toolkit/components/typography";
+@import "toolkit/components/form";
+@import "toolkit/components/code";
 
 code {
     background: lighten($toolkit-secondary, 30%);
