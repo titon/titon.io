@@ -876,16 +876,16 @@
         },
         {
             "name": "titon/toolkit",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/titon/toolkit.git",
-                "reference": "5505519b1df62231a55e97b5630cfe5b79c8c28c"
+                "reference": "ded0f8083b5dffbbe19415537efcc882e95281c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/titon/toolkit/zipball/5505519b1df62231a55e97b5630cfe5b79c8c28c",
-                "reference": "5505519b1df62231a55e97b5630cfe5b79c8c28c",
+                "url": "https://api.github.com/repos/titon/toolkit/zipball/ded0f8083b5dffbbe19415537efcc882e95281c2",
+                "reference": "ded0f8083b5dffbbe19415537efcc882e95281c2",
                 "shasum": ""
             },
             "type": "library",
@@ -920,7 +920,7 @@
                 "toolkit",
                 "ui"
             ],
-            "time": "2014-12-08 19:25:02"
+            "time": "2014-12-17 20:46:02"
         },
         {
             "name": "titon/type",
@@ -1107,6 +1107,7 @@
     "minimum-stability": "stable",
     "stability-flags": [],
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
 }
