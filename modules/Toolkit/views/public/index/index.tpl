@@ -59,7 +59,7 @@ $filterComponents = function($type) use ($components) {
                 <span class="button-suffix"><?= $version; ?></span>
             </a>
 
-            <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => 'releases/2.0']); ?>" class="button large">
+            <a href="<?= url(['route' => 'toolkit.docs', 'version' => $version, 'path' => 'releases/2.1']); ?>" class="button large">
                 Release Notes
             </a>
         </div>
