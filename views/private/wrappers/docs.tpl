@@ -34,7 +34,7 @@ $isComponents = (strpos($urlPath, '/components') === 0); ?>
 <main class="body" id="top">
     <div class="wrapper">
         <div class="grid" id="doc">
-            <aside class="hide-small col medium-3 large-3 docs-sidebar" id="toc">
+            <aside class="col medium-3 large-3 docs-sidebar" id="toc">
                 <nav class="box docs-toc">
                     <header><?= $tocSections['title']; ?></header>
 

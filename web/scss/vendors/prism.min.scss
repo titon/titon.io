@@ -30,7 +30,8 @@
 .token.null,
 .token.tag > .token.punctuation,
 .language-css .token.property,
-.language-scss .token.property {
+.language-scss .token.property,
+.language-sass .token.property {
     color: #b294bb;
 }
 
@@ -42,7 +43,8 @@
 .token.pseudo,
 .token.regex,
 .token.operator,
-.language-scss .token.keyword {
+.language-scss .token.keyword,
+.language-sass .token.keyword {
     color: #8abeb7;
 }
 
@@ -74,7 +76,8 @@
 .token.function,
 .token.selector .token.id,
 .token.selector .token.class,
-.language-scss .token.selector {
+.language-scss .token.selector,
+.language-sass .token.selector {
     color: #81a2be;
 }
 

@@ -4,7 +4,10 @@
     $('#toc').pin({
         throttle: 0,
         context: '#doc',
-        location: 'left'
+        location: 'left',
+        onResize: function() {
+            this.active = (this.viewport.width > 945);
+        }
     });
 
     $('body').stalker({
