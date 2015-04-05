@@ -19,3 +19,9 @@
         &:first-child { text-align: left; }
     }
 }
+
+// overflow-x doesn't work on some mobile devices
+// so use overflow to be safe
+.table-responsive {
+    overflow: auto;
+}
