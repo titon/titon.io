@@ -20,8 +20,7 @@
     }
 }
 
-// overflow-x doesn't work on some mobile devices
-// so use overflow to be safe
-.table-responsive {
-    overflow: auto;
+// overflow-x doesn't work on android devices
+.android .table-responsive {
+    overflow: hidden;
 }

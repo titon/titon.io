@@ -28,4 +28,9 @@
         history.pushState(null, null, hash);
     });
 
+    $(function() {
+        if (navigator.userAgent.toLowerCase().indexOf('android') > -1) {
+            $('html').addClass('android');
+        }
+    });
 })(jQuery);
