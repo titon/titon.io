@@ -6,7 +6,11 @@
         context: '#doc',
         location: 'left',
         onResize: function() {
-            this.active = (this.viewport.width > 945);
+            if (this.viewport.width > 640) {
+                this.active = true;
+            } else {
+                this.destructor();
+            }
         }
     });
 

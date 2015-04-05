@@ -232,6 +232,10 @@ class Docs {
         // Replace .md in URLs
         $parsed = str_replace('.md', '', $parsed);
 
+        // Wrap tables for responsiveness
+        $parsed = str_replace('<table', '<div class="table-responsive"><table', $parsed);
+        $parsed = str_replace('</table>', '</table></div>', $parsed);
+
         // Fix URLs on index pages
         if (basename($path) === 'index.md') {
             $folder = basename(dirname($path));

@@ -34,7 +34,7 @@ $isComponents = (strpos($urlPath, '/components') === 0); ?>
 <main class="body" id="top">
     <div class="wrapper">
         <div class="grid" id="doc">
-            <aside class="col medium-3 large-3 docs-sidebar" id="toc">
+            <aside class="col small-3 medium-3 large-3 docs-sidebar" id="toc">
                 <nav class="box docs-toc">
                     <header><?= $tocSections['title']; ?></header>
 
@@ -85,7 +85,7 @@ $isComponents = (strpos($urlPath, '/components') === 0); ?>
                 </nav>
             </aside>
 
-            <section class="col medium-9 large-9 end" id="chapters">
+            <section class="col small-9 medium-9 large-9 end" id="chapters">
                 <?= $this->getContent(); ?>
             </section>
         </div>
