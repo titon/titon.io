@@ -48,8 +48,13 @@ $docs-border-color: darken($toolkit-bg-alt, 5%);
         &:last-child { margin-bottom: 0; }
     }
 
-    .docs-sidebar.is-pinned {
-        margin: $margin 0;
+    .docs-sidebar {
+        margin: 0;
+        transition: margin .2s;
+
+        &.is-pinned {
+            margin: $margin 0;
+        }
     }
 
     .docs-toc {

@@ -5,9 +5,10 @@
         throttle: 0,
         context: '#doc',
         location: 'left',
+        lock: true,
         onResize: function() {
             if (this.viewport.width > 640) {
-                this.active = true;
+                this.calculate();
             } else {
                 this.destructor();
             }
