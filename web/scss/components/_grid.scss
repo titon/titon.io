@@ -3,7 +3,3 @@ $responsive-size: "both";
 $grid-gutter: 2rem;
 
 @import "toolkit/components/grid";
-
-@include if-max(nth($breakpoint-range-xsmall, 2)) {
-    .col.end { float: none !important; }
-}
