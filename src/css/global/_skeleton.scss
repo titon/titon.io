@@ -28,7 +28,7 @@ a:hover { color: $toolkit-primary-light; }
 
 .head {
     color: #fff;
-    background: image-url("hexagon-pattern.png") repeat, linear-gradient(to left, $toolkit-primary-dark, $framework-primary-dark);
+    background: url("../img/hexagon-pattern.png") repeat, linear-gradient(to left, $toolkit-primary-dark, $framework-primary-dark);
 }
 
 //-------------------- Body --------------------//
@@ -128,7 +128,7 @@ a:hover { color: $toolkit-primary-light; }
     width: 138px;
     display: block;
     text-indent: -9999px;
-    background: image-url("logo.png") no-repeat;
+    background: url("../img/logo.png") no-repeat;
     background-size: auto 60px;
     position: relative;
     bottom: -2px;

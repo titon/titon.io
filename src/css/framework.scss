@@ -6,7 +6,7 @@ a,
 a:hover { color: darken($framework-secondary, 15%); }
 
 .head {
-    background: $framework-primary-dark image-url("hexagon-pattern.png") repeat;
+    background: $framework-primary-dark url("../img/hexagon-pattern.png") repeat;
 }
 
 .hexagon,
@@ -15,10 +15,10 @@ a:hover { color: darken($framework-secondary, 15%); }
 .hexagon-32,
 .hexagon-64,
 .hexagon-128 {
-    background-image: image-url("hexagon-teal.png");
+    background-image: url("../img/hexagon-teal.png");
 
     @include if-retina {
-        background-image: image-url("hexagon-teal@2x.png");
+        background-image: url("../img/hexagon-teal@2x.png");
     }
 }
 

@@ -4,10 +4,10 @@ body { padding: 0; }
 
 .home {
     position: relative;
-    background: image-url("hexagon-pattern.png") repeat, linear-gradient(to right, $toolkit-primary-dark, $framework-primary-dark);
+    background: url("../img/hexagon-pattern.png") repeat, linear-gradient(to right, $toolkit-primary-dark, $framework-primary-dark);
 
     h1 {
-        background: image-url("logo-large.png") no-repeat;
+        background: url("../img/logo-large.png") no-repeat;
         background-size: 100% auto;
         text-indent: -9999px;
         width: 100%;

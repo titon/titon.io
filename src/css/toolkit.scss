@@ -6,7 +6,7 @@ a,
 a:hover { color: darken($toolkit-secondary, 15%); }
 
 .head {
-    background: $toolkit-primary-dark image-url("hexagon-pattern.png") repeat;
+    background: $toolkit-primary-dark url("../img/hexagon-pattern.png") repeat;
 }
 
 .body {
@@ -19,10 +19,10 @@ a:hover { color: darken($toolkit-secondary, 15%); }
 .hexagon-32,
 .hexagon-64,
 .hexagon-128 {
-    background-image: image-url("hexagon-pink.png");
+    background-image: url("../img/hexagon-pink.png");
 
     @include if-retina {
-        background-image: image-url("hexagon-pink@2x.png");
+        background-image: url("../img/hexagon-pink@2x.png");
     }
 }
 
