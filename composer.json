@@ -1,28 +1,13 @@
 {
-    "_REQUIRE_": "ALL THE THINGS!",
     "require": {
-        "titon/common": "0.13.2",
-        "titon/controller": "0.4.3",
-        "titon/event": "0.4.4",
-        "titon/http": "0.8.2",
-        "titon/io": "0.7.2",
-        "titon/route": "0.14.1",
-        "titon/utility": "0.12.3",
-        "titon/view": "0.8.1",
-
-        "titon/app": "0.2.0",
-        "titon/mvc": "0.11.1",
-        "titon/db": "0.11.2",
-        "titon/g11n": "0.11.4",
-        "titon/cache": "0.8.1",
-        "titon/debug": "0.6.6",
-        "titon/env": "0.11.0",
-        "titon/type": "0.9.2",
-        "titon/toolkit": "*",
-        "psr/log": "*",
-        "erusev/parsedown": "*"
+        "slim/slim": "~2.6",
+        "league/commonmark": "~0.8",
+        "league/plates": "~3.1",
+        "titon/toolkit": "*"
     },
     "autoload": {
-        "psr-4": { "": ["modules/", "libs/"] }
+        "psr-4": {
+            "Titon//": "lib/"
+        }
     }
 }

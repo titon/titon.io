@@ -1,23 +1,13 @@
 <?php
+/**
+ * @copyright   2010-2015, The Titon Project
+ * @license     http://opensource.org/licenses/BSD-3-Clause
+ * @link        http://titon.io
+ */
 
-use Titon\Cache\Storage\FileSystemStorage;
-use Titon\Cache\Traits\StorageAware;
-use Titon\G11n\Utility\Inflector;
-use Titon\Http\Exception\NotFoundException;
-use Titon\Io\File;
-use Titon\Io\Folder;
-use Titon\Io\Reader\JsonReader;
-use Titon\Mvc\Application;
-use Titon\Mvc\Traits\AppAware;
-use Titon\Utility\Path;
+namespace Titon;
 
-class Docs {
-    use AppAware, StorageAware;
-
-    public function __construct() {
-        $this->setApplication(Application::getInstance());
-        $this->setStorage(new FileSystemStorage(['directory' => TEMP_DIR . 'cache/docs/']));
-    }
+class DocManager {
 
     public function buildVersions($version) {
         $version = substr($version, 0, 3);
