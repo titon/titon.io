@@ -1,12 +1,4 @@
-<?php $this->layout('layouts/default', ['pageTitle' => 'Index']); ?>
-
-<?php $this->start('head'); ?>
-    <link href="<?= $this->asset('/css/home.min.css'); ?>" media="screen" rel="stylesheet" type="text/css">
-<?php $this->stop(); ?>
-
-<?php $this->start('foot'); ?>
-    <script src="<?= $this->asset('/js/home.min.js'); ?>"></script>
-<?php $this->stop(); ?>
+<?php $this->layout('layouts/home'); ?>
 
 <div id="home" class="home">
     <div class="wrapper">

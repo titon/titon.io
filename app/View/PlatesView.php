@@ -11,6 +11,7 @@ use League\Plates\Engine;
 use League\Plates\Extension\Asset;
 use Slim\Slim;
 use Slim\View;
+use Titon\Model\Toolkit;
 
 class PlatesView extends View {
 
@@ -27,6 +28,13 @@ class PlatesView extends View {
 
         $app = Slim::getInstance();
         $plates = new Engine($app->config('templates.path'), 'tpl');
+
+        // Global variables
+        $plates->addData([
+            'env' => APP_ENV,
+            'locale' => 'en',
+            'toolkitVersion' => Toolkit::loadVersion()
+        ]);
 
         // Asset timestamping
         $plates->loadExtension(new Asset(WEB_DIR));
@@ -46,7 +54,9 @@ class PlatesView extends View {
      * @return string
      */
     public function render($template) {
-        return $this->plates->render($template, $this->data->all());
+        return $this->plates
+            ->addData($this->data->all())
+            ->render($template);
     }
 
 }

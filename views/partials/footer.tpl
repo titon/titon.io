@@ -7,7 +7,7 @@
 
         <div class="copyright">
             &copy; 2013&ndash;<?= date('Y'); ?> Miles Johnson, the Titon Project. All rights reserved.<br>
-            Powered by Titon Framework and Titon Toolkit v TODO &mdash; of course.
+            Powered by Titon Framework and Titon Toolkit v<?= $toolkitVersion; ?> &mdash; of course.
         </div>
     </div>
 </footer>

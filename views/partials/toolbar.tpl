@@ -2,13 +2,13 @@
     <div class="wrapper">
         <nav class="nav">
             <ul>
-                <?php /*<li><a href="<?= url(['route' => 'toolkit.docs', 'version' => $toolkitVersion, 'path' => 'setup/installing']); ?>">Install</a></li>
-                <li><a href="<?= url(['route' => 'toolkit.docs', 'version' => $toolkitVersion, 'path' => 'setup/getting-started']); ?>">Download</a></li>
-                <li><a href="<?= trim(url(['route' => 'toolkit.docs', 'version' => $toolkitVersion])); ?>">Docs</a></li>
+                <li><a href="<?= $this->url('toolkit.docs', ['version' => $toolkitVersion, 'path' => 'setup/installing']); ?>">Install</a></li>
+                <li><a href="<?= $this->url('toolkit.docs', ['version' => $toolkitVersion, 'path' => 'setup/getting-started']); ?>">Download</a></li>
+                <li><a href="<?= $this->url('toolkit.docs', ['version' => $toolkitVersion, 'path' => '']); ?>">Docs</a></li>
                 <li><a href="http://demo.titon.io">Demos</a></li>
                 <li><a href="https://github.com/titon/toolkit">GitHub</a></li>
 
-                <li>
+                <?php /*<li>
                     <?= $html->anchor('Toolkit', 'toolkit'); ?>
 
                     <ul class="drop drop--down reverse-align" id="toolkit-menu">

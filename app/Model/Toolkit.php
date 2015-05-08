@@ -15,7 +15,7 @@ class Toolkit {
      * @return string
      */
     public static function loadVersion() {
-        $version = file_get_contents(VENDOR_DIR . 'titon/toolkit/version.md');
+        $version = trim(file_get_contents(VENDOR_DIR . 'titon/toolkit/version.md'));
 
         if (strpos($version, '-') !== false) {
             $version = explode('-', $version)[0];
@@ -35,7 +35,7 @@ class Toolkit {
 
         foreach ($json as $key => $component) {
             if (strpos($key, '-') === false) {
-                $key = str_replace('_', '-', Inflector::underscore($key));
+                $key = strtolower(str_replace('_', '-', preg_replace('/([A-Z]{1})/', '_$1', $key)));
             }
 
             $component['key'] = $key;

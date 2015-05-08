@@ -6,6 +6,8 @@
  */
 
 use Slim\Slim;
+use Titon\Model\Framework;
+use Titon\Model\Toolkit;
 
 // Start the application
 $app = new Slim([
@@ -22,26 +24,36 @@ $app->get('/', function() use ($app) {
 });
 
 $app->get('/en', function() use ($app) {
-    $app->render('index');
+    $app->render('index', [
+        'hideToolbar' => true
+    ]);
 })->name('index');
 
 // Toolkit
 $app->get('/en/toolkit', function() use ($app) {
-    // TODO
+    $app->render('toolkit/index', [
+        'components' => Toolkit::loadComponents(),
+        'skeletonClass' => 'landing',
+        'bodyClass' => 'toolkit'
+    ]);
 })->name('toolkit');
 
 // Toolkit documentation
-$app->get('/en/toolkit/:version/:doc+', function($version, $doc) use ($app) {
+$app->get('/en/toolkit/:version/:path+', function($version, $doc = '') use ($app) {
     // TODO
 })->name('toolkit.docs');
 
 // Framework
 $app->get('/en/framework', function() use ($app) {
-    // TODO
+    $app->render('framework/index', [
+        'packages' => Framework::loadPackages(),
+        'skeletonClass' => 'landing',
+        'bodyClass' => 'framework'
+    ]);
 })->name('framework');
 
 // Framework documentation
-$app->get('/en/framework/:version/:doc+', function($version, $doc) use ($app) {
+$app->get('/en/framework/:version/:path+', function($version, $doc = '') use ($app) {
     // TODO
 })->name('framework.docs');
 
