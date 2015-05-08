@@ -5,7 +5,7 @@
  * @link        http://titon.io
  */
 
-namespace Titon;
+namespace Titon\Manager;
 
 class DocManager {
 
