@@ -6,6 +6,7 @@
  */
 
 use Slim\Slim;
+use Titon\Manager\DocManager;
 use Titon\Model\Framework;
 use Titon\Model\Toolkit;
 
@@ -24,9 +25,7 @@ $app->get('/', function() use ($app) {
 });
 
 $app->get('/en', function() use ($app) {
-    $app->render('index', [
-        'hideToolbar' => true
-    ]);
+    $app->render('index');
 })->name('index');
 
 // Toolkit
@@ -39,8 +38,15 @@ $app->get('/en/toolkit', function() use ($app) {
 })->name('toolkit');
 
 // Toolkit documentation
-$app->get('/en/toolkit/:version/:path+', function($version, $doc = '') use ($app) {
-    // TODO
+$app->get('/en/toolkit/:version(/:path+)', function($version, $path = []) use ($app) {
+    $path = implode('/', $path);
+    $docs = new DocManager('toolkit');
+
+    // Load documentation
+    $toc = $docs->getToc($version);
+    $source = $docs->getSource($version, $path);
+    $chapters = $docs->findChapters($toc, $path);
+
 })->name('toolkit.docs');
 
 // Framework
@@ -53,7 +59,7 @@ $app->get('/en/framework', function() use ($app) {
 })->name('framework');
 
 // Framework documentation
-$app->get('/en/framework/:version/:path+', function($version, $doc = '') use ($app) {
+$app->get('/en/framework/:version(/:path+)', function($version, $path = []) use ($app) {
     // TODO
 })->name('framework.docs');
 

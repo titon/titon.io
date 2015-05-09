@@ -7,8 +7,37 @@
 
 namespace Titon\Manager;
 
+use League\CommonMark\Block\Element\Header;
+use League\CommonMark\DocParser;
+use League\CommonMark\Environment;
+use League\CommonMark\HtmlElement;
+use League\CommonMark\HtmlRenderer;
+use League\Flysystem\Adapter\Local;
+use League\Flysystem\Filesystem;
+use RuntimeException;
+
 class DocManager {
 
+    /**
+     * @var \League\Flysystem\Filesystem
+     */
+    protected $flysystem;
+
+    /**
+     * Instantiate a new documentation manager for a project.
+     *
+     * @param string $project
+     */
+    public function __construct($project) {
+        $this->flysystem = new Filesystem(new Local(SRC_DIR . 'docs/' . $project . '/'));
+    }
+
+    /**
+     * Determine a valid version by looping through a list of possible versions in descending order.
+     *
+     * @param string $version
+     * @return array
+     */
     public function buildVersions($version) {
         $version = substr($version, 0, 3);
         $versions = [$version];
@@ -31,31 +60,72 @@ class DocManager {
         return $versions;
     }
 
-    public function compileFile(File $file) {
-        $key = md5($file->path());
-        $content = $this->parseMarkdown($file);
+    /**
+     * Compile a file by reading its contents, extracting the title, sections, and finally convert to HTML.
+     *
+     * @param string $path
+     * @return array
+     */
+    public function compileFile($path) {
+        $environment = Environment::createCommonMarkEnvironment();
+        $renderer = new HtmlRenderer($environment);
+        $document = (new DocParser($environment))->parse($this->flysystem->read($path));
+        $sections = [];
+        $title = '';
+        $sectionContent = '';
+        $sectionHash = '';
 
-        $this->getStorage()->set($key, $content, '+1 week');
+        foreach ($document->getChildren() as $child) {
 
-        return $content;
-    }
+            // Start a new section at each header
+            if ($child instanceof Header) {
 
-    public function compileFolder(Folder $folder) {
-        foreach ($folder->read() as $file) {
-            if ($file instanceof File) {
-                $this->compileFile($file);
-            } else {
-                $this->compileFolder($file);
+                // Extract the title if first header
+                if ($child->getLevel() === 1) {
+                    $title = $child->getStringContent();
+                    $sectionHash = $this->makeHash($title);
+
+                // Start a new section if not first
+                } else {
+                    $sections[$sectionHash] = $sectionContent;
+                    $sectionContent = '';
+                    $sectionHash = $this->makeHash($child->getStringContent());
+                }
             }
+
+            // Render the individual child into different sections
+            /** @var HtmlElement $renderedSection */
+            $renderedSection = $renderer->renderBlock($child);
+
+            // Add an ID to headers
+            if ($child instanceof Header) {
+                $renderedSection->setAttribute('id', $sectionHash);
+            }
+
+            $sectionContent .= (string) $renderedSection;
         }
 
-        return $this;
+        // Append last section
+        $sections[$sectionHash] = $sectionContent;
+
+        // Parse the Markdown even further
+        foreach ($sections as $key => $section) {
+            $sections[$key] = $this->parseMarkdown($section, $path);
+        }
+
+        return [
+            'path' => $path,
+            'title' => $title,
+            'sections' => $sections
+        ];
     }
 
-    public function compileSources($source, $version) {
-        return $this->compileFolder(new Folder($this->locateSource($source, $version)));
-    }
-
+    /**
+     * Flatten the table of contents and index each item by it's URL.
+     *
+     * @param array $toc
+     * @return array
+     */
     public function flattenToc(array $toc) {
         $flattened = [];
 
@@ -64,7 +134,7 @@ class DocManager {
                 continue;
             }
 
-            $flattened[$item['url']] = $item;
+            $flattened[trim($item['url'], '/')] = $item;
 
             if (!empty($item['children'])) {
                 $flattened = array_merge($flattened, $this->flattenToc($item['children']));
@@ -74,12 +144,19 @@ class DocManager {
         return $flattened;
     }
 
-    public function findChapter(array $toc, $url) {
+    /**
+     * Find a list of chapters within the current section path.
+     *
+     * @param array $toc
+     * @param string $path
+     * @return array
+     */
+    public function findChapters(array $toc, $path) {
         $tocGrouped = $this->flattenToc($toc['children']);
-        $url = str_replace('\\', '/', dirname($url));
+        $path = str_replace('\\', '/', dirname($path));
 
-        if (isset($tocGrouped[$url])) {
-            $chapter = $tocGrouped[$url];
+        if (isset($tocGrouped[$path])) {
+            $chapter = $tocGrouped[$path];
         } else {
             $chapter = $toc;
         }
@@ -87,212 +164,101 @@ class DocManager {
         return $chapter;
     }
 
-    public function getSource($source, $version, $query) {
-        $file = new File(Path::ds($this->locateSource($source, $version, $query)));
+    /**
+     * Locate, load, and convert a documentation Markdown file to HTML.
+     *
+     * @param string $version
+     * @param string $path
+     * @return string
+     */
+    public function getSource($version, $path) {
+        $path = $this->locateSource($version, $path . '.md');
 
-        if (!$file->exists()) {
-            throw new NotFoundException('Docs Not Found');
-        }
-
-        $key = md5($file->path());
-
-        if ($content = $this->getStorage()->get($key)) {
-            return $content;
-        }
-
-        return $this->compileFile($file);
+        return $this->compileFile($path);
     }
 
-    public function getToc($source, $version) {
-        $locale = $this->getApplication()->get('g11n')->current()->getCode();
-        $versions = $this->buildVersions($version);
-        $path = '';
+    /**
+     * Locate, load, and parse the documentation JSON table of contents.
+     *
+     * @param string $version
+     * @return array
+     */
+    public function getToc($version) {
+        $path = $this->locateSource($version, 'toc.json');
 
-        foreach ($versions as $version) {
-            $lookup = DOCS_DIR . sprintf('%s-%s/%s/toc.json', $source, $version, $locale);
-
-            if (file_exists($lookup)) {
-                $path = $lookup;
-                break;
-            }
-        }
-
-        if (!$path) {
-            throw new NotFoundException('Table of Contents Not Found');
-        }
-
-        $file = new JsonReader(Path::ds($path));
-        $key = md5($file->path());
-
-        if ($content = $this->getStorage()->get($key)) {
-            return $content;
-        }
-
-        $content = $file->read();
-
-        $this->getStorage()->set($key, $content, '+1 week');
-
-        return $content;
+        return json_decode($this->flysystem->read($path), true);
     }
 
-    public function locateSource($source, $version, $query = null) {
-        $locale = $this->getApplication()->get('g11n')->current()->getCode();
+    /**
+     * Locate a source file by looping through a possible list of version path combinations.
+     *
+     * @param string $version
+     * @param string [$target]
+     * @return string
+     */
+    public function locateSource($version, $file = '') {
         $versions = $this->buildVersions($version);
 
         foreach ($versions as $version) {
-            $base = DOCS_DIR . sprintf('%s-%s/%s/', $source, $version, $locale);
-            $paths = [$base];
+            $base = sprintf('%s/%s/', $version, 'en');
 
-            if ($query !== null) {
-                $paths = [$base . $query . '.md', $base . $query . '/index.md'];
+            if ($file) {
+                $paths = [$base . $file, $base . str_replace('.md', '', $file) . '/index.md'];
+            } else {
+                $paths = [$base];
             }
 
             foreach ($paths as $path) {
-                if (is_file($path) && file_exists($path)) {
+                if ($this->flysystem->has($path)) {
                     return $path;
                 }
             }
         }
 
-        throw new NotFoundException('Sources Not Found');
+        throw new RuntimeException(sprintf('Documentation source [%s] could not be located', $file));
     }
 
-    public function parseChapters(array $chapters) {
-        $toc = [];
-        $chapterCount = count($chapters) - 1;
-        $chapterStack = [];
-        $typeStack = [];
-        $appendToLast = function(&$chapterStack, &$typeStack) {
-            $lastChapter = array_pop($chapterStack);
-            array_pop($typeStack);
-
-            $chapterStack[count($typeStack) - 1]['children'][] = $lastChapter;
-        };
-
-        // Group by type
-        foreach ($chapters as $i => $chapter) {
-            $currentType = (int) $chapter['type'];
-            $lastType = (int) end($typeStack);
-
-            // Lower depth, go deeper
-            if (!$lastType || $currentType > $lastType) {
-                $chapterStack[] = $chapter;
-                $typeStack[] = $currentType;
-
-            // Same depth, append previous item and start new stack
-            } else if ($currentType === $lastType) {
-                $appendToLast($chapterStack, $typeStack);
-
-                if ($i == $chapterCount) {
-                    $chapterStack[count($typeStack) - 1]['children'][] = $chapter;
-                } else {
-                    $chapterStack[] = $chapter;
-                    $typeStack[] = $currentType;
-                }
-
-            // Higher depth, close parent and start a new one
-            } else if ($currentType < $lastType) {
-                $appendToLast($chapterStack, $typeStack);
-                $appendToLast($chapterStack, $typeStack);
-
-                $chapterStack[] = $chapter;
-                $typeStack[] = $currentType;
-            }
-        }
-
-        // Append remaining stack
-        for ($i = count($chapterStack) - 1; $i >= 0; $i--) {
-            if ($i === 0) {
-                $toc = $chapterStack[0];
-            } else {
-                $appendToLast($chapterStack, $typeStack);
-            }
-        }
-
-        return $toc;
-    }
-
-    public function parseMarkdown(File $file) {
-        $parsedown = new Parsedown();
-        $path = $file->path();
-
-        // Parse the file
-        $parsed = $parsedown->parse($file->read());
+    /**
+     * Parse the Markdown even further by fixing specific situations.
+     *
+     * @param string $contents
+     * @param string $path
+     * @return string
+     */
+    public function parseMarkdown($contents, $path) {
 
         // Replace .md in URLs
-        $parsed = str_replace('.md', '', $parsed);
+        $contents = str_replace('.md', '', $contents);
 
         // Wrap tables for responsiveness
-        $parsed = str_replace('<table', '<div class="table-responsive"><table', $parsed);
-        $parsed = str_replace('</table>', '</table></div>', $parsed);
+        $contents = str_replace('<table', '<div class="table-responsive"><table', $contents);
+        $contents = str_replace('</table>', '</table></div>', $contents);
 
         // Fix URLs on index pages
         if (basename($path) === 'index.md') {
             $folder = basename(dirname($path));
-            $parsed = preg_replace_callback('/<a href="([-a-zA-Z0-9\/\.]+)">/', function($matches) use ($folder) {
+            $contents = preg_replace_callback('/<a href="([-a-zA-Z0-9\/\.]+)">/', function($matches) use ($folder) {
                 return sprintf('<a href="%s">', $folder . '/' . $matches[1]);
-            }, $parsed);
+            }, $contents);
         }
 
-        // Break up into sections
-        $parsed = explode("\n", $parsed);
-        $parsedLength = count($parsed) - 1;
-        $sections = [];
-        $currentSection = '';
-        $sectionHash = '';
-        $title = '';
-
-        foreach ($parsed as $i => $line) {
-            preg_match('/^<h([1-6])>(.*?)<\/h([1-6])>$/', $line, $matches);
-
-            // Append to the current open section
-            if (empty($matches)) {
-                $currentSection .= "\n" . $line;
-
-                if ($i >= $parsedLength) {
-                    $sections[$sectionHash] = $currentSection;
-                }
-
-            // Break up the document into sections based on h2 tags
-            } else if ($matches[1] == 1 || $matches[1] == 2) {
-                if ($matches[1] == 1) {
-                    $title = $matches[2];
-                }
-
-                if ($matches[1] == 2) {
-                    $sections[$sectionHash] = $currentSection;
-                }
-
-                $sectionHash = $this->makeHash($matches[2]);
-                $currentSection = $line;
-
-                if (is_numeric($sectionHash)) {
-                    $sectionHash = 'no-' . $sectionHash;
-                }
-
-            // Rewrite h3-h6 tags to have an ID
-            } else {
-                $hash = $this->makeHash($matches[2]);
-
-                if (is_numeric($hash)) {
-                    $hash = 'no-' . $hash;
-                }
-
-                $currentSection .= "\n" . sprintf('<h%s id="%s">%s</h%s>', $matches[1], $hash, $matches[2], $matches[3]);
-            }
-        }
-
-        $paths = preg_split('/([a-z]+)-([0-9\.x]+)/', $path);
-
-        return [
-            'path' => str_replace('\\', '/', $paths[1]),
-            'title' => $title,
-            'sections' => $sections
-        ];
+        return $contents;
     }
 
+    /**
+     * Convert a header title into a hash.
+     *
+     * @param string $string
+     * @return string
+     */
     public function makeHash($string) {
-        return str_replace('.', '', Inflector::slug(str_replace('&amp;', 'and', trim($string))));
+        $hash = strtolower(str_replace('.', '', str_replace('&amp;', 'and', str_replace(' ', '-', str_replace('-', '_', trim($string))))));
+
+        if (is_numeric($hash)) {
+            $hash = 'no-' . $hash;
+        }
+
+        return $hash;
     }
 
 }
