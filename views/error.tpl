@@ -1,4 +1,4 @@
-<?php $this->layout('layouts/default', ['pageTitle' => 'Error']); ?>
+<? $this->layout('layouts/default', ['pageTitle' => 'Error']); ?>
 
 <div class="error">
     <header class="head">

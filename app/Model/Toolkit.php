@@ -10,7 +10,7 @@ namespace Titon\Model;
 class Toolkit {
 
     /**
-     * Load the latest version from the master branch.
+     * Load the latest version.
      *
      * @return string
      */
@@ -25,7 +25,7 @@ class Toolkit {
     }
 
     /**
-     * Load the component manifest from the master branch.
+     * Load the component manifest.
      *
      * @return array
      */

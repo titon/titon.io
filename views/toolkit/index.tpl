@@ -1,18 +1,4 @@
-<?php $this->layout('layouts/default', ['pageTitle' => 'Toolkit']);
-
-$filterComponents = function($type) use ($components) {
-    $clean = [];
-
-    foreach ($components as $key => $component) {
-        if (isset($component['type']) && $component['type'] === $type) {
-            $clean[] = $key;
-        } else if (isset($component['category']) && $component['category'] === $type) {
-            $clean[] = $key;
-        }
-    }
-
-    return $clean;
-}; ?>
+<? $this->layout('layouts/default', ['pageTitle' => 'Toolkit']); ?>
 
 <header class="head">
     <div class="wrapper">
@@ -133,6 +119,20 @@ $filterComponents = function($type) use ($components) {
         </div>
     </section>
 
+    <? $filterComponents = function($type) use ($components) {
+        $clean = [];
+
+        foreach ($components as $key => $component) {
+            if (isset($component['type']) && $component['type'] === $type) {
+                $clean[] = $key;
+            } else if (isset($component['category']) && $component['category'] === $type) {
+                $clean[] = $key;
+            }
+        }
+
+        return $clean;
+    }; ?>
+
     <section class="segment components" id="components">
         <div class="wrapper">
             <h2>Powerful user interface components.</h2>
@@ -146,7 +146,7 @@ $filterComponents = function($type) use ($components) {
                     <p>Helper classes, mixins, functions, and visual styles for built-in HTML tags.</p>
 
                     <ul>
-                        <?php foreach ($filterComponents('layout') as $key) {
+                        <? foreach ($filterComponents('layout') as $key) {
                             echo $this->fetch('partials/component-item', ['component' => $components[$key], 'key' => $key]);
                         } ?>
                     </ul>
@@ -157,7 +157,7 @@ $filterComponents = function($type) use ($components) {
                     <p>Common user interface concepts packaged as static HTML elements.</p>
 
                     <ul>
-                        <?php foreach ($filterComponents('element') as $key) {
+                        <? foreach ($filterComponents('element') as $key) {
                             echo $this->fetch('partials/component-item', ['component' => $components[$key], 'key' => $key]);
                         } ?>
                     </ul>
@@ -168,7 +168,7 @@ $filterComponents = function($type) use ($components) {
                     <p>Element components empowered with JavaScript for advanced functionality.</p>
 
                     <ul>
-                        <?php foreach ($filterComponents('module') as $key) {
+                        <? foreach ($filterComponents('module') as $key) {
                             echo $this->fetch('partials/component-item', ['component' => $components[$key], 'key' => $key]);
                         } ?>
                     </ul>
