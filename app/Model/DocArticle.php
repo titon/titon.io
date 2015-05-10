@@ -27,6 +27,13 @@ class DocArticle {
     protected $chapters = [];
 
     /**
+     * Description of the document.
+     *
+     * @var string
+     */
+    protected $description;
+
+    /**
      * @var \League\Flysystem\Filesystem
      */
     protected $flysystem;
@@ -110,6 +117,15 @@ class DocArticle {
      */
     public function getChapters() {
         return $this->chapters;
+    }
+
+    /**
+     * Return the document description.
+     *
+     * @return string
+     */
+    public function getDescription() {
+        return $this->description;
     }
 
     /**
@@ -203,11 +219,12 @@ class DocArticle {
         $environment = Environment::createCommonMarkEnvironment();
         $renderer = new HtmlRenderer($environment);
         $document = (new DocParser($environment))->parse($this->flysystem->read($path));
+        $children = $document->getChildren();
         $sectionContent = '';
         $sectionHash = '';
         $childHash = '';
 
-        foreach ($document->getChildren() as $child) {
+        foreach ($children as $i => $child) {
             if ($child instanceof Header) {
                 $childContent = htmlentities($child->getStringContent(), ENT_QUOTES, 'UTF-8');
                 $childHash = DocManager::makeHash($childContent);
@@ -215,6 +232,7 @@ class DocArticle {
                 // Extract the title if first header
                 if ($child->getLevel() === 1) {
                     $this->title = $childContent;
+                    $this->description = $children[$i + 1]->getStringContent();
                     $sectionHash = $childHash;
 
                 // Start a new section if second header

@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title><?= $pageTitle; ?> - Project Titon</title>
     <?= $this->fetch('partials/meta-tags'); ?>
-    <?= $this->fetch('partials/open-graph'); ?>
+    <?= $this->fetch('partials/open-graph', ['pageTitle' => $pageTitle]); ?>
     <link href="//fonts.googleapis.com/css?family=Droid+Sans:400,700" media="screen" rel="stylesheet" type="text/css">
     <link href="<?= $this->asset('/css/style.min.css'); ?>" media="screen" rel="stylesheet" type="text/css">
     <link href="<?= $this->asset('/css/' . $bodyClass . '.min.css'); ?>" media="screen" rel="stylesheet" type="text/css">

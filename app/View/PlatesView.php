@@ -33,7 +33,8 @@ class PlatesView extends View {
         $plates->addData([
             'env' => APP_ENV,
             'locale' => APP_LOCALE,
-            'toolkitVersion' => Toolkit::loadVersion()
+            'toolkitVersion' => Toolkit::loadVersion(),
+            'currentUrl' => $app->request->getUrl() . $app->request->getPath()
         ]);
 
         // Asset cache busting

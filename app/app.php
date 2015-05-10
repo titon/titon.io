@@ -59,14 +59,16 @@ $app->get('/en/toolkit/:version', function($version) use ($app) {
 
 $app->get('/en/toolkit/:version/:path+', function($version, $path = []) use ($app) {
     $path = implode('/', $path);
+    $article = new DocArticle('toolkit', $version, $path);
 
     $app->render('toolkit/docs/read', [
         'skeletonClass' => 'documentation',
         'bodyClass' => 'toolkit',
         'version' => $version,
-        'plugins' => Toolkit::loadPlugins(),
-        'article' => new DocArticle('toolkit', $version, $path),
-        'menu' => new DocMenu('toolkit', $version, $path)
+        'menu' => new DocMenu('toolkit', $version, $path),
+        'article' => $article,
+        'description' => $article->getDescription(),
+        'plugins' => Toolkit::loadPlugins()
     ]);
 })->name('toolkit.docs');
 
