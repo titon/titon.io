@@ -10,6 +10,27 @@ namespace Titon\Model;
 class Toolkit {
 
     /**
+     * Load the plugin manifest.
+     *
+     * @return array
+     */
+    public static function loadPlugins() {
+        $json = json_decode(file_get_contents(VENDOR_DIR . 'titon/toolkit/manifest.json'), true);
+        $plugins = [];
+
+        foreach ($json as $key => $plugin) {
+            if (strpos($key, '-') === false) {
+                $key = strtolower(str_replace('_', '-', preg_replace('/([A-Z]{1})/', '_$1', $key)));
+            }
+
+            $plugin['key'] = $key;
+            $plugins[$key] = $plugin;
+        }
+
+        return $plugins;
+    }
+
+    /**
      * Load the latest version.
      *
      * @return string
@@ -22,27 +43,6 @@ class Toolkit {
         }
 
         return $version;
-    }
-
-    /**
-     * Load the component manifest.
-     *
-     * @return array
-     */
-    public static function loadComponents() {
-        $json = json_decode(file_get_contents(VENDOR_DIR . 'titon/toolkit/manifest.json'), true);
-        $components = [];
-
-        foreach ($json as $key => $component) {
-            if (strpos($key, '-') === false) {
-                $key = strtolower(str_replace('_', '-', preg_replace('/([A-Z]{1})/', '_$1', $key)));
-            }
-
-            $component['key'] = $key;
-            $components[$key] = $component;
-        }
-
-        return $components;
     }
 
 }

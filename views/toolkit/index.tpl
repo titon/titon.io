@@ -4,7 +4,7 @@
     <div class="wrapper">
         <h1>Toolkit</h1>
 
-        <h6>Extensible front-end HTML, CSS, and JavaScript user interface components for the responsive, mobile, and modern web.</h6>
+        <h6>Extensible front-end HTML, CSS, and JavaScript user interface components and behaviors for the responsive, mobile, and modern web.</h6>
 
         <div class="hexagons hide-xsmall hide-small">
             <div class="hexagon">
@@ -98,7 +98,7 @@
                 <li>
                     <span class="hexagon-32"><span class="icon-16-reusable"></span></span>
                     <h6>Reusable Code</h6>
-                    <p>Easier code re-use through the CSS block-element-modifier (BEM) methodology, and an advanced JavaScript component system.</p>
+                    <p>Easier code re-use through the CSS block-element-modifier (BEM) methodology, and an advanced JavaScript class system.</p>
                 </li>
                 <li>
                     <span class="hexagon-32"><span class="icon-16-accessible"></span></span>
@@ -119,13 +119,14 @@
         </div>
     </section>
 
-    <? $filterComponents = function($type) use ($components) {
+    <? $filterPlugins = function($type) use ($plugins) {
         $clean = [];
 
-        foreach ($components as $key => $component) {
-            if (isset($component['type']) && $component['type'] === $type) {
+        foreach ($plugins as $key => $plugin) {
+            if (isset($plugin['type']) && $plugin['type'] === $type) {
                 $clean[] = $key;
-            } else if (isset($component['category']) && $component['category'] === $type) {
+
+            } else if (isset($plugin['category']) && $plugin['category'] === $type) {
                 $clean[] = $key;
             }
         }
@@ -135,7 +136,7 @@
 
     <section class="segment components" id="components">
         <div class="wrapper">
-            <h2>Powerful user interface components.</h2>
+            <h2>Powerful user interface plugins.</h2>
             <h5>Continually growing with every release.</h5>
 
             <hr>
@@ -146,8 +147,8 @@
                     <p>Helper classes, mixins, functions, and visual styles for built-in HTML tags.</p>
 
                     <ul>
-                        <? foreach ($filterComponents('layout') as $key) {
-                            echo $this->fetch('partials/plugin-row', ['component' => $components[$key], 'key' => $key]);
+                        <? foreach ($filterPlugins('layout') as $key) {
+                            echo $this->fetch('partials/plugin-row', ['plugin' => $plugins[$key], 'key' => $key]);
                         } ?>
                     </ul>
                 </div>
@@ -157,19 +158,19 @@
                     <p>Common user interface concepts packaged as static HTML elements.</p>
 
                     <ul>
-                        <? foreach ($filterComponents('element') as $key) {
-                            echo $this->fetch('partials/plugin-row', ['component' => $components[$key], 'key' => $key]);
+                        <? foreach ($filterPlugins('element') as $key) {
+                            echo $this->fetch('partials/plugin-row', ['plugin' => $plugins[$key], 'key' => $key]);
                         } ?>
                     </ul>
                 </div>
 
                 <div class="col medium-4 large-4">
                     <h6>Modules</h6>
-                    <p>Element components empowered with JavaScript for advanced functionality.</p>
+                    <p>Element plugins empowered with JavaScript for advanced functionality.</p>
 
                     <ul>
-                        <? foreach ($filterComponents('module') as $key) {
-                            echo $this->fetch('partials/plugin-row', ['component' => $components[$key], 'key' => $key]);
+                        <? foreach ($filterPlugins('module') as $key) {
+                            echo $this->fetch('partials/plugin-row', ['plugin' => $plugins[$key], 'key' => $key]);
                         } ?>
                     </ul>
                 </div>
@@ -202,7 +203,7 @@
                 </div>
 
                 <div class="col medium-6 large-6 end">
-                    <p>Initialize JavaScript functionality for components using familiar plugin syntax.</p>
+                    <p>Initialize JavaScript functionality for plugins using familiar syntax.</p>
 
                     <pre id="example-jquery" class="tabs-section"><code class="lang-javascript">$('.carousel').carousel({
     animation: 'slide-up',

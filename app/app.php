@@ -42,7 +42,7 @@ $app->get('/en', function() use ($app) {
 
 $app->get('/en/toolkit', function() use ($app) {
     $app->render('toolkit/index', [
-        'components' => Toolkit::loadComponents(),
+        'plugins' => Toolkit::loadPlugins(),
         'skeletonClass' => 'landing',
         'bodyClass' => 'toolkit'
     ]);
@@ -64,7 +64,7 @@ $app->get('/en/toolkit/:version/:path+', function($version, $path = []) use ($ap
         'skeletonClass' => 'documentation',
         'bodyClass' => 'toolkit',
         'version' => $version,
-        'components' => Toolkit::loadComponents(),
+        'plugins' => Toolkit::loadPlugins(),
         'article' => new DocArticle('toolkit', $version, $path),
         'menu' => new DocMenu('toolkit', $version, $path)
     ]);

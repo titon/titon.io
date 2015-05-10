@@ -8,9 +8,9 @@
             <div class="go-toolkit col medium-6 large-6">
                 <h2>Toolkit</h2>
 
-                <p>A collection of extensible front-end user interface components for the responsive and mobile web.</p>
+                <p>A collection of extensible front-end user interface components and behaviors for the responsive, mobile, and modern web.</p>
 
-                <p><a href="<?= $this->url('toolkit'); ?>" class="button">View Components</a></p>
+                <p><a href="<?= $this->url('toolkit'); ?>" class="button">View Plugins</a></p>
             </div>
 
             <div class="go-framework col medium-6 large-6 end">

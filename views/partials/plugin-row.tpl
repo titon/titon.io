@@ -9,19 +9,19 @@
     } ?>
 
     <a href="<?= $this->url('toolkit.docs', ['version' => $toolkitVersion, 'path' => $path]); ?>" data-tooltip="#tooltip-<?= $key; ?>">
-        <?= $this->e($component['name']); ?>
+        <?= $this->e($plugin['name']); ?>
 
-        <? if (!empty($component['source']['js'])) { ?>
+        <? if (!empty($plugin['source']['js'])) { ?>
             <span class="label small">JS</span>
         <? } ?>
     </a>
 
     <div id="tooltip-<?= $key; ?>" style="display: none">
-        <?= $this->e($component['description']); ?>
+        <?= $this->e($plugin['description']); ?>
 
         <ul class="meta-list">
-            <? if (!empty($component['source'])) {
-                $includes = array_map('strtoupper', array_filter(array_keys($component['source']), function($value) {
+            <? if (!empty($plugin['source'])) {
+                $includes = array_map('strtoupper', array_filter(array_keys($plugin['source']), function($value) {
                     return ($value === 'css' || $value === 'js');
                 })); ?>
 
@@ -31,10 +31,10 @@
                 </li>
             <? } ?>
 
-            <? if (!empty($component['require'])) {
-                $requires = array_map(function($value) use ($components) {
-                    return $components[$value]['name'];
-                }, $component['require']); ?>
+            <? if (!empty($plugin['require'])) {
+                $requires = array_map(function($value) use ($plugins) {
+                    return $plugins[$value]['name'];
+                }, $plugin['require']); ?>
 
                 <li>
                     <span class="secondary">Requires:</span>

@@ -255,11 +255,11 @@ class DocArticle {
         $path = $this->getUrlPath();
 
         if (strpos($path, 'components') === 0 || strpos($path, 'behaviors') === 0) {
-            $components = Toolkit::loadComponents();
+            $plugins = Toolkit::loadPlugins();
             $name = basename($path);
 
-            if (isset($components[$name])) {
-                $this->plugin = new Plugin($components[$name]);
+            if (isset($plugins[$name])) {
+                $this->plugin = new Plugin($plugins[$name]);
             }
         }
     }

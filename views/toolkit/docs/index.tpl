@@ -34,8 +34,8 @@
             <div class="col large-6 medium-6 box">
                 <h3>What Is Toolkit</h3>
 
-                <p>Titon Toolkit is a collection of very powerful user interface components and utility
-                    classes for the responsive, mobile, and modern web. Each component represents encapsulated HTML,
+                <p>Titon Toolkit is a collection of very powerful user interface components, behaviors, and utility
+                    classes for the responsive, mobile, and modern web. Each plugin represents encapsulated HTML,
                     CSS, and JavaScript functionality for role specific page elements.</p>
 
                 <p>Toolkit makes use of the latest and greatest technology. This includes HTML5 for semantics,

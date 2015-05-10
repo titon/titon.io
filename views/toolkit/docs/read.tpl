@@ -60,7 +60,7 @@
 
                             <li<? if ($isOpen) { ?> class="is-open"<? } ?>>
                                 <a href="<?= $this->url('toolkit.docs', ['version' => $version, 'path' => trim($chapter['url'], '/')]); ?>">
-                                    <? if ($article->isPlugin() && !empty($components[basename($chapter['url'])]['source']['js'])) { ?>
+                                    <? if ($article->isPlugin() && !empty($plugins[basename($chapter['url'])]['source']['js'])) { ?>
                                         <span class="label small float-right" data-tooltip="Requires JavaScript">JS</span>
                                     <? } ?>
 
@@ -142,7 +142,7 @@
                                         $requires[] = sprintf('<a href="%s">%s</a>', '../development/js/base', 'Base (JS)');
                                     }
                                 } else {
-                                    $requires[] = sprintf('<a href="%s">%s</a>', $require, $components[$require]['name']);
+                                    $requires[] = sprintf('<a href="%s">%s</a>', $require, $plugins[$require]['name']);
                                 }
                             } ?>
 
