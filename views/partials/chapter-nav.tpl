@@ -1,5 +1,5 @@
 <ul>
-    <? foreach ($chapters as $chapter) {
+    <?php foreach ($chapters as $chapter) {
         if (isset($chapter['divider'])) {
             continue;
         }
@@ -16,5 +16,5 @@
             }, $chapter['title']); ?></a>
         </li>
 
-    <? } ?>
+    <?php } ?>
 </ul>

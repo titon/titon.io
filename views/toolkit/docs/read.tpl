@@ -1,13 +1,13 @@
-<? $this->layout('layouts/default', ['pageTitle' => $article->getTitle() . ' - Documentation - Toolkit']); ?>
+<?php $this->layout('layouts/default', ['pageTitle' => $article->getTitle() . ' - Documentation - Toolkit']); ?>
 
-<? $this->start('head'); ?>
+<?php $this->start('head'); ?>
 <link href="<?= $this->asset('/css/vendors/prism.min.css'); ?>" media="screen" rel="stylesheet" type="text/css">
-<? $this->stop(); ?>
+<?php $this->stop(); ?>
 
-<? $this->start('foot'); ?>
+<?php $this->start('foot'); ?>
 <script src="<?= $this->asset('/js/vendors/prism.min.js'); ?>"></script>
 <script src="<?= $this->asset('/js/docs.min.js'); ?>"></script>
-<? $this->stop(); ?>
+<?php $this->stop(); ?>
 
 <header class="head">
     <div class="wrapper">
@@ -19,18 +19,18 @@
                 </a>
             </li>
 
-            <? foreach ($menu->getNavigation() as $item) {
+            <?php foreach ($menu->getNavigation() as $item) {
                 $isActive = (strpos($article->getUrlPath(), $item['url']) === 0); ?>
 
                 <li>
                     <a href="<?= $this->url('toolkit.docs', ['version' => $version, 'path' => $item['url']]); ?>"
-                        <? if ($isActive) { ?> class="is-active"<? } ?>>
+                        <?php if ($isActive) { ?> class="is-active"<?php } ?>>
                         <span class="fa <?= $item['icon']; ?>"></span>
                         <span class="title"><?= $item['title']; ?></span>
                     </a>
                 </li>
 
-            <? } ?>
+            <?php } ?>
         </ul>
     </div>
 </header>
@@ -39,43 +39,43 @@
     <div class="wrapper">
         <div class="grid" id="doc">
             <aside class="col small-3 medium-3 large-3 docs-sidebar" id="toc">
-                <? $parentMenu = $menu->getParentMenu(); ?>
+                <?php $parentMenu = $menu->getParentMenu(); ?>
 
                 <nav class="box docs-toc">
                     <header><?= $parentMenu['title']; ?></header>
 
                     <ul>
-                        <? if ($parentMenu['url'] !== '/') { ?>
+                        <?php if ($parentMenu['url'] !== '/') { ?>
                             <li>
                                 <a href="<?= $this->url('toolkit.docs', ['version' => $version, 'path' => trim($parentMenu['url'], '/')]); ?>">&laquo; Back</a>
                             </li>
-                        <? } ?>
+                        <?php } ?>
 
-                        <? foreach ($parentMenu['children'] as $chapter) {
+                        <?php foreach ($parentMenu['children'] as $chapter) {
                             if (isset($chapter['divider'])) {
                                 continue;
                             }
 
                             $isOpen = ('/' . $article->getUrlPath() === $chapter['url']); ?>
 
-                            <li<? if ($isOpen) { ?> class="is-open"<? } ?>>
+                            <li<?php if ($isOpen) { ?> class="is-open"<?php } ?>>
                                 <a href="<?= $this->url('toolkit.docs', ['version' => $version, 'path' => trim($chapter['url'], '/')]); ?>">
-                                    <? if ($article->isPlugin() && !empty($plugins[basename($chapter['url'])]['source']['js'])) { ?>
+                                    <?php if ($article->isPlugin() && !empty($plugins[basename($chapter['url'])]['source']['js'])) { ?>
                                         <span class="label small float-right" data-tooltip="Requires JavaScript">JS</span>
-                                    <? } ?>
+                                    <?php } ?>
 
                                     <?= $chapter['title']; ?>
 
-                                    <? if (!empty($chapter['updated'])) { ?>
+                                    <?php if (!empty($chapter['updated'])) { ?>
                                         <span class="label small is-info">Updated</span>
-                                    <? } ?>
+                                    <?php } ?>
 
-                                    <? if (!empty($chapter['new'])) { ?>
+                                    <?php if (!empty($chapter['new'])) { ?>
                                         <span class="label small is-success">New</span>
-                                    <? } ?>
+                                    <?php } ?>
                                 </a>
 
-                                <? if ($isOpen) {
+                                <?php if ($isOpen) {
                                     if (!empty($chapter['children'])) {
                                         echo $this->fetch('partials/chapter-nav', ['chapters' => $chapter['children']]);
                                     }
@@ -86,51 +86,51 @@
                                 } ?>
                             </li>
 
-                        <? } ?>
+                        <?php } ?>
                     </ul>
                 </nav>
             </aside>
 
             <section class="col small-9 medium-9 large-9 end" id="chapters">
-                <? $count = 0;
+                <?php $count = 0;
 
                 foreach ($article->getSections() as $id => $section) { ?>
 
                     <article class="box docs-article" id="<?= $id; ?>">
-                        <? // Display metadata in the 1st section
+                        <?php // Display metadata in the 1st section
                         if ($count === 0) { ?>
                             <div class="docs-actions">
-                                <? if ($article->isPlugin()) { ?>
+                                <?php if ($article->isPlugin()) { ?>
                                     <div class="button-group round small">
-                                        <? if ($cssUrl = $article->getPlugin()->getGitHubCssUrl()) { ?>
+                                        <?php if ($cssUrl = $article->getPlugin()->getGitHubCssUrl()) { ?>
                                             <a href="<?= $cssUrl; ?>" class="button">SCSS</a>
-                                        <? } ?>
+                                        <?php } ?>
 
-                                        <? if ($jsUrl = $article->getPlugin()->getGitHubJsUrl()) { ?>
+                                        <?php if ($jsUrl = $article->getPlugin()->getGitHubJsUrl()) { ?>
                                             <a href="<?= $jsUrl; ?>" class="button">JS</a>
-                                        <? } ?>
+                                        <?php } ?>
                                     </div>
-                                <? } ?>
+                                <?php } ?>
 
                                 <div class="button-group round small">
                                     <a href="<?= $article->getGitHubUrl(); ?>" class="button is-success">Edit</a>
 
-                                    <? if ($article->isPlugin() && ($demoUrl = $article->getPlugin()->getDemoUrl())) { ?>
+                                    <?php if ($article->isPlugin() && ($demoUrl = $article->getPlugin()->getDemoUrl())) { ?>
                                         <a href="<?= $demoUrl; ?>" class="button is-error">Demo</a>
-                                    <? } ?>
+                                    <?php } ?>
                                 </div>
                             </div>
 
-                        <? } else { ?>
+                        <?php } else { ?>
                             <a href="#top" class="scroll-to back-to-top">
                                 Top <span class="fa fa-arrow-up"></span>
                             </a>
-                        <? } ?>
+                        <?php } ?>
 
-                        <? // Render the sections content
+                        <?php // Render the sections content
                         echo $section; ?>
 
-                        <? // Display requirements for plugins
+                        <?php // Display requirements for plugins
                         if ($count === 0 && $article->isPlugin()) {
                             $requires = [];
 
@@ -147,18 +147,18 @@
                             } ?>
 
                             <ul class="docs-meta">
-                                <? if ($requires) { ?>
+                                <?php if ($requires) { ?>
                                     <li><b>Requires:</b> <?= implode(', ', $requires); ?></li>
-                                <? }
+                                <?php }
 
                                 if ($pluginVersion = $article->getPlugin()->getAddedVersion()) { ?>
                                     <li><b>Added In:</b> <?= $pluginVersion; ?></li>
-                                <? } ?>
+                                <?php } ?>
                             </ul>
-                        <? } ?>
+                        <?php } ?>
                     </article>
 
-                    <? $count++;
+                    <?php $count++;
                 } ?>
             </section>
         </div>

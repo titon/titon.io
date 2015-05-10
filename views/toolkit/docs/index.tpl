@@ -1,8 +1,8 @@
-<? $this->layout('layouts/default', ['pageTitle' => 'Documentation - Toolkit']); ?>
+<?php $this->layout('layouts/default', ['pageTitle' => 'Documentation - Toolkit']); ?>
 
-<? $this->start('foot'); ?>
+<?php $this->start('foot'); ?>
 <script src="<?= $this->asset('/js/docs.min.js'); ?>"></script>
-<? $this->stop(); ?>
+<?php $this->stop(); ?>
 
 <header class="head">
     <div class="wrapper">
@@ -14,7 +14,7 @@
                 </a>
             </li>
 
-            <? foreach ($menu->getNavigation() as $item) { ?>
+            <?php foreach ($menu->getNavigation() as $item) { ?>
 
                 <li>
                     <a href="<?= $this->url('toolkit.docs', ['version' => $version, 'path' => $item['url']]); ?>">
@@ -23,7 +23,7 @@
                     </a>
                 </li>
 
-            <? } ?>
+            <?php } ?>
         </ul>
     </div>
 </header>

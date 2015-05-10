@@ -1,4 +1,4 @@
-<? $this->layout('layouts/default', ['pageTitle' => 'Toolkit']); ?>
+<?php $this->layout('layouts/default', ['pageTitle' => 'Toolkit']); ?>
 
 <header class="head">
     <div class="wrapper">
@@ -119,7 +119,7 @@
         </div>
     </section>
 
-    <? $filterPlugins = function($type) use ($plugins) {
+    <?php $filterPlugins = function($type) use ($plugins) {
         $clean = [];
 
         foreach ($plugins as $key => $plugin) {
@@ -147,7 +147,7 @@
                     <p>Helper classes, mixins, functions, and visual styles for built-in HTML tags.</p>
 
                     <ul>
-                        <? foreach ($filterPlugins('layout') as $key) {
+                        <?php foreach ($filterPlugins('layout') as $key) {
                             echo $this->fetch('partials/plugin-row', ['plugin' => $plugins[$key], 'key' => $key]);
                         } ?>
                     </ul>
@@ -158,7 +158,7 @@
                     <p>Common user interface concepts packaged as static HTML elements.</p>
 
                     <ul>
-                        <? foreach ($filterPlugins('element') as $key) {
+                        <?php foreach ($filterPlugins('element') as $key) {
                             echo $this->fetch('partials/plugin-row', ['plugin' => $plugins[$key], 'key' => $key]);
                         } ?>
                     </ul>
@@ -169,7 +169,7 @@
                     <p>Element plugins empowered with JavaScript for advanced functionality.</p>
 
                     <ul>
-                        <? foreach ($filterPlugins('module') as $key) {
+                        <?php foreach ($filterPlugins('module') as $key) {
                             echo $this->fetch('partials/plugin-row', ['plugin' => $plugins[$key], 'key' => $key]);
                         } ?>
                     </ul>

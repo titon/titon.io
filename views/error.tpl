@@ -1,4 +1,4 @@
-<? $this->layout('layouts/home', ['pageTitle' => $title]); ?>
+<?php $this->layout('layouts/home', ['pageTitle' => $title]); ?>
 
 <div class="error">
     <header class="head">
