@@ -7,10 +7,10 @@
 
 use Slim\Slim;
 use Titon\Manager\DocManager;
-use Titon\Model\Framework;
+use Titon\Model\DocArticle;
+use Titon\Model\DocMenu;
 use Titon\Model\Toolkit;
 
-// Start the application
 $app = new Slim([
     'mode' => APP_ENV,
     'debug' => (APP_ENV === 'development'),
@@ -37,30 +37,35 @@ $app->get('/en/toolkit', function() use ($app) {
     ]);
 })->name('toolkit');
 
-// Toolkit documentation
-$app->get('/en/toolkit/:version(/:path+)', function($version, $path = []) use ($app) {
-    $path = implode('/', $path);
-    $docs = new DocManager('toolkit');
+$app->get('/en/toolkit/:version', function($version) use ($app) {
+    $app->render('toolkit/docs/index', [
+        'skeletonClass' => 'documentation',
+        'bodyClass' => 'toolkit',
+        'version' => $version,
+        'menu' => new DocMenu('toolkit', $version)
+    ]);
+})->name('toolkit.docs.index');
 
-    // Load documentation
-    $toc = $docs->getToc($version);
-    $source = $docs->getSource($version, $path);
-    $chapters = $docs->findChapters($toc, $path);
+$app->get('/en/toolkit/:version/:path+', function($version, $path = []) use ($app) {
+    $app->render('toolkit/docs/read', [
+        'skeletonClass' => 'documentation',
+        'bodyClass' => 'toolkit',
+        'version' => $version,
 
+        'components' => Toolkit::loadComponents(),
+        'article' => new DocArticle('toolkit', $version, implode('/', $path)),
+        'menu' => new DocMenu('toolkit', $version)
+    ]);
 })->name('toolkit.docs');
 
 // Framework
 $app->get('/en/framework', function() use ($app) {
-    $app->render('framework/index', [
-        'packages' => Framework::loadPackages(),
-        'skeletonClass' => 'landing',
-        'bodyClass' => 'framework'
-    ]);
+    $app->redirect('/en');
 })->name('framework');
 
 // Framework documentation
 $app->get('/en/framework/:version(/:path+)', function($version, $path = []) use ($app) {
-    // TODO
+    $app->redirect('/en');
 })->name('framework.docs');
 
 // Internal error

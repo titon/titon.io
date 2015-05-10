@@ -36,7 +36,7 @@ class PlatesView extends View {
             'toolkitVersion' => Toolkit::loadVersion()
         ]);
 
-        // Asset timestamping
+        // Asset cache busting
         $plates->loadExtension(new Asset(WEB_DIR));
 
         // URL building
