@@ -32,6 +32,13 @@ class DocArticle {
     protected $flysystem;
 
     /**
+     * Component or behavior plugin instance.
+     *
+     * @type \Titon\Model\Plugin
+     */
+    protected $plugin;
+
+    /**
      * Type of project.
      *
      * @type string
@@ -92,7 +99,8 @@ class DocArticle {
         $this->flysystem = new Filesystem(new Local(SRC_DIR . 'docs/' . $project . '/'));
 
         $this->locateSource();
-        $this->compile();
+        $this->compileMarkdown();
+        $this->detectPlugin();
     }
 
     /**
@@ -104,8 +112,22 @@ class DocArticle {
         return $this->chapters;
     }
 
+    /**
+     * Return a GitHub URL for the specific file path.
+     *
+     * @return string
+     */
     public function getGitHubUrl() {
         return sprintf('https://github.com/titon/%s/tree/master/docs/%s', $this->project, str_replace($this->getSourceVersion() . '/', '', $this->getSourcePath()));
+    }
+
+    /**
+     * Return the Toolkit plugin.
+     *
+     * @return \Titon\Model\Plugin
+     */
+    public function getPlugin() {
+        return $this->plugin;
     }
 
     /**
@@ -163,11 +185,20 @@ class DocArticle {
     }
 
     /**
+     * Is the article for a Toolkit plugin?
+     *
+     * @return bool
+     */
+    public function isPlugin() {
+        return !empty($this->plugin);
+    }
+
+    /**
      * Compile a file by reading its contents, extracting the title, sections, and finally convert to HTML.
      *
      * @return void
      */
-    protected function compile() {
+    protected function compileMarkdown() {
         $path = $this->getSourcePath();
         $environment = Environment::createCommonMarkEnvironment();
         $renderer = new HtmlRenderer($environment);
@@ -213,6 +244,24 @@ class DocArticle {
 
         // Append last section
         $this->sections[$sectionHash] = DocManager::parseMarkdown($sectionContent, $path);
+    }
+
+    /**
+     * Detect if the article is for a Toolkit plugin.
+     *
+     * @return void
+     */
+    protected function detectPlugin() {
+        $path = $this->getUrlPath();
+
+        if (strpos($path, 'components') === 0 || strpos($path, 'behaviors') === 0) {
+            $components = Toolkit::loadComponents();
+            $name = basename($path);
+
+            if (isset($components[$name])) {
+                $this->plugin = new Plugin($components[$name]);
+            }
+        }
     }
 
     /**

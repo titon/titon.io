@@ -6,7 +6,6 @@
  */
 
 use Slim\Slim;
-use Titon\Manager\DocManager;
 use Titon\Model\DocArticle;
 use Titon\Model\DocMenu;
 use Titon\Model\Toolkit;
@@ -19,7 +18,13 @@ $app = new Slim([
     'templates.path' => '../views/'
 ]);
 
-// Homepage
+/**
+ * INDEX
+ *
+ * The root should redirect to the locale specific root,
+ * as to support the old URL structure.
+ */
+
 $app->get('/', function() use ($app) {
     $app->redirect('/en');
 });
@@ -28,7 +33,13 @@ $app->get('/en', function() use ($app) {
     $app->render('index');
 })->name('index');
 
-// Toolkit
+/**
+ * TOOLKIT
+ *
+ * Landing page and documentation for the Toolkit project
+ * and its plugins.
+ */
+
 $app->get('/en/toolkit', function() use ($app) {
     $app->render('toolkit/index', [
         'components' => Toolkit::loadComponents(),
@@ -47,36 +58,49 @@ $app->get('/en/toolkit/:version', function($version) use ($app) {
 })->name('toolkit.docs.index');
 
 $app->get('/en/toolkit/:version/:path+', function($version, $path = []) use ($app) {
+    $path = implode('/', $path);
+
     $app->render('toolkit/docs/read', [
         'skeletonClass' => 'documentation',
         'bodyClass' => 'toolkit',
         'version' => $version,
-
         'components' => Toolkit::loadComponents(),
-        'article' => new DocArticle('toolkit', $version, implode('/', $path)),
-        'menu' => new DocMenu('toolkit', $version)
+        'article' => new DocArticle('toolkit', $version, $path),
+        'menu' => new DocMenu('toolkit', $version, $path)
     ]);
 })->name('toolkit.docs');
 
-// Framework
+/**
+ * FRAMEWORK
+ *
+ * Landing page and documentation for the Framework project
+ * and its packages. Will temporarily redirect till implemented.
+ */
+
 $app->get('/en/framework', function() use ($app) {
     $app->redirect('/en');
 })->name('framework');
 
-// Framework documentation
+$app->get('/en/framework/:version', function($version) use ($app) {
+    $app->redirect('/en');
+})->name('framework.docs.index');
+
 $app->get('/en/framework/:version(/:path+)', function($version, $path = []) use ($app) {
     $app->redirect('/en');
 })->name('framework.docs');
 
-// Internal error
+/**
+ * ERRORS
+ *
+ * Error pages for internal errors and not found entities.
+ */
+
 $app->error(function(Exception $e) use ($app) {
     $app->render('error', ['code' => $e->getCode()]);
 });
 
-// Not found
 $app->notFound(function() use ($app) {
     $app->render('error', ['code' => 404]);
 });
 
-// Run the application
 $app->run();

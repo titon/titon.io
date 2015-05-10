@@ -38,30 +38,29 @@
 <main class="body" id="top">
     <div class="wrapper">
         <div class="grid" id="doc">
-            <?php /*
             <aside class="col small-3 medium-3 large-3 docs-sidebar" id="toc">
+                <? $parentMenu = $menu->getParentMenu(); ?>
+
                 <nav class="box docs-toc">
-                    <header><?= $chapters['title']; ?></header>
+                    <header><?= $parentMenu['title']; ?></header>
 
                     <ul>
-                        <? if ($chapters['url'] !== '/') { ?>
+                        <? if ($parentMenu['url'] !== '/') { ?>
                             <li>
-                                <a href="<?= $this->url('toolkit.docs', ['version' => $version, 'path' => trim($chapters['url'], '/')]); ?>">&laquo; Back</a>
+                                <a href="<?= $this->url('toolkit.docs', ['version' => $version, 'path' => trim($parentMenu['url'], '/')]); ?>">&laquo; Back</a>
                             </li>
-                        <? }
+                        <? } ?>
 
-                        $isComponents = (strpos($urlPath, '/components') === 0);
-
-                        foreach ($chapters['children'] as $chapter) {
+                        <? foreach ($parentMenu['children'] as $chapter) {
                             if (isset($chapter['divider'])) {
                                 continue;
                             }
 
-                            $isOpen = ($urlPath === $chapter['url']); ?>
+                            $isOpen = ('/' . $article->getUrlPath() === $chapter['url']); ?>
 
                             <li<? if ($isOpen) { ?> class="is-open"<? } ?>>
                                 <a href="<?= $this->url('toolkit.docs', ['version' => $version, 'path' => trim($chapter['url'], '/')]); ?>">
-                                    <? if ($isComponents && !empty($components[basename($chapter['url'])]['source']['js'])) { ?>
+                                    <? if ($article->isPlugin() && !empty($components[basename($chapter['url'])]['source']['js'])) { ?>
                                         <span class="label small float-right" data-tooltip="Requires JavaScript">JS</span>
                                     <? } ?>
 
@@ -91,7 +90,6 @@
                     </ul>
                 </nav>
             </aside>
-            */ ?>
 
             <section class="col small-9 medium-9 large-9 end" id="chapters">
                 <? $count = 0;
@@ -99,16 +97,17 @@
                 foreach ($article->getSections() as $id => $section) { ?>
 
                     <article class="box docs-article" id="<?= $id; ?>">
-                        <? if ($count === 0) { ?>
+                        <? // Display metadata in the 1st section
+                        if ($count === 0) { ?>
                             <div class="docs-actions">
-                                <? if (!empty($component)) { ?>
+                                <? if ($article->isPlugin()) { ?>
                                     <div class="button-group round small">
-                                        <? if (!empty($component['source']['css'][0])) { ?>
-                                            <a href="https://github.com/titon/toolkit/tree/master/scss/toolkit/<?= $component['source']['css'][0]; ?>" class="button">SCSS</a>
-                                        <? }
+                                        <? if ($cssUrl = $article->getPlugin()->getGitHubCssUrl()) { ?>
+                                            <a href="<?= $cssUrl; ?>" class="button">SCSS</a>
+                                        <? } ?>
 
-                                        if (!empty($component['source']['js'][0])) {?>
-                                            <a href="https://github.com/titon/toolkit/tree/master/js/<?= $component['source']['js'][0]; ?>" class="button">JS</a>
+                                        <? if ($jsUrl = $article->getPlugin()->getGitHubJsUrl()) { ?>
+                                            <a href="<?= $jsUrl; ?>" class="button">JS</a>
                                         <? } ?>
                                     </div>
                                 <? } ?>
@@ -116,8 +115,8 @@
                                 <div class="button-group round small">
                                     <a href="<?= $article->getGitHubUrl(); ?>" class="button is-success">Edit</a>
 
-                                    <? if (!empty($component) && $component['key'] !== 'blackout') { ?>
-                                        <a href="http://demo.titon.io/?<?= $component['key']; ?>" class="button is-error">Demo</a>
+                                    <? if ($article->isPlugin() && ($demoUrl = $article->getPlugin()->getDemoUrl())) { ?>
+                                        <a href="<?= $demoUrl; ?>" class="button is-error">Demo</a>
                                     <? } ?>
                                 </div>
                             </div>
@@ -128,15 +127,22 @@
                             </a>
                         <? } ?>
 
-                        <?= $section; ?>
+                        <? // Render the sections content
+                        echo $section; ?>
 
-                        <? // Display requirements for components
-                        if ($count === 0 && !empty($component)) {
+                        <? // Display requirements for plugins
+                        if ($count === 0 && $article->isPlugin()) {
                             $requires = [];
 
-                            if (!empty($component['require'])) {
-                                foreach ($component['require'] as $requireKey) {
-                                    $requires[] = sprintf('<a href="%s">%s</a>', $requireKey, $components[$requireKey]['name']);
+                            foreach ($article->getPlugin()->getRequires() as $require) {
+                                if ($require === 'base') {
+                                    $requires[] = sprintf('<a href="%s">%s</a>', '../development/css/base', 'Base (CSS)');
+
+                                    if ($article->getPlugin()->getSourceJs()) {
+                                        $requires[] = sprintf('<a href="%s">%s</a>', '../development/js/base', 'Base (JS)');
+                                    }
+                                } else {
+                                    $requires[] = sprintf('<a href="%s">%s</a>', $require, $components[$require]['name']);
                                 }
                             } ?>
 
@@ -145,8 +151,8 @@
                                     <li><b>Requires:</b> <?= implode(', ', $requires); ?></li>
                                 <? }
 
-                                if (!empty($component['version'])) { ?>
-                                    <li><b>Added In:</b> <?= $component['version']; ?></li>
+                                if ($pluginVersion = $article->getPlugin()->getAddedVersion()) { ?>
+                                    <li><b>Added In:</b> <?= $pluginVersion; ?></li>
                                 <? } ?>
                             </ul>
                         <? } ?>

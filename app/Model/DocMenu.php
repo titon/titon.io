@@ -9,8 +9,9 @@ namespace Titon\Model;
 
 use League\Flysystem\Adapter\Local;
 use League\Flysystem\Filesystem;
-use RuntimeException;
 use Titon\Manager\DocManager;
+use RuntimeException;
+use SplQueue;
 
 class DocMenu {
 
@@ -43,6 +44,13 @@ class DocMenu {
     protected $sourceVersion;
 
     /**
+     * URL path provided for location.
+     *
+     * @var string
+     */
+    protected $urlPath;
+
+    /**
      * Version found in the URL.
      *
      * @var string
@@ -52,14 +60,16 @@ class DocMenu {
     /**
      * @param string $project
      * @param string $version
+     * @param string $path
      */
-    public function __construct($project, $version) {
+    public function __construct($project, $version, $path = '') {
+        $this->urlPath = $path;
         $this->project = $project;
         $this->version = $version;
         $this->flysystem = new Filesystem(new Local(SRC_DIR . 'docs/' . $project . '/'));
 
         $this->locateSource();
-        $this->compile();
+        $this->compileMenu();
     }
 
     /**
@@ -74,15 +84,47 @@ class DocMenu {
             $icons = ['fa-power-off', 'fa-code', 'fa-puzzle-piece', 'fa-shield', 'fa-bullhorn', 'fa-code-fork'];
         }
 
-        foreach ($this->contents as $i => $item) {
+        foreach ($this->contents['children'] as $i => $item) {
             $nav[] = [
                 'title' => $item['title'],
-                'icon' => $icons[$i],
+                'icon' => isset($icons[$i]) ? $icons[$i] : '',
                 'url' => trim($item['url'], '/')
             ];
         }
 
         return $nav;
+    }
+
+    /**
+     * Use breadth-first-search to find the parent navigation menu.
+     *
+     * @return array
+     */
+    public function getParentMenu() {
+        $queue = new SplQueue();
+        $path = $this->urlPath ? dirname('/' . $this->urlPath) : '/';
+
+        // Add root
+        $queue->enqueue($this->contents);
+
+        // Process the queue
+        while (!$queue->isEmpty()) {
+            $node = $queue->dequeue();
+
+            // Determine if the chapter is found
+            if ($node['url'] === $path) {
+                return $node;
+            }
+
+            // Loop through children
+            if (!empty($node['children'])) {
+                foreach ($node['children'] as $child) {
+                    $queue->enqueue($child);
+                }
+            }
+        }
+
+        return [];
     }
 
     /**
@@ -126,10 +168,10 @@ class DocMenu {
      *
      * @return void
      */
-    protected function compile() {
+    protected function compileMenu() {
         $contents = json_decode($this->flysystem->read($this->getSourcePath()), true);
 
-        $this->contents = $contents['children'];
+        $this->contents = $contents;
     }
 
     /**

@@ -2,6 +2,8 @@
     <?
     if ($key === 'normalize') {
         $path = 'development/css/philosophies#normalize-integration';
+    } else if ($key === 'base') {
+        $path = 'development/css/base';
     } else {
         $path = 'components/' . $key;
     } ?>

@@ -147,7 +147,7 @@
 
                     <ul>
                         <? foreach ($filterComponents('layout') as $key) {
-                            echo $this->fetch('partials/component-item', ['component' => $components[$key], 'key' => $key]);
+                            echo $this->fetch('partials/plugin-row', ['component' => $components[$key], 'key' => $key]);
                         } ?>
                     </ul>
                 </div>
@@ -158,7 +158,7 @@
 
                     <ul>
                         <? foreach ($filterComponents('element') as $key) {
-                            echo $this->fetch('partials/component-item', ['component' => $components[$key], 'key' => $key]);
+                            echo $this->fetch('partials/plugin-row', ['component' => $components[$key], 'key' => $key]);
                         } ?>
                     </ul>
                 </div>
@@ -169,7 +169,7 @@
 
                     <ul>
                         <? foreach ($filterComponents('module') as $key) {
-                            echo $this->fetch('partials/component-item', ['component' => $components[$key], 'key' => $key]);
+                            echo $this->fetch('partials/plugin-row', ['component' => $components[$key], 'key' => $key]);
                         } ?>
                     </ul>
                 </div>

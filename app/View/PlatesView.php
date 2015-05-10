@@ -32,7 +32,7 @@ class PlatesView extends View {
         // Global variables
         $plates->addData([
             'env' => APP_ENV,
-            'locale' => 'en',
+            'locale' => APP_LOCALE,
             'toolkitVersion' => Toolkit::loadVersion()
         ]);
 

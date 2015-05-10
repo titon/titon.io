@@ -14,10 +14,6 @@
             <a href="<?= $url; ?>"><?= preg_replace_callback('/^\s+/', function($matches) {
                 return str_replace(' ', '&nbsp;&nbsp;', $matches[0]);
             }, $chapter['title']); ?></a>
-
-            <? if (!empty($chapter['children'])) {
-                //echo $this->open('docs/chapter-nav', ['chapters' => $chapter['children']]);
-            } ?>
         </li>
 
     <? } ?>
