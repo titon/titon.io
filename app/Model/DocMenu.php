@@ -181,7 +181,7 @@ class DocMenu {
      */
     protected function locateSource() {
         foreach (DocManager::buildVersions($this->getVersion()) as $version) {
-            $path = sprintf('%s/%s/toc.json', $version, APP_LOCALE);
+            $path = sprintf('%s/%s/toc.json', $version, getenv('APP_LOCALE'));
 
             if ($this->flysystem->has($path)) {
                 $this->sourcePath = $path;

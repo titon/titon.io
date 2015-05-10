@@ -292,7 +292,7 @@ class DocArticle {
         $file = $this->getUrlPath();
 
         foreach ($versions as $version) {
-            $base = sprintf('%s/%s/', $version, APP_LOCALE);
+            $base = sprintf('%s/%s/', $version, getenv('APP_LOCALE'));
 
             if ($file) {
                 $paths = [$base . $file . '.md', $base . $file . '/index.md'];

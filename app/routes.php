@@ -10,10 +10,11 @@ use Titon\Model\DocArticle;
 use Titon\Model\DocMenu;
 use Titon\Model\Toolkit;
 
+$isDev = (getenv('APP_ENV') === 'development' || getenv('APP_ENV') === 'local');
+
 $app = new Slim([
-    'mode' => APP_ENV,
-    'debug' => (APP_ENV === 'development'),
-    'log.enabled' => false,
+    'debug' => $isDev,
+    'log.enabled' => $isDev,
     'view' => 'Titon\View\PlatesView',
     'templates.path' => '../views/'
 ]);

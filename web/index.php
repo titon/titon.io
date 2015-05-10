@@ -13,11 +13,11 @@ define('WEB_DIR', __DIR__ . '/');
 define('SRC_DIR', ROOT_DIR . 'src/');
 define('APP_DIR', ROOT_DIR . 'app/');
 
-define('APP_ENV', getenv('SLIM_MODE') ?: 'production');
-define('APP_LOCALE', 'en');
-
 // Load dependencies
 require VENDOR_DIR . 'autoload.php';
 
+// Setup environment
+Dotenv::load(ROOT_DIR);
+
 // Run the application
-require APP_DIR . 'app.php';
+require APP_DIR . 'routes.php';

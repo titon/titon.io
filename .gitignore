@@ -1,5 +1,6 @@
 .idea/
 .sass-cache/
+.env
 node_modules/
 vendor/
 temp/*

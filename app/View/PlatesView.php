@@ -31,8 +31,8 @@ class PlatesView extends View {
 
         // Global variables
         $plates->addData([
-            'env' => APP_ENV,
-            'locale' => APP_LOCALE,
+            'env' => getenv('APP_ENV'),
+            'locale' => getenv('APP_LOCALE'),
             'toolkitVersion' => Toolkit::loadVersion(),
             'currentUrl' => $app->request->getUrl() . $app->request->getPath()
         ]);

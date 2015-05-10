@@ -23,5 +23,7 @@
     <script src="<?= $this->asset('/js/common.min.js'); ?>"></script>
     <?= $this->section('foot'); ?>
     <?= $this->fetch('partials/analytics'); ?>
+
+    <!-- <?= $env; ?> - <?= $locale; ?> -->
 </body>
 </html>
