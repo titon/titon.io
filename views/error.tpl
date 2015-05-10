@@ -1,16 +1,16 @@
-<? $this->layout('layouts/default', ['pageTitle' => 'Error']); ?>
+<? $this->layout('layouts/home', ['pageTitle' => $title]); ?>
 
 <div class="error">
     <header class="head">
         <div class="wrapper align-center">
             <h1><?= $code; ?></h1>
-            <h2><?= ($code === 404) ? 'Not Found' : 'Internal Error'; ?></h2>
+            <h2><?= $title; ?></h2>
         </div>
     </header>
 
     <main class="body">
         <div class="wrapper align-center">
-            An unexpected error has occurred. Please be patient while we analyze the problem.
+            <?= $message; ?>
         </div>
     </main>
 

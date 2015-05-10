@@ -6,6 +6,7 @@
  */
 
 date_default_timezone_set('UTC');
+error_reporting(0);
 
 define('ROOT_DIR', dirname(__DIR__) . '/');
 define('APP_DIR', ROOT_DIR . 'app/');

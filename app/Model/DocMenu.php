@@ -193,7 +193,7 @@ class DocMenu {
             }
         }
 
-        throw new RuntimeException('Table of contents could not be located');
+        throw new RuntimeException('Table of contents could not be located.');
     }
 
 }

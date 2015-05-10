@@ -99,11 +99,19 @@ $app->get('/en/framework/:version(/:path+)', function($version, $path = []) use 
  */
 
 $app->error(function(Exception $e) use ($app) {
-    $app->render('error', ['code' => $e->getCode()]);
+    $app->render('error', [
+        'code' => 500,
+        'title' => 'Internal Error',
+        'message' => $e->getMessage()
+    ]);
 });
 
 $app->notFound(function() use ($app) {
-    $app->render('error', ['code' => 404]);
+    $app->render('error', [
+        'code' => 404,
+        'title' => 'Not Found',
+        'message' => 'The page you are looking for could not be found.'
+    ]);
 });
 
 $app->run();

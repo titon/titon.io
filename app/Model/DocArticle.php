@@ -332,7 +332,7 @@ class DocArticle {
             }
         }
 
-        throw new RuntimeException(sprintf('Documentation source [%s] could not be located', $file));
+        throw new RuntimeException(sprintf('Documentation [%s] could not be located.', $file));
     }
 
 }
