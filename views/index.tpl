@@ -1,4 +1,4 @@
-<? $this->layout('layouts/home'); ?>
+<?php $this->layout('layouts/home'); ?>
 
 <div id="home" class="home">
     <div class="wrapper">
