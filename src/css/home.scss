@@ -1,0 +1,78 @@
+@import "global/common";
+
+body { padding: 0; }
+
+.home {
+    position: relative;
+    background: url("../img/hexagon-pattern.png") repeat, linear-gradient(to right, $toolkit-primary-dark, $framework-primary-dark);
+
+    h1 {
+        background: url("../img/logo-large.png") no-repeat;
+        background-size: 100% auto;
+        text-indent: -9999px;
+        width: 100%;
+        height: auto;
+        max-width: 768px;
+        max-height: 167px;
+        position: relative;
+        line-height: 0;
+        font-size: 0;
+        margin: 0 auto 3rem auto;
+
+        &:after {
+            display: block;
+            content: '';
+            padding-bottom: 21.74%;
+        }
+    }
+
+    .wrapper {
+        padding: 3rem;
+    }
+}
+
+.go {
+    padding: $spacing;
+    margin-bottom: 3rem;
+    background: black(.75);
+    border-radius: $round;
+    text-align: center;
+    color: #fff;
+
+    h2 {
+        line-height: 100%;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.go-toolkit {
+    @extend .go;
+
+    h2 { color: lighten($toolkit-primary-light, 15%); }
+}
+
+.go-framework {
+    @extend .go;
+
+    h2 { color: lighten($framework-primary-light, 15%); }
+}
+
+//-------------------- Responsive --------------------//
+
+@include if-medium {
+    .home .wrapper {
+        padding: 5rem;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@include if-large {
+    .go { margin-bottom: 0; }
+}

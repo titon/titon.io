@@ -1,12 +1,10 @@
 .idea/
 .sass-cache/
+.env
 node_modules/
 vendor/
 temp/*
 web/css/toolkit/
-
-# Ignore symlinks
-web/common/
 
 # Allow folders
 !.gitkeep

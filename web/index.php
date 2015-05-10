@@ -1,13 +1,25 @@
 <?php
 /**
- * @copyright    Copyright 2010-2013, The Titon Project
- * @license        http://opensource.org/licenses/bsd-license.php
+ * @copyright   2010-2015, The Titon Project
+ * @license     http://opensource.org/licenses/BSD-3-Clause
  * @link        http://titon.io
  */
 
-/**
- * This file should be used as the index of the root web directory.
- * Using this as the web root will provide easy access for static assets (css, js, img),
- * as well as moving all vendors and application code below the root.
- */
-require_once '../index.php';
+date_default_timezone_set('UTC');
+error_reporting(0);
+
+define('ROOT_DIR', dirname(__DIR__) . '/');
+define('APP_DIR', ROOT_DIR . 'app/');
+define('SRC_DIR', ROOT_DIR . 'src/');
+define('TEMP_DIR', ROOT_DIR . 'temp/');
+define('VENDOR_DIR', ROOT_DIR . 'vendor/');
+define('WEB_DIR', __DIR__ . '/');
+
+// Load dependencies
+require VENDOR_DIR . 'autoload.php';
+
+// Setup environment
+Dotenv::load(ROOT_DIR);
+
+// Run the application
+require APP_DIR . 'routes.php';

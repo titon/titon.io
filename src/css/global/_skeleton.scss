@@ -1,0 +1,279 @@
+html {
+    font: normal 14px/1.5rem "Droid Sans", sans-serif;
+}
+
+body {
+    color: $text-color;
+    background: $bg-color;
+    margin: 0;
+    padding: 0;
+}
+
+a, a:hover {
+    color: lighten($toolkit-primary-light, 15%);
+    text-decoration: none;
+}
+
+a:hover { color: $toolkit-primary-light; }
+
+//-------------------- Structure --------------------//
+
+.wrapper {
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    position: relative;
+}
+
+//-------------------- Header --------------------//
+
+.head {
+    color: #fff;
+    background: url("../img/hexagon-pattern.png") repeat, linear-gradient(to left, $toolkit-primary-dark, $framework-primary-dark);
+}
+
+//-------------------- Body --------------------//
+
+.body {
+    background: #fff;
+}
+
+//-------------------- Footer --------------------//
+
+.foot {
+    border-top: 2px solid #0e0e0e;
+    color: #6c6c6c;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.social {
+    text-align: center;
+    padding-top: .55rem;
+
+    a {
+        font-size: 2rem;
+        display: inline-block;
+        margin-left: .5rem;
+    }
+}
+
+//-------------------- Toolbar --------------------//
+
+.toolbar {
+    height: 45px;
+    padding: $small-padding 0;
+    background: $bg-color;
+
+    .wrapper {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+.nav {
+    float: right;
+    height: 45px;
+    margin: -$small-padding;
+    display: none;
+
+    > ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        > li {
+            float: left;
+            position: relative;
+
+            > a {
+                display: block;
+                height: 45px;
+                line-height: 45px;
+                padding: 0 ($small-padding * 2);
+            }
+
+            &:hover {
+                > a {
+                    color: #fff;
+                    background: #0e0e0e;
+                }
+
+                .drop--down {
+                    display: block !important;
+                    opacity: 1 !important;
+                    visibility: visible !important;
+                }
+            }
+        }
+
+        @include clear-fix;
+    }
+
+    .drop--down {
+        background: #0e0e0e;
+
+        &,
+        li:first-child > a {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    }
+}
+
+.logo {
+    height: 30px;
+    width: 138px;
+    display: block;
+    text-indent: -9999px;
+    background: url("../img/logo.png") no-repeat;
+    background-size: auto 60px;
+    position: relative;
+    bottom: -2px;
+
+    &:hover { background-position: 0 -30px; }
+}
+
+//-------------------- Helpers --------------------//
+
+.center-vertical {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box {
+    background: $toolkit-bg;
+    border: 1px solid darken($toolkit-bg-alt, 5%);
+    border-bottom: 2px solid $toolkit-border;
+    border-radius: $round;
+    margin-bottom: $spacing;
+    padding: $spacing;
+}
+
+//-------------------- Hexagons --------------------//
+
+.hexagon {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-size: 128px auto;
+
+    span[class*="icon-"] {
+        @extend .center-vertical;
+    }
+}
+
+.hexagon-128 {
+    @extend .hexagon;
+    width: 128px;
+    height: 113px;
+    background-position: 0 -57px;
+}
+
+.hexagon-64 {
+    @extend .hexagon;
+    width: 64px;
+    height: 57px;
+}
+
+.hexagon-32 {
+    @extend .hexagon;
+    width: 32px;
+    height: 28px;
+    background-position: -64px 0;
+}
+
+.hexagon-24 {
+    @extend .hexagon;
+    width: 24px;
+    height: 21px;
+    background-position: -64px -36px;
+}
+
+.hexagon-16 {
+    @extend .hexagon;
+    width: 16px;
+    height: 14px;
+    background-position: -96px 0;
+}
+
+//-------------------- Responsive --------------------//
+
+@include if-small {
+    .nav { display: block; }
+}
+
+@include if-medium {
+    html { font-size: 16px; }
+
+    .wrapper { padding: 2rem; }
+
+    .toolbar {
+        padding: $medium-padding 0;
+        height: 60px;
+    }
+
+    .nav {
+        margin: -$medium-padding;
+        height: 60px;
+
+        > ul > li > a {
+            height: 60px;
+            line-height: 60px;
+            padding: 0 ($medium-padding * 2);
+        }
+    }
+
+    .logo {
+        height: 35px;
+        width: 161px;
+        background-size: auto 70px;
+
+        &:hover { background-position: 0 -35px; }
+    }
+
+    .social {
+        float: right;
+    }
+
+    .copyright {
+        text-align: left;
+        margin: 0;
+    }
+}
+
+@include if-large {
+    html { font-size: 18px; }
+
+    .wrapper { max-width: nth($breakpoint-range-large, 1) !important; }
+
+    .toolbar {
+        padding: $large-padding 0;
+        height: 75px;
+    }
+
+    .nav {
+        margin: -$large-padding;
+        height: 75px;
+
+        > ul > li > a {
+            height: 75px;
+            line-height: 75px;
+            padding: 0 ($large-padding * 2);
+        }
+    }
+
+    .logo {
+        height: 40px;
+        width: 184px;
+        background-size: auto 80px;
+
+        &:hover { background-position: 0 -40px; }
+    }
+}
