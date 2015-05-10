@@ -9,6 +9,7 @@ namespace Titon\Model;
 
 use League\Flysystem\Adapter\Local;
 use League\Flysystem\Filesystem;
+use Titon\Manager\CacheManager;
 use Titon\Manager\DocManager;
 use RuntimeException;
 use SplQueue;
@@ -101,30 +102,31 @@ class DocMenu {
      * @return array
      */
     public function getParentMenu() {
-        $queue = new SplQueue();
         $path = $this->urlPath ? dirname('/' . $this->urlPath) : '/';
 
-        // Add root
-        $queue->enqueue($this->contents);
+        return CacheManager::cache([__METHOD__, $path], function() use ($path) {
+            $queue = new SplQueue();
+            $queue->enqueue($this->contents);
 
-        // Process the queue
-        while (!$queue->isEmpty()) {
-            $node = $queue->dequeue();
+            // Process the queue
+            while (!$queue->isEmpty()) {
+                $node = $queue->dequeue();
 
-            // Determine if the chapter is found
-            if ($node['url'] === $path) {
-                return $node;
-            }
+                // Determine if the chapter is found
+                if ($node['url'] === $path) {
+                    return $node;
+                }
 
-            // Loop through children
-            if (!empty($node['children'])) {
-                foreach ($node['children'] as $child) {
-                    $queue->enqueue($child);
+                // Loop through children
+                if (!empty($node['children'])) {
+                    foreach ($node['children'] as $child) {
+                        $queue->enqueue($child);
+                    }
                 }
             }
-        }
 
-        return [];
+            return [];
+        });
     }
 
     /**
@@ -169,9 +171,9 @@ class DocMenu {
      * @return void
      */
     protected function compileMenu() {
-        $contents = json_decode($this->flysystem->read($this->getSourcePath()), true);
-
-        $this->contents = $contents;
+        $this->contents = CacheManager::cache(__METHOD__, function() {
+            return json_decode($this->flysystem->read($this->getSourcePath()), true);
+        });
     }
 
     /**

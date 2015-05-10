@@ -14,6 +14,7 @@ use League\CommonMark\HtmlElement;
 use League\CommonMark\HtmlRenderer;
 use League\Flysystem\Adapter\Local;
 use League\Flysystem\Filesystem;
+use Titon\Manager\CacheManager;
 use Titon\Manager\DocManager;
 use RuntimeException;
 
@@ -216,6 +217,19 @@ class DocArticle {
      */
     protected function compileMarkdown() {
         $path = $this->getSourcePath();
+        $cache = CacheManager::getInstance()->getEngine();
+        $cacheKey = __METHOD__ . ':' . $path;
+
+        // Check the cache first
+        if ($article = $cache->fetch($cacheKey)) {
+            $this->title = $article['title'];
+            $this->description = $article['description'];
+            $this->sections = $article['sections'];
+            $this->chapters = $article['chapters'];
+
+            return;
+        }
+
         $environment = Environment::createCommonMarkEnvironment();
         $renderer = new HtmlRenderer($environment);
         $document = (new DocParser($environment))->parse($this->flysystem->read($path));
@@ -262,6 +276,14 @@ class DocArticle {
 
         // Append last section
         $this->sections[$sectionHash] = DocManager::parseMarkdown($sectionContent, $path);
+
+        // Cache the compiled article
+        $cache->save($cacheKey, [
+            'title' => $this->title,
+            'description' => $this->description,
+            'sections' => $this->sections,
+            'chapters' => $this->chapters
+        ], 86400); // 24 hours
     }
 
     /**

@@ -8,10 +8,11 @@
 date_default_timezone_set('UTC');
 
 define('ROOT_DIR', dirname(__DIR__) . '/');
+define('APP_DIR', ROOT_DIR . 'app/');
+define('SRC_DIR', ROOT_DIR . 'src/');
+define('TEMP_DIR', ROOT_DIR . 'temp/');
 define('VENDOR_DIR', ROOT_DIR . 'vendor/');
 define('WEB_DIR', __DIR__ . '/');
-define('SRC_DIR', ROOT_DIR . 'src/');
-define('APP_DIR', ROOT_DIR . 'app/');
 
 // Load dependencies
 require VENDOR_DIR . 'autoload.php';

@@ -7,6 +7,8 @@
 
 namespace Titon\Model;
 
+use Titon\Manager\CacheManager;
+
 class Toolkit {
 
     /**
@@ -15,19 +17,21 @@ class Toolkit {
      * @return array
      */
     public static function loadPlugins() {
-        $json = json_decode(file_get_contents(VENDOR_DIR . 'titon/toolkit/manifest.json'), true);
-        $plugins = [];
+        return CacheManager::cache(__METHOD__, function() {
+            $json = json_decode(file_get_contents(VENDOR_DIR . 'titon/toolkit/manifest.json'), true);
+            $plugins = [];
 
-        foreach ($json as $key => $plugin) {
-            if (strpos($key, '-') === false) {
-                $key = strtolower(str_replace('_', '-', preg_replace('/([A-Z]{1})/', '_$1', $key)));
+            foreach ($json as $key => $plugin) {
+                if (strpos($key, '-') === false) {
+                    $key = strtolower(str_replace('_', '-', preg_replace('/([A-Z]{1})/', '_$1', $key)));
+                }
+
+                $plugin['key'] = $key;
+                $plugins[$key] = $plugin;
             }
 
-            $plugin['key'] = $key;
-            $plugins[$key] = $plugin;
-        }
-
-        return $plugins;
+            return $plugins;
+        });
     }
 
     /**
@@ -36,13 +40,15 @@ class Toolkit {
      * @return string
      */
     public static function loadVersion() {
-        $version = trim(file_get_contents(VENDOR_DIR . 'titon/toolkit/version.md'));
+        return CacheManager::cache(__METHOD__, function() {
+            $version = trim(file_get_contents(VENDOR_DIR . 'titon/toolkit/version.md'));
 
-        if (strpos($version, '-') !== false) {
-            $version = explode('-', $version)[0];
-        }
+            if (strpos($version, '-') !== false) {
+                $version = explode('-', $version)[0];
+            }
 
-        return $version;
+            return $version;
+        });
     }
 
 }
