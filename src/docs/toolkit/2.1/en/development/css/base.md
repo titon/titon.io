@@ -126,7 +126,7 @@ A `.span-*` class can be used to force a percentage based width on an element. T
 
 ## RTL ##
 
-Adding `dir="rtl"` or `.rtl` to an element will enable RTL reading mode. We suggest adding this attribute to the base `<html>` tag. [Learn more about RTL languages.](../../development/rtl.md)
+Adding `dir="rtl"` or `.rtl` to an element will enable RTL reading mode. We suggest adding this attribute to the base `<html>` tag. [Learn more about RTL languages.](../rtl.md)
 
 ```html
 <html lang="ar" dir="rtl">
@@ -144,6 +144,6 @@ Furthermore, to support videos and embeds, the `.fluid-media` wrapper can be use
 
 ```html
 <div class="fluid-media">
-    <iframe src="/path/to/video" frameborder="0" allowfullscreen></iframe>
+    <iframe src="/path/to/video.ogg" frameborder="0" allowfullscreen></iframe>
 </div>
 ```

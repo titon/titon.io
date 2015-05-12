@@ -3,7 +3,7 @@
 Layouts based on the flexbox specification. Supports different responsive sizes for blocks.
 
 <div class="notice is-error">
-    This component is not available in the distribution files and must be manually enabled in the Sass layer by removing "flex" from the <code>$modules-excluded</code> Sass variable.
+    This component is not available in the distribution files and must be manually enabled in the Sass layer by removing "flex" from the <code>$modules-excluded</code> Sass variable.x         
 </div>
 
 ## Usage ##
