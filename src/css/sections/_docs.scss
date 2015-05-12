@@ -50,7 +50,7 @@ $docs-border-color: darken($toolkit-bg-alt, 5%);
 
     .docs-sidebar {
         margin: 0;
-        transition: margin .2s, top .2s, left .2s, right .2s;
+        transition: margin .2s;
 
         &.is-pinned {
             margin: $margin 0;

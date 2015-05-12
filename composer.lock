@@ -320,16 +320,16 @@
         },
         {
             "name": "titon/toolkit",
-            "version": "2.1.3",
+            "version": "2.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/titon/toolkit.git",
-                "reference": "06554fb449b3d40afaf772c4a48d1c842655f223"
+                "reference": "c896567f4b2aff8701eaaa1995a6b8799464be20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/titon/toolkit/zipball/06554fb449b3d40afaf772c4a48d1c842655f223",
-                "reference": "06554fb449b3d40afaf772c4a48d1c842655f223",
+                "url": "https://api.github.com/repos/titon/toolkit/zipball/c896567f4b2aff8701eaaa1995a6b8799464be20",
+                "reference": "c896567f4b2aff8701eaaa1995a6b8799464be20",
                 "shasum": ""
             },
             "type": "library",
@@ -364,7 +364,7 @@
                 "toolkit",
                 "ui"
             ],
-            "time": "2015-05-06 01:57:10"
+            "time": "2015-05-11 22:57:26"
         },
         {
             "name": "vlucas/phpdotenv",
