@@ -3,8 +3,8 @@
 .env
 node_modules/
 vendor/
-temp/*
 web/css/toolkit/
+*.log
 
 # Allow folders
 !.gitkeep
