@@ -6,16 +6,15 @@
  */
 
 use Slim\Slim;
+use Titon\Adapter\MonologWriter;
 use Titon\Model\DocArticle;
 use Titon\Model\DocMenu;
 use Titon\Model\Toolkit;
 
-$isDev = (getenv('APP_ENV') === 'development' || getenv('APP_ENV') === 'local');
-
 $app = new Slim([
-    'debug' => $isDev,
+    'debug' => (getenv('APP_ENV') === 'development' || getenv('APP_ENV') === 'local'),
     'log.enabled' => true,
-    'log.writer' => 'Titon\Adapter\MonologLogger',
+    'log.writer' => new MonologWriter(),
     'view' => 'Titon\Adapter\PlatesView',
     'templates.path' => '../views/'
 ]);

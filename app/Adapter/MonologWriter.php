@@ -10,9 +10,8 @@ namespace Titon\Adapter;
 use Monolog\Logger;
 use Monolog\Registry;
 use Slim\Log;
-use Slim\LogWriter;
 
-class MonologLogger extends LogWriter {
+class MonologWriter {
 
     /**
      * Write a message to the Monolog layer.
