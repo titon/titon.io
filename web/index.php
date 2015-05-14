@@ -22,4 +22,5 @@ require VENDOR_DIR . 'autoload.php';
 Dotenv::load(ROOT_DIR);
 
 // Run the application
+require APP_DIR . 'logging.php';
 require APP_DIR . 'routes.php';

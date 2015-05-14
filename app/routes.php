@@ -14,8 +14,9 @@ $isDev = (getenv('APP_ENV') === 'development' || getenv('APP_ENV') === 'local');
 
 $app = new Slim([
     'debug' => $isDev,
-    'log.enabled' => $isDev,
-    'view' => 'Titon\View\PlatesView',
+    'log.enabled' => true,
+    'log.writer' => 'Titon\Adapter\MonologLogger',
+    'view' => 'Titon\Adapter\PlatesView',
     'templates.path' => '../views/'
 ]);
 

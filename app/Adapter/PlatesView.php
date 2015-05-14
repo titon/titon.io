@@ -5,7 +5,7 @@
  * @link        http://titon.io
  */
 
-namespace Titon\View;
+namespace Titon\Adapter;
 
 use League\Plates\Engine;
 use League\Plates\Extension\Asset;
