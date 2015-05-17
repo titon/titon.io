@@ -6,6 +6,7 @@
  */
 
 use Monolog\ErrorHandler;
+use Monolog\Handler\NativeMailerHandler;
 use Monolog\Handler\RotatingFileHandler;
 use Monolog\Logger;
 use Monolog\Registry;
@@ -13,6 +14,10 @@ use Monolog\Registry;
 // Instantiated a logger
 $logger = new Logger('default');
 $logger->pushHandler(new RotatingFileHandler(TEMP_DIR . 'logs/titon.log', 7));
+
+if ($email = getenv('LOGGING_EMAIL')) {
+    $logger->pushHandler(new NativeMailerHandler($email, '[titon.io] Log Exception', $email));
+}
 
 // Store it for use elsewhere
 Registry::addLogger($logger, 'default');
