@@ -332,7 +332,7 @@ class DocArticle {
             }
         }
 
-        throw new RuntimeException(sprintf('Documentation [%s] could not be located.', $file));
+        throw new RuntimeException(sprintf('Documentation [%s] does not exist for version [%s].', $file, $this->getVersion()));
     }
 
 }

@@ -1,4 +1,4 @@
-<?php $this->layout('layouts/default', ['pageTitle' => 'Documentation - Toolkit']); ?>
+<?php $this->layout('layouts/default', ['pageTitle' => $version . ' Documentation - Toolkit']); ?>
 
 <?php $this->start('foot'); ?>
 <script src="<?= $this->asset('/js/docs.min.js'); ?>"></script>
