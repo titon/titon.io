@@ -1,4 +1,4 @@
-<?php $this->layout('layouts/default', ['pageTitle' => $article->getTitle() . ' - Documentation - Toolkit']); ?>
+<?php $this->layout('layouts/default', ['pageTitle' => $article->getTitle() . ' - ' . $version . ' Documentation - Toolkit']); ?>
 
 <?php $this->start('head'); ?>
 <link href="<?= $this->asset('/css/vendors/prism.min.css'); ?>" media="screen" rel="stylesheet" type="text/css">
