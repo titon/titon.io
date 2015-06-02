@@ -12,7 +12,7 @@ use Titon\Model\DocMenu;
 use Titon\Model\Toolkit;
 
 $app = new Slim([
-    'debug' => (getenv('APP_ENV') === 'development' || getenv('APP_ENV') === 'local'),
+    'debug' => IS_LOCAL,
     'log.enabled' => true,
     'log.writer' => new MonologWriter(),
     'view' => 'Titon\Adapter\PlatesView',

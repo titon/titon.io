@@ -14,6 +14,7 @@ define('SRC_DIR', ROOT_DIR . 'src/');
 define('TEMP_DIR', ROOT_DIR . 'temp/');
 define('VENDOR_DIR', ROOT_DIR . 'vendor/');
 define('WEB_DIR', __DIR__ . '/');
+define('IS_LOCAL', getenv('APP_ENV') === 'development' || getenv('APP_ENV') === 'local');
 
 // Load dependencies
 require VENDOR_DIR . 'autoload.php';

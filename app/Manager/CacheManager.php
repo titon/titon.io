@@ -43,6 +43,10 @@ class CacheManager {
      * @return mixed
      */
     public static function cache($key, callable $callback, $lifetime = 86400) {
+        if (IS_LOCAL) {
+            return $callback();
+        }
+
         if (is_array($key)) {
             $key = implode(':', $key);
         }

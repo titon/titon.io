@@ -221,7 +221,7 @@ class DocArticle {
         $cacheKey = __METHOD__ . ':' . $path;
 
         // Check the cache first
-        if ($article = $cache->fetch($cacheKey)) {
+        if (($article = $cache->fetch($cacheKey)) && !IS_LOCAL) {
             $this->title = $article['title'];
             $this->description = $article['description'];
             $this->sections = $article['sections'];
@@ -278,12 +278,14 @@ class DocArticle {
         $this->sections[$sectionHash] = DocManager::parseMarkdown($sectionContent, $path);
 
         // Cache the compiled article
-        $cache->save($cacheKey, [
-            'title' => $this->title,
-            'description' => $this->description,
-            'sections' => $this->sections,
-            'chapters' => $this->chapters
-        ], 86400); // 24 hours
+        if (!IS_LOCAL) {
+            $cache->save($cacheKey, [
+                'title'       => $this->title,
+                'description' => $this->description,
+                'sections'    => $this->sections,
+                'chapters'    => $this->chapters
+            ], 86400); // 24 hours
+        }
     }
 
     /**
