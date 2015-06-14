@@ -41,6 +41,10 @@ $app->get('/en', function() use ($app) {
  * and its plugins.
  */
 
+$app->get('/toolkit', function() use ($app) {
+    $app->redirect('/en/toolkit');
+});
+
 $app->get('/en/toolkit', function() use ($app) {
     $app->render('toolkit/index', [
         'plugins' => Toolkit::loadPlugins(),
@@ -79,6 +83,10 @@ $app->get('/en/toolkit/:version/:path+', function($version, $path = []) use ($ap
  * Landing page and documentation for the Framework project
  * and its packages. Will temporarily redirect till implemented.
  */
+
+$app->get('/framework', function() use ($app) {
+    $app->redirect('/en/framework');
+});
 
 $app->get('/en/framework', function() use ($app) {
     $app->redirect('/en');
