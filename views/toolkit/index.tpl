@@ -36,7 +36,7 @@
 
         <div class="button-toolbar">
             <a href="<?= $this->url('toolkit.docs', ['version' => $toolkitVersion, 'path' => 'setup/getting-started']); ?>" class="button large">
-                Install
+                Getting Started
             </a>
 
             <a href="https://github.com/titon/toolkit/archive/<?= $toolkitVersion; ?>.zip" class="button large is-success hide-xsmall">

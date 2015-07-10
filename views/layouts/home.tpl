@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<html lang="en" dir="ltr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
 <head>
     <meta name="charset" content="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
