@@ -16,7 +16,6 @@ gulp.task('css', function() {
     return gulp.src('./src/css/**/*.scss')
         .pipe(sass({
             outputStyle: 'compressed',
-            unixNewlines: true,
             includePaths: [__dirname + '/vendor/titon/toolkit/scss/']
         }))
         .pipe(prefixer({
