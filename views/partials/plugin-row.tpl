@@ -1,5 +1,5 @@
 <li>
-    <?
+    <?php
     if ($key === 'normalize') {
         $path = 'development/css/philosophies#normalize-integration';
     } else if ($key === 'base') {
